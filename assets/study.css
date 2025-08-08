@@ -1,0 +1,76 @@
+.shopify-section--study-detail,
+.shopify-section--study-search {
+    background: #fdf4e9;
+    padding: 1em;
+}
+article.study {
+    margin: 1em 0;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2rem;
+}
+.study-published,
+.study-author,
+.study-country {
+    border-radius: 9999px;
+    background-color: rgb(var(--button-background));
+    color: #FFFFFF;
+    padding: 0.25em 0.5em;
+    display: inline-block;
+    margin: 0.5em 0.25em;
+}
+.study-topic,
+.study-vehicle,
+.study-comparison,
+.study-complement,
+.study-testsubject,
+.study-journal,
+.study-application,
+.study-outcome {
+    border-radius: 9999px;
+    background-color: #cc475a;
+    color: #FFFFFF;
+    padding: 0.25em 0.5em;
+    display: inline-block;
+    margin: 0.5em 0.25em;
+}
+.study-search .study-search-fields {
+    display: flex;
+    gap: 0.5em;
+    margin: 0.5em 0;
+    flex-wrap: wrap;
+}
+.study-search select,
+.study-search button,
+.study-search input {
+    flex: 1;
+    width: 100%;
+    border: 1px solid #bbb;
+    border-radius: 9999px;
+    padding: 0.25em 0.5em;
+    font-size: 0.8em;
+    min-width: 10em;
+}
+.study-search button {
+    background-color: #cc475a;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.study-headline {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.5em;
+}
+.related-studies {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.5em;
+    padding: 0.5em 0;
+}
+.teaser-pagination .button {
+    margin: 0 .25em;
+}
+.teaser-pagination .button.active {
+    background-color: #cc475a;
+    background-size: 0 101%,101% 101%;
+}

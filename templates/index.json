@@ -1,0 +1,839 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_overlay_t9GHLw": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_JUn9D8": {
+          "type": "heading",
+          "settings": {
+            "text": "Mehr Energie. Schnellere Regeneration. Maximale Zellgesundheit.",
+            "heading_tag": "h4"
+          }
+        },
+        "heading_4hzxtQ": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "mehr Leben für dich.",
+            "heading_tag": "h3"
+          }
+        },
+        "richtext_RtabLk": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Unterstütze Körper & Geist mit der Kraft von molekularem Wasserstoff – für mehr Leistung, Hydration und Langlebigkeit. </p>"
+          }
+        },
+        "button_pCiby3": {
+          "type": "button",
+          "settings": {
+            "style": "solid",
+            "text": "Jetzt entdecken",
+            "url": "shopify://products/vitaminh2",
+            "background": "#ea5167",
+            "text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "heading_JUn9D8",
+        "heading_4hzxtQ",
+        "richtext_RtabLk",
+        "button_pCiby3"
+      ],
+      "custom_css": [
+        "p.h2:nth-child(2) {margin-top: 5px;}",
+        "p.h2 {text-transform: capitalize;}",
+        ".body-text p {margin: 0px !important;}"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "image_size": "auto",
+        "image": "shopify://shop_images/12989468-e017-4dc3-a70b-b6d4870dd770_1.png",
+        "mobile_image": "shopify://shop_images/hero_mobile_v3.png",
+        "allow_transparent_header": false,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": true,
+        "content_width": "md",
+        "mobile_text_position": "place-self-start text-start",
+        "desktop_text_position": "sm:place-self-center-start sm:text-start",
+        "overlay_color": "#000000",
+        "overlay_opacity": 18
+      }
+    },
+    "scrolling_content_RDf8c4": {
+      "type": "scrolling-content",
+      "blocks": {
+        "text_QrpHND": {
+          "type": "text",
+          "settings": {
+            "text": "Natürliche Inhaltsstoffe"
+          }
+        },
+        "text_BQLRWT": {
+          "type": "text",
+          "settings": {
+            "text": "0% Zucker"
+          }
+        },
+        "text_kcThE6": {
+          "type": "text",
+          "settings": {
+            "text": "Wissenschaftlich fundiert"
+          }
+        },
+        "text_Uzx3Ur": {
+          "type": "text",
+          "settings": {
+            "text": "Fruchtiger Geschmack"
+          }
+        },
+        "text_rjdm9J": {
+          "type": "text",
+          "settings": {
+            "text": "Glutenfrei"
+          }
+        }
+      },
+      "block_order": [
+        "text_QrpHND",
+        "text_BQLRWT",
+        "text_kcThE6",
+        "text_Uzx3Ur",
+        "text_rjdm9J"
+      ],
+      "custom_css": [
+        ".section-spacing {background: linear-gradient(45deg, #f6b042, #deb2b6, #d1dbee, #b3c4e6);}"
+      ],
+      "settings": {
+        "separate_section_with_border": true,
+        "scrolling_speed": 0.1,
+        "scroll_direction": "left",
+        "pause_on_hover": false,
+        "text_font": "body",
+        "text_font_size_mobile": 16,
+        "text_font_size_desktop": 16,
+        "section_vertical_spacing_mobile": 18,
+        "section_vertical_spacing_desktop": 22,
+        "item_horizontal_spacing_mobile": 25,
+        "item_horizontal_spacing_desktop": 35,
+        "background": "#f8b77b",
+        "text_color": "#000000"
+      }
+    },
+    "image_with_text_xEVRHw": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_DCz3YM": {
+          "type": "heading",
+          "settings": {
+            "text": "",
+            "text2": "<p>Natürliche Energie für deinen Tag</p>",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_h8GXmh": {
+          "type": "richtext",
+          "settings": {
+            "content_class": "first-content",
+            "content2": "",
+            "content": "<p>VitaminH2 ist ein Premium-Nahrungsergänzungsmittel, das deine Zellgesundheit, Regeneration und Hydration unterstützt – mit natürlichen Inhaltsstoffen für mehr Wohlbefinden und Leistung.</p>"
+          }
+        },
+        "richtext_7q78Ud": {
+          "type": "richtext",
+          "settings": {
+            "content_class": "benefits-content one",
+            "content2": "<p><strong>Natürlicher Energie Boost</strong></p>",
+            "content": "<p>Erlebe eine gezielte Unterstützung auf zellulärer Ebene für bessere Regeneration und schnellere Heilung.<br/>Magnesiummalat und molekularer Wasserstoff fördern deine Zellgesundheit und aktivieren natürliche Reparaturmechanismen.</p>"
+          }
+        },
+        "richtext_NPdWkx": {
+          "type": "richtext",
+          "settings": {
+            "content_class": "benefits-content two",
+            "content2": "<p><strong>Fördert Schnelle Regeneration</strong></p>",
+            "content": "<p>Mit der HydraFusion® Technologie wird molekularer Wasserstoff optimal freigesetzt, um deine Regeneration nach dem Training zu beschleunigen.</p>"
+          }
+        },
+        "richtext_VHXhhb": {
+          "type": "richtext",
+          "settings": {
+            "content_class": "benefits-content three",
+            "content2": "<p><strong>100% Natürliche Inhaltsstoffe</strong></p>",
+            "content": "<p>Frei von Zucker, Farbstoffen, Gluten, Soja und Laktose – für eine reine, hochwirksame Ergänzung, die du bedenkenlos täglich einnehmen kannst.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_DCz3YM",
+        "richtext_h8GXmh",
+        "richtext_7q78Ud",
+        "richtext_NPdWkx",
+        "richtext_VHXhhb"
+      ],
+      "custom_css": [
+        "img {color: #0000; max-width: 100%; height: auto; border-radius: 20px;}",
+        ".first-content p {margin-top: 0px !important;}",
+        ".h2.heading2 h2 {margin-top: 5px !important;}",
+        "picture {padding-left: 5%;}",
+        "@media (min-width: 1024px) {image-with-text.image-with-text.image-with-text--reverse {width: 75%; margin: auto; }}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": false,
+        "image": "shopify://shop_images/H2_Strawberry_Hand.png",
+        "reveal_on_scroll": true,
+        "image_position": "end",
+        "content_width": "lg",
+        "remove_vertical_spacing": false
+      }
+    },
+    "custom_liquid_3KRn3U": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<p><img src=\"https://cdn.shopify.com/s/files/1/0872/7969/8251/files/Bildschirmfoto_2024-09-18_um_15.43.08.png?v=1726667111\" alt=\"Dein Bildbeschreibung\" /></p>",
+        "text_alignment": "center"
+      }
+    },
+    "rich_text_MLiPKR": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_dMN7if": {
+          "type": "heading",
+          "settings": {
+            "text": "Easy to Use, Simple to Benefit",
+            "heading_tag": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_dMN7if"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "@media (min-width: 768px) {.prose {overflow-wrap: anywhere; max-width: 75%; margin: auto; } .container.container--sm {margin: 0 auto; width: 100%; }}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-569996c9-ce4a-4d19-aa0d-e0c820f04393",
+        "separate_section_with_border": false,
+        "content_width": "sm",
+        "text_position": "start",
+        "remove_vertical_spacing": false
+      }
+    },
+    "image_with_text_overlay_enrhNd": {
+      "type": "image-with-text-overlay",
+      "disabled": true,
+      "custom_css": [
+        "@media (min-width: 768px) {image-with-text-overlay.content-over-media.content-over-media--auto {max-width: 75%; margin: auto; }}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-569996c9-ce4a-4d19-aa0d-e0c820f04393",
+        "image_size": "auto",
+        "image": "shopify://shop_images/Frame_desktop.png",
+        "mobile_image": "shopify://shop_images/4_columns_mobile.jpg",
+        "allow_transparent_header": false,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": true,
+        "content_width": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "multi_column_tLdACb": {
+      "type": "multi-column",
+      "blocks": {
+        "image_with_text_W9NcUX": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/1_df1be256-cd44-4ba3-ae89-4a8b7022db0f.png",
+            "title": "Die richtige Menge dosieren",
+            "heading_tag": "h3",
+            "content": "<p>Verwende 1-2 Tabs täglich für optimale Ergebnisse. Für eine höhere Dosis kannst du auch bis zu 5 Tabs konsumieren.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_Ene86w": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/2_ac08646b-0a29-4f1d-b4ed-03951be3cad1.png",
+            "title": "Einfach ins Wasser geben",
+            "heading_tag": "h3",
+            "content": "<p>Löse einen Tab in 200-300 ml Wasser auf. Warte, bis der Tab vollständig aufgelöst ist. Für einen intensiveren Effekt kannst du auch 2 Tabs in der gleichen Menge Wasser auflösen.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_RFkyMi": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/3.png",
+            "title": "Auflösen lassen",
+            "heading_tag": "h3",
+            "content": "<p>Lass die Tabs nach dem Einlegen kurz auflösen und warte, bis sie vollständig verschwunden sind. Trinke das Getränk anschliessend möglichst zeitnah, um die volle Wirkung zu erzielen.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_VeHCG9": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/Testemonial7869.png",
+            "title": "Trinken und genießen",
+            "heading_tag": "h3",
+            "content": "<p>Geniesse das erfrischende Getränk und spüre die Vorteile von VitaminH2 für deine Zellen, Regeneration und Energie.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_with_text_W9NcUX",
+        "image_with_text_Ene86w",
+        "image_with_text_RFkyMi",
+        "image_with_text_VeHCG9"
+      ],
+      "custom_css": [
+        "@media (min-width: 1024px) {.container {width: 75%; margin: auto !important; }}",
+        "@media (max-width: 768px) {.multi-column {grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "columns_per_row": 4,
+        "stack_on_mobile": true,
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing": "md",
+        "subheading": "",
+        "title": "Einfach anzuwenden, maximaler Effekt",
+        "content": ""
+      }
+    },
+    "featured_product_JCRmJp": {
+      "type": "featured-product",
+      "blocks": {
+        "vendor_QWYKDi": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "title_9MiycC": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h3"
+          }
+        },
+        "badges_8bBEaY": {
+          "type": "badges",
+          "settings": {}
+        },
+        "price_tiPtzX": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "rating_7DcHM9": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+            "show_empty": true,
+            "rating_mode": "rating"
+          }
+        },
+        "payment_terms_qtgU4P": {
+          "type": "payment_terms",
+          "settings": {}
+        },
+        "separator_TRN6DK": {
+          "type": "separator",
+          "settings": {}
+        },
+        "description_GU8VLY": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false
+          }
+        },
+        "variant_picker_AfCd7X": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "",
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector_FYUxGw": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_MmkgEj": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": false,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "pickup_availability_XhwiW9": {
+          "type": "pickup_availability",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "vendor_QWYKDi",
+        "title_9MiycC",
+        "badges_8bBEaY",
+        "price_tiPtzX",
+        "rating_7DcHM9",
+        "payment_terms_qtgU4P",
+        "separator_TRN6DK",
+        "description_GU8VLY",
+        "variant_picker_AfCd7X",
+        "quantity_selector_FYUxGw",
+        "buy_buttons_MmkgEj",
+        "pickup_availability_XhwiW9"
+      ],
+      "settings": {
+        "color_scheme": "scheme-d158b51a-f3e3-4810-a2bb-41206d01c467",
+        "product": "vitaminh2",
+        "separate_section_with_border": false,
+        "container_size": "lg",
+        "product_info_size": 45,
+        "center_basic_info": false,
+        "desktop_media_layout": "carousel_thumbnails_bottom",
+        "desktop_media_grid_gap": 30,
+        "mobile_controls": "dots",
+        "enable_media_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": false,
+        "max_image_zoom_level": 3,
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    },
+    "logo_list_9ec3EQ": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_mUgUcQ": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Company_logo_1.png",
+            "logo_width": 120,
+            "link": ""
+          }
+        },
+        "logo_qHPnE8": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Company_logo_2.png",
+            "logo_width": 120,
+            "link": ""
+          }
+        },
+        "logo_J3ryn7": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Company_logo_3.png",
+            "logo_width": 120,
+            "link": ""
+          }
+        },
+        "logo_RnhAG9": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Company_logo_4.png",
+            "logo_width": 120,
+            "link": ""
+          }
+        },
+        "logo_WaaW6i": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Company_logo.png",
+            "logo_width": 120,
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_mUgUcQ",
+        "logo_qHPnE8",
+        "logo_J3ryn7",
+        "logo_RnhAG9",
+        "logo_WaaW6i"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "@media (max-width: 768px) {.logo-list {display: flex !important; overflow-x: scroll; flex-wrap: nowrap !important; } .logo-list__item {min-width: 200px; }}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": false,
+        "subheading": "",
+        "title": "",
+        "items_per_row": 5,
+        "logo_item_background": "",
+        "logo_item_border": ""
+      }
+    },
+    "custom_liquid_CwjJ9e": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "{% render 'custom-testimonial' %}",
+        "text_alignment": "center"
+      }
+    },
+    "custom_testimonial_9dAqMB": {
+      "type": "custom-testimonial",
+      "blocks": {
+        "testimony_6zaqDC": {
+          "type": "testimony",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/Testimonial.png",
+            "content": "<p>Seit ich VitaminH2 nehme, fühle ich mich energiegeladener und regeneriere viel schneller nach dem Training. Es hat meine Leistung auf ein neues Level gehoben!</p>",
+            "name": "Lea P.",
+            "date": "14 März 2025"
+          }
+        },
+        "testimony_d4QE6A": {
+          "type": "testimony",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/Testemonial.png",
+            "content": "<p>Ich spüre eine deutliche Verbesserung meiner Konzentration und meiner Hautgesundheit. VitaminH2 ist jetzt ein fester Bestandteil meines Alltags!</p>",
+            "name": "Anna S.",
+            "date": "17 Dezember 2024"
+          }
+        }
+      },
+      "block_order": [
+        "testimony_6zaqDC",
+        "testimony_d4QE6A"
+      ],
+      "custom_css": [
+        "@media (max-width: 768px) {.section-spacing {width: 90%; margin: auto; }}"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "color_scheme2": "scheme-bf5b0f8c-52b0-4434-9e75-88cb7d811258",
+        "separate_section_with_border": false
+      }
+    },
+    "rich_text_9q3TB9": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_jfXxxG": {
+          "type": "heading",
+          "settings": {
+            "text": "Compare and Choose the Best",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_HCnaPT": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Not all supplements are created equal. See how VitaminH2 stacks up</p><p> against the competition with our all-natural, scientifically backed formula.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_jfXxxG",
+        "richtext_HCnaPT"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "p {margin-top: 2px !important;}",
+        "@media (min-width: 768px) {.prose {overflow-wrap: anywhere; max-width: 75%; margin: auto; } .container.container--sm {margin: 0 auto; width: 100%; }}"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "content_width": "sm",
+        "text_position": "start",
+        "remove_vertical_spacing": false
+      }
+    },
+    "image_with_text_overlay_69hhz6": {
+      "type": "image-with-text-overlay",
+      "disabled": true,
+      "custom_css": [
+        "@media (min-width: 768px) {image-with-text-overlay.content-over-media.content-over-media--auto {max-width: 75%; margin: auto; }}",
+        ".color-scheme.color-scheme--scheme-1.color-scheme--with-image-overlay {padding-block-end: var( --section-vertical-spacing-override, var(--section-vertical-spacing) );}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "image_size": "auto",
+        "image": "shopify://shop_images/Content.jpg",
+        "allow_transparent_header": false,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": true,
+        "content_width": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "custom_comparison_table_tNmYz8": {
+      "type": "custom-comparison-table",
+      "blocks": {
+        "product_features_6HL67g": {
+          "type": "product_features",
+          "settings": {
+            "feature1": "Hochdosierter H₂",
+            "feature2": "Ionisiertes Magnesium",
+            "feature3": "Nachgewiesene Effektivität",
+            "feature4": "Wissenschaftliche Fundierung",
+            "feature5": "Natürliche Inhaltsstoffe",
+            "feature6": "Fruchtiger Geschmack",
+            "button_text": "Jetz kaufen",
+            "button_link": ""
+          }
+        },
+        "product1_eFC33D": {
+          "type": "product1",
+          "settings": {
+            "image": "shopify://shop_images/Kein_Titel_1192_x_920_px_392_x_800_px.png",
+            "product_name": "VitaminH2",
+            "feature1": true,
+            "feature2": true,
+            "feature3": true,
+            "feature4": true,
+            "feature5": true,
+            "feature6": true
+          }
+        },
+        "product2_ArBpNn": {
+          "type": "product2",
+          "settings": {
+            "image": "shopify://shop_images/competitor_bottle.png",
+            "product_name": "Competitor 1",
+            "feature1": false,
+            "feature2": false,
+            "feature3": false,
+            "feature4": false,
+            "feature5": false,
+            "feature6": true
+          }
+        },
+        "product3_igF98L": {
+          "type": "product3",
+          "settings": {
+            "image": "shopify://shop_images/competitor_bottle.png",
+            "product_name": "Competitor 2",
+            "feature1": false,
+            "feature2": true,
+            "feature3": false,
+            "feature4": false,
+            "feature5": false,
+            "feature6": false
+          }
+        }
+      },
+      "block_order": [
+        "product_features_6HL67g",
+        "product1_eFC33D",
+        "product2_ArBpNn",
+        "product3_igF98L"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-d158b51a-f3e3-4810-a2bb-41206d01c467",
+        "separate_section_with_border": false,
+        "title": "Warum VitaminH2 die beste Wahl für dich ist",
+        "content": "<p>Nicht alle Nahrungsergänzungsmittel sind gleich. Sieh dir an, wie VitaminH2 im Vergleich zu anderen abschneidet – mit unserer rein natürlichen, wissenschaftlich fundierten Formel.</p>",
+        "remove_vertical_spacing": true
+      }
+    },
+    "faq_q76XTU": {
+      "type": "faq",
+      "blocks": {
+        "question_QLw4zH": {
+          "type": "question",
+          "settings": {
+            "question": "Wie nehme ich VitaminH2 richtig ein?",
+            "answer": "<p>Löse 1-2 Tabletten in 200-300 ml Wasser auf. Für maximale Wirkung kannst du auch 2 Tabletten verwenden. Trinke die Mischung nach dem vollständigen Auflösen.</p>"
+          }
+        },
+        "question_Tq96LJ": {
+          "type": "question",
+          "settings": {
+            "question": "Wie oft sollte ich VitaminH2 einnehmen?",
+            "answer": "<p>Für optimale Ergebnisse empfehlen wir die Einnahme von 1-2 Tabletten täglich. Du kannst bis zu 5 Tabletten pro Tag konsumieren, da das Produkt frei von schädlichen Zusatzstoffen ist.</p>"
+          }
+        },
+        "question_Payqch": {
+          "type": "question",
+          "settings": {
+            "question": "Wie schnell werde ich die Wirkung von VitaminH2 spüren?",
+            "answer": "<p>Viele Nutzer berichten von einer schnellen Verbesserung ihrer Energielevels und einer besseren Hydration nach nur wenigen Tagen der Einnahme. Die Wirkung variiert jedoch je nach Körper und Bedarf.</p>"
+          }
+        },
+        "question_34cFHt": {
+          "type": "question",
+          "settings": {
+            "question": "Ist VitaminH2 für Vegetarier und Veganer geeignet?",
+            "answer": "<p>Ja, VitaminH2 ist zu 100% vegan und enthält keine tierischen Inhaltsstoffe.</p>"
+          }
+        },
+        "question_nb3RLa": {
+          "type": "question",
+          "settings": {
+            "question": "Ist VitaminH2 gluten- oder laktosefrei?",
+            "answer": "<p>Ja, VitaminH2 ist frei von Gluten und Laktose. Es ist auch frei von Zucker, Soja und Gentechnik.</p>"
+          }
+        },
+        "question_RwLQkc": {
+          "type": "question",
+          "settings": {
+            "question": "Kann VitaminH2 bei Stress helfen?",
+            "answer": "<p>Ja, die enthaltenen natürlichen Inhaltsstoffe wie Magnesium können helfen, Stress abzubauen und das allgemeine Wohlbefinden zu steigern.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_QLw4zH",
+        "question_Tq96LJ",
+        "question_Payqch",
+        "question_34cFHt",
+        "question_nb3RLa",
+        "question_RwLQkc"
+      ],
+      "custom_css": [
+        ".faq_side_text p {margin-top: 15px;}",
+        ".side-text p {margin-top: 0px !important;}",
+        ".side-header {margin-bottom: 15px;}",
+        "@media (min-width: 768px) {.container {width: 75% !important; margin: auto; }}",
+        "@media (max-width: 768px) {.faq {flex-direction: column; row-gap: 40px; } .faq__content {width: 95%; } .faq__content {flex-basis: 0px !important; }}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "side_header": "<h2>Hast du Fragen? Wir haben die Antworten. </h2>",
+        "side_text": "<p>Hier findest du die Antworten auf einige der häufigsten Fragen zu VitaminH2. Kannst du die gesuchte Antwort nicht finden? </p><p>Dann kontaktiere einfach unser freundliches Team.</p>",
+        "separate_section_with_border": true,
+        "show_categories": true,
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    },
+    "image_with_text_8eymdx": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_kgAXwG": {
+          "type": "subheading",
+          "settings": {
+            "text": "Subheading"
+          }
+        },
+        "heading_jKwiPx": {
+          "type": "heading",
+          "settings": {
+            "text": "Image with text",
+            "text2": "<h2>Heading</h2",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_8FLjNA": {
+          "type": "richtext",
+          "settings": {
+            "content_class": "",
+            "content2": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_kgAXwG",
+        "heading_jKwiPx",
+        "richtext_8FLjNA"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "image": "shopify://shop_images/1.png",
+        "reveal_on_scroll": true,
+        "image_position": "end",
+        "content_width": "sm",
+        "remove_vertical_spacing": true
+      }
+    },
+    "blog-posts": {
+      "type": "blog-posts",
+      "custom_css": [
+        ".header-wrapper {display: flex; justify-content: space-between; align-items: flex-end;}",
+        ".justify-self-center.bottom-btn {display: none;}",
+        "@media screen and (max-width: 768px) {.justify-self-center.bottom-btn {display: block; } .justify-self-center.top-btn {display: none; }}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-e240f942-9acb-4b5c-8e31-a59739abd614",
+        "separate_section_with_border": false,
+        "blog": "news",
+        "posts_count": 3,
+        "stack_on_mobile": false,
+        "show_category": true,
+        "show_date": false,
+        "show_excerpt": true,
+        "show_read_more": true,
+        "subheading": "",
+        "title": "Gesundheitstipps",
+        "content": "<p>Lass dir von Gesundheitsexperten zeigen, wie Vitamin H2 deine Wellness-Routine optimieren kann. In unserem Blog teilen Ärzte, Ernährungsberater und Experten wertvolle Tipps und Erkenntnisse.</p>",
+        "button_link": "",
+        "button_text": "Alle Beiträge ansehen"
+      }
+    }
+  },
+  "order": [
+    "image_with_text_overlay_t9GHLw",
+    "scrolling_content_RDf8c4",
+    "image_with_text_xEVRHw",
+    "custom_liquid_3KRn3U",
+    "rich_text_MLiPKR",
+    "image_with_text_overlay_enrhNd",
+    "multi_column_tLdACb",
+    "featured_product_JCRmJp",
+    "logo_list_9ec3EQ",
+    "custom_liquid_CwjJ9e",
+    "custom_testimonial_9dAqMB",
+    "rich_text_9q3TB9",
+    "image_with_text_overlay_69hhz6",
+    "custom_comparison_table_tNmYz8",
+    "faq_q76XTU",
+    "image_with_text_8eymdx",
+    "blog-posts"
+  ]
+}

@@ -1,0 +1,161 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "newsletter_FiiprE": {
+      "type": "newsletter",
+      "disabled": true,
+      "custom_css": [
+        ".content.section-stack.gap-8.text-left {display: flex; flex-direction: row; max-width: 100%;}",
+        "@media (min-width: 1497px) {button.button {height: 70%; }}",
+        "@media (max-width: 768px) {.form-wrapper {width: 100%; } .privacy-text {margin-top: 10px; } .section-header.justify-self-left.text-left {margin-left: 0px !important; } .content.section-stack.gap-8.text-left {flex-direction: column; gap: 16px; } button.button {height: auto; width: 100%; }}",
+        "a {text-decoration: underline;}",
+        "p {margin-top: 5px !important;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-bf5b0f8c-52b0-4434-9e75-88cb7d811258",
+        "separate_section_with_border": false,
+        "image_size": "auto",
+        "subheading": "",
+        "title": "Exklusive Deals für dich",
+        "content": "<p>Verpasse keine Sonderaktionen und sichere dir als Erster die besten Deals.</p>",
+        "privacy_text": "We care about your data in our <a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">privacy policy</a>",
+        "button_text": "Subscribe",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "text-with-icons": {
+      "type": "text-with-icons",
+      "blocks": {
+        "icon-1": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-leaf",
+            "custom_icon": "shopify://shop_images/Vegan.png",
+            "icon_width": 36,
+            "mobile_icon_width": 36,
+            "title": "Vegan und natürlich",
+            "content": "<p>100 % natürliche Inhaltsstoffe ohne Zusatzstoffe.</p><p></p>"
+          }
+        },
+        "icon-2": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-award-gift",
+            "custom_icon": "shopify://shop_images/Moneyback.png",
+            "icon_width": 36,
+            "mobile_icon_width": 36,
+            "title": "Geld zurück Garantie",
+            "content": "<p>Wir sind erst zufrieden, wenn du es bist, 100 % Geld zurück Garantie.</p>"
+          }
+        },
+        "icon-3": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-box",
+            "custom_icon": "shopify://shop_images/Shipping.png",
+            "icon_width": 36,
+            "mobile_icon_width": 36,
+            "title": "Schneller Versand",
+            "content": "<p>Schnell und zuverlässig zu dir geliefert.</p><p></p>"
+          }
+        },
+        "icon-4": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-credit-card",
+            "custom_icon": "shopify://shop_images/Payment.png",
+            "icon_width": 36,
+            "mobile_icon_width": 36,
+            "title": "Sichere Zahlungen",
+            "content": "<p>Alle Zahlungen sind sicher und geschützt, sodass du sorgenfrei einkaufen kannst.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "icon-1",
+        "icon-2",
+        "icon-3",
+        "icon-4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-d158b51a-f3e3-4810-a2bb-41206d01c467",
+        "separate_section_with_border": true,
+        "stack_on_mobile": false,
+        "icon_color": "",
+        "text_color": "",
+        "text_alignment": "center"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "newsletter": {
+          "type": "newsletter",
+          "disabled": true,
+          "settings": {
+            "title": "Newsletter",
+            "content": "<p>Sign up to our newsletter to receive exclusive offers.</p>",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        },
+        "links_9ArbPD": {
+          "type": "links",
+          "settings": {
+            "menu": "kundenservice-in-bearbeitung",
+            "show_menu_title": true,
+            "menu_title": ""
+          }
+        },
+        "links": {
+          "type": "links",
+          "settings": {
+            "menu": "rechtliches-in-bearbeitung",
+            "show_menu_title": true,
+            "menu_title": ""
+          }
+        },
+        "text_AybmGd": {
+          "type": "text",
+          "settings": {
+            "title": "Über uns",
+            "content": "<p>VitaminH2 nutzt fortschrittliche Wissenschaft, um dir mit molekularem Wasserstoff natürliche Energie und Zellgesundheit zu bieten. Unsere Produkte bestehen aus hochwertigen, natürlichen Zutaten – ganz ohne künstliche Zusatzstoffe.</p>",
+            "enable_follow_on_shop": false
+          }
+        }
+      },
+      "block_order": [
+        "newsletter",
+        "links_9ArbPD",
+        "links",
+        "text_AybmGd"
+      ],
+      "settings": {
+        "color_scheme": "scheme-e240f942-9acb-4b5c-8e31-a59739abd614",
+        "separate_section_with_border": false,
+        "show_social_media": true,
+        "show_payment_icons": true,
+        "show_country_selector": true,
+        "show_country_name": true,
+        "show_country_flag": true,
+        "show_locale_selector": true
+      }
+    }
+  },
+  "order": [
+    "newsletter_FiiprE",
+    "text-with-icons",
+    "footer"
+  ]
+}

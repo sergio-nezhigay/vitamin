@@ -1,0 +1,285 @@
+  <!-- CSS -->
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<!-- JavaScript -->
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+<style>
+  .custom-testimonial-container {
+    display: flex;
+    width: 75%;
+    margin: auto;
+   border-radius: 25px;
+   
+}
+
+
+.testimonial-text-wrapper {
+  display: flex;
+    width:50%;
+  background: linear-gradient(to right, #f6b042, #deb2b6, #d1dbee, #b3c4e6) !important;
+  border-radius: 25px 0 0 25px; 
+}
+.testimonial-text-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  position:relative;
+  height: 100%;
+    justify-content: space-around;
+}
+
+.testimonial-image-container {
+    width: 50%;
+    border-radius: 0 25px 25px 0;
+}
+
+img.customer-image {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; 
+}
+
+   p.content-body-text {
+    text-align: left;
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+  p.red-stars {
+    display: flex;
+  }
+
+  p.red-stars svg {
+    width: 23px !important;
+  }
+  .additional-info {
+    text-align: left;
+    font-size: 16px;
+}
+  .star-container {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+@media (min-width: 1920px) {
+ p.content-body-text {
+    font-size: 30px;
+}
+  p.red-stars svg {
+    width: 30px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+ p.content-body-text {
+    font-size: 20px;
+}
+  p.red-stars svg {
+    width: 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-testimonial-container {
+    width: 100%;
+    flex-direction: column;
+}
+  
+  .testimonial-text-wrapper {
+    display: flex;
+    width: 100%;
+   border-radius: 25px 25px 0 0;
+}
+ 
+ .testimonial-image-container {
+    width: 100%;
+    border-radius: 0 0 25px 25px;
+}
+
+  p.content-body-text {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+  p.red-stars svg {
+    width: 20px !important;
+  }
+  .additional-info {
+    text-align: left;
+    font-size: 16px;
+}
+  .star-container {
+    text-align: left;
+    margin-bottom: 15px;
+}
+  .testimonial-text-container {
+    padding: 30px 0px;
+}}
+
+  
+  .flickity-prev-next-button {
+    top: 80%;
+  }
+
+  .flickity-prev-next-button.next {
+    right: 46%;
+}
+ .flickity-prev-next-button.previous {
+    left: 46%;
+} 
+
+.custom-testimonial-container {
+    width: 100%;
+    margin-right: 10px;
+}
+.custom-testimonial-wrapper{
+    width: 75%;
+    margin: auto;
+}
+
+.flickity-viewport {
+    height: 500px;
+}
+
+
+
+@media (max-width: 1650px) and (min-width: 1420px) {
+    .flickity-prev-next-button.next {
+        right: 45%;
+    }
+    .flickity-prev-next-button.previous {
+        left: 45%;
+    }
+}
+
+@media (max-width: 1419px) and (min-width: 1150px) {
+    .flickity-prev-next-button.next {
+        right: 44%;
+    }
+    .flickity-prev-next-button.previous {
+        left: 44%;
+    }
+}
+
+@media (max-width: 1149px) and (min-width: 860px) {
+    .flickity-prev-next-button.next {
+        right: 42%;
+    }
+    .flickity-prev-next-button.previous {
+        left: 42%;
+    }
+}
+
+@media (max-width: 859px) and (min-width: 769px) {
+    .flickity-prev-next-button.next {
+        right: 40%;
+    }
+    .flickity-prev-next-button.previous {
+        left: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-testimonial-wrapper {
+        width: 100%;
+    }
+    .flickity-prev-next-button.previous {
+        left: -2%;
+    }
+    .flickity-prev-next-button.next {
+        right: -2%;
+    }
+}
+
+  button.flickity-button.flickity-prev-next-button {
+    background-color: #ea5167;
+    color: #ffffff;
+}
+</style>
+
+<div class="custom-testimonial-wrapper">
+    <div class="custom-testimonial-container">
+      <div class="testimonial-text-wrapper">
+         <div class="testimonial-text-container">
+          
+          <div class="content-container">
+            <div class="star-container">
+              <p class="red-stars">
+              {% for i in (1..5) %}
+                 <span>
+                    {% render 'icon-star-red' %}
+                 </span>
+              {% endfor %}
+             </p>
+          </div>
+            <p class="content-body-text">
+              <span>I feel more balance and energized</span>
+              <span>throughout the day. Plus, its's all-</span>
+              <span>natural, which is a big win for me.</span>               </p>
+          </div>
+          <div class="additional-info">
+            <p class="customer-name"><strong>Lulu Meyers</strong></p>
+            <p class="review-date">14 October 2024</p>
+          </div>
+         </div>
+      </div>
+      
+      <div class="testimonial-image-container">
+         <img  class="customer-image" src="https://cdn.shopify.com/s/files/1/0872/7969/8251/files/lulu_meyer.png?v=1734238951" >
+      </div>
+   </div>
+
+
+    <div class="custom-testimonial-container">
+      <div class="testimonial-text-wrapper">
+         <div class="testimonial-text-container">
+          
+          <div class="content-container">
+            <div class="star-container">
+              <p class="red-stars">
+              {% for i in (1..5) %}
+                 <span>
+                    {% render 'icon-star-red' %}
+                 </span>
+              {% endfor %}
+             </p>
+          </div>
+            <p class="content-body-text">
+              <span>I feel more balance and energized</span>
+              <span>throughout the day. Plus, its's all-</span>
+              <span>natural, which is a big win for me.</span>               </p>
+          </div>
+          <div class="additional-info">
+            <p class="customer-name"><strong>Lulu Meyers</strong></p>
+            <p class="review-date">14 October 2024</p>
+          </div>
+         </div>
+      </div>
+      
+      <div class="testimonial-image-container">
+         <img  class="customer-image" src="https://cdn.shopify.com/s/files/1/0872/7969/8251/files/lulu_meyer.png?v=1734238951" >
+      </div>
+   </div>
+</div>
+
+<script>
+var elem = document.querySelector('.custom-testimonial-wrapper');
+var flkty = new Flickity( elem, {
+  // options
+  prevNextButtons: true,
+  pageDots: false,
+  wrapAround: false,
+  cellAlign: "left",
+  groupCells: true,
+  arrowShape: {"x0": 20, "x1": 60, "y1": 40, "x2": 60, "y2": 35, "x3": 25}
+});
+
+// element argument can be a selector string
+//   for an individual element
+var flkty = new Flickity( '.custom-testimonial-wrapper }}', {
+  // options
+});
+</script>

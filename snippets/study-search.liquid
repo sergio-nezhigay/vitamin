@@ -1,0 +1,39 @@
+<form class="study-search" action="{{ pages.study.url }}" method="get">
+    <div class="study-search-fields">
+    <input type="search" name="study_search" placeholder="{{ 'study.search_placeholder' | t }}" value="">
+    <select name="publish_year">
+        <option value="">-- {{ 'study.all_years' | t }} --</option>
+    </select>
+    <select name="country">
+        <option value="">-- {{ 'study.all_countries' | t }} --</option>
+    </select>
+    <select name="primary_topic">
+        <option value="">-- {{ 'study.all_body_parts' | t }} --</option>
+    </select>
+    <select name="outcome">
+        <option value="">-- {{ 'study.all_outcomes' | t }} --</option>
+    </select>
+    <button type="submit">{{ 'study.search' | t }}</button>
+    </div>
+    <div class="study-search-fields">
+        <select name="secondary_topic">
+            <option value="">-- {{ 'study.all_secondary_topics' | t }} --</option>
+        </select>
+        <select name="tertiary_topic">
+            <option value="">-- {{ 'study.all_tertiary_topics' | t }} --</option>
+        </select>
+        <select name="study_author">
+            <option value="">-- {{ 'study.all_authors' | t }} --</option>
+        </select>
+        <select name="application">
+            <option value="">-- {{ 'study.all_applications' | t }} --</option>
+        </select>
+        <select name="test_subject">
+            <option value="">-- {{ 'study.all_test_subjects' | t }} --</option>
+        </select>
+        <select name="journal">
+            <option value="">-- {{ 'study.all_journals' | t }} --</option>
+        </select>
+    </div>
+</form>
+<p>{{ 'study.num_studies_found' | t }}<span class="study-count"></span></p>

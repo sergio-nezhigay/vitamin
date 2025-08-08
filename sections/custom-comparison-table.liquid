@@ -1,0 +1,584 @@
+  <style>
+/* Section Styles */
+ @media (min-width: 1024px) {
+    .comparison-section {
+        width: 75%;
+        margin: auto;
+    }
+}
+
+section.comparison-section {
+    padding: 2rem;
+    background-color: #ffffff;
+}
+
+.comparison-section ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.comparison-section li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    border-bottom: 1px solid #eee;
+}
+
+/* Alternating Row Colors */
+.comparison-section ul li:nth-child(even) {
+    background-color: #fdf4e9; /* Light peach for odd rows */
+}
+
+  .empty-column{
+    background-color: #ffffff !important;
+    border: none !important;
+  }
+.comparison-section ul li:nth-child(odd) {
+    background-color: #ffffff; /* White for even rows */
+}
+
+/* Hover Effect for Rows */
+.comparison-section ul li:hover {
+    /* background-color: #ffe8df; 
+    transition: background-color 0.3s ease; */
+}
+
+/* Comparison Table Layout */
+.comparison-table {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    /* background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px; */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden; */
+}
+
+.feature-column {
+    background-color: #ffffff;
+    font-weight: bold;
+}
+
+.feature-column ul li {
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.comparison-section .product-column {
+    text-align: center;
+}
+
+.comparison-section .product-header {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.comparison-section .product-header img {
+    width: 60px;
+    height: auto;
+    margin: 0 auto 0.5rem;
+}
+
+.comparison-section .checkmark {
+    color: green;
+    font-weight: bold;
+}
+
+/* .comparison-section .buy-now {
+    display: inline-block;
+    background-color: #ff5e8a;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 1rem auto;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+} */
+
+/* .comparison-section .buy-now:hover {
+    background-color: #e04c72;
+} */
+
+/* Highlight Column */
+.comparison-section .highlight {
+    border: 2px solid #ea5167;
+    position: relative;
+    margin-top: -1px;
+  border-radius: 15px;
+}
+
+.comparison-section .highlight .product-header h3 {
+    color: #000000;
+}
+
+/* Scrollable Design for Mobile */
+@media (max-width: 768px) {
+    .comparison-section {
+        overflow-x: auto; /* Enables horizontal scrolling */
+    }
+
+    .comparison-table {
+        display: grid;
+        /* grid-template-columns: 1.5fr 1fr; /* Show only 2 columns */ */
+        min-width: 600px; /* Prevent collapsing of table, ensuring scrolling */
+        width:650px;
+    }
+
+    .feature-column ul li,
+    .product-column ul li {
+        text-align: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .feature-column {
+        text-align: center;
+        padding: 0;
+    }
+}
+
+.border-top {
+    border-top: 1px solid lightgray !important;
+}
+
+.border-bottom {
+    border-bottom: 1px solid lightgray !important;
+}
+
+    
+  </style>
+
+  {% assign first_product = section.blocks[1] %}
+    {% assign second_product = section.blocks[2] %}
+    {% assign third_product = section.blocks[3] %}
+     {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
+  <div class="{% unless section.settings.remove_vertical_spacing %}section-spacing{% endunless %} color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
+
+    <section class="comparison-section">
+      <div class="section-stack"> 
+       <div class="section-header justify-self-start text-start">
+         <div class="prose">
+           <h2 class="h2">{{ section.settings.title }}
+           </h2>
+           {{ section.settings.content }}
+         </div>
+       </div>
+      <div class="comparison-table">
+            <!-- Feature List -->
+            <div class="feature-column">
+                <ul>
+                  <li class="empty-column"></li>
+                  <li  class="empty-column"></li>
+                  <li  class="empty-column"></li>
+                  <li  class="empty-column "></li>
+                  <li class="border-top">Feature</li>
+                    <li>{{ section.blocks.first.settings.feature1 }}</li>
+                    <li>{{ section.blocks.first.settings.feature2 }}</li>
+                    <li>{{ section.blocks.first.settings.feature3 }}</li>
+                    <li>{{ section.blocks.first.settings.feature4 }}</li>
+                    <li>{{ section.blocks.first.settings.feature5 }}</li>
+                    <li class="border-bottom">{{ section.blocks.first.settings.feature6 }}</li>
+                </ul>
+            </div>
+            <!-- VitaminH2 Column -->
+            <div class="product-column highlight">
+                <div class="product-header">
+                    <img src="{{ first_product.settings.image | image_url: width: 500, height: 500 }}" alt="{{ first_product.settings.image.alt }}">
+                    <h3>{{ first_product.settings.product_name }}</h3>
+                </div>
+                <ul>
+                     <li class="border-top"></li>
+                    {% if first_product.settings.feature1 %}
+                        <li ><span class="checkmark ">{% render 'icon-check-circle-red' %}</span></li>
+                    {% else %}
+                        <li ><span class="dash">{% render 'icon-minus-custom' %}</span></li>
+                    {% endif %}
+                  
+                    {% if first_product.settings.feature2 %}
+                        <li><span class="checkmark">{% render 'icon-check-circle-red' %}</span></li>
+                    {% else %}
+                        <li><span class="dash">{% render 'icon-minus-custom' %}</span></li>
+                    {% endif %}
+                  
+                    {% if first_product.settings.feature3 %}
+                        <li><span class="checkmark">{% render 'icon-check-circle-red' %}</span></li>
+                    {% else %}
+                        <li><span class="dash">{% render 'icon-minus-custom' %}</span></li>
+                    {% endif %}
+                  
+                     {% if first_product.settings.feature4 %}
+                        <li><span class="checkmark">{% render 'icon-check-circle-red' %}</span></li>
+                    {% else %}
+                        <li><span class="dash">{% render 'icon-minus-custom' %}</span></li>
+                    {% endif %}
+
+                     {% if first_product.settings.feature5 %}
+                        <li><span class="checkmark">{% render 'icon-check-circle-red' %}</span></li>
+                    {% else %}
+                        <li><span class="dash">{% render 'icon-minus-custom' %}</span></li>
+                    {% endif %}
+
+                     {% if first_product.settings.feature6 %}
+                        <li class="border-bottom"><span class="checkmark">{% render 'icon-check-circle-red' %}</span></li>
+                    {% else %}
+                        <li class="border-bottom"><span class="dash">{% render 'icon-minus-custom' %}</span></li>
+                    {% endif %}
+                   <li style="height: 100px; background-color: unset;"><button style="width: 90%;" class="buy-now button">Buy now</button></li>
+                </ul>
+                
+            </div>
+            <!-- Competitor 1 Column -->
+            <div class="product-column">
+                 <div class="product-header">
+                    <img src="{{ second_product.settings.image | image_url: width: 500, height: 500 }}" alt="{{ second_product.settings.image.alt }}">
+                    <h3>{{ second_product.settings.product_name }}</h3>
+                </div>
+                <ul>
+                    <li class="border-top"></li>
+                    {% if second_product.settings.feature1 %}
+                        <li ><span class="checkmark">{% render 'icon-check-circle-black' %}</span></li>
+                    {% else %}
+                        <li ><span class="dash">{% render 'icon-minus-custom' %}</span></li>
+                    {% endif %}
+                  
+                    {% if second_product.settings.feature2 %}
+                        <li><span class="checkmark">{% render 'icon-check-circle-black' %}</span></li>
+                    {% else %}
+                        <li ><span class="dash">{% render 'icon-minus-custom' %}</span></li>
+                    {% endif %}
+                  
+                    {% if second_product.settings.feature3 %}
+                        <li><span class="checkmark">{% render 'icon-check-circle-black' %}</span></li>
+                    {% else %}
+                        <li ><span class="dash">{% render 'icon-minus-custom' %}</span></li>
+                    {% endif %}
+                  
+                     {% if second_product.settings.feature4 %}
+                        <li><span class="checkmark">{% render 'icon-check-circle-black' %}</span></li>
+                    {% else %}
+                        <li ><span class="dash">{% render 'icon-minus-custom' %}</span></li>
+                    {% endif %}
+
+                     {% if second_product.settings.feature5 %}
+                        <li><span class="checkmark">{% render 'icon-check-circle-black' %}</span></li>
+                    {% else %}
+                        <li ><span class="dash">{% render 'icon-minus-custom' %}</span></li>
+                    {% endif %}
+
+                     {% if second_product.settings.feature6 %}
+                        <li class="border-bottom"><span class="checkmark">{% render 'icon-check-circle-black' %}</span></li>
+                    {% else %}
+                        <li class="border-bottom"><span class="dash">{% render 'icon-minus-custom' %}</span></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <!-- Competitor 2 Column -->
+            <div class="product-column">
+                 <div class="product-header">
+                    <img src="{{ third_product.settings.image | image_url: width: 500, height: 500 }}" alt="{{ third_product.settings.image.alt }}">
+                    <h3>{{ third_product.settings.product_name }}</h3>
+                </div>
+                <ul>
+                     <li class="border-top"></li>
+                    {% if third_product.settings.feature1 %}
+                        <li ><span class="checkmark ">{% render 'icon-check-circle-black' %}</span></li>
+                    {% else %}
+                        <li ><span class="dash">{% render 'icon-minus-custom' %}</span></li>
+                    {% endif %}
+                  
+                    {% if third_product.settings.feature2 %}
+                        <li><span class="checkmark">{% render 'icon-check-circle-black' %}</span></li>
+                    {% else %}
+                        <li ><span class="dash">{% render 'icon-minus-custom' %}</span></li>
+                    {% endif %}
+                  
+                    {% if third_product.settings.feature3 %}
+                        <li><span class="checkmark">{% render 'icon-check-circle-black' %}</span></li>
+                    {% else %}
+                        <li ><span class="dash">{% render 'icon-minus-custom' %}</span></li>
+                    {% endif %}
+                  
+                     {% if third_product.settings.feature4 %}
+                        <li><span class="checkmark">{% render 'icon-check-circle-black' %}</span></li>
+                    {% else %}
+                        <li ><span class="dash">{% render 'icon-minus-custom' %}</span></li>
+                    {% endif %}
+
+                     {% if third_product.settings.feature5 %}
+                        <li><span class="checkmark">{% render 'icon-check-circle-black' %}</span></li>
+                    {% else %}
+                        <li ><span class="dash">{% render 'icon-minus-custom' %}</span></li>
+                    {% endif %}
+
+                     {% if third_product.settings.feature6 %}
+                        <li class="border-bottom"><span class="checkmark">{% render 'icon-check-circle-black' %}</span></li>
+                    {% else %}
+                        <li class="border-bottom"><span class="dash">{% render 'icon-minus-custom' %}</span></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+      </div>
+    </section>  
+  </div>
+
+{% schema %}
+  {
+    "name": "Comparison table",
+    "max_blocks": 4,
+    "settings": [
+      {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:global.colors.scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "separate_section_with_border",
+      "label": "t:global.section.separate_section_with_border",
+      "default": true
+    },
+      {
+        "type": "inline_richtext",
+        "id": "title",
+        "label":"Header"
+      },
+      {
+        "type": "richtext",
+        "id": "content",
+        "label":"content"
+     },
+      {
+      "type": "checkbox",
+      "id": "remove_vertical_spacing",
+      "label": "t:global.spacing.remove_vertical_spacing",
+      "default": true
+    }
+      
+    ],
+    "blocks":[
+         {
+           "type":"product_features",
+           "name":"product features",
+           "settings":[
+               {
+                 "type":"header",
+                 "content":"Feature"
+               },
+               {
+                 "type":"inline_richtext",
+                 "id":"feature1",
+                 "label":"Feature 1",
+                 "default":"High-Dose Molecular Hydrogen"
+               },
+              {
+                 "type":"inline_richtext",
+                 "id":"feature2",
+                 "label":"Feature 2",
+                 "default":"Ionized Magnesium"
+               },
+               {
+                 "type":"inline_richtext",
+                 "id":"feature3",
+                 "label":"Feature 3",
+                 "default":"Clinically Tested Ingredients"
+               },
+             {
+                 "type":"inline_richtext",
+                 "id":"feature4",
+                 "label":"Feature 4",
+                 "default":"Studies Confirm Effectiveness"
+               },
+             {
+                 "type":"inline_richtext",
+                 "id":"feature5",
+                 "label":"Feature 5",
+                 "default":"Natural Ingredients"
+               },
+             {
+                 "type":"inline_richtext",
+                 "id":"feature6",
+                 "label":"Feature 6",
+                 "default":"Fruit Flavor and Easy to Use"
+               },
+              {
+                 "type":"inline_richtext",
+                 "id":"button_text",
+                 "label":"Button text",
+                 "default":"Buy now"
+               },
+               {
+                 "type":"url",
+                 "id":"button_link",
+                 "label":"Button link"
+               }
+           ]
+          },
+          {
+            "type":"product1",
+             "name":"product 1",
+             "settings":[
+                {
+                  "type":"image_picker",
+                  "id":"image",
+                  "label":"product image"
+                },
+                {
+                  "type":"inline_richtext",
+                  "id":"product_name",
+                  "label":"product name"
+                },
+                {
+                  "type": "checkbox",
+                  "id": "feature1",
+                  "label": "Feature 1",
+                  "default":true
+                },
+               {
+                  "type": "checkbox",
+                  "id": "feature2",
+                  "label": "Feature 2",
+                  "default":true
+                },
+               {
+                  "type": "checkbox",
+                  "id": "feature3",
+                  "label": "Feature 3",
+                  "default":true
+                },
+               {
+                  "type": "checkbox",
+                  "id": "feature4",
+                  "label": "Feature 4",
+                  "default":true
+                },
+               {
+                  "type": "checkbox",
+                  "id": "feature5",
+                  "label": "Feature 5",
+                  "default":true
+                },
+               {
+                  "type": "checkbox",
+                  "id": "feature6",
+                  "label": "Feature 6",
+                  "default":true
+                }
+             ] 
+          },
+          {
+                "type":"product2",
+                 "name":"product 2",
+                 "settings":[
+                    {
+                      "type":"image_picker",
+                      "id":"image",
+                      "label":"product image"
+                    },
+                    {
+                      "type":"inline_richtext",
+                      "id":"product_name",
+                      "label":"product name"
+                    },
+                   {
+                  "type": "checkbox",
+                  "id": "feature1",
+                  "label": "Feature 1",
+                  "default":false
+                },
+               {
+                  "type": "checkbox",
+                  "id": "feature2",
+                  "label": "Feature 2",
+                  "default":false
+                },
+               {
+                  "type": "checkbox",
+                  "id": "feature3",
+                  "label": "Feature 3",
+                  "default":false
+                },
+               {
+                  "type": "checkbox",
+                  "id": "feature4",
+                  "label": "Feature 4",
+                  "default":false
+                },
+               {
+                  "type": "checkbox",
+                  "id": "feature5",
+                  "label": "Feature 5",
+                  "default":false
+                },
+               {
+                  "type": "checkbox",
+                  "id": "feature6",
+                  "label": "Feature 6",
+                  "default":false
+                }
+                 ] 
+              },
+              {
+                "type":"product3",
+                 "name":"product 3",
+                 "settings":[
+                    {
+                      "type":"image_picker",
+                      "id":"image",
+                      "label":"product image"
+                    },
+                    {
+                      "type":"inline_richtext",
+                      "id":"product_name",
+                      "label":"product name"
+                    },
+                   {
+                  "type": "checkbox",
+                  "id": "feature1",
+                  "label": "Feature 1",
+                  "default":false
+                },
+               {
+                  "type": "checkbox",
+                  "id": "feature2",
+                  "label": "Feature 2",
+                  "default":false
+                },
+               {
+                  "type": "checkbox",
+                  "id": "feature3",
+                  "label": "Feature 3",
+                  "default":false
+                },
+               {
+                  "type": "checkbox",
+                  "id": "feature4",
+                  "label": "Feature 4",
+                  "default":false
+                },
+               {
+                  "type": "checkbox",
+                  "id": "feature5",
+                  "label": "Feature 5",
+                  "default":false
+                },
+               {
+                  "type": "checkbox",
+                  "id": "feature6",
+                  "label": "Feature 6",
+                  "default":false
+                }
+                 ] 
+              }
+      ],
+    "presets" :[
+      {
+          "name":"Comparison table"
+      }
+    ]
+  }
+{% endschema %}

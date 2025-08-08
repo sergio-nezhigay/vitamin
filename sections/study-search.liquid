@@ -1,0 +1,23 @@
+{{ 'study.css' | asset_url | stylesheet_tag }}
+<link rel="study-data" href="{{ 'studies.json' | asset_url }}" type="application/json">
+<script src="{{ 'study.js' | asset_url }}" type="text/javascript" defer></script>
+{% render 'study-search' %}
+<div class="study-teasers"></div>
+
+{% schema %}
+{
+  "name": "t:sections.study.name",
+  "class": "shopify-section--study-search",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside", "custom.overlay"]
+  },
+  "settings": [
+  ],
+  "presets": [
+    {
+      "name": "t:sections.study.name"
+    }
+  ]
+}
+{% endschema %}

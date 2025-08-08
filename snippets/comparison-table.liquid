@@ -1,0 +1,301 @@
+
+
+    <style>
+        .section--{{ section.id }} table {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            /* background: #fff; */
+            /* border: 1px solid #ddd; */
+            /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+        }
+
+        .section--{{ section.id }} th, .section--{{ section.id }}  td {
+            /* border: 1px solid #ddd; */
+          border-collapse: collapse;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+        }
+
+        .section--{{ section.id }}  th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+
+        .section--{{ section.id }}  .feature-col {
+            text-align: left;
+            font-weight: bold;
+            background-color: #f9f9f9;
+        }
+
+        /* Highlighted Column (VitaminH2) */
+        .section--{{ section.id }}  .highlight {
+            /* border: 2px solid #ff5e8a; */
+          padding: unset;
+            position: relative;
+        }
+
+        .section--{{ section.id }}  .highlight h3 {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .section--{{ section.id }}  img {
+            width: 60px;
+            margin-bottom: 10px;
+        }
+
+        .section--{{ section.id }}  .checkmark {
+            color: green;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .section--{{ section.id }}  .dash {
+            color: #ccc;
+            font-size: 1.2rem;
+        }
+
+        /* Buy Now Button */
+        .section--{{ section.id }}  .buy-now-btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #ff5e8a;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .section--{{ section.id }}  .buy-now-btn:hover {
+            background-color: #e04c72;
+        }
+
+      
+       .product-one-image{
+          padding: 15px;
+       }
+      .product-next-image{
+          padding: 15px;
+       }
+
+      .section--{{ section.id }} td, .section--{{ section.id }} th {
+    border-block-width: 0px !important;
+            }
+
+      td.feature-col:before, td.feature-col:before,  .section--{{ section.id }} td {
+    border-style: none !important;
+}
+        /* Responsive Table for Mobile */
+        @media (max-width: 768px) {
+            .section--{{ section.id }}.table-container {
+                overflow-x: auto; /* Allow horizontal scrolling */
+                -webkit-overflow-scrolling: touch; /* Smooth scroll on mobile */
+            }
+
+            .section--{{ section.id }} table {
+                width: 600px; /* Force table to extend beyond the screen */
+                white-space: nowrap; /* Prevent columns from wrapping */
+            }
+
+            .section--{{ section.id }} th, .section--{{ section.id }} td {
+                padding: 10px;
+                font-size: 12px;
+            }
+
+            .section--{{ section.id }} img {
+                width: 40px;
+            }
+
+            .section--{{ section.id }} .buy-now-btn {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+        }
+
+
+      .colored-border {
+        padding: 15px;
+        border: solid #ff5e8a;
+        border-width: 1px 1px 0 1px !important;
+        padding-bottom: 0px;
+      }
+      .colored-border-center {
+        border:#ff5e8a;
+        border-width: 0px 1px 0px 1px !important;
+        border-style: solid !important;
+      }
+      .colored-border-last {
+        border:#ff5e8a;
+        border-width: 0px 1px 1px 1px !important;
+        border-style: solid !important;
+      }
+      
+       .noncolored-border {
+        padding: 15px;
+      }
+    </style>
+    {% assign first_product = section.blocks[1] %}
+    {% assign second_product = section.blocks[2] %}
+    {% assign third_product = section.blocks[3] %}
+ <div class="section--{{ section.id }}  comparison-table-wrapper ">
+    <div class="header-container-comparison-table">
+       <div class="title">
+          {{ section.settings.title }}
+       </div>
+       <div class="content">
+          {{ section.settings.content }}
+       </div>
+    </div>
+    <div class="section--{{ section.id }}  table-container">
+        <table>
+            <!-- Header Row -->
+            <tr>
+                <th class="feature-col">Feature</th>
+                <th class="highlight">
+                   <div class="product-one-image">
+                     <img src="{{ first_product.settings.image | image_url: width: 500, height: 500 }}" alt="{{ first_product.settings.image.alt }}">
+                   </div>
+                      <h3>{{ first_product.settings.product_name }}</h3>
+                 
+                </th>
+                <th>
+                    <div class="product-next-image">
+                     <img src="{{ second_product.settings.image | image_url: width: 500, height: 500 }}" alt="{{ second_product.settings.image.alt }}">
+                    </div>
+                      <h3>{{ second_product.settings.product_name }}</h3>
+                </th>
+                <th>
+                     <div class="product-next-image">
+                     <img src="{{ third_product.settings.image | image_url: width: 500, height: 500 }}" alt="{{ third_product.settings.image.alt }}">
+                     </div>
+                      <h3>{{ third_product.settings.product_name }}</h3>
+                </th>
+            </tr>
+
+            <!-- Features Rows -->
+            <tr>
+                <td class="feature-col">{{ section.blocks.first.settings.feature1 }}</td>
+                    {% if first_product.settings.feature1 %}
+                        <td class="checkmark colored-border-center" style="border-style: solid !important;">✔</div>
+                      </td>
+                    {% else %}
+                        <td class="dash colored-border-center" style="border-style: solid !important;">-</td>
+                    {% endif %}
+                    {% if second_product.settings.feature1 %}
+                        <td class="checkmark">✔</td>
+                    {% else %}
+                        <td class="dash">-</td>
+                    {% endif %}
+                    {% if third_product.settings.feature1 %}
+                        <td class="checkmark">✔</td>
+                    {% else %}
+                        <td class="dash">-</td>
+                    {% endif %}
+            </tr>
+            <tr>
+                <td class="feature-col">{{ section.blocks.first.settings.feature2 }}</td>
+                {% if first_product.settings.feature2 %}
+                        <td class="checkmark colored-border-center" style="border-style: solid !important;">✔</td>
+                    {% else %}
+                        <td class="dash colored-border-center" style="border-style: solid !important;">-</td>
+                    {% endif %}
+                    {% if second_product.settings.feature2 %}
+                        <td class="checkmark">✔</td>
+                    {% else %}
+                        <td class="dash">-</td>
+                    {% endif %}
+                    {% if third_product.settings.feature2 %}
+                        <td class="checkmark">✔</td>
+                    {% else %}
+                        <td class="dash">-</td>
+                    {% endif %}
+            </tr>
+            <tr>
+                <td class="feature-col">{{ section.blocks.first.settings.feature3 }}</td>
+               {% if first_product.settings.feature3 %}
+                        <td class="checkmark colored-border-center" style="border-style: solid !important;">✔</td>
+                    {% else %}
+                        <td class="dash colored-border-center" style="border-style: solid !important;">-</td>
+                    {% endif %}
+                    {% if second_product.settings.feature3 %}
+                        <td class="checkmark">✔</td>
+                    {% else %}
+                        <td class="dash">-</td>
+                    {% endif %}
+                    {% if third_product.settings.feature3 %}
+                        <td class="checkmark">✔</td>
+                    {% else %}
+                        <td class="dash">-</td>
+                    {% endif %}
+            </tr>
+            <tr>
+                <td class="feature-col">{{ section.blocks.first.settings.feature4 }}</td>
+                {% if first_product.settings.feature4 %}
+                        <td class="checkmark colored-border-center " style="border-style: solid !important;">✔</td>
+                    {% else %}
+                        <td class="dash colored-border-center" style="border-style: solid !important;">-</td>
+                    {% endif %}
+                    {% if second_product.settings.feature4 %}
+                        <td class="checkmark">✔</td>
+                    {% else %}
+                        <td class="dash">-</td>
+                    {% endif %}
+                    {% if third_product.settings.feature4 %}
+                        <td class="checkmark">✔</td>
+                    {% else %}
+                        <td class="dash">-</td>
+                    {% endif %}
+            </tr>
+            <tr>
+                <td class="feature-col">{{ section.blocks.first.settings.feature5 }}</td>
+                {% if first_product.settings.feature5 %}
+                        <td class="checkmark colored-border-center" style="border-style: solid !important;">✔</td>
+                    {% else %}
+                        <td class="dash colored-border-center" style="border-style: solid !important;">-</td>
+                    {% endif %}
+                    {% if second_product.settings.feature5 %}
+                        <td class="checkmark">✔</td>
+                    {% else %}
+                        <td class="dash">-</td>
+                    {% endif %}
+                    {% if third_product.settings.feature5 %}
+                        <td class="checkmark">✔</td>
+                    {% else %}
+                        <td class="dash">-</td>
+                    {% endif %}
+            </tr>
+            <tr>
+                <td class="feature-col">{{ section.blocks.first.settings.feature6 }}</td>
+                {% if first_product.settings.feature6 %}
+                        <td class="checkmark colored-border-center" style="border-style: solid !important;">✔</td>
+                    {% else %}
+                        <td class="dash colored-border-center" style="border-style: solid !important;">-</td>
+                    {% endif %}
+                    {% if second_product.settings.feature6 %}
+                        <td class="checkmark">✔</td>
+                    {% else %}
+                        <td class="dash">-</td>
+                    {% endif %}
+                    {% if third_product.settings.feature6 %}
+                        <td class="checkmark">✔</td>
+                    {% else %}
+                        <td class="dash">-</td>
+                    {% endif %}
+            </tr>
+            <tr>
+              <td></td>
+               
+                <td class="" style="border-style: solid !important;">
+                  <div class="colored-border-last">
+                    <a href="{{ section.blocks.first.settings.button_link }}" class="buy-now-btn">{{ section.blocks.first.settings.button_text }}</a>
+                   </div>
+                  </td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+ </div>  
