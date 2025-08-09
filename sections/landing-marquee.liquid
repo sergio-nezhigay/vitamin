@@ -10,110 +10,72 @@
 >
   <div class="w-full overflow-hidden relative">
     <div class="flex items-center whitespace-nowrap animate-marquee" id="marquee-track-{{ section.id }}">
-      {% for block in section.blocks %}
-        {% if block.settings.benefit_text != blank %}
-          <div
-            class="flex items-center flex-shrink-0"
-            style="margin-right: {{ section.settings.item_spacing }}px;"
-            {{ block.shopify_attributes }}
-          >
+      <div class="marquee-track-inner flex items-center">
+        {% for block in section.blocks %}
+          {% if block.settings.benefit_text != blank %}
             <div
-              class="flex items-center justify-center flex-shrink-0"
-              style="margin-right: {{ section.settings.icon_text_spacing }}px;"
+              class="flex items-center flex-shrink-0"
+              style="margin-right: {{ section.settings.item_spacing }}px;"
+              {{ block.shopify_attributes }}
             >
-              {% if block.settings.custom_icon != blank %}
-                {{ block.settings.custom_icon }}
-              {% else %}
-                <svg class="w-5 h-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="10" cy="10" r="10" fill="{{ block.settings.icon_background_color }}"/>
-                  <path d="M6 10L8.5 12.5L14 7" stroke="{{ block.settings.icon_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              {% endif %}
+              <div
+                class="flex items-center justify-center flex-shrink-0"
+                style="margin-right: {{ section.settings.icon_text_spacing }}px;"
+              >
+                {% if block.settings.custom_icon != blank %}
+                  {{ block.settings.custom_icon }}
+                {% else %}
+                  <svg class="w-5 h-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="10" cy="10" r="10" fill="{{ block.settings.icon_background_color }}"/>
+                    <path d="M6 10L8.5 12.5L14 7" stroke="{{ block.settings.icon_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                {% endif %}
+              </div>
+              <span
+                class="whitespace-nowrap font-medium leading-tight"
+                style="
+                  color: {{ block.settings.text_color }};
+                  font-size: {{ block.settings.text_size_mobile }}px;
+                  font-family: {{ section.settings.font_family }};
+                  font-weight: {{ section.settings.font_weight }};
+                "
+              >
+                {{ block.settings.benefit_text }}
+              </span>
             </div>
-
-            <span
-              class="whitespace-nowrap font-medium leading-tight"
-              style="
-                color: {{ block.settings.text_color }};
-                font-size: {{ block.settings.text_size_mobile }}px;
-                font-family: {{ section.settings.font_family }};
-                font-weight: {{ section.settings.font_weight }};
-              "
-            >
-              {{ block.settings.benefit_text }}
-            </span>
-          </div>
-        {% endif %}
-      {% endfor %}
-
-      {% for block in section.blocks %}
-        {% if block.settings.benefit_text != blank %}
-          <div
-            class="flex items-center flex-shrink-0"
-            style="margin-right: {{ section.settings.item_spacing }}px;"
-          >
-            <div
-              class="flex items-center justify-center flex-shrink-0"
-              style="margin-right: {{ section.settings.icon_text_spacing }}px;"
-            >
-              {% if block.settings.custom_icon != blank %}
-                {{ block.settings.custom_icon }}
-              {% else %}
-                <svg class="w-5 h-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="10" cy="10" r="10" fill="{{ block.settings.icon_background_color }}"/>
-                  <path d="M6 10L8.5 12.5L14 7" stroke="{{ block.settings.icon_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              {% endif %}
-            </div>
-
-            <span
-              class="whitespace-nowrap font-medium leading-tight"
-              style="
-                color: {{ block.settings.text_color }};
-                font-size: {{ block.settings.text_size_mobile }}px;
-                font-family: {{ section.settings.font_family }};
-                font-weight: {{ section.settings.font_weight }};
-              "
-            >
-              {{ block.settings.benefit_text }}
-            </span>
-          </div>
-        {% endif %}
-      {% endfor %}
+          {% endif %}
+        {% endfor %}
+      </div>
     </div>
   </div>
 </div>
 
 <style>
   @keyframes marquee {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
   }
 
-  #section-{{ section.id }} .animate-marquee {
-    animation: marquee {{ section.settings.animation_duration }}s linear infinite;
-  }
-
-  {% if section.settings.pause_on_hover %}
-    #section-{{ section.id }}:hover .animate-marquee {
-      animation-play-state: paused;
-    }
-  {% endif %}
-
-  @media (min-width: 768px) {
-    #section-{{ section.id }} {
-      padding-top: {{ section.settings.padding_top_desktop }}px !important;
-      padding-bottom: {{ section.settings.padding_bottom_desktop }}px !important;
+    #section-{{ section.id }} .animate-marquee {
+      animation: marquee {{ section.settings.animation_duration }}s linear infinite;
     }
 
-    #section-{{ section.id }} .benefit-text-desktop {
-      font-size: {{ section.settings.text_size_desktop }}px !important;
+    {% if section.settings.pause_on_hover %}
+      #section-{{ section.id }}:hover .animate-marquee {
+        animation-play-state: paused;
+      }
+    {% endif %}
+
+    @media (min-width: 768px) {
+      #section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top_desktop }}px !important;
+        padding-bottom: {{ section.settings.padding_bottom_desktop }}px !important;
+      }
+
+      #section-{{ section.id }} .benefit-text-desktop {
+        font-size: {{ section.settings.text_size_desktop }}px !important;
+      }
     }
-  }
 </style>
 
 <script>

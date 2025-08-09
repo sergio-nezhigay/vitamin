@@ -44,6 +44,76 @@
     "landing-marquee": {
       "type": "landing-marquee",
       "blocks": {
+        "benefit_xDKLt9": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Zero sugar",
+            "text_color": "#1c1917",
+            "custom_icon": "",
+            "icon_color": "#FFFFFF",
+            "icon_background_color": "#ea5167"
+          }
+        },
+        "benefit_ECCirV": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Free delivery",
+            "text_color": "#1c1917",
+            "custom_icon": "",
+            "icon_color": "#FFFFFF",
+            "icon_background_color": "#ea5167"
+          }
+        },
+        "benefit_UY8ACc": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Natural ingredients",
+            "text_color": "#1c1917",
+            "custom_icon": "",
+            "icon_color": "#FFFFFF",
+            "icon_background_color": "#ea5167"
+          }
+        },
+        "benefit_XzCxji": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Natural ingredients",
+            "text_color": "#1c1917",
+            "custom_icon": "",
+            "icon_color": "#FFFFFF",
+            "icon_background_color": "#22C55E"
+          }
+        },
+        "benefit_aYywrb": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Zero sugar",
+            "text_color": "#1c1917",
+            "custom_icon": "",
+            "icon_color": "#FFFFFF",
+            "icon_background_color": "#ea5167"
+          }
+        },
+        "benefit_MA37q9": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Natural ingredients",
+            "text_color": "#1c1917",
+            "custom_icon": "",
+            "icon_color": "#FFFFFF",
+            "icon_background_color": "#ea5167"
+          }
+        },
+        "benefit_EtnAtj": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Free delivery",
+            "text_color": "#1c1917",
+            "custom_icon": "",
+            "icon_color": "#FFFFFF",
+            "icon_background_color": "#ea5167"
+          }
+        },
         "benefit_KJ6wVW": {
           "type": "benefit",
           "settings": {
@@ -76,6 +146,13 @@
         }
       },
       "block_order": [
+        "benefit_xDKLt9",
+        "benefit_ECCirV",
+        "benefit_UY8ACc",
+        "benefit_XzCxji",
+        "benefit_aYywrb",
+        "benefit_MA37q9",
+        "benefit_EtnAtj",
         "benefit_KJ6wVW",
         "benefit_caGbr6",
         "benefit_4tbxeN"
