@@ -50,7 +50,7 @@
             "benefit_text": "Zero sugar",
             "text_color": "#1c1917",
             "custom_icon": "",
-            "icon_color": "#FFFFFF",
+            "icon_color": "#ffffff",
             "icon_background_color": "#ea5167"
           }
         },
@@ -60,7 +60,7 @@
             "benefit_text": "Free delivery",
             "text_color": "#1c1917",
             "custom_icon": "",
-            "icon_color": "#FFFFFF",
+            "icon_color": "#ffffff",
             "icon_background_color": "#ea5167"
           }
         },
@@ -70,27 +70,27 @@
             "benefit_text": "Natural ingredients",
             "text_color": "#1c1917",
             "custom_icon": "",
-            "icon_color": "#FFFFFF",
+            "icon_color": "#ffffff",
             "icon_background_color": "#ea5167"
           }
         },
         "benefit_XzCxji": {
           "type": "benefit",
           "settings": {
-            "benefit_text": "Natural ingredients",
+            "benefit_text": "Zero sugar",
             "text_color": "#1c1917",
             "custom_icon": "",
-            "icon_color": "#FFFFFF",
-            "icon_background_color": "#22C55E"
+            "icon_color": "#ffffff",
+            "icon_background_color": "#22c55e"
           }
         },
         "benefit_aYywrb": {
           "type": "benefit",
           "settings": {
-            "benefit_text": "Zero sugar",
+            "benefit_text": "Free delivery",
             "text_color": "#1c1917",
             "custom_icon": "",
-            "icon_color": "#FFFFFF",
+            "icon_color": "#ffffff",
             "icon_background_color": "#ea5167"
           }
         },
@@ -100,31 +100,11 @@
             "benefit_text": "Natural ingredients",
             "text_color": "#1c1917",
             "custom_icon": "",
-            "icon_color": "#FFFFFF",
-            "icon_background_color": "#ea5167"
-          }
-        },
-        "benefit_EtnAtj": {
-          "type": "benefit",
-          "settings": {
-            "benefit_text": "Free delivery",
-            "text_color": "#1c1917",
-            "custom_icon": "",
-            "icon_color": "#FFFFFF",
-            "icon_background_color": "#ea5167"
-          }
-        },
-        "benefit_KJ6wVW": {
-          "type": "benefit",
-          "settings": {
-            "benefit_text": "Natural ingredients",
-            "text_color": "#1c1917",
-            "custom_icon": "",
             "icon_color": "#ffffff",
             "icon_background_color": "#ea5167"
           }
         },
-        "benefit_caGbr6": {
+        "benefit_EtnAtj": {
           "type": "benefit",
           "settings": {
             "benefit_text": "Zero sugar",
@@ -134,10 +114,30 @@
             "icon_background_color": "#ea5167"
           }
         },
-        "benefit_4tbxeN": {
+        "benefit_KJ6wVW": {
           "type": "benefit",
           "settings": {
             "benefit_text": "Free delivery",
+            "text_color": "#1c1917",
+            "custom_icon": "",
+            "icon_color": "#ffffff",
+            "icon_background_color": "#ea5167"
+          }
+        },
+        "benefit_caGbr6": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Natural ingredients",
+            "text_color": "#1c1917",
+            "custom_icon": "",
+            "icon_color": "#ffffff",
+            "icon_background_color": "#ea5167"
+          }
+        },
+        "benefit_4tbxeN": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Zero sugar",
             "text_color": "#1c1917",
             "custom_icon": "",
             "icon_color": "#ffffff",
@@ -159,11 +159,6 @@
       ],
       "settings": {
         "max_width": "1200",
-        "padding_top_mobile": 20,
-        "padding_bottom_mobile": 20,
-        "padding_top_desktop": 30,
-        "padding_bottom_desktop": 30,
-        "background_color": "#f8b77b",
         "custom_classes": "",
         "font_family": "inherit",
         "font_weight": "700",

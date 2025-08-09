@@ -1,63 +1,90 @@
 <div
   id="section-{{ section.id }}"
-  class="benefits-marquee-wrapper overflow-hidden relative {{ section.settings.custom_classes }}"
+  class="benefits-marquee-wrapper overflow-hidden relative {{ section.settings.custom_classes }} py-[19px] md:py-[32px]"
   style="
-     padding-top: {{ section.settings.padding_top_mobile }}px;
-     padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
-     background: linear-gradient(104.04deg, #F6B042 0%, #DEB2B6 50%, #D1DBEE 75%, #B3C4E6 100%);
+    background: linear-gradient(104.04deg, #F6B042 0%, #DEB2B6 50%, #D1DBEE 75%, #B3C4E6 100%);
     margin: 0 auto;
   "
 >
   <div class="w-full overflow-hidden relative">
     <div class="flex items-center whitespace-nowrap animate-marquee" id="marquee-track-{{ section.id }}">
-      <div class="marquee-track-inner flex items-center">
-        {% for block in section.blocks %}
-          {% if block.settings.benefit_text != blank %}
+      <!-- First copy -->
+      {% for block in section.blocks %}
+        {% if block.settings.benefit_text != blank %}
+          <div
+            class="flex items-center flex-shrink-0 h-full"
+            style="margin-right: {{ section.settings.item_spacing }}px;"
+          >
             <div
-              class="flex items-center flex-shrink-0"
-              style="margin-right: {{ section.settings.item_spacing }}px;"
-              {{ block.shopify_attributes }}
+              class="flex items-center justify-center flex-shrink-0 h-full"
+              style="margin-right: {{ section.settings.icon_text_spacing }}px;"
             >
-              <div
-                class="flex items-center justify-center flex-shrink-0"
-                style="margin-right: {{ section.settings.icon_text_spacing }}px;"
-              >
-                {% if block.settings.custom_icon != blank %}
-                  {{ block.settings.custom_icon }}
-                {% else %}
-                  <svg class="w-5 h-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="10" cy="10" r="10" fill="{{ block.settings.icon_background_color }}"/>
-                    <path d="M6 10L8.5 12.5L14 7" stroke="{{ block.settings.icon_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                {% endif %}
-              </div>
-              <span
-                class="whitespace-nowrap font-medium leading-tight"
-                style="
-                  color: {{ block.settings.text_color }};
-                  font-size: {{ block.settings.text_size_mobile }}px;
-                  font-family: {{ section.settings.font_family }};
-                  font-weight: {{ section.settings.font_weight }};
-                "
-              >
-                {{ block.settings.benefit_text }}
-              </span>
+              {% if block.settings.custom_icon != blank %}
+                {{ block.settings.custom_icon }}
+              {% else %}
+                <svg class="w-7 h-7" viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="10" fill="{{ block.settings.icon_background_color }}"/>
+                  <path d="M6 10L8.5 12.5L14 7" stroke="{{ block.settings.icon_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              {% endif %}
             </div>
-          {% endif %}
-        {% endfor %}
-      </div>
+            <span
+              class="whitespace-nowrap font-medium leading-none pt-[2px] font-display"
+              style="
+                color: {{ block.settings.text_color }};
+                font-size: {{ section.settings.text_size_mobile }}px;
+                font-weight: {{ section.settings.font_weight }};
+              "
+            >
+              {{ block.settings.benefit_text }}
+            </span>
+          </div>
+        {% endif %}
+      {% endfor %}
+
+      <!-- Second copy -->
+      {% for block in section.blocks %}
+        {% if block.settings.benefit_text != blank %}
+          <div class="flex items-center flex-shrink-0" style="margin-right: {{ section.settings.item_spacing }}px;">
+            <div
+              class="flex items-center justify-center flex-shrink-0"
+              style="margin-right: {{ section.settings.icon_text_spacing }}px;"
+            >
+              {% if block.settings.custom_icon != blank %}
+                {{ block.settings.custom_icon }}
+              {% else %}
+                <svg class="w-7 h-7" viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="10" fill="{{ block.settings.icon_background_color }}"/>
+                  <path d="M6 10L8.5 12.5L14 7" stroke="{{ block.settings.icon_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              {% endif %}
+            </div>
+            <span
+              class="whitespace-nowrap font-medium leading-none pt-[2px] font-display"
+              style="
+                color: {{ block.settings.text_color }};
+                font-size: {{ section.settings.text_size_mobile }}px;
+
+                font-weight: {{ section.settings.font_weight }};
+              "
+            >
+              {{ block.settings.benefit_text }}
+            </span>
+          </div>
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
 </div>
 
 <style>
-  @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-  }
+    @keyframes marquee {
+  0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
 
     #section-{{ section.id }} .animate-marquee {
-      animation: marquee {{ section.settings.animation_duration }}s linear infinite;
+      animation: marquee 30s linear infinite;
     }
 
     {% if section.settings.pause_on_hover %}
@@ -65,44 +92,11 @@
         animation-play-state: paused;
       }
     {% endif %}
-
-    @media (min-width: 768px) {
-      #section-{{ section.id }} {
-        padding-top: {{ section.settings.padding_top_desktop }}px !important;
-        padding-bottom: {{ section.settings.padding_bottom_desktop }}px !important;
-      }
-
-      #section-{{ section.id }} .benefit-text-desktop {
-        font-size: {{ section.settings.text_size_desktop }}px !important;
-      }
-    }
 </style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const track = document.getElementById('marquee-track-{{ section.id }}');
-    if (!track) return;
-
-    const items = track.children;
-    const itemCount = items.length / 2;
-
-    let totalWidth = 0;
-    for (let i = 0; i < itemCount; i++) {
-      totalWidth += items[i].offsetWidth + {{ section.settings.item_spacing }};
-    }
-
-    const containerWidth = track.parentElement.offsetWidth;
-    const speed = {{ section.settings.speed }};
-    const minDuration = {{ section.settings.min_duration }};
-
-    const calculatedDuration = Math.max(minDuration, totalWidth / speed);
-    track.style.animationDuration = calculatedDuration + 's';
-  });
-</script>
 
 {% schema %}
 {
-  "name": "Benefits Marquee",
+  "name": "Landing Benefits Marquee",
   "settings": [
     {
       "type": "header",
@@ -115,48 +109,7 @@
       "default": "1200",
       "info": "Leave blank for full width"
     },
-    {
-      "type": "range",
-      "id": "padding_top_mobile",
-      "label": "Padding Top - Mobile",
-      "min": 0,
-      "max": 100,
-      "step": 5,
-      "default": 15
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom_mobile",
-      "label": "Padding Bottom - Mobile",
-      "min": 0,
-      "max": 100,
-      "step": 5,
-      "default": 15
-    },
-    {
-      "type": "range",
-      "id": "padding_top_desktop",
-      "label": "Padding Top - Desktop",
-      "min": 0,
-      "max": 150,
-      "step": 5,
-      "default": 20
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom_desktop",
-      "label": "Padding Bottom - Desktop",
-      "min": 0,
-      "max": 150,
-      "step": 5,
-      "default": 20
-    },
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background Color",
-      "default": "#F5A623"
-    },
+
     {
       "type": "text",
       "id": "custom_classes",
