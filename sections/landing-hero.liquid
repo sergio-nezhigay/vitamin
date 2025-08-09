@@ -1,0 +1,437 @@
+<section
+  id="{{ section.id }}"
+  class="bg-red-200 premium-hero-section {{ section.settings.custom_classes }}"
+  style="
+    background-color: {{ section.settings.background_color | default: '#f8f6f3' }};
+    padding-top: {{ section.settings.padding_top_desktop | default: 80 }}px;
+    padding-bottom: {{ section.settings.padding_bottom_desktop | default: 80 }}px;
+  "
+>
+  <div
+    class="mx-auto px-5"
+    style="max-width: {{ section.settings.max_width | default: '1200' }}px;"
+  >
+    <div
+      class="
+        flex items-center lg:flex-row flex-col
+        {% if section.settings.mobile_layout == 'content-first' %}
+          flex-col-reverse lg:flex-row
+        {% else %}
+          flex-col lg:flex-row
+        {% endif %}
+      "
+    >
+      <div class="flex-1 w-full lg:text-left text-center">
+        {% if section.settings.trust_text != blank %}
+          <div class="flex items-center gap-2 mb-6 lg:justify-start justify-center">
+            <div class="flex gap-0.5">
+              <span class="text-red-500 text-sm">★</span>
+              <span class="text-red-500 text-sm">★</span>
+              <span class="text-red-500 text-sm">★</span>
+              <span class="text-red-500 text-sm">★</span>
+              <span class="text-red-500 text-sm">★</span>
+            </div>
+            <p
+              class="text-sm font-normal m-0"
+              style="color: {{ section.settings.trust_text_color | default: '#666' }};"
+            >
+              {{ section.settings.trust_text }}
+            </p>
+          </div>
+        {% endif %}
+
+        {% if section.settings.title != blank %}
+          <h1
+            class="font-bold leading-tight m-0 mb-5 tracking-tight lg:text-left text-center"
+            style="
+              color: {{ section.settings.title_color | default: '#2c2c2c' }};
+              font-size: {{ section.settings.title_size_mobile | default: 32 }}px;
+            "
+          >
+            {{ section.settings.title }}
+          </h1>
+        {% endif %}
+
+        {% if section.settings.description != blank %}
+          <div
+            class="leading-relaxed mb-8 lg:text-left text-center"
+            style="
+              color: {{ section.settings.description_color | default: '#666' }};
+              font-size: 18px;
+            "
+          >
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
+
+        <div class="flex gap-4 mb-8 flex-wrap lg:justify-start justify-center">
+          {% if section.settings.primary_button_text != blank and section.settings.primary_button_url != blank %}
+            <a
+              href="{{ section.settings.primary_button_url }}"
+              class="inline-block py-3.5 px-8 no-underline rounded-md font-semibold text-base transition-all duration-300 border-0 cursor-pointer text-center min-w-[140px] hover:-translate-y-0.5"
+              style="
+                background-color: {{ section.settings.primary_button_bg | default: '#e74c3c' }};
+                color: {{ section.settings.primary_button_color | default: '#ffffff' }};
+              "
+              onmouseover="this.style.backgroundColor='#c0392b'"
+              onmouseout="this.style.backgroundColor='{{ section.settings.primary_button_bg | default: '#e74c3c' }}'"
+            >
+              {{ section.settings.primary_button_text }}
+            </a>
+          {% endif %}
+
+          {% if section.settings.secondary_button_text != blank and section.settings.secondary_button_url != blank %}
+            <a
+              href="{{ section.settings.secondary_button_url }}"
+              class="inline-block py-3.5 px-8 no-underline rounded-md font-semibold text-base transition-all duration-300 border-0 cursor-pointer text-center min-w-[140px] bg-transparent hover:text-gray-800"
+              style="color: {{ section.settings.secondary_button_color | default: '#666' }};"
+            >
+              {{ section.settings.secondary_button_text }}
+            </a>
+          {% endif %}
+        </div>
+
+        {% if section.settings.guarantee_text != blank %}
+          <div
+            class="flex items-center gap-2 text-sm font-medium lg:justify-start justify-center"
+            style="color: {{ section.settings.guarantee_color | default: '#e74c3c' }};"
+          >
+            <div class="flex items-center justify-center w-4 h-4 flex-shrink-0">
+              {% if section.settings.guarantee_icon != blank %}
+                {{ section.settings.guarantee_icon }}
+              {% else %}
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <circle cx="8" cy="8" r="7.5" stroke="currentColor"/>
+                  <path d="M6 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                </svg>
+              {% endif %}
+            </div>
+            <span>{{ section.settings.guarantee_text }}</span>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="flex-1 flex justify-center items-center">
+        {% if section.settings.hero_image != blank %}
+          <div class="relative w-full">
+            <img
+              src="{{ section.settings.hero_image | img_url: '800x' }}"
+              alt="{{ section.settings.hero_image.alt | default: section.settings.title }}"
+              class="w-full h-auto object-contain"
+              loading="lazy"
+              width="800"
+              height="600"
+            >
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (min-width: 1024px) {
+    #{{ section.id }} h1 {
+      font-size: {{ section.settings.title_size_desktop | default: 48 }}px !important;
+    }
+
+    #{{ section.id }} .premium-hero-section {
+      padding-top: {{ section.settings.padding_top_desktop | default: 80 }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom_desktop | default: 80 }}px !important;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    #{{ section.id }} .premium-hero-section {
+      padding-top: {{ section.settings.padding_top_mobile | default: 40 }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom_mobile | default: 40 }}px !important;
+    }
+
+    #{{ section.id }} .gap-15 {
+      gap: 2.5rem;
+    }
+
+    #{{ section.id }} .min-h-[600px] {
+      min-height: auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #{{ section.id }} .flex-wrap {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #{{ section.id }} .min-w-[140px] {
+      width: 100%;
+      max-width: 280px;
+    }
+
+    #{{ section.id }} .py-3.5 {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    #{{ section.id }} .px-8 {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    #{{ section.id }} .text-base {
+      font-size: 0.875rem;
+    }
+
+    #{{ section.id }} .min-w-[120px] {
+      min-width: 120px;
+    }
+  }
+
+  #{{ section.id }} .gap-15 {
+    gap: 3.75rem;
+  }
+
+  #{{ section.id }} .premium-hero-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  #{{ section.id }} p {
+    margin: 0;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Landing Hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "text",
+      "id": "custom_classes",
+      "label": "Custom CSS Classes"
+    },
+    {
+      "type": "text",
+      "id": "max_width",
+      "label": "Max Width (px)",
+      "default": "1200"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding Top - Desktop",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom - Desktop",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "default": 80,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top - Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom - Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f8f6f3"
+    },
+    {
+      "type": "header",
+      "content": "Trust Badge"
+    },
+    {
+      "type": "text",
+      "id": "trust_text",
+      "label": "Trust Text",
+      "default": "Trusted by 15,000+ Health Enthusiasts"
+    },
+    {
+      "type": "color",
+      "id": "trust_text_color",
+      "label": "Trust Text Color",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "<p>Fuel Your Body,<br>Energize Your Life</p>"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#2c2c2c"
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "label": "Title Size - Desktop",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "default": 48,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Title Size - Mobile",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Experience the benefits of Vitamin H2 – premium supplements formulated to enhance your energy, mental clarity, and overall wellness.</p>"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description Color",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Buttons"
+    },
+    {
+      "type": "text",
+      "id": "primary_button_text",
+      "label": "Primary Button Text",
+      "default": "Buy now"
+    },
+    {
+      "type": "url",
+      "id": "primary_button_url",
+      "label": "Primary Button URL"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_bg",
+      "label": "Primary Button Background",
+      "default": "#e74c3c"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_color",
+      "label": "Primary Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_text",
+      "label": "Secondary Button Text",
+      "default": "Read more"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_url",
+      "label": "Secondary Button URL"
+    },
+    {
+      "type": "color",
+      "id": "secondary_button_color",
+      "label": "Secondary Button Color",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Guarantee"
+    },
+    {
+      "type": "text",
+      "id": "guarantee_text",
+      "label": "Guarantee Text",
+      "default": "100% Satisfaction Guarantee"
+    },
+    {
+      "type": "html",
+      "id": "guarantee_icon",
+      "label": "Guarantee Icon (SVG)"
+    },
+    {
+      "type": "color",
+      "id": "guarantee_color",
+      "label": "Guarantee Color",
+      "default": "#e74c3c"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Layout"
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile Layout",
+      "options": [
+        {
+          "value": "image-first",
+          "label": "Image First, Content Second"
+        },
+        {
+          "value": "content-first",
+          "label": "Content First, Image Second"
+        }
+      ],
+      "default": "image-first"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Premium Hero Section"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,29 @@
+{
+  "name": "vitamin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "shopify theme dev",
+    "tail": "npx tailwindcss -i ./assets/tailwind.input.css -o ./assets/tailwind.output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergio-nezhigay/vitamin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergio-nezhigay/vitamin/issues"
+  },
+  "homepage": "https://github.com/sergio-nezhigay/vitamin#readme",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
