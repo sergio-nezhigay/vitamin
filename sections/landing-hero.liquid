@@ -1,6 +1,6 @@
 <section
   id="{{ section.id }}"
-  class="bg-red-200 premium-hero-section {{ section.settings.custom_classes }}"
+  class="premium-hero-section {{ section.settings.custom_classes }}"
   style="
     background-color: {{ section.settings.background_color | default: '#f8f6f3' }};
     padding-top: {{ section.settings.padding_top_desktop | default: 80 }}px;
@@ -8,117 +8,115 @@
   "
 >
   <div
-    class="mx-auto px-5"
+    class="mx-auto leading-normal"
     style="max-width: {{ section.settings.max_width | default: '1200' }}px;"
   >
     <div
       class="
         flex items-center lg:flex-row flex-col
         {% if section.settings.mobile_layout == 'content-first' %}
-          flex-col-reverse lg:flex-row
+        flex-col lg:flex-row
         {% else %}
-          flex-col lg:flex-row
+        flex-col-reverse lg:flex-row
         {% endif %}
       "
     >
-      <div class="flex-1 w-full lg:text-left text-center">
-        {% if section.settings.trust_text != blank %}
-          <div class="flex items-center gap-2 mb-6 lg:justify-start justify-center">
-            <div class="flex gap-0.5">
-              <span class="text-red-500 text-sm">★</span>
-              <span class="text-red-500 text-sm">★</span>
-              <span class="text-red-500 text-sm">★</span>
-              <span class="text-red-500 text-sm">★</span>
-              <span class="text-red-500 text-sm">★</span>
+      <div class="flex-1  text-left">
+        <div class="px-6 lg:px-[112px] pt-8 pb-8 lg:pt-0">
+          {% if section.settings.trust_text != blank %}
+            <div class="flex items-center gap-2 mb-[19px] md:mb-[16px]">
+              <div class="flex gap-1 items-center">
+                {% render 'icon-star-landing' %}
+                {% render 'icon-star-landing' %}
+                {% render 'icon-star-landing' %}
+                {% render 'icon-star-landing' %}
+                {% render 'icon-star-landing' %}
+              </div>
+              <p
+                class="text-[12px] m-0 font-display font-medium md:text-[16px] "
+                style="color: {{ section.settings.trust_text_color | default: '#666' }}"
+              >
+                Trusted by <span class="font-bold">15,000+</span> Health Enthusiasts
+              </p>
             </div>
-            <p
-              class="text-sm font-normal m-0"
-              style="color: {{ section.settings.trust_text_color | default: '#666' }};"
-            >
-              {{ section.settings.trust_text }}
-            </p>
-          </div>
-        {% endif %}
-
-        {% if section.settings.title != blank %}
-          <h1
-            class="font-bold leading-tight m-0 mb-5 tracking-tight lg:text-left text-center"
-            style="
-              color: {{ section.settings.title_color | default: '#2c2c2c' }};
-              font-size: {{ section.settings.title_size_mobile | default: 32 }}px;
-            "
-          >
-            {{ section.settings.title }}
-          </h1>
-        {% endif %}
-
-        {% if section.settings.description != blank %}
-          <div
-            class="leading-relaxed mb-8 lg:text-left text-center"
-            style="
-              color: {{ section.settings.description_color | default: '#666' }};
-              font-size: 18px;
-            "
-          >
-            {{ section.settings.description }}
-          </div>
-        {% endif %}
-
-        <div class="flex gap-4 mb-8 flex-wrap lg:justify-start justify-center">
-          {% if section.settings.primary_button_text != blank and section.settings.primary_button_url != blank %}
-            <a
-              href="{{ section.settings.primary_button_url }}"
-              class="inline-block py-3.5 px-8 no-underline rounded-md font-semibold text-base transition-all duration-300 border-0 cursor-pointer text-center min-w-[140px] hover:-translate-y-0.5"
-              style="
-                background-color: {{ section.settings.primary_button_bg | default: '#e74c3c' }};
-                color: {{ section.settings.primary_button_color | default: '#ffffff' }};
-              "
-              onmouseover="this.style.backgroundColor='#c0392b'"
-              onmouseout="this.style.backgroundColor='{{ section.settings.primary_button_bg | default: '#e74c3c' }}'"
-            >
-              {{ section.settings.primary_button_text }}
-            </a>
           {% endif %}
 
-          {% if section.settings.secondary_button_text != blank and section.settings.secondary_button_url != blank %}
-            <a
-              href="{{ section.settings.secondary_button_url }}"
-              class="inline-block py-3.5 px-8 no-underline rounded-md font-semibold text-base transition-all duration-300 border-0 cursor-pointer text-center min-w-[140px] bg-transparent hover:text-gray-800"
-              style="color: {{ section.settings.secondary_button_color | default: '#666' }};"
+          {% if section.settings.title != blank %}
+            <h1
+              class="font-medium text-[28px] md:text-[48px] leading-[1.18] "
+              style="              color: {{ section.settings.title_color | default: '#2c2c2c' }};"
             >
-              {{ section.settings.secondary_button_text }}
-            </a>
+              Fuel Your Body, <br>
+              Energize Your Life
+            </h1>
+          {% endif %}
+
+          {% if section.settings.description != blank %}
+            <div
+              class="mb-6 text-[16px] md:text-[20px] leading-[1.5] font-semibold font-display"
+              style="color: {{ section.settings.description_color | default: '#666' }};"
+            >
+              {{ section.settings.description }}
+            </div>
+          {% endif %}
+
+          <div class="flex gap-3 mb-4 flex-wrap ">
+            {% if section.settings.primary_button_text != blank and section.settings.primary_button_url != blank %}
+              <a
+                href="{{ section.settings.primary_button_url }}"
+                class="inline-block py-3 px-[18px] no-underline rounded-[8px] font-bold text-[16px] transition-all duration-300 border-0 cursor-pointer font-display text-center min-w-[106px] hover:-translate-y-0.5 max-md:w-full"
+                style="
+                  background-color: {{ section.settings.primary_button_bg | default: '#e74c3c' }};
+                  color: {{ section.settings.primary_button_color | default: '#ffffff' }};
+                "
+                onmouseover="this.style.backgroundColor='#c0392b'"
+                onmouseout="this.style.backgroundColor='{{ section.settings.primary_button_bg | default: '#e74c3c' }}'"
+              >
+                {{ section.settings.primary_button_text }}
+              </a>
+            {% endif %}
+
+            {% if section.settings.secondary_button_text != blank and section.settings.secondary_button_url != blank %}
+              <a
+                href="{{ section.settings.secondary_button_url }}"
+                class="inline-block py-[11px] px-[18px] no-underline rounded-[8px] font-bold text-[16px] transition-all duration-300 cursor-pointer font-display text-center min-w-[106px] hover:-translate-y-0.5 max-md:w-full bg-white border border-[#D0D5DD]"
+                style="color: {{ section.settings.secondary_button_color | default: '#666' }};"
+              >
+                {{ section.settings.secondary_button_text }}
+              </a>
+            {% endif %}
+          </div>
+
+          {% if section.settings.guarantee_text != blank %}
+            <div
+              class="flex items-center gap-2 text-sm font-medium"
+              style="color: {{ section.settings.guarantee_color | default: '#e74c3c' }};"
+            >
+              <div class="flex items-center  w-6 h-6 flex-shrink-0">
+                {% if section.settings.guarantee_icon != blank %}
+                  {{ section.settings.guarantee_icon }}
+                {% else %}
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <circle cx="8" cy="8" r="7.5" stroke="currentColor"/>
+                    <path d="M6 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                  </svg>
+                {% endif %}
+              </div>
+              <span class="text-gray-700 font-display font-bold text-[16px] leading-[1.5]">
+                {{- section.settings.guarantee_text -}}
+              </span>
+            </div>
           {% endif %}
         </div>
-
-        {% if section.settings.guarantee_text != blank %}
-          <div
-            class="flex items-center gap-2 text-sm font-medium lg:justify-start justify-center"
-            style="color: {{ section.settings.guarantee_color | default: '#e74c3c' }};"
-          >
-            <div class="flex items-center justify-center w-4 h-4 flex-shrink-0">
-              {% if section.settings.guarantee_icon != blank %}
-                {{ section.settings.guarantee_icon }}
-              {% else %}
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <circle cx="8" cy="8" r="7.5" stroke="currentColor"/>
-                  <path d="M6 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                </svg>
-              {% endif %}
-            </div>
-            <span>{{ section.settings.guarantee_text }}</span>
-          </div>
-        {% endif %}
       </div>
 
       <div class="flex-1 flex justify-center items-center">
         {% if section.settings.hero_image != blank %}
-          <div class="relative w-full">
+          <div class="relative flex md-max:aspect-square lg:h-[600px]">
             <img
-              src="{{ section.settings.hero_image | img_url: '800x' }}"
+              src="{{ section.settings.hero_image | image_url: width:800 }}"
               alt="{{ section.settings.hero_image.alt | default: section.settings.title }}"
-              class="w-full h-auto object-contain"
-              loading="lazy"
+              class="w-full h-full object-cover"
               width="800"
               height="600"
             >
@@ -197,6 +195,10 @@
 
   #{{ section.id }} p {
     margin: 0;
+  }
+
+  #{{ section.id }} h1 {
+    margin-bottom: 14px;
   }
 </style>
 
