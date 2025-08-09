@@ -40,9 +40,69 @@
         "hero_image": "shopify://shop_images/Picture.webp",
         "mobile_layout": "image-first"
       }
+    },
+    "landing-marquee": {
+      "type": "landing-marquee",
+      "blocks": {
+        "benefit_KJ6wVW": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Natural ingredients",
+            "text_color": "#1c1917",
+            "custom_icon": "",
+            "icon_color": "#ffffff",
+            "icon_background_color": "#ea5167"
+          }
+        },
+        "benefit_caGbr6": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Zero sugar",
+            "text_color": "#1c1917",
+            "custom_icon": "",
+            "icon_color": "#ffffff",
+            "icon_background_color": "#ea5167"
+          }
+        },
+        "benefit_4tbxeN": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Free delivery",
+            "text_color": "#1c1917",
+            "custom_icon": "",
+            "icon_color": "#ffffff",
+            "icon_background_color": "#ea5167"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_KJ6wVW",
+        "benefit_caGbr6",
+        "benefit_4tbxeN"
+      ],
+      "settings": {
+        "max_width": "1200",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "padding_top_desktop": 30,
+        "padding_bottom_desktop": 30,
+        "background_color": "#f8b77b",
+        "custom_classes": "",
+        "font_family": "inherit",
+        "font_weight": "700",
+        "text_size_mobile": 14,
+        "text_size_desktop": 18,
+        "animation_duration": 15,
+        "speed": 60,
+        "min_duration": 10,
+        "pause_on_hover": true,
+        "item_spacing": 40,
+        "icon_text_spacing": 12
+      }
     }
   },
   "order": [
-    "landing_hero_claude"
+    "landing_hero_claude",
+    "landing-marquee"
   ]
 }
