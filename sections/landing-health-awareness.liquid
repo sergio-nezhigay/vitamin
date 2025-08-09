@@ -1,0 +1,139 @@
+<div
+  id="section-{{ section.id }}"
+  class="health-awareness-section {{ section.settings.custom_classes }} py-[64px] md:py-[96px]"
+>
+  <div class="mx-auto px-6 md:px-[112px] max-w-[1440px] ">
+    <div class="flex flex-col md:flex-row items-center max-sm:gap-5 gap-8">
+      <div class="w-full md:w-1/2  {% if section.settings.reverse_layout %}md:order-2{% endif %}">
+        {% if section.settings.title != blank %}
+          <h2
+            class="text-[#292524] text-[20px] md:text-[36px] font-medium"
+          >
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.subtitle != blank %}
+          <h3
+            class="!mb-5 text-[#EA5167] text-[20px] md:text-[36px]  font-medium "
+          >
+            {{ section.settings.subtitle }}
+          </h3>
+        {% endif %}
+
+        {% if section.settings.description != blank %}
+          <div
+            class="text-[#44403C] text-[14px] font-medium font-display leading-[1.4] md:max-w-[520px] md:text-[18px] md:mb-5"
+            style="color: {{ section.settings.text_color }};"
+          >
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
+
+        <!-- Process Flow -->
+        {%- assign info_classes = 'hidden md:block' -%}
+        {% render 'info-section-snippet', info_classes: info_classes %}
+      </div>
+
+      <!-- Image Section -->
+      <div class="w-full md:w-1/2 {% if section.settings.reverse_layout %}md:order-1{% endif %}">
+        {% if section.settings.main_image != blank %}
+          <div>
+            <img
+              src="{{ section.settings.main_image | image_url }}"
+              alt="{{ section.settings.main_image.alt | default: section.settings.title }}"
+              class="w-full rounded-2xl"
+              loading="lazy"
+              width="600"
+              height="600"
+            >
+          </div>
+        {% endif %}
+      </div>
+      {%- assign info_classes = 'block md:hidden' -%}
+      {% render 'info-section-snippet', info_classes: info_classes %}
+    </div>
+  </div>
+</div>
+
+<style>
+  p + p {
+    margin-top: 1em;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Health Awareness",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main Title",
+      "default": "It's Not Just Being Tired."
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "It's a Body Signal."
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Fatigue isn't just \"normal life\" – it's your body's way of saying, \"Something's off inside.\"</p><p>When your cells don't get enough nutrients, it leads to poor energy production, mental fog, low immunity, and that constant feeling of exhaustion you can't shake off.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "process_text",
+      "label": "Process Flow Text",
+      "default": "<p>Low Cellular Energy → Poor Focus → Weakened Immunity → Chronic Fatigue</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Main Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "reverse_layout",
+      "label": "Reverse Layout (Image Left, Content Right)",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "custom_classes",
+      "label": "Custom CSS Classes"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author Name"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Author Avatar"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Health Awareness"
+    }
+  ]
+}
+{% endschema %}

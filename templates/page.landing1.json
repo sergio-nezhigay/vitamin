@@ -171,10 +171,36 @@
         "item_spacing": 40,
         "icon_text_spacing": 12
       }
+    },
+    "landing_health_awareness": {
+      "type": "landing-health-awareness",
+      "blocks": {
+        "testimonial_Yt78qc": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "“I thought this tiredness was just part of getting older. I kept treating the wrong thing.” ",
+            "author": "Vitamin H2 Customer",
+            "avatar": "shopify://shop_images/Ellipse_68.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_Yt78qc"
+      ],
+      "settings": {
+        "title": "It's Not Just Being Tired.",
+        "subtitle": "It's a Body Signal.",
+        "description": "<p>Fatigue isn't just \"normal life\" – it's your body's way of saying, \"Something's off inside.\"</p><p>When your cells don't get enough nutrients, it leads to poor energy production, mental fog, low immunity, and that constant feeling of exhaustion you can't shake off.</p>",
+        "process_text": "<p>Low Cellular Energy → Poor Focus → Weakened Immunity → Chronic Fatigue</p>",
+        "main_image": "shopify://shop_images/Frame_1096.webp",
+        "reverse_layout": false,
+        "custom_classes": ""
+      }
     }
   },
   "order": [
     "landing_hero_claude",
-    "landing-marquee"
+    "landing-marquee",
+    "landing_health_awareness"
   ]
 }
