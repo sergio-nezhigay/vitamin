@@ -25,7 +25,7 @@
         <div class="px-6 lg:px-[112px] pt-8 max-sm:pb-8 lg:pt-0">
           {% if section.settings.trust_text != blank %}
             <div class="flex items-center gap-2 mb-[19px] md:mb-[16px]">
-              <div class="flex gap-1 items-center">
+              <div class="flex gap-[6px] items-center">
                 {% render 'icon-star-landing' %}
                 {% render 'icon-star-landing' %}
                 {% render 'icon-star-landing' %}
@@ -33,7 +33,7 @@
                 {% render 'icon-star-landing' %}
               </div>
               <p
-                class="text-[12px] m-0 font-display font-medium md:text-[16px] "
+                class="text-[12px] m-0 font-display font-medium md:text-[16px] max-sm:leading-[2]"
                 style="color: {{ section.settings.trust_text_color | default: '#666' }}"
               >
                 Trusted by <span class="font-bold">15,000+</span> Health Enthusiasts

@@ -1,20 +1,19 @@
 <section
   id="section-{{ section.id }}"
-  class="from-fatigue-section {{ section.settings.custom_classes }}"
+  class="from-fatigue-section {{ section.settings.custom_classes }} outline outline-red-800"
   style="--max-width: {{ section.settings.max_width }}px; background-color: {{ section.settings.background_color }};"
 >
-  <div class="container mx-auto px-4 py-8 lg:py-16">
+  <div class="container mx-auto px-5 py-[64px] lg:py-16">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center {% if section.settings.reverse_layout %}lg:flex-row-reverse{% endif %}">
       {% comment %} Content Column {% endcomment %}
-      <div class="{% if section.settings.mobile_content_first %}order-1 lg:order-none{% else %}order-2 lg:order-none{% endif %}">
+      <div>
         {% if section.settings.title != blank %}
           <h2
-            class="from-fatigue-title text-2xl lg:text-3xl xl:text-4xl font-bold mb-6 leading-tight"
-            style="color: {{ section.settings.title_color }}; font-size: {{ section.settings.title_size_mobile }}px; line-height: 1.2;"
+            class="from-fatigue-title text-[20px] leading-[1.4] font-medium !mb-5 max-sm:pr-[25px] text-[#292524]"
           >
             {{ section.settings.title }}
             {% if section.settings.highlight_text != blank %}
-              <span class="from-fatigue-highlight block" style="color: {{ section.settings.highlight_color }};">
+              <span class="from-fatigue-highlight" style="color: {{ section.settings.highlight_color }};">
                 {{- section.settings.highlight_text -}}
               </span>
             {% endif %}
@@ -23,8 +22,7 @@
 
         {% if section.settings.description != blank %}
           <div
-            class="from-fatigue-description text-gray-600 mb-8 leading-relaxed"
-            style="color: {{ section.settings.description_color }}; font-size: {{ section.settings.description_size_mobile }}px;"
+            class="from-fatigue-description text-[#44403C] mb-[25px] font-nunito font-semibold leading-[1.4] pr-[6px]"
           >
             {{ section.settings.description }}
           </div>
@@ -32,31 +30,29 @@
 
         {% comment %} Benefits List {% endcomment %}
         {% if section.blocks.size > 0 %}
-          <div class="from-fatigue-list space-y-6">
+          <div class="from-fatigue-list space-y-5">
             {% for block in section.blocks %}
               {% case block.type %}
                 {% when 'benefit_item' %}
                   <div class="from-fatigue-item flex items-start gap-4" {{ block.shopify_attributes }}>
                     {% if block.settings.icon != blank %}
                       <div class="size-7.5 bg-[#FBECED] rounded-full flex justify-center items-center from-fatigue-icon">
-                        <div class="from-fatigue-icon flex-shrink-0 w-5 h-5 text-transparent fill-green-700">
+                        <div class="from-fatigue-icon flex-shrink-0 w-5 h-5 text-transparent ">
                           {{ block.settings.icon }}
                         </div>
                       </div>
                     {% endif %}
-                    <div class="from-fatigue-content flex-1">
+                    <div class="from-fatigue-content flex-1 pt-1 pr-[19px]">
                       {% if block.settings.title != blank %}
                         <h3
-                          class="from-fatigue-item-title font-semibold mb-2"
-                          style="color: {{ block.settings.title_color }}; font-size: {{ block.settings.title_size_mobile }}px;"
+                          class="from-fatigue-item-title text-[16px] font-medium !mb-2 text-[#292524]"
                         >
                           {{ block.settings.title }}
                         </h3>
                       {% endif %}
                       {% if block.settings.description != blank %}
                         <p
-                          class="from-fatigue-item-description text-gray-600 leading-relaxed"
-                          style="color: {{ block.settings.description_color }}; font-size: {{ block.settings.description_size_mobile }}px;"
+                          class="from-fatigue-item-description text-[#44403C] leading-[1.4] font-nunito text-[14px]"
                         >
                           {{ block.settings.description }}
                         </p>
@@ -70,16 +66,16 @@
       </div>
 
       {% comment %} Image Column {% endcomment %}
-      <div class="{% if section.settings.mobile_content_first %}order-2 lg:order-none{% else %}order-1 lg:order-none{% endif %}">
+      <div>
         {% if section.settings.image != blank %}
-          <div class="from-fatigue-image-wrapper rounded-2xl overflow-hidden">
+          <div class="from-fatigue-image-wrapper rounded-3xl overflow-hidden max-sm:aspect-[1.03]">
             <img
-              src="{{ section.settings.image | img_url: '800x800' }}"
+              src="{{ section.settings.image | image_url: width:592 }}"
               alt="{{ section.settings.image.alt | escape }}"
-              class="from-fatigue-image w-full h-auto object-cover"
+              class="from-fatigue-image w-full h-full object-cover object-bottom"
               loading="lazy"
-              width="800"
-              height="800"
+              width="592"
+              height="646"
             >
           </div>
         {% endif %}

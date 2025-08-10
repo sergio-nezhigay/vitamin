@@ -18,8 +18,8 @@
     {% case block.type %}
       {% when 'testimonial' %}
         {% if block.settings.quote != blank %}
-          <div class="bg-[#FDF4E9] py-6 px-[17px] rounded-[12px] max-w-[520px] md:px-6">
-            <blockquote class="!mb-3 font-semibold text-[14px] md:text-[20px] font-display">
+          <div class="bg-[#FDF4E9] max-sm:py-[17px] max-sm:px-[24px] rounded-[12px] max-w-[520px] md:px-6">
+            <blockquote class="!mb-3 font-semibold text-[14px] md:text-[20px] font-display leading-[1.4]">
               {{ block.settings.quote }}
             </blockquote>
             <div class="flex items-center">
