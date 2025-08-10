@@ -29,10 +29,10 @@
               {% endif %}
             </div>
             <span
-              class="whitespace-nowrap font-medium leading-none pt-[2px] font-display"
+              class="whitespace-nowrap font-medium leading-none pt-[2px] font-display text-[14px] md:text-[18px]"
               style="
                 color: {{ block.settings.text_color }};
-                font-size: {{ section.settings.text_size_mobile }}px;
+
                 font-weight: {{ section.settings.font_weight }};
               "
             >
@@ -78,20 +78,20 @@
 </div>
 
 <style>
-    @keyframes marquee {
+      @keyframes marquee {
   0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    #section-{{ section.id }} .animate-marquee {
-      animation: marquee 30s linear infinite;
-    }
-
-    {% if section.settings.pause_on_hover %}
-      #section-{{ section.id }}:hover .animate-marquee {
-        animation-play-state: paused;
+        100% { transform: translateX(-50%); }
       }
-    {% endif %}
+
+      #section-{{ section.id }} .animate-marquee {
+        animation: marquee 30s linear infinite;
+      }
+
+      {% if section.settings.pause_on_hover %}
+        #section-{{ section.id }}:hover .animate-marquee {
+          animation-play-state: paused;
+        }
+      {% endif %}
 </style>
 
 {% schema %}
@@ -167,24 +167,7 @@
         }
       ]
     },
-    {
-      "type": "range",
-      "id": "text_size_mobile",
-      "label": "Text Size - Mobile",
-      "min": 12,
-      "max": 24,
-      "step": 1,
-      "default": 14
-    },
-    {
-      "type": "range",
-      "id": "text_size_desktop",
-      "label": "Text Size - Desktop",
-      "min": 12,
-      "max": 32,
-      "step": 1,
-      "default": 16
-    },
+
     {
       "type": "header",
       "content": "Animation Settings"

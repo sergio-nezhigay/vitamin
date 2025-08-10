@@ -76,8 +76,8 @@
 
     {{- 'theme.css' | asset_url | stylesheet_tag: preload: true -}}
     {{- 'custom.css' | asset_url | stylesheet_tag: preload: true -}}
-    {{ 'tailwind.output.css' | asset_url | stylesheet_tag: preload: true }}
     <link rel="stylesheet" href="https://use.typekit.net/nao2ewt.css">
+    {{ 'tailwind.output.css' | asset_url | stylesheet_tag }}
   </head>
 
   {% liquid
