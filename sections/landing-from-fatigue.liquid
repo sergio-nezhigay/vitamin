@@ -1,0 +1,329 @@
+<section
+  id="section-{{ section.id }}"
+  class="from-fatigue-section {{ section.settings.custom_classes }}"
+  style="--max-width: {{ section.settings.max_width }}px; background-color: {{ section.settings.background_color }};"
+>
+  <div class="container mx-auto px-4 py-8 lg:py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center {% if section.settings.reverse_layout %}lg:flex-row-reverse{% endif %}">
+      {% comment %} Content Column {% endcomment %}
+      <div class="{% if section.settings.mobile_content_first %}order-1 lg:order-none{% else %}order-2 lg:order-none{% endif %}">
+        {% if section.settings.title != blank %}
+          <h2
+            class="from-fatigue-title text-2xl lg:text-3xl xl:text-4xl font-bold mb-6 leading-tight"
+            style="color: {{ section.settings.title_color }}; font-size: {{ section.settings.title_size_mobile }}px; line-height: 1.2;"
+          >
+            {{ section.settings.title }}
+            {% if section.settings.highlight_text != blank %}
+              <span class="from-fatigue-highlight block" style="color: {{ section.settings.highlight_color }};">
+                {{- section.settings.highlight_text -}}
+              </span>
+            {% endif %}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.description != blank %}
+          <div
+            class="from-fatigue-description text-gray-600 mb-8 leading-relaxed"
+            style="color: {{ section.settings.description_color }}; font-size: {{ section.settings.description_size_mobile }}px;"
+          >
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
+
+        {% comment %} Benefits List {% endcomment %}
+        {% if section.blocks.size > 0 %}
+          <div class="from-fatigue-list space-y-6">
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'benefit_item' %}
+                  <div class="from-fatigue-item flex items-start gap-4" {{ block.shopify_attributes }}>
+                    {% if block.settings.icon != blank %}
+                      <div class="size-7.5 bg-[#FBECED] rounded-full flex justify-center items-center from-fatigue-icon">
+                        <div class="from-fatigue-icon flex-shrink-0 w-5 h-5 text-transparent fill-green-700">
+                          {{ block.settings.icon }}
+                        </div>
+                      </div>
+                    {% endif %}
+                    <div class="from-fatigue-content flex-1">
+                      {% if block.settings.title != blank %}
+                        <h3
+                          class="from-fatigue-item-title font-semibold mb-2"
+                          style="color: {{ block.settings.title_color }}; font-size: {{ block.settings.title_size_mobile }}px;"
+                        >
+                          {{ block.settings.title }}
+                        </h3>
+                      {% endif %}
+                      {% if block.settings.description != blank %}
+                        <p
+                          class="from-fatigue-item-description text-gray-600 leading-relaxed"
+                          style="color: {{ block.settings.description_color }}; font-size: {{ block.settings.description_size_mobile }}px;"
+                        >
+                          {{ block.settings.description }}
+                        </p>
+                      {% endif %}
+                    </div>
+                  </div>
+              {% endcase %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      {% comment %} Image Column {% endcomment %}
+      <div class="{% if section.settings.mobile_content_first %}order-2 lg:order-none{% else %}order-1 lg:order-none{% endif %}">
+        {% if section.settings.image != blank %}
+          <div class="from-fatigue-image-wrapper rounded-2xl overflow-hidden">
+            <img
+              src="{{ section.settings.image | img_url: '800x800' }}"
+              alt="{{ section.settings.image.alt | escape }}"
+              class="from-fatigue-image w-full h-auto object-cover"
+              loading="lazy"
+              width="800"
+              height="800"
+            >
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .from-fatigue-section .container {
+    max-width: var(--max-width);
+  }
+
+  @media (min-width: 1024px) {
+
+
+    .from-fatigue-title {
+      font-size: {{ section.settings.title_size_desktop }}px !important;
+    }
+
+    .from-fatigue-description {
+      font-size: {{ section.settings.description_size_desktop }}px !important;
+    }
+
+    {% for block in section.blocks %}
+      {% if block.type == 'benefit_item' %}
+        #section-{{ section.id }} .from-fatigue-item:nth-child({{ forloop.index }}) .from-fatigue-item-title {
+          font-size: {{ block.settings.title_size_desktop }}px !important;
+        }
+
+        #section-{{ section.id }} .from-fatigue-item:nth-child({{ forloop.index }}) .from-fatigue-item-description {
+          font-size: {{ block.settings.description_size_desktop }}px !important;
+        }
+      {% endif %}
+    {% endfor %}
+  }
+
+  {% if section.settings.reverse_layout %}
+    @media (min-width: 1024px) {
+      #section-{{ section.id }} .grid {
+        direction: rtl;
+      }
+
+      #section-{{ section.id }} .grid > div {
+        direction: ltr;
+      }
+    }
+  {% endif %}
+
+  .from-fatigue-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+
+  .from-fatigue-image {
+    transition: transform 0.3s ease;
+  }
+
+  .from-fatigue-image:hover {
+    transform: scale(1.02);
+  }
+</style>
+
+{% schema %}
+{
+  "name": "From Fatigue",
+  "class": "from-fatigue-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "custom_classes",
+      "label": "Custom CSS Classes",
+      "info": "Add custom CSS classes separated by spaces"
+    },
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "text",
+      "id": "max_width",
+      "label": "Max Width (px)",
+      "default": "1200",
+      "info": "Maximum width of the section content"
+    },
+    {
+      "type": "checkbox",
+      "id": "reverse_layout",
+      "label": "Reverse Layout",
+      "default": false,
+      "info": "Show image on left, content on right"
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile Order",
+      "options": [
+        {
+          "value": "content_first",
+          "label": "Content First"
+        },
+        {
+          "value": "image_first",
+          "label": "Image First"
+        }
+      ],
+      "default": "image_first"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "From Fatigue and Brain Fog..."
+    },
+    {
+      "type": "text",
+      "id": "highlight_text",
+      "label": "Highlighted Text",
+      "default": "to a Clear, Energized You"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Vitamin H2 isn't just about masking tiredness – it's about restoring your body's natural energy from the inside out. Here's what people start noticing just after a few weeks:</p>"
+    },
+    {
+      "type": "header",
+      "content": "Title Styling"
+    },
+
+    {
+      "type": "color",
+      "id": "highlight_color",
+      "label": "Highlight Color",
+      "default": "#ef4444"
+    },
+
+    {
+      "type": "header",
+      "content": "Description Styling"
+    },
+
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit_item",
+      "name": "Benefit Item",
+      "settings": [
+        {
+          "type": "html",
+          "id": "icon",
+          "label": "Icon (SVG)",
+          "info": "Add SVG icon code"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "header",
+          "content": "Title Styling"
+        },
+
+        {
+          "type": "header",
+          "content": "Description Styling"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefits Features",
+      "blocks": [
+        {
+          "type": "benefit_item",
+          "settings": {
+            "icon": "<svg viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z\" fill=\"#ef4444\"/></svg>",
+            "title": "Sustainable Energy",
+            "description": "No more ups and downs - experience a steady flow of natural energy all day long."
+          }
+        },
+        {
+          "type": "benefit_item",
+          "settings": {
+            "icon": "<svg viewBox=\"0 0 24 24\" fill=\"currentColor\"><circle cx=\"12\" cy=\"12\" r=\"10\" fill=\"#ef4444\"/></svg>",
+            "title": "Stronger Immunity",
+            "description": "Support your body's defenses and get sick less often."
+          }
+        },
+        {
+          "type": "benefit_item",
+          "settings": {
+            "icon": "<svg viewBox=\"0 0 24 24\" fill=\"currentColor\"><circle cx=\"12\" cy=\"12\" r=\"10\" fill=\"#ef4444\"/></svg>",
+            "title": "Better Sleep & Recovery",
+            "description": "Wake up feeling rested, refreshed, and ready to go."
+          }
+        },
+        {
+          "type": "benefit_item",
+          "settings": {
+            "icon": "<svg viewBox=\"0 0 24 24\" fill=\"currentColor\"><circle cx=\"12\" cy=\"12\" r=\"10\" fill=\"#ef4444\"/></svg>",
+            "title": "Sharper Focus",
+            "description": "Say goodbye to mental fog and distractions - clear thinking and better productivity."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
