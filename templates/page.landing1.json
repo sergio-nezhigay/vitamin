@@ -162,8 +162,6 @@
         "custom_classes": "",
         "font_family": "inherit",
         "font_weight": "700",
-        "text_size_mobile": 14,
-        "text_size_desktop": 18,
         "animation_duration": 15,
         "speed": 60,
         "min_duration": 10,
@@ -196,11 +194,91 @@
         "reverse_layout": false,
         "custom_classes": ""
       }
+    },
+    "landing_vitamin_ingredients": {
+      "type": "landing-vitamin-ingredients",
+      "blocks": {
+        "ingredient_pEPQRD": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_image": "shopify://shop_images/Rectangle_5.webp",
+            "ingredient_name": "Molecular Hydrogen (H₂)",
+            "name_color": "#292524",
+            "name_size_desktop": 20,
+            "ingredient_description": "<p>Targets harmful free radicals, reduces inflammation, and supports cell regeneration.</p>",
+            "description_color": "#44403c",
+            "description_size_desktop": 16,
+            "read_more_text": "Read more",
+            "read_more_color": "#344054"
+          }
+        },
+        "ingredient_AnRUEU": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_image": "shopify://shop_images/Rectangle_6.webp",
+            "ingredient_name": "Magnesium",
+            "name_color": "#44403c",
+            "name_size_desktop": 20,
+            "ingredient_description": "<p>Activates hydrogen release and fuels over 300 vital processes in your body.</p>",
+            "description_color": "#44403c",
+            "description_size_desktop": 16,
+            "read_more_text": "Read more",
+            "read_more_color": "#344054"
+          }
+        },
+        "ingredient_PcGRHf": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_image": "shopify://shop_images/Rectangle_7.webp",
+            "ingredient_name": "Sodium Bicarbonate",
+            "name_color": "#292524",
+            "name_size_desktop": 20,
+            "ingredient_description": "<p>Balances pH levels for better absorption and gentle alkalizing effect.</p>",
+            "description_color": "#44403c",
+            "description_size_desktop": 16,
+            "read_more_text": "Read more",
+            "read_more_color": "#344054"
+          }
+        },
+        "ingredient_Y4zgWH": {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_image": "shopify://shop_images/Rectangle_8.webp",
+            "ingredient_name": "Organic Acids",
+            "name_color": "#292524",
+            "name_size_desktop": 20,
+            "ingredient_description": "<p>Ensure fast, smooth hydrogen release with no residue.</p>",
+            "description_color": "#44403c",
+            "description_size_desktop": 16,
+            "read_more_text": "Read more",
+            "read_more_color": "#344054"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_pEPQRD",
+        "ingredient_AnRUEU",
+        "ingredient_PcGRHf",
+        "ingredient_Y4zgWH"
+      ],
+      "settings": {
+        "title": "Ingredients of VitaminH2 – Small but Mighty",
+        "title_color": "#1f2937",
+        "title_size_desktop": 36,
+        "subtitle": "<p>VitaminH2 is a powerful blend of molecular hydrogen and essential minerals, crafted to <strong>boost energy, fight fatigue</strong>, and <strong>support overall wellness</strong> from the inside out.</p>",
+        "subtitle_color": "#6b7280",
+        "subtitle_size_desktop": 18,
+        "section_background": "#fdf4e9",
+        "card_background": "#ffffff",
+        "card_border_radius": 24,
+        "custom_classes": ""
+      }
     }
   },
   "order": [
     "landing_hero_claude",
     "landing-marquee",
-    "landing_health_awareness"
+    "landing_health_awareness",
+    "landing_vitamin_ingredients"
   ]
 }

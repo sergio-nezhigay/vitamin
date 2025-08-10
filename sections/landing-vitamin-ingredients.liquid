@@ -1,0 +1,281 @@
+<section
+  id="{{ section.id }}"
+  class="vitamin-h2-ingredients-section {{ section.settings.custom_classes }} outline-red-800 outline"
+  style="padding-top: 96px; padding-bottom: 116px; background: {{ section.settings.section_background }};"
+>
+  <div class="hidden md:block max-w-[1440px] px-[112px] mx-auto">
+    {% if section.settings.title != blank %}
+      <div class="text-center mb-[66px]">
+        <h2
+          class="text-4xl font-medium text-[#292524] !mb-4 leading-[1.22]"
+          style="font-size: {{ section.settings.title_size_desktop }}px;"
+        >
+          {{ section.settings.title }}
+        </h2>
+        {% if section.settings.subtitle != blank %}
+          <div
+            class="text-[20px] text-black font-semibold max-w-[794px] mx-auto leading-normal font-nunito"
+          >
+            {{ section.settings.subtitle }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="grid grid-cols-4 gap-[37px]">
+      {% for block in section.blocks %}
+        <div
+          class="ingredient-card bg-white rounded-[24px] px-5 pb-[29px] flex flex-col"
+          {{ block.shopify_attributes }}
+        >
+          {% if block.settings.ingredient_image != blank %}
+            <div class="ingredient-icon flex px-2 pt-2 pb-[12px]">
+              <img
+                src="{{ block.settings.ingredient_image | image_url: width: 108 }}"
+                alt="{{ block.settings.ingredient_name | escape }}"
+                loading="lazy"
+                class="w-[108px] h-[100px] object-contain"
+                width="108"
+                height="100"
+              >
+            </div>
+          {% endif %}
+
+          {% if block.settings.ingredient_name != blank %}
+            <h3
+              class="font-medium !mb-[8px]"
+              style="color: {{ block.settings.name_color }}; font-size: {{ block.settings.name_size_desktop }}px;"
+            >
+              {{ block.settings.ingredient_name }}
+            </h3>
+          {% endif %}
+
+          {% if block.settings.ingredient_description != blank %}
+            <div
+              class="text-gray-600 mb-5 leading-normal font-nunito max-w-[229px]"
+              style="color: {{ block.settings.description_color }}; font-size: {{ block.settings.description_size_desktop }}px;"
+            >
+              {{ block.settings.ingredient_description }}
+            </div>
+          {% endif %}
+
+          {% if block.settings.read_more_text != blank %}
+            <div class="mt-auto">
+              <button
+                class="block !text-[16px] !font-bold !font-nunito !px-[17px] !py-[11px] border border-[#D0D5DD] rounded-[8px] "
+                style="color: {{ block.settings.read_more_color }};"
+              >
+                {{ block.settings.read_more_text }}
+              </button>
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  #{{ section.id }} .ingredient-card {
+    background: {{ section.settings.card_background }};
+    border-radius: {{ section.settings.card_border_radius }}px;
+  }
+
+  #{{ section.id }} .ingredient-card:hover {
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 767px) {
+    #{{ section.id }} {
+      display: none !important;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "VitaminH2 Ingredients",
+  "tag": "section",
+  "class": "vitamin-ingredients-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Ingredients of VitaminH2 – Small but Mighty"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#1F2937"
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "label": "Title Size (Desktop)",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "default": 36,
+      "unit": "px"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "<p>VitaminH2 is a powerful blend of molecular hydrogen and essential minerals, crafted to <strong>boost energy, fight fatigue</strong>, and support overall wellness from the inside out.</p>"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#6B7280"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size_desktop",
+      "label": "Subtitle Size (Desktop)",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Section Background",
+      "default": "#F8F9FA"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Card Border Radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "text",
+      "id": "custom_classes",
+      "label": "Custom CSS Classes"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "ingredient_image",
+          "label": "Ingredient Image"
+        },
+        {
+          "type": "text",
+          "id": "ingredient_name",
+          "label": "Ingredient Name"
+        },
+        {
+          "type": "color",
+          "id": "name_color",
+          "label": "Name Color",
+          "default": "#1F2937"
+        },
+        {
+          "type": "range",
+          "id": "name_size_desktop",
+          "label": "Name Size (Desktop)",
+          "min": 16,
+          "max": 32,
+          "step": 1,
+          "default": 20,
+          "unit": "px"
+        },
+        {
+          "type": "richtext",
+          "id": "ingredient_description",
+          "label": "Description"
+        },
+        {
+          "type": "color",
+          "id": "description_color",
+          "label": "Description Color",
+          "default": "#6B7280"
+        },
+        {
+          "type": "range",
+          "id": "description_size_desktop",
+          "label": "Description Size (Desktop)",
+          "min": 12,
+          "max": 18,
+          "step": 1,
+          "default": 14,
+          "unit": "px"
+        },
+        {
+          "type": "text",
+          "id": "read_more_text",
+          "label": "Read More Text",
+          "default": "Read more"
+        },
+        {
+          "type": "color",
+          "id": "read_more_color",
+          "label": "Read More Color",
+          "default": "#2563EB"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "VitaminH2 Ingredients",
+      "blocks": [
+        {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_name": "Molecular Hydrogen (H₂)",
+            "ingredient_description": "<p>Targets harmful free radicals, reduces inflammation, and supports cell regeneration.</p>",
+            "read_more_text": "Read more"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_name": "Magnesium",
+            "ingredient_description": "<p>Activates hydrogen release and fuels over 300 vital processes in your body.</p>",
+            "read_more_text": "Read more"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_name": "Sodium Bicarbonate",
+            "ingredient_description": "<p>Balances pH levels for better absorption and gentle alkalizing effect.</p>",
+            "read_more_text": "Read more"
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "ingredient_name": "Organic Acids",
+            "ingredient_description": "<p>Ensure fast, smooth hydrogen release with no residue.</p>",
+            "read_more_text": "Read more"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
