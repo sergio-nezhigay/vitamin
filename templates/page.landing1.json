@@ -320,6 +320,20 @@
     "landing_video_testimonials": {
       "type": "landing-video-testimonials",
       "blocks": {
+        "video_item_aGw3k4": {
+          "type": "video_item",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_9_1.png",
+            "video_url": "https://www.youtube.com/watch?v=on20FAtDHhk"
+          }
+        },
+        "video_item_DyGJWU": {
+          "type": "video_item",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_12_1.png",
+            "video_url": "https://www.youtube.com/watch?v=on20FAtDHhk"
+          }
+        },
         "video_item_HJd87n": {
           "type": "video_item",
           "settings": {
@@ -333,27 +347,13 @@
             "image": "shopify://shop_images/Rectangle_10_1.png",
             "video_url": "https://www.youtube.com/watch?v=on20FAtDHhk"
           }
-        },
-        "video_item_DyGJWU": {
-          "type": "video_item",
-          "settings": {
-            "image": "shopify://shop_images/Rectangle_12_1.png",
-            "video_url": "https://www.youtube.com/watch?v=on20FAtDHhk"
-          }
-        },
-        "video_item_aGw3k4": {
-          "type": "video_item",
-          "settings": {
-            "image": "shopify://shop_images/Rectangle_9_1.png",
-            "video_url": "https://www.youtube.com/watch?v=on20FAtDHhk"
-          }
         }
       },
       "block_order": [
-        "video_item_HJd87n",
-        "video_item_xdqf8C",
+        "video_item_aGw3k4",
         "video_item_DyGJWU",
-        "video_item_aGw3k4"
+        "video_item_HJd87n",
+        "video_item_xdqf8C"
       ],
       "settings": {
         "bg_color": "#ffffff",
@@ -369,29 +369,11 @@
     "landing_testimonials": {
       "type": "landing-testimonials",
       "blocks": {
-        "testimonial_QBmqFb": {
+        "testimonial_EX9ARV": {
           "type": "testimonial",
           "settings": {
-            "customer_name": "Michael B.",
-            "testimonial_text": "“Brain fog was ruining my focus at work. I tried so many supplements, but nothing worked. Vitamin H2 cleared my mind, and I feel sharper and more present throughout the day.”",
-            "show_rating": true,
-            "rating": 5
-          }
-        },
-        "testimonial_7WYULN": {
-          "type": "testimonial",
-          "settings": {
-            "customer_name": "Laura K.",
-            "testimonial_text": "“Even with 8 hours of sleep, I woke up exhausted. After just 3 weeks on Vitamin H2, my sleep improved drastically, and I finally wake up feeling refreshed and ready to go.”",
-            "show_rating": true,
-            "rating": 5
-          }
-        },
-        "testimonial_zD7GFj": {
-          "type": "testimonial",
-          "settings": {
-            "customer_name": "Ava L.",
-            "testimonial_text": "“I was skeptical at first, but after hearing about Vitamin H2 from a friend, I decided to give it a try. Now, I can’t imagine my day without it! I feel more alert and motivated to exercise.”",
+            "customer_name": "Emily R.",
+            "testimonial_text": "“I used to wake up tired every single day no matter how much I slept. After taking Vitamin H2 for a few weeks, my mornings feel completely different – more energy, better focus, and no more afternoon crashes!”",
             "show_rating": true,
             "rating": 5
           }
@@ -405,17 +387,37 @@
             "rating": 5
           }
         },
-        "image_ynEgyq": {
-          "type": "image",
+        "testimonial_zD7GFj": {
+          "type": "testimonial",
           "settings": {
-            "customer_image": "shopify://shop_images/Rectangle_12_2.png",
-            "alt_text": "Customer"
+            "customer_name": "Ava L.",
+            "testimonial_text": "“I was skeptical at first, but after hearing about Vitamin H2 from a friend, I decided to give it a try. Now, I can’t imagine my day without it! I feel more alert and motivated to exercise.”",
+            "show_rating": true,
+            "rating": 5
           }
         },
-        "image_gxqVdj": {
+        "testimonial_7WYULN": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Laura K.",
+            "testimonial_text": "“Even with 8 hours of sleep, I woke up exhausted. After just 3 weeks on Vitamin H2, my sleep improved drastically, and I finally wake up feeling refreshed and ready to go.”",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_QBmqFb": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Michael B.",
+            "testimonial_text": "“Brain fog was ruining my focus at work. I tried so many supplements, but nothing worked. Vitamin H2 cleared my mind, and I feel sharper and more present throughout the day.”",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "image_4nLwWB": {
           "type": "image",
           "settings": {
-            "customer_image": "shopify://shop_images/Rectangle_11_2.png",
+            "customer_image": "shopify://shop_images/Rectangle_9_3.png",
             "alt_text": "Customer"
           }
         },
@@ -426,20 +428,18 @@
             "alt_text": "Customer"
           }
         },
-        "image_4nLwWB": {
+        "image_gxqVdj": {
           "type": "image",
           "settings": {
-            "customer_image": "shopify://shop_images/Rectangle_9_3.png",
+            "customer_image": "shopify://shop_images/Rectangle_11_2.png",
             "alt_text": "Customer"
           }
         },
-        "testimonial_EX9ARV": {
-          "type": "testimonial",
+        "image_ynEgyq": {
+          "type": "image",
           "settings": {
-            "customer_name": "Emily R.",
-            "testimonial_text": "“I used to wake up tired every single day no matter how much I slept. After taking Vitamin H2 for a few weeks, my mornings feel completely different – more energy, better focus, and no more afternoon crashes!”",
-            "show_rating": true,
-            "rating": 5
+            "customer_image": "shopify://shop_images/Rectangle_12_2.png",
+            "alt_text": "Customer"
           }
         },
         "testimonial_HnDh7c": {
@@ -453,20 +453,107 @@
         }
       },
       "block_order": [
-        "testimonial_QBmqFb",
-        "testimonial_7WYULN",
-        "testimonial_zD7GFj",
-        "testimonial_d8QHyK",
-        "image_ynEgyq",
-        "image_gxqVdj",
-        "image_kjiDEY",
-        "image_4nLwWB",
         "testimonial_EX9ARV",
+        "testimonial_d8QHyK",
+        "testimonial_zD7GFj",
+        "testimonial_7WYULN",
+        "testimonial_QBmqFb",
+        "image_4nLwWB",
+        "image_kjiDEY",
+        "image_gxqVdj",
+        "image_ynEgyq",
         "testimonial_HnDh7c"
       ],
       "settings": {
         "section_title": "Trusted by Thousands Worldwide",
         "rating_text": "(4.8/5)"
+      }
+    },
+    "blog_posts_kWAWWH": {
+      "type": "blog-posts",
+      "name": "t:sections.blog_posts.presets.blog_posts.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "blog": "news",
+        "posts_count": 3,
+        "stack_on_mobile": false,
+        "show_category": true,
+        "show_date": false,
+        "show_excerpt": true,
+        "show_read_more": true,
+        "subheading": "Hear from health professionals about how Vitamin H2 can fit into your wellness routine. Our blog features insights from doctors, nutritionists, and health experts.",
+        "title": "Expert Advice and Health Tips",
+        "content": "",
+        "button_link": "",
+        "button_text": "View all"
+      }
+    },
+    "faq_KafdiU": {
+      "type": "faq",
+      "blocks": {
+        "category_r3bHiE": {
+          "type": "category",
+          "settings": {
+            "title": "Order",
+            "icon": "none",
+            "icon_width": 16
+          }
+        },
+        "question_HtHKGH": {
+          "type": "question",
+          "settings": {
+            "question": "Do you ship overseas?",
+            "answer": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+          }
+        },
+        "question_4VxWyH": {
+          "type": "question",
+          "settings": {
+            "question": "How long will it take to get my orders?",
+            "answer": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+          }
+        },
+        "question_keFU39": {
+          "type": "question",
+          "settings": {
+            "question": "Any question?",
+            "answer": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "category_r3bHiE",
+        "question_HtHKGH",
+        "question_4VxWyH",
+        "question_keFU39"
+      ],
+      "name": "t:sections.faq.presets.faq.name",
+      "settings": {
+        "color_scheme": "",
+        "side_header": "",
+        "side_text": "<p>Here are the answers to some of the most common questions we get about VitaminH2. Can’t find the answer you’re looking for? Please chat to our friendly team.</p>",
+        "separate_section_with_border": true,
+        "show_categories": false,
+        "subheading": "Need help?",
+        "title": "Got Questions?  We’ve Got Answers",
+        "content": ""
+      }
+    },
+    "newsletter_Lr8TGN": {
+      "type": "newsletter",
+      "name": "t:sections.newsletter.presets.newsletter.name",
+      "settings": {
+        "color_scheme": "scheme-bf5b0f8c-52b0-4434-9e75-88cb7d811258",
+        "separate_section_with_border": true,
+        "image_size": "auto",
+        "subheading": "",
+        "title": "Stay Updated and Save",
+        "content": "<p>Be the first to know about special promotions </p>",
+        "privacy_text": "We care about your data in our privacy policy.",
+        "button_text": "Subscribe",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
       }
     }
   },
@@ -477,6 +564,9 @@
     "landing_vitamin_ingredients",
     "from_fatigue",
     "landing_video_testimonials",
-    "landing_testimonials"
+    "landing_testimonials",
+    "blog_posts_kWAWWH",
+    "faq_KafdiU",
+    "newsletter_Lr8TGN"
   ]
 }
