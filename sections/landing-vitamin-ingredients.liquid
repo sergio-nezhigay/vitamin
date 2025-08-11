@@ -1,6 +1,6 @@
 <section
   id="{{ section.id }}"
-  class="vitamin-h2-ingredients-section {{ section.settings.custom_classes }} outline-red-800 outline"
+  class="vitamin-h2-ingredients-section {{ section.settings.custom_classes }} "
   style="padding-top: 96px; padding-bottom: 116px; background: {{ section.settings.section_background }};"
 >
   <div class="hidden md:block max-w-[1440px] px-[112px] mx-auto">
@@ -62,7 +62,7 @@
           {% if block.settings.read_more_text != blank %}
             <div class="mt-auto">
               <button
-                class="block !text-[16px] !font-bold !font-nunito !px-[17px] !py-[11px] border border-[#D0D5DD] rounded-[8px] "
+                class="block !text-[16px] !font-bold !font-nunito !px-[17px] !py-[11px] border border-[#D0D5DD] rounded-[8px] !leading-normal"
                 style="color: {{ block.settings.read_more_color }};"
               >
                 {{ block.settings.read_more_text }}

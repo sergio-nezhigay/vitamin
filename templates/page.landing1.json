@@ -64,7 +64,7 @@
             "icon_background_color": "#ea5167"
           }
         },
-        "benefit_UY8ACc": {
+        "benefit_iPGKej": {
           "type": "benefit",
           "settings": {
             "benefit_text": "Natural ingredients",
@@ -74,17 +74,47 @@
             "icon_background_color": "#ea5167"
           }
         },
-        "benefit_XzCxji": {
+        "benefit_UY8ACc": {
           "type": "benefit",
           "settings": {
             "benefit_text": "Zero sugar",
             "text_color": "#1c1917",
             "custom_icon": "",
             "icon_color": "#ffffff",
-            "icon_background_color": "#22c55e"
+            "icon_background_color": "#ea5167"
+          }
+        },
+        "benefit_XzCxji": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Free delivery",
+            "text_color": "#1c1917",
+            "custom_icon": "",
+            "icon_color": "#ffffff",
+            "icon_background_color": "#ea5167"
           }
         },
         "benefit_aYywrb": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Natural ingredients",
+            "text_color": "#1c1917",
+            "custom_icon": "",
+            "icon_color": "#ffffff",
+            "icon_background_color": "#ea5167"
+          }
+        },
+        "benefit_7nAFAj": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Zero sugar",
+            "text_color": "#1c1917",
+            "custom_icon": "",
+            "icon_color": "#ffffff",
+            "icon_background_color": "#ea5167"
+          }
+        },
+        "benefit_TY63U6": {
           "type": "benefit",
           "settings": {
             "benefit_text": "Free delivery",
@@ -103,59 +133,18 @@
             "icon_color": "#ffffff",
             "icon_background_color": "#ea5167"
           }
-        },
-        "benefit_EtnAtj": {
-          "type": "benefit",
-          "settings": {
-            "benefit_text": "Zero sugar",
-            "text_color": "#1c1917",
-            "custom_icon": "",
-            "icon_color": "#ffffff",
-            "icon_background_color": "#ea5167"
-          }
-        },
-        "benefit_KJ6wVW": {
-          "type": "benefit",
-          "settings": {
-            "benefit_text": "Free delivery",
-            "text_color": "#1c1917",
-            "custom_icon": "",
-            "icon_color": "#ffffff",
-            "icon_background_color": "#ea5167"
-          }
-        },
-        "benefit_caGbr6": {
-          "type": "benefit",
-          "settings": {
-            "benefit_text": "Natural ingredients",
-            "text_color": "#1c1917",
-            "custom_icon": "",
-            "icon_color": "#ffffff",
-            "icon_background_color": "#ea5167"
-          }
-        },
-        "benefit_4tbxeN": {
-          "type": "benefit",
-          "settings": {
-            "benefit_text": "Zero sugar",
-            "text_color": "#1c1917",
-            "custom_icon": "",
-            "icon_color": "#ffffff",
-            "icon_background_color": "#ea5167"
-          }
         }
       },
       "block_order": [
         "benefit_xDKLt9",
         "benefit_ECCirV",
+        "benefit_iPGKej",
         "benefit_UY8ACc",
         "benefit_XzCxji",
         "benefit_aYywrb",
-        "benefit_MA37q9",
-        "benefit_EtnAtj",
-        "benefit_KJ6wVW",
-        "benefit_caGbr6",
-        "benefit_4tbxeN"
+        "benefit_7nAFAj",
+        "benefit_TY63U6",
+        "benefit_MA37q9"
       ],
       "settings": {
         "max_width": "1200",
@@ -318,7 +307,6 @@
       ],
       "settings": {
         "custom_classes": "",
-        "max_width": "1216",
         "reverse_layout": false,
         "mobile_layout": "content_first",
         "background_color": "#ffffff",
@@ -328,6 +316,158 @@
         "highlight_color": "#ea5167",
         "image": "shopify://shop_images/Group_-_Item_1_of_2_2_png.webp"
       }
+    },
+    "landing_video_testimonials": {
+      "type": "landing-video-testimonials",
+      "blocks": {
+        "video_item_HJd87n": {
+          "type": "video_item",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_11_1_2bc808c2-31dd-4243-9be4-77d024657dd3.png",
+            "video_url": "https://www.youtube.com/watch?v=on20FAtDHhk"
+          }
+        },
+        "video_item_xdqf8C": {
+          "type": "video_item",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_10_1.png",
+            "video_url": "https://www.youtube.com/watch?v=on20FAtDHhk"
+          }
+        },
+        "video_item_DyGJWU": {
+          "type": "video_item",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_12_1.png",
+            "video_url": "https://www.youtube.com/watch?v=on20FAtDHhk"
+          }
+        },
+        "video_item_aGw3k4": {
+          "type": "video_item",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_9_1.png",
+            "video_url": "https://www.youtube.com/watch?v=on20FAtDHhk"
+          }
+        }
+      },
+      "block_order": [
+        "video_item_HJd87n",
+        "video_item_xdqf8C",
+        "video_item_DyGJWU",
+        "video_item_aGw3k4"
+      ],
+      "settings": {
+        "bg_color": "#ffffff",
+        "text_color": "#292524",
+        "heading": "<h2>Hear It from Our Customers</h2>",
+        "description": "",
+        "padding_top": 76,
+        "padding_bottom": 96,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 64
+      }
+    },
+    "landing_testimonials": {
+      "type": "landing-testimonials",
+      "blocks": {
+        "testimonial_QBmqFb": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Michael B.",
+            "testimonial_text": "“Brain fog was ruining my focus at work. I tried so many supplements, but nothing worked. Vitamin H2 cleared my mind, and I feel sharper and more present throughout the day.”",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_7WYULN": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Laura K.",
+            "testimonial_text": "“Even with 8 hours of sleep, I woke up exhausted. After just 3 weeks on Vitamin H2, my sleep improved drastically, and I finally wake up feeling refreshed and ready to go.”",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_zD7GFj": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Ava L.",
+            "testimonial_text": "“I was skeptical at first, but after hearing about Vitamin H2 from a friend, I decided to give it a try. Now, I can’t imagine my day without it! I feel more alert and motivated to exercise.”",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_d8QHyK": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Michael T.",
+            "testimonial_text": "“As a busy professional, I often struggle to find time for self-care. Vitamin H2 has seamlessly integrated into my routine, providing me with the mental clarity and stamina I need to tackle my day head-on.”",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "image_ynEgyq": {
+          "type": "image",
+          "settings": {
+            "customer_image": "shopify://shop_images/Rectangle_12_2.png",
+            "alt_text": "Customer"
+          }
+        },
+        "image_gxqVdj": {
+          "type": "image",
+          "settings": {
+            "customer_image": "shopify://shop_images/Rectangle_11_2.png",
+            "alt_text": "Customer"
+          }
+        },
+        "image_kjiDEY": {
+          "type": "image",
+          "settings": {
+            "customer_image": "shopify://shop_images/Rectangle_10_3.png",
+            "alt_text": "Customer"
+          }
+        },
+        "image_4nLwWB": {
+          "type": "image",
+          "settings": {
+            "customer_image": "shopify://shop_images/Rectangle_9_3.png",
+            "alt_text": "Customer"
+          }
+        },
+        "testimonial_EX9ARV": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Emily R.",
+            "testimonial_text": "“I used to wake up tired every single day no matter how much I slept. After taking Vitamin H2 for a few weeks, my mornings feel completely different – more energy, better focus, and no more afternoon crashes!”",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_HnDh7c": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Anna P.",
+            "testimonial_text": "“I’ve tried every vitamin out there, but nothing ever felt different. Vitamin H2 is the first supplement where I can truly feel the benefits – more energy, less stress, and better overall mood.”",
+            "show_rating": true,
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_QBmqFb",
+        "testimonial_7WYULN",
+        "testimonial_zD7GFj",
+        "testimonial_d8QHyK",
+        "image_ynEgyq",
+        "image_gxqVdj",
+        "image_kjiDEY",
+        "image_4nLwWB",
+        "testimonial_EX9ARV",
+        "testimonial_HnDh7c"
+      ],
+      "settings": {
+        "section_title": "Trusted by Thousands Worldwide",
+        "rating_text": "(4.8/5)"
+      }
     }
   },
   "order": [
@@ -335,6 +475,8 @@
     "landing-marquee",
     "landing_health_awareness",
     "landing_vitamin_ingredients",
-    "from_fatigue"
+    "from_fatigue",
+    "landing_video_testimonials",
+    "landing_testimonials"
   ]
 }

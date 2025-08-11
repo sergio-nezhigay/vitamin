@@ -28,7 +28,6 @@
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --leading-normal: 1.5;
-    --radius-2xl: 1rem;
     --radius-3xl: 1.5rem;
     --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -248,6 +247,9 @@
   .mx-auto {
     margin-inline: auto;
   }
+  .my-auto {
+    margin-block: auto;
+  }
   .mt-auto {
     margin-top: auto;
   }
@@ -311,17 +313,9 @@
   .table {
     display: table;
   }
-  .size-3 {
-    width: calc(var(--spacing) * 3);
-    height: calc(var(--spacing) * 3);
-  }
   .size-3\.5 {
     width: calc(var(--spacing) * 3.5);
     height: calc(var(--spacing) * 3.5);
-  }
-  .size-7 {
-    width: calc(var(--spacing) * 7);
-    height: calc(var(--spacing) * 7);
   }
   .size-7\.5 {
     width: calc(var(--spacing) * 7.5);
@@ -359,9 +353,6 @@
   }
   .w-10 {
     width: calc(var(--spacing) * 10);
-  }
-  .w-\[90\%\] {
-    width: 90%;
   }
   .w-\[108px\] {
     width: 108px;
@@ -408,23 +399,11 @@
   .shrink-0 {
     flex-shrink: 0;
   }
-  .flex-grow {
-    flex-grow: 1;
-  }
   .grow {
     flex-grow: 1;
   }
   .border-collapse {
     border-collapse: collapse;
-  }
-  .origin-center {
-    transform-origin: center;
-  }
-  .scale-90 {
-    --tw-scale-x: 90%;
-    --tw-scale-y: 90%;
-    --tw-scale-z: 90%;
-    scale: var(--tw-scale-x) var(--tw-scale-y);
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
@@ -482,9 +461,6 @@
   }
   .justify-items-start {
     justify-items: start;
-  }
-  .gap-0 {
-    gap: calc(var(--spacing) * 0);
   }
   .gap-0\.5 {
     gap: calc(var(--spacing) * 0.5);
@@ -617,12 +593,6 @@
   .object-cover {
     object-fit: cover;
   }
-  .object-scale-down {
-    object-fit: scale-down;
-  }
-  .object-bottom {
-    object-position: bottom;
-  }
   .\!px-\[17px\] {
     padding-inline: 17px !important;
   }
@@ -673,9 +643,6 @@
   }
   .pt-\[2px\] {
     padding-top: 2px;
-  }
-  .pr-\[6px\] {
-    padding-right: 6px;
   }
   .pr-\[19px\] {
     padding-right: 19px;
@@ -744,6 +711,10 @@
   }
   .text-\[28px\] {
     font-size: 28px;
+  }
+  .\!leading-normal {
+    --tw-leading: var(--leading-normal) !important;
+    line-height: var(--leading-normal) !important;
   }
   .leading-\[1\.4\] {
     --tw-leading: 1.4;
@@ -833,9 +804,6 @@
   }
   .no-underline {
     text-decoration-line: none;
-  }
-  .underline {
-    text-decoration-line: underline;
   }
   .shadow {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
@@ -1055,9 +1023,9 @@
       margin-bottom: calc(var(--spacing) * 10);
     }
   }
-  .md\:mb-\[16px\] {
+  .md\:mb-\[22px\] {
     @media (width >= 48rem) {
-      margin-bottom: 16px;
+      margin-bottom: 22px;
     }
   }
   .md\:block {
@@ -1083,6 +1051,11 @@
   .md\:table {
     @media (width >= 48rem) {
       display: table;
+    }
+  }
+  .md\:aspect-\[0\.916\] {
+    @media (width >= 48rem) {
+      aspect-ratio: 0.916;
     }
   }
   .md\:size-10 {
@@ -1121,9 +1094,9 @@
       flex-direction: row-reverse;
     }
   }
-  .md\:items-center {
+  .md\:gap-1 {
     @media (width >= 48rem) {
-      align-items: center;
+      gap: calc(var(--spacing) * 1);
     }
   }
   .md\:gap-16 {
@@ -1148,6 +1121,11 @@
   .md\:px-\[112px\] {
     @media (width >= 48rem) {
       padding-inline: 112px;
+    }
+  }
+  .md\:py-6 {
+    @media (width >= 48rem) {
+      padding-block: calc(var(--spacing) * 6);
     }
   }
   .md\:py-\[32px\] {
@@ -1213,34 +1191,14 @@
       height: 600px;
     }
   }
-  .lg\:grid-cols-2 {
-    @media (width >= 64rem) {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
   .lg\:flex-row {
     @media (width >= 64rem) {
       flex-direction: row;
     }
   }
-  .lg\:flex-row-reverse {
-    @media (width >= 64rem) {
-      flex-direction: row-reverse;
-    }
-  }
-  .lg\:gap-16 {
-    @media (width >= 64rem) {
-      gap: calc(var(--spacing) * 16);
-    }
-  }
   .lg\:px-\[112px\] {
     @media (width >= 64rem) {
       padding-inline: 112px;
-    }
-  }
-  .lg\:py-16 {
-    @media (width >= 64rem) {
-      padding-block: calc(var(--spacing) * 16);
     }
   }
   .lg\:pt-0 {
@@ -1249,20 +1207,26 @@
     }
   }
 }
-@property --tw-scale-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('./Nunito-Medium.woff2') format('woff2'), url('./Nunito-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
-@property --tw-scale-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('./Nunito-SemiBold.woff2') format('woff2'), url('./Nunito-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
-@property --tw-scale-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('./Nunito-Bold.woff2') format('woff2'), url('./Nunito-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 @property --tw-rotate-x {
   syntax: "*";
@@ -1481,9 +1445,6 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-scale-x: 1;
-      --tw-scale-y: 1;
-      --tw-scale-z: 1;
       --tw-rotate-x: initial;
       --tw-rotate-y: initial;
       --tw-rotate-z: initial;

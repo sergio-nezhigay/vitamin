@@ -4,7 +4,6 @@
 <div class="{{ info_classes | default: '' }}">
   <div
     class="mb-5 font-display font-medium text-[14px] md:text-[18px] leading-[1.4] text-[#44403C] md:max-w-[436px]"
-    style="color: {{ section.settings.text_color }};"
   >
     {% for part in text_parts %}
       {{ part }}
@@ -18,8 +17,8 @@
     {% case block.type %}
       {% when 'testimonial' %}
         {% if block.settings.quote != blank %}
-          <div class="bg-[#FDF4E9] max-sm:py-[17px] max-sm:px-[24px] rounded-[12px] max-w-[520px] md:px-6">
-            <blockquote class="!mb-3 font-semibold text-[14px] md:text-[20px] font-display leading-[1.4]">
+          <div class="bg-[#FDF4E9] max-sm:py-[17px] max-sm:px-[24px] rounded-[12px] max-w-[520px] md:px-6 md:py-6">
+            <blockquote class="!mb-3 font-semibold text-[14px] md:text-[20px] font-nunito leading-[1.4] md:leading-normal">
               {{ block.settings.quote }}
             </blockquote>
             <div class="flex items-center">

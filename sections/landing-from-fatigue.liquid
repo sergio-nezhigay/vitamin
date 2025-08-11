@@ -1,11 +1,11 @@
 <section
   id="section-{{ section.id }}"
-  class="from-fatigue-section {{ section.settings.custom_classes }}  max-w-[1440px] md:px-[112px]"
+  class="from-fatigue-section {{ section.settings.custom_classes }}  max-w-[1440px] md:px-[112px] mx-auto"
 >
   <div class="mx-auto max-sm:px-5 py-[64px] md:py-[96px]">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 max-sm:items-center {% if section.settings.reverse_layout %}md:flex-row-reverse{% endif %}">
       {% comment %} Content Column {% endcomment %}
-      <div>
+      <div class="flex flex-col justify-between">
         {% if section.settings.title != blank %}
           <h2
             class="text-[20px] md:text-[36px] leading-[1.4] font-medium !mb-5 md:!mb-[17px] max-sm:pr-[25px] text-[#292524] max-w-[520px] md:leading-[1.22]"
@@ -29,7 +29,7 @@
 
         {% comment %} Benefits List {% endcomment %}
         {% if section.blocks.size > 0 %}
-          <div class="space-y-5 md:space-y-8">
+          <div class="space-y-5 md:space-y-8 my-auto">
             {% for block in section.blocks %}
               {% case block.type %}
                 {% when 'benefit_item' %}
@@ -44,7 +44,7 @@
                     <div class="from-fatigue-content flex-1 pt-1 pr-[19px]">
                       {% if block.settings.title != blank %}
                         <h3
-                          class="from-fatigue-item-title text-[16px] font-medium !mb-2 text-[#292524] md:text-[20px]"
+                          class="from-fatigue-item-title text-[16px] font-medium !mb-2 text-[#292524] md:text-[20px] md:leading-normal"
                         >
                           {{ block.settings.title }}
                         </h3>
@@ -66,7 +66,7 @@
 
       {% comment %} Image Column {% endcomment %}
       {% if section.settings.image != blank %}
-        <div class="from-fatigue-image-wrapper rounded-3xl overflow-hidden max-sm:aspect-[1.03]">
+        <div class="from-fatigue-image-wrapper rounded-3xl overflow-hidden max-sm:aspect-[1.03] md:aspect-[0.916]">
           <img
             src="{{ section.settings.image | image_url: width:592 }}"
             alt="{{ section.settings.image.alt | escape }}"

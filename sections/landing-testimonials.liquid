@@ -1,0 +1,261 @@
+{{ 'custom-testimonials.css' | asset_url | stylesheet_tag }}
+
+<section class="testimonials-section">
+  <div class="container">
+    <header class="testimonials-header">
+      <div class="rating-display">
+        <div class="stars-wrapper">
+          {% for i in (1..5) %}
+            <svg
+              class="star-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <g clip-path="url(#clip0_379_3325_{{ i }})">
+                <path d="M7.53834 1.50987C7.70914 1.09922 8.29086 1.09922 8.46166 1.50987L9.99874 5.20546C10.0707 5.37858 10.2336 5.49686 10.4204 5.51185L14.4102 5.8317C14.8535 5.86724 15.0332 6.42049 14.6955 6.70983L11.6557 9.31368C11.5133 9.43566 11.4512 9.62705 11.4947 9.80943L12.4234 13.7027C12.5265 14.1353 12.0559 14.4772 11.6764 14.2454L8.26063 12.1591C8.10062 12.0614 7.89938 12.0614 7.73937 12.1591L4.32363 14.2454C3.94408 14.4772 3.47345 14.1353 3.57665 13.7027L4.50534 9.80943C4.54884 9.62705 4.48665 9.43566 4.34426 9.31368L1.30453 6.70983C0.966758 6.4205 1.14652 5.86724 1.58985 5.8317L5.57955 5.51185C5.76645 5.49686 5.92925 5.37858 6.00126 5.20546L7.53834 1.50987Z" fill="#F2F4F7"/>
+                <g clip-path="url(#clip1_379_3325_{{ i }})">
+                  <path d="M7.53834 1.50987C7.70914 1.09922 8.29086 1.09922 8.46166 1.50987L9.99874 5.20546C10.0707 5.37858 10.2336 5.49686 10.4204 5.51185L14.4102 5.8317C14.8535 5.86724 15.0332 6.42049 14.6955 6.70983L11.6557 9.31368C11.5133 9.43566 11.4512 9.62705 11.4947 9.80943L12.4234 13.7027C12.5265 14.1353 12.0559 14.4772 11.6764 14.2454L8.26063 12.1591C8.10062 12.0614 7.89938 12.0614 7.73937 12.1591L4.32363 14.2454C3.94408 14.4772 3.47345 14.1353 3.57665 13.7027L4.50534 9.80943C4.54884 9.62705 4.48665 9.43566 4.34426 9.31368L1.30453 6.70983C0.966758 6.4205 1.14652 5.86724 1.58985 5.8317L5.57955 5.51185C5.76645 5.49686 5.92925 5.37858 6.00126 5.20546L7.53834 1.50987Z" fill="#EA5167"/>
+                </g>
+              </g>
+              <defs>
+                <clipPath id="clip0_379_3325_{{ i }}">
+                  <rect width="16" height="16" fill="white"/>
+                </clipPath>
+                <clipPath id="clip1_379_3325_{{ i }}">
+                  <rect width="16" height="16" fill="white"/>
+                </clipPath>
+              </defs>
+            </svg>
+          {% endfor %}
+        </div>
+        <span class="rating-text">{{ section.settings.rating_text | default: '(4.8/5)' }}</span>
+      </div>
+
+      <h2 class="section-heading">{{ section.settings.section_title | default: 'Trusted by Thousands Worldwide' }}</h2>
+    </header>
+
+    <div class="customer-images-wrapper">
+      <div class="customer-images">
+        {% assign image_blocks = section.blocks | where: 'type', 'image' %}
+        {% for block in image_blocks limit: 4 %}
+          {% if block.settings.customer_image != blank %}
+            <div class="customer-image-item" {{ block.shopify_attributes }}>
+              <img
+                src="{{ block.settings.customer_image | image_url: width: 480 }}"
+                alt="{{ block.settings.alt_text | default: 'Customer' | escape }}"
+                class="customer-avatar"
+                loading="lazy"
+                width="240"
+                height="240"
+              >
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="testimonials-grid">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'testimonial' %}
+            <article class="testimonial-card" {{ block.shopify_attributes }}>
+              {% if block.settings.show_rating %}
+                <div class="testimonial-rating">
+                  {% assign rating = block.settings.rating | default: 5 %}
+                  {% for i in (1..rating) %}
+                    <svg
+                      class="rating-star"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_{{ block.id }}_{{ i }})">
+                        <path d="M7.53834 1.50987C7.70914 1.09922 8.29086 1.09922 8.46166 1.50987L9.99874 5.20546C10.0707 5.37858 10.2336 5.49686 10.4204 5.51185L14.4102 5.8317C14.8535 5.86724 15.0332 6.42049 14.6955 6.70983L11.6557 9.31368C11.5133 9.43566 11.4512 9.62705 11.4947 9.80943L12.4234 13.7027C12.5265 14.1353 12.0559 14.4772 11.6764 14.2454L8.26063 12.1591C8.10062 12.0614 7.89938 12.0614 7.73937 12.1591L4.32363 14.2454C3.94408 14.4772 3.47345 14.1353 3.57665 13.7027L4.50534 9.80943C4.54884 9.62705 4.48665 9.43566 4.34426 9.31368L1.30453 6.70983C0.966758 6.4205 1.14652 5.86724 1.58985 5.8317L5.57955 5.51185C5.76645 5.49686 5.92925 5.37858 6.00126 5.20546L7.53834 1.50987Z" fill="#F2F4F7"/>
+                        <g clip-path="url(#clip1_{{ block.id }}_{{ i }})">
+                          <path d="M7.53834 1.50987C7.70914 1.09922 8.29086 1.09922 8.46166 1.50987L9.99874 5.20546C10.0707 5.37858 10.2336 5.49686 10.4204 5.51185L14.4102 5.8317C14.8535 5.86724 15.0332 6.42049 14.6955 6.70983L11.6557 9.31368C11.5133 9.43566 11.4512 9.62705 11.4947 9.80943L12.4234 13.7027C12.5265 14.1353 12.0559 14.4772 11.6764 14.2454L8.26063 12.1591C8.10062 12.0614 7.89938 12.0614 7.73937 12.1591L4.32363 14.2454C3.94408 14.4772 3.47345 14.1353 3.57665 13.7027L4.50534 9.80943C4.54884 9.62705 4.48665 9.43566 4.34426 9.31368L1.30453 6.70983C0.966758 6.4205 1.14652 5.86724 1.58985 5.8317L5.57955 5.51185C5.76645 5.49686 5.92925 5.37858 6.00126 5.20546L7.53834 1.50987Z" fill="#EA5167"/>
+                        </g>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_{{ block.id }}_{{ i }}">
+                          <rect width="16" height="16" fill="white"/>
+                        </clipPath>
+                        <clipPath id="clip1_{{ block.id }}_{{ i }}">
+                          <rect width="16" height="16" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  {% endfor %}
+                </div>
+              {% endif %}
+
+              {% if block.settings.customer_name != blank %}
+                <h3 class="customer-name">{{ block.settings.customer_name }}</h3>
+              {% endif %}
+
+              {% if block.settings.testimonial_text != blank %}
+                <p class="testimonial-content">{{ block.settings.testimonial_text }}</p>
+              {% endif %}
+            </article>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Customer Testimonials",
+  "tag": "section",
+  "class": "section-testimonials",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content Settings"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Trusted by Thousands Worldwide"
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Rating Text",
+      "default": "(4.8/5)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Customer Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "customer_image",
+          "label": "Customer Photo"
+        },
+        {
+          "type": "text",
+          "id": "alt_text",
+          "label": "Alt Text",
+          "default": "Customer"
+        }
+      ]
+    },
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "customer_name",
+          "label": "Name"
+        },
+        {
+          "type": "textarea",
+          "id": "testimonial_text",
+          "label": "Testimonial"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_rating",
+          "label": "Show Rating",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "label": "Stars",
+          "default": 5
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Customer Testimonials",
+      "settings": {
+        "section_title": "Trusted by Thousands Worldwide",
+        "rating_text": "(4.8/5)"
+      },
+      "blocks": [
+        {
+          "type": "image",
+          "settings": {
+            "alt_text": "Emily"
+          }
+        },
+        {
+          "type": "image",
+          "settings": {
+            "alt_text": "Michael"
+          }
+        },
+        {
+          "type": "image",
+          "settings": {
+            "alt_text": "Ava"
+          }
+        },
+        {
+          "type": "image",
+          "settings": {
+            "alt_text": "Laura"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Emily R.",
+            "testimonial_text": "I used to wake up tired every single day no matter how much I slept. After taking Vitamin H2 for a few weeks, my mornings feel completely different - more energy, better focus, and no more afternoon crashes!"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Michael T.",
+            "testimonial_text": "As a busy professional, I often struggle to find time for self-care. Vitamin H2 has seamlessly integrated into my routine, providing me with the mental clarity and stamina I need to tackle my day head-on."
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Ava L.",
+            "testimonial_text": "I was skeptical at first, but after hearing about Vitamin H2 from a friend, I decided to give it a try. Now, I can't imagine my day without it! I feel more alert and motivated to exercise."
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Laura K.",
+            "testimonial_text": "Even with 8 hours of sleep, I woke up exhausted. After just 3 weeks on Vitamin H2, my sleep improved drastically, and I finally wake up feeling refreshed and ready to go."
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Michael B.",
+            "testimonial_text": "Brain fog was ruining my focus at work. I tried so many supplements, but nothing worked. Vitamin H2 cleared my mind, and I feel sharper and more present throughout the day."
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Anna P.",
+            "testimonial_text": "I've tried every vitamin out there, but nothing ever felt different. Vitamin H2 is the first supplement where I can truly feel the benefits - more energy, less stress, and better overall mood."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
