@@ -7,7 +7,7 @@
       <div class="w-full md:w-1/2  {% if section.settings.reverse_layout %}md:order-2{% endif %}">
         {% if section.settings.title != blank %}
           <h2
-            class="text-[#292524] text-[20px] md:text-[36px] font-medium max-sm:leading-[1.4] md:leading-none lg:!mb-2 max-sm:!mb-1"
+            class="text-[#292524] text-[20px] md:text-[36px] font-medium max-sm:leading-[1.4] md:leading-none md:!mb-2 max-sm:!mb-1"
           >
             {{ section.settings.title }}
           </h2>
@@ -36,7 +36,7 @@
       </div>
 
       <!-- Image Section -->
-      <div class="w-full md:w-1/2 {% if section.settings.reverse_layout %}md:order-1{% endif %}">
+      <div class="w-full md:w-1/2">
         {% if section.settings.main_image != blank %}
           <div>
             <img
@@ -50,7 +50,7 @@
           </div>
         {% endif %}
       </div>
-      {%- assign info_classes = 'block md:hidden' -%}
+      {%- assign info_classes = 'block md:!hidden' -%}
       {% render 'info-section-snippet', info_classes: info_classes %}
     </div>
   </div>
