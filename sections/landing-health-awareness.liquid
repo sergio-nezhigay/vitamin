@@ -1,13 +1,13 @@
 <div
   id="section-{{ section.id }}"
-  class="health-awareness-section {{ section.settings.custom_classes }} py-[64px] md:py-[96px]"
+  class="health-awareness-section {{ section.settings.custom_classes }} pt-[64px] md:pt-[96px] md:pb-[96px]"
 >
   <div class="mx-auto px-6 md:px-[112px] max-w-[1440px] ">
-    <div class="flex flex-col md:flex-row items-center max-sm:!gap-[17px] gap-8">
+    <div class="flex flex-col md:flex-row items-center max-sm:!gap-[20px] gap-8">
       <div class="w-full md:w-1/2  {% if section.settings.reverse_layout %}md:order-2{% endif %}">
         {% if section.settings.title != blank %}
           <h2
-            class="text-[#292524] text-[20px] md:text-[36px] font-medium leading-none lg:!mb-2 !mb-2"
+            class="text-[#292524] text-[20px] md:text-[36px] font-medium max-sm:leading-[1.4] md:leading-none lg:!mb-2 max-sm:!mb-1"
           >
             {{ section.settings.title }}
           </h2>
@@ -15,7 +15,7 @@
 
         {% if section.settings.subtitle != blank %}
           <h3
-            class="!mb-5 md:!mb-[21px] text-[#EA5167] text-[20px] md:text-[36px] font-medium leading-none"
+            class="!mb-[22px] md:!mb-[21px] text-[#EA5167] text-[20px] md:text-[36px] font-medium leading-none"
           >
             {{ section.settings.subtitle }}
           </h3>
@@ -58,7 +58,7 @@
 
 <style>
   p + p {
-    margin-top: 1em;
+    margin-top: 22px;
   }
 </style>
 
@@ -105,6 +105,12 @@
       "type": "text",
       "id": "custom_classes",
       "label": "Custom CSS Classes"
+    },
+    {
+      "type": "text",
+      "id": "text_parts",
+      "label": "Text Parts",
+      "default": "Low Cellular Energy|Poor Focus|Weakened Immunity|Chronic Fatigue"
     }
   ],
   "blocks": [

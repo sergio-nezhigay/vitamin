@@ -36,7 +36,9 @@
                 class="text-[12px] m-0 font-display font-medium md:text-[16px] max-sm:leading-[2]"
                 style="color: {{ section.settings.trust_text_color | default: '#666' }}"
               >
-                Trusted by <span class="font-bold">15,000+</span> Health Enthusiasts
+                {{ section.settings.trust_text_before }}
+                <span class="font-bold">{{ section.settings.trust_number }}</span>
+                {{ section.settings.trust_text_after }}
               </p>
             </div>
           {% endif %}
@@ -112,13 +114,13 @@
 
       <div class="flex-1 flex justify-center items-center">
         {% if section.settings.hero_image != blank %}
-          <div class="relative flex md-max:aspect-square lg:h-[600px]">
+          <div class="relative flex max-md:aspect-square lg:h-[600px]">
             <img
               src="{{ section.settings.hero_image | image_url: width:800 }}"
               alt="{{ section.settings.hero_image.alt | default: section.settings.title }}"
               class="w-full h-full object-cover"
               width="800"
-              height="600"
+              height="800"
             >
           </div>
         {% endif %}
@@ -428,6 +430,24 @@
         }
       ],
       "default": "image-first"
+    },
+    {
+      "type": "text",
+      "id": "trust_text_before",
+      "label": "Trust Text Before Number",
+      "default": "Trusted by "
+    },
+    {
+      "type": "text",
+      "id": "trust_number",
+      "label": "Trust Number",
+      "default": "15,000+"
+    },
+    {
+      "type": "text",
+      "id": "trust_text_after",
+      "label": "Trust Text After Number",
+      "default": " Health Enthusiasts"
     }
   ],
   "presets": [

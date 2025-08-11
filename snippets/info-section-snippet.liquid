@@ -1,5 +1,7 @@
 {%- comment -%} Info Section Snippet {%- endcomment -%}
-{% assign text_parts = 'Low Cellular Energy|Poor Focus|Weakened Immunity|Chronic Fatigue' | split: '|' %}
+{% comment %}{% assign text_parts = 'Low Cellular Energy|Poor Focus|Weakened Immunity|Chronic Fatigue' | split: '|' %}{% endcomment %}
+{%- comment -%} Info Section Snippet {%- endcomment -%}
+{% assign text_parts = section.settings.text_parts | split: '|' %}
 
 <div class="{{ info_classes | default: '' }}">
   <div
