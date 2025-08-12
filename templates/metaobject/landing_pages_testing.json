@@ -1,0 +1,52 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "landing_hero_LALFtN": {
+      "type": "landing-hero",
+      "name": "Premium Hero Section",
+      "settings": {
+        "custom_classes": "",
+        "max_width": "1200",
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 80,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "background_color": "#fdf4e9",
+        "trust_text": "Trusted by 15,000+ Health Enthusiasts",
+        "trust_text_color": "#666666",
+        "title": "<p>Fuel Your Body,<br/>Energize Your Life</p>",
+        "title_color": "#2c2c2c",
+        "title_size_desktop": 48,
+        "title_size_mobile": 32,
+        "description": "<p>Experience the benefits of Vitamin H2 – premium supplements formulated to enhance your energy, mental clarity, and overall wellness.</p>",
+        "description_color": "#666666",
+        "primary_button_text": "Buy now",
+        "primary_button_url": "",
+        "primary_button_bg": "#e74c3c",
+        "primary_button_color": "#ffffff",
+        "secondary_button_text": "Read more",
+        "secondary_button_url": "",
+        "secondary_button_color": "#666666",
+        "guarantee_text": "100% Satisfaction Guarantee",
+        "guarantee_icon": "",
+        "guarantee_color": "#e74c3c",
+        "hero_image": "shopify://shop_images/Group_-_Item_1_of_2_2_png.webp",
+        "mobile_layout": "image-first",
+        "trust_text_before": "Trusted by",
+        "trust_number": "15,000+",
+        "trust_text_after": "Health Enthusiasts"
+      }
+    }
+  },
+  "order": [
+    "landing_hero_LALFtN"
+  ]
+}

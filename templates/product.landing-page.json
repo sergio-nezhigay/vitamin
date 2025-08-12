@@ -1,0 +1,472 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h3"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "liquid_eihyBg": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n.usp-wrapper {\n  display: flex;\n  justify-content: flex-start; /* linksbündig statt zentriert */\n  margin: 30px 15px;\n}\n\n.usp-container {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  align-items: flex-start; /* ebenfalls linksbündig */\n}\n\n.usp-item {\n  display: flex;\n  align-items: center; /* vertikale Zentrierung */\n  gap: 10px;\n}\n\n.usp-item img {\n  width: 20px; /* kleinere Darstellung */\n  height: 20px;\n  flex-shrink: 0;\n}\n\n.usp-item p {\n  font-size: 14px;\n  margin: 0;\n}\n</style>\n\n<div class=\"usp-wrapper\">\n  <div class=\"usp-container\">\n    <div class=\"usp-item\">\n      <img src=\"{{ 'focus.svg' | asset_url }}\" alt=\"Fokus Icon\">\n      <p>Fokus & Konzentration</p>\n    </div>\n    <div class=\"usp-item\">\n      <img src=\"{{ 'fruity.svg' | asset_url }}\" alt=\"Fruchtiger Geschmack Icon\">\n      <p>Fruchtiger Geschmack</p>\n    </div>\n    <div class=\"usp-item\">\n      <img src=\"{{ 'boost.svg' | asset_url }}\" alt=\"Boost Icon\">\n      <p>Leistungs-Boost</p>\n    </div>\n    <div class=\"usp-item\">\n      <img src=\"{{ 'loslich.svg' | asset_url }}\" alt=\"Schnell löslich Icon\">\n      <p>Schnell löslich</p>\n    </div>\n  </div>\n</div>"
+          }
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "disabled": true,
+          "settings": {}
+        },
+        "separator": {
+          "type": "separator",
+          "disabled": true,
+          "settings": {}
+        },
+        "feature_with_icon_f4WrNN": {
+          "type": "feature_with_icon",
+          "disabled": true,
+          "settings": {
+            "text": "Mehr Fokus und Konzentration",
+            "link": "",
+            "icon": "picto-award-gift",
+            "custom_icon": "shopify://shop_images/Shipping.png",
+            "icon_width": 16,
+            "background": "rgba(0,0,0,0)",
+            "text_color": "#1c1c1c",
+            "border_color": ""
+          }
+        },
+        "feature_with_icon_azxcDc": {
+          "type": "feature_with_icon",
+          "disabled": true,
+          "settings": {
+            "text": "Erfrischend fruchtig",
+            "link": "",
+            "icon": "picto-award-gift",
+            "icon_width": 16,
+            "background": "rgba(0,0,0,0)",
+            "text_color": "#1c1c1c",
+            "border_color": ""
+          }
+        },
+        "feature_with_icon_h4KpWt": {
+          "type": "feature_with_icon",
+          "disabled": true,
+          "settings": {
+            "text": "Hochwertiger H2-Boost",
+            "link": "",
+            "icon": "picto-award-gift",
+            "icon_width": 16,
+            "background": "rgba(0,0,0,0)",
+            "text_color": "#1c1c1c",
+            "border_color": ""
+          }
+        },
+        "feature_with_icon_9B7eKp": {
+          "type": "feature_with_icon",
+          "disabled": true,
+          "settings": {
+            "text": "Schnell löslich",
+            "link": "",
+            "icon": "picto-award-gift",
+            "icon_width": 16,
+            "background": "rgba(0,0,0,0)",
+            "text_color": "#1c1c1c",
+            "border_color": ""
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "",
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "liquid_p8n8Qk": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<p>\n  <span style=\"color: #00703c; font-weight: bold;\">Sofort Lieferbar</span> – Lieferung zwischen \n  <span id=\"fromDate\" style=\"margin-left: 2px;\"></span> – \n  <span id=\"toDate\" style=\"margin-left: 2px;\"></span>\n</p>\n\n<script>\nfunction setDeliveryDates() {\n  function addDaysSkippingWeekends(startDate, days) {\n    let date = new Date(startDate);\n    while (days > 0) {\n      date.setDate(date.getDate() + 1);\n      if (date.getDay() !== 0 && date.getDay() !== 6) {\n        days--;\n      }\n    }\n    return date;\n  }\n\n  function formatDate(date) {\n    const day = (\"0\" + date.getDate()).slice(-2);\n    const month = (\"0\" + (date.getMonth() + 1)).slice(-2);\n    return `${day}.${month}`;\n  }\n\n  const fromEl = document.getElementById(\"fromDate\");\n  const toEl = document.getElementById(\"toDate\");\n\n  if (fromEl && toEl && fromEl.innerHTML === \"\") {\n    const fromDate = addDaysSkippingWeekends(new Date(), 1);\n    const toDate = addDaysSkippingWeekends(new Date(), 3);\n    fromEl.innerHTML = formatDate(fromDate);\n    toEl.innerHTML = formatDate(toDate);\n  }\n}\n\n// initial ausführen\ndocument.addEventListener(\"DOMContentLoaded\", setDeliveryDates);\n\n// sicherstellen, dass es auch nach Variantenwechseln aktiv bleibt\nconst interval = setInterval(setDeliveryDates, 500);\n</script>"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": false,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "#f05464",
+            "atc_button_text_color": "#ffffff",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "liquid_FiDK8J": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n    .payment-icons-wrapper {\n        display: flex;\n        justify-content: center;\n    }\n\n    .payment-icons {\n        display: flex;\n        justify-content: center;\n        gap: 10px;\n        width: fit-content;\n    }\n\n    .payment-icons img {\n        width: 30px;\n        height: auto;\n    }\n</style>\n\n<div class=\"payment-icons-wrapper\">\n    <div class=\"payment-icons\">\n        <img src=\"{{ 'american-express.svg' | asset_url }}\" alt=\"Amex\" class=\"payment-icon\">\n        <img src=\"{{ 'apple-pay.svg' | asset_url }}\" alt=\"Apple Pay\" class=\"payment-icon\">\n        <img src=\"{{ 'google-pay.svg' | asset_url }}\" alt=\"Google Pay\" class=\"payment-icon\">\n        <img src=\"{{ 'maestro.svg' | asset_url }}\" alt=\"Maestro\" class=\"payment-icon\">\n        <img src=\"{{ 'mastercard.svg' | asset_url }}\" alt=\"MasterCard\" class=\"payment-icon\">\n        <img src=\"{{ 'unionpay.svg' | asset_url }}\" alt=\"UnionPay\" class=\"payment-icon\">\n    </div>\n</div>"
+          }
+        },
+        "offers_N79mcn": {
+          "type": "offers",
+          "settings": {
+            "stack_offers": false,
+            "offer_1_title": "<strong>10 % Off mit dem Code \"Welcome10\"</strong>",
+            "offer_1_content": "<p>Teste unsere Supplements und spare 10 % bei deiner ersten Bestellung!</p>",
+            "offer_2_title": "",
+            "offer_2_content": "",
+            "offer_3_title": "",
+            "offer_3_content": "",
+            "background": "#fdf4e9",
+            "text_color": "#1c1c1c",
+            "border_color": "#fdf4e9"
+          }
+        },
+        "complementary_products": {
+          "type": "complementary_products",
+          "settings": {
+            "title": "Pairs well with",
+            "products_count": 2,
+            "show_below_gallery": true,
+            "stack_products": false,
+            "show_quick_buy": true
+          }
+        },
+        "accordion_gGr6x7": {
+          "type": "accordion",
+          "settings": {
+            "show_below_gallery": true,
+            "icon": "none",
+            "title": "Beschreibung",
+            "content": "<p>VitaminH2 ist ein hochmodernes Nahrungsergänzungsmittel, das mithilfe unserer exklusiven HydraFusion®-Technologie eine maximale Dosis an molekularem Wasserstoff freisetzt. Dieses einzigartige Supplement unterstützt die Zellgesundheit, verbessert die Hydration und hilft bei der Reduktion von Entzündungen. Ideal für alle, die ihre Regeneration beschleunigen und ihre geistige sowie körperliche Leistung steigern möchten.</p>",
+            "liquid": "",
+            "page": ""
+          }
+        },
+        "accordion_EtY6w6": {
+          "type": "accordion",
+          "settings": {
+            "show_below_gallery": true,
+            "icon": "none",
+            "title": "Anwendung",
+            "content": "<p>Löse einen Tab in 200–300 ml Wasser auf und warte, bis sie vollständig aufgelöst ist. Für ein intensiveres Erlebnis können auch zwei Tabs pro Glas verwendet werden.</p>",
+            "liquid": "",
+            "page": ""
+          }
+        },
+        "accordion_Ve6hb6": {
+          "type": "accordion",
+          "settings": {
+            "show_below_gallery": true,
+            "icon": "none",
+            "title": "Verzehrempfehlung",
+            "content": "<p>Nehme täglich 1–2 Tabletten für optimale Ergebnisse. Die Einnahme von bis zu 5 Tabletten pro Tag ist unbedenklich. Bitte überschreite nicht die empfohlene Tagesdosis.</p>",
+            "liquid": "",
+            "page": ""
+          }
+        },
+        "accordion_6LFC4U": {
+          "type": "accordion",
+          "disabled": true,
+          "settings": {
+            "show_below_gallery": true,
+            "icon": "none",
+            "title": "Lab-Analysen",
+            "content": "<p>Share some content to your customers about your products.</p>",
+            "liquid": "",
+            "page": ""
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "collapse_content": true,
+            "show_below_gallery": false
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "liquid_eihyBg",
+        "payment_terms",
+        "separator",
+        "feature_with_icon_f4WrNN",
+        "feature_with_icon_azxcDc",
+        "feature_with_icon_h4KpWt",
+        "feature_with_icon_9B7eKp",
+        "variant_picker",
+        "quantity_selector",
+        "liquid_p8n8Qk",
+        "buy_buttons",
+        "liquid_FiDK8J",
+        "offers_N79mcn",
+        "complementary_products",
+        "accordion_gGr6x7",
+        "accordion_EtY6w6",
+        "accordion_Ve6hb6",
+        "accordion_6LFC4U",
+        "description"
+      ],
+      "settings": {
+        "color_scheme": "scheme-d158b51a-f3e3-4810-a2bb-41206d01c467",
+        "container_size": "lg",
+        "product_info_size": 35,
+        "show_sticky_add_to_cart": true,
+        "center_basic_info": false,
+        "desktop_media_layout": "carousel_thumbnails_bottom",
+        "desktop_media_grid_gap": 30,
+        "mobile_controls": "thumbnails",
+        "enable_media_autoplay": false,
+        "enable_video_looping": false,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "recommendations_count": 10,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": "",
+        "title": "Related products",
+        "content": ""
+      }
+    },
+    "image_with_text_WpJme6": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_jAAnXa": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": "Platzhalter"
+          }
+        },
+        "heading_hcd4r8": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "",
+            "text2": "<h2>Key-Facts</h2>",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_TVNJYa": {
+          "type": "richtext",
+          "settings": {
+            "content_class": "",
+            "content2": "",
+            "content": "<h4><strong>Hochdosierter Wasserstoff</strong></h4><p>Fruchtiges Pfirsich-Aroma für ein angenehmes Geschmackserlebnis</p><h4><strong>Erfrischender Geschmack</strong></h4><p>Fruchtiges Pfirsich-Aroma für ein angenehmes Geschmackserlebnis</p><h4><strong>0 Zucker, 0 Farbstoffe, 0 GMO</strong></h4><p>Frei von unnötigen Zusätzen – nur reine, hochwertige Inhaltsstoffe</p><h4><strong>Die smarte Alternative</strong></h4><p>Perfekte Ergänzung für Sportler, Biohacker und alle, die ihre Gesundheit aktiv unterstützen möchten</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_jAAnXa",
+        "heading_hcd4r8",
+        "richtext_TVNJYa"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "/* Desktop ab 1024px */@media only screen and (min-width: 1024px) {/* Selektiert alle IMG-Elemente, deren src auf image_1_V2.png endet */ img[src$=\"image_1_V2.png\"] {max-width: 300px; /* gewünschte maximale Breite */ width: 80%; /* skaliert das Bild bis zur max-width */ height: auto; /* behält das Seitenverhältnis */ }}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-d158b51a-f3e3-4810-a2bb-41206d01c467",
+        "separate_section_with_border": true,
+        "image": "shopify://shop_images/Image_1_V2.png",
+        "mobile_image": "shopify://shop_images/Image_1_V2.png",
+        "reveal_on_scroll": true,
+        "image_position": "start",
+        "content_width": "sm",
+        "remove_vertical_spacing": false
+      }
+    },
+    "images_with_text_scroll_3RrRJF": {
+      "type": "images-with-text-scroll",
+      "blocks": {
+        "image_with_text_aMzyFz": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/Image_PDP_V4.png",
+            "subheading": "",
+            "title": "",
+            "content": "<h4><strong>Hochdosierter Wasserstoff</strong></h4><p>Fruchtiges Pfirsich- oder Erdbeeraroma für ein angenehmes Geschmackserlebnis</p><h4><strong>Erfrischender Geschmack</strong></h4><p>Fruchtiges Pfirsich-Aroma für ein angenehmes Geschmackserlebnis</p><h4><strong>0 Zucker, 0 Farbstoffe, 0 GMO</strong></h4><p>Frei von unnötigen Zusätzen – nur reine, hochwertige Inhaltsstoffe</p><h4><strong>Die smarte Alternative</strong></h4><p>Perfekte Ergänzung für Sportler, Biohacker und alle, die ihre Gesundheit aktiv unterstützen möchten</p>",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "solid"
+          }
+        }
+      },
+      "block_order": [
+        "image_with_text_aMzyFz"
+      ],
+      "name": "t:sections.images_with_text_scroll.presets.images_with_text_scroll.name",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "image_position": "start",
+        "text_alignment": "start",
+        "heading_tag": "h1",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "blog_posts_tq3fWm": {
+      "type": "blog-posts",
+      "settings": {
+        "color_scheme": "scheme-e240f942-9acb-4b5c-8e31-a59739abd614",
+        "separate_section_with_border": true,
+        "blog": "news",
+        "posts_count": 3,
+        "stack_on_mobile": false,
+        "show_category": true,
+        "show_date": false,
+        "show_excerpt": true,
+        "show_read_more": true,
+        "subheading": "",
+        "title": "Gesundheitstipps",
+        "content": "",
+        "button_link": "",
+        "button_text": "Mehr ansehen"
+      }
+    },
+    "faq_3QXyTE": {
+      "type": "faq",
+      "blocks": {
+        "category_PF6ejx": {
+          "type": "category",
+          "settings": {
+            "title": "Order",
+            "icon": "none",
+            "icon_width": 16
+          }
+        },
+        "question_kqhehY": {
+          "type": "question",
+          "settings": {
+            "question": "Do you ship overseas?",
+            "answer": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+          }
+        },
+        "question_Lhnybr": {
+          "type": "question",
+          "settings": {
+            "question": "How long will it take to get my orders?",
+            "answer": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+          }
+        },
+        "question_XceUQ4": {
+          "type": "question",
+          "settings": {
+            "question": "Any question?",
+            "answer": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "category_PF6ejx",
+        "question_kqhehY",
+        "question_Lhnybr",
+        "question_XceUQ4"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-d158b51a-f3e3-4810-a2bb-41206d01c467",
+        "side_header": "",
+        "side_text": "",
+        "separate_section_with_border": true,
+        "show_categories": false,
+        "subheading": "Need help?",
+        "title": "Frequently Asked Questions",
+        "content": ""
+      }
+    },
+    "testimonials_G8xRCc": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_fXg3CP": {
+          "type": "testimonial",
+          "settings": {
+            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>",
+            "logo_max_width": 140,
+            "logo_mobile_max_width": 100,
+            "author": ""
+          }
+        },
+        "testimonial_hXc6xK": {
+          "type": "testimonial",
+          "settings": {
+            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>",
+            "logo_max_width": 140,
+            "logo_mobile_max_width": 100,
+            "author": ""
+          }
+        },
+        "testimonial_PiHAg7": {
+          "type": "testimonial",
+          "settings": {
+            "content": "<p>Share what your customers are saying about your products, customer service or shipping rates.</p>",
+            "logo_max_width": 140,
+            "logo_mobile_max_width": 100,
+            "author": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_fXg3CP",
+        "testimonial_hXc6xK",
+        "testimonial_PiHAg7"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "auto_rotate_between_testimonials": false,
+        "cycle_speed": 5,
+        "font_size_factor": 1,
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "image_with_text_WpJme6",
+    "images_with_text_scroll_3RrRJF",
+    "blog_posts_tq3fWm",
+    "faq_3QXyTE",
+    "testimonials_G8xRCc"
+  ]
+}

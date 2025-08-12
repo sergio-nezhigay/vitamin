@@ -21,27 +21,27 @@
         "background_color": "#fdf4e9",
         "trust_text": "Trusted by 15,000+ Health Enthusiasts",
         "trust_text_color": "#44403c",
-        "title": "<p>Warum bin ich ständig müde, obwohl ich mich gesund ernähre?</p>",
+        "title": "<p>Fuel Your Body,<br/>Energize Your Life</p>",
         "title_color": "#292524",
         "title_size_desktop": 48,
         "title_size_mobile": 32,
-        "description": "<p>Das ist kein Zufall – es ist ein Zeichen, dass dein Körper Unterstützung auf Zellebene braucht.</p>",
+        "description": "<p>Experience the benefits of Vitamin H2 – premium supplements formulated to enhance your energy, mental clarity, and overall wellness.</p>",
         "description_color": "#000000",
-        "primary_button_text": "Jetzt kaufen",
-        "primary_button_url": "shopify://products/vitaminh2",
+        "primary_button_text": "Buy now",
+        "primary_button_url": "shopify://collections/all",
         "primary_button_bg": "#ea5167",
         "primary_button_color": "#ffffff",
-        "secondary_button_text": "Mehr dazu",
+        "secondary_button_text": "Read more",
         "secondary_button_url": "shopify://blogs/news",
         "secondary_button_color": "#344054",
-        "guarantee_text": "100% Wohlfühl-Garantie",
+        "guarantee_text": "100% Satisfaction Guarantee",
         "guarantee_icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M9 12L11 14L15.5 9.5M7.33377 3.8187C8.1376 3.75455 8.90071 3.43846 9.51447 2.91542C10.9467 1.69486 13.0533 1.69486 14.4855 2.91542C15.0993 3.43846 15.8624 3.75455 16.6662 3.8187C18.5421 3.96839 20.0316 5.45794 20.1813 7.33377C20.2455 8.1376 20.5615 8.90071 21.0846 9.51447C22.3051 10.9467 22.3051 13.0533 21.0846 14.4855C20.5615 15.0993 20.2455 15.8624 20.1813 16.6662C20.0316 18.5421 18.5421 20.0316 16.6662 20.1813C15.8624 20.2455 15.0993 20.5615 14.4855 21.0846C13.0533 22.3051 10.9467 22.3051 9.51447 21.0846C8.90071 20.5615 8.1376 20.2455 7.33377 20.1813C5.45794 20.0316 3.96839 18.5421 3.8187 16.6662C3.75455 15.8624 3.43846 15.0993 2.91542 14.4855C1.69486 13.0533 1.69486 10.9467 2.91542 9.51447C3.43846 8.90071 3.75455 8.1376 3.8187 7.33377C3.96839 5.45794 5.45794 3.96839 7.33377 3.8187Z\" stroke=\"#EA5167\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
         "guarantee_color": "#ea5167",
         "hero_image": "shopify://shop_images/Picture.webp",
         "mobile_layout": "image-first",
-        "trust_text_before": "Über",
-        "trust_number": "15’000",
-        "trust_text_after": "Menschen spüren wieder echte Energie"
+        "trust_text_before": "Trusted by",
+        "trust_number": "15,000+",
+        "trust_text_after": "Health Enthusiasts"
       }
     },
     "landing-marquee": {
@@ -168,8 +168,8 @@
         "testimonial_Yt78qc": {
           "type": "testimonial",
           "settings": {
-            "quote": "„Ich dachte, es liegt am Stress – bis ich verstanden habe, dass meine Zellen unter oxidativem Stress leiden.“",
-            "author": "Vitamin H2 Kundin",
+            "quote": "“I thought this tiredness was just part of getting older. I kept treating the wrong thing.” ",
+            "author": "Vitamin H2 Customer",
             "avatar": "shopify://shop_images/Ellipse_68.jpg"
           }
         }
@@ -178,14 +178,13 @@
         "testimonial_Yt78qc"
       ],
       "settings": {
-        "title": "Es ist nicht nur Müdigkeit.",
-        "subtitle": "Es ist ein Warnsignal deines Körpers.",
-        "description": "<p>Müdigkeit, Antriebslosigkeit, schwache Konzentration und langsame Regeneration sind oft Signale deines Körpers für oxidativen Stress und stille Entzündungen, die deine Zellen belasten.</p>",
-        "process_text": "<p>Zellstress → Entzündungen → Energieverlust → Leistungsabfall</p>",
+        "title": "It's Not Just Being Tired.",
+        "subtitle": "It's a Body Signal.",
+        "description": "<p>Fatigue isn't just \"normal life\" – it's your body's way of saying, \"Something's off inside.\"</p><p>When your cells don't get enough nutrients, it leads to poor energy production, mental fog, low immunity, and that constant feeling of exhaustion you can't shake off.</p>",
+        "process_text": "<p>Low Cellular Energy → Poor Focus → Weakened Immunity → Chronic Fatigue</p>",
         "main_image": "shopify://shop_images/Frame_1096.webp",
         "reverse_layout": false,
-        "custom_classes": "",
-        "text_parts": "Zellstress | Entzündungen | Energieverlust | Leistungsabfall"
+        "custom_classes": ""
       }
     },
     "landing_vitamin_ingredients": {
@@ -255,124 +254,16 @@
         "ingredient_Y4zgWH"
       ],
       "settings": {
-        "title": "Wertvolle Inhaltsstoffe. Spürbare Wirkung.",
+        "title": "Ingredients of VitaminH2 – Small but Mighty",
         "title_color": "#1f2937",
         "title_size_desktop": 36,
-        "subtitle": "<p>VitaminH2 enthält nur wertvolle Inhaltsstoffe: Molekularer Wasserstoff und sorgfältig ausgewählte Mineralien, die dein Körper kennt und braucht. Keine künstlichen Zusätze, keine versteckten Inhaltsstoffe – einfach reine Unterstützung für mehr Energie, Fokus und Wohlbefinden.</p>",
+        "subtitle": "<p>VitaminH2 is a powerful blend of molecular hydrogen and essential minerals, crafted to <strong>boost energy, fight fatigue</strong>, and <strong>support overall wellness</strong> from the inside out.</p>",
         "subtitle_color": "#6b7280",
         "subtitle_size_desktop": 18,
         "section_background": "#fdf4e9",
         "card_background": "#ffffff",
         "card_border_radius": 24,
         "custom_classes": ""
-      }
-    },
-    "featured_product_czCePe": {
-      "type": "featured-product",
-      "blocks": {
-        "vendor_tmcwbH": {
-          "type": "vendor",
-          "settings": {}
-        },
-        "title_QrbiyA": {
-          "type": "title",
-          "settings": {
-            "heading_tag": "h3"
-          }
-        },
-        "badges_gcXAbK": {
-          "type": "badges",
-          "settings": {}
-        },
-        "price_zckqfz": {
-          "type": "price",
-          "settings": {
-            "show_taxes_notice": false
-          }
-        },
-        "rating_Vd8aGa": {
-          "type": "rating",
-          "settings": {
-            "show_empty": true,
-            "rating_mode": "rating"
-          }
-        },
-        "payment_terms_YNgYaW": {
-          "type": "payment_terms",
-          "settings": {}
-        },
-        "separator_U3U88D": {
-          "type": "separator",
-          "settings": {}
-        },
-        "description_jYEnUN": {
-          "type": "description",
-          "settings": {
-            "collapse_content": false
-          }
-        },
-        "variant_picker_biqgr3": {
-          "type": "variant_picker",
-          "settings": {
-            "hide_sold_out_variants": false,
-            "selector_style": "block",
-            "swatch_selector_style": "swatch",
-            "variant_image_options": "",
-            "size_chart_page": ""
-          }
-        },
-        "quantity_selector_cVxyar": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "buy_buttons_CWdmJi": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_payment_button": false,
-            "show_gift_card_recipient": true,
-            "atc_button_background": "",
-            "atc_button_text_color": "",
-            "payment_button_background": "",
-            "payment_button_text_color": ""
-          }
-        },
-        "pickup_availability_C8D9Px": {
-          "type": "pickup_availability",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "vendor_tmcwbH",
-        "title_QrbiyA",
-        "badges_gcXAbK",
-        "price_zckqfz",
-        "rating_Vd8aGa",
-        "payment_terms_YNgYaW",
-        "separator_U3U88D",
-        "description_jYEnUN",
-        "variant_picker_biqgr3",
-        "quantity_selector_cVxyar",
-        "buy_buttons_CWdmJi",
-        "pickup_availability_C8D9Px"
-      ],
-      "name": "t:sections.featured_product.presets.featured_product.name",
-      "settings": {
-        "color_scheme": "scheme-d158b51a-f3e3-4810-a2bb-41206d01c467",
-        "product": "vitaminh2",
-        "separate_section_with_border": true,
-        "container_size": "lg",
-        "product_info_size": 45,
-        "center_basic_info": false,
-        "desktop_media_layout": "carousel_thumbnails_bottom",
-        "desktop_media_grid_gap": 30,
-        "mobile_controls": "dots",
-        "enable_media_autoplay": false,
-        "enable_video_looping": true,
-        "enable_image_zoom": false,
-        "max_image_zoom_level": 3,
-        "subheading": "",
-        "title": "Featured product",
-        "content": ""
       }
     },
     "from_fatigue": {
@@ -674,7 +565,6 @@
     "landing-marquee",
     "landing_health_awareness",
     "landing_vitamin_ingredients",
-    "featured_product_czCePe",
     "from_fatigue",
     "landing_video_testimonials",
     "landing_testimonials",
