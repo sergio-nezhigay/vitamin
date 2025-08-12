@@ -9,7 +9,7 @@
 >
   <div
     class="mx-auto leading-normal"
-    style="max-width: {{ section.settings.max_width | default: '1200' }}px;"
+    style="max-width: 1920px;"
   >
     <div
       class="
@@ -111,7 +111,7 @@
 
       <div class="flex-1 flex justify-center items-center">
         {% if section.settings.hero_image != blank %}
-          <div class="relative flex max-md:aspect-square lg:h-[600px]">
+          <div class="relative flex max-md:aspect-square xl:w-full md:aspect-[720/600] max-w-[960px]">
             <img
               src="{{ section.settings.hero_image | image_url: width:800 }}"
               alt="{{ section.settings.hero_image.alt | default: section.settings.title }}"
