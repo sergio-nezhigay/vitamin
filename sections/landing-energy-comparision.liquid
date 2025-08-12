@@ -24,12 +24,12 @@
               {% case block.type %}
                 {% when 'image_callout' %}
                   <div
-                    class="absolute top-[25px] md:top-[39px] left-[62px] md:left-[247px] z-10 px-4 py-3 rounded-lg whitespace-nowrap shadow-lg"
+                    class="absolute top-[25px] md:top-[39px] left-[62px] md:left-[247px] z-10 px-6 py-[9px] rounded-lg  whitespace-nowrap shadow-lg"
                     style="                      background: {{ block.settings.callout_bg }};"
                   >
                     {% if block.settings.callout_text != blank %}
                       <div
-                        class="block text-[14px] font-semibold font-nunito leading-normal"
+                        class="block font-semibold font-nunito text-[14px] leading-[2.14]"
                         style="color: {{ block.settings.text_color }}; "
                       >
                         {{ block.settings.callout_text }}
@@ -37,9 +37,15 @@
                     {% endif %}
                     {% if block.settings.show_arrow %}
                       <div
-                        class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-2 border-r-2 border-t-2 border-transparent"
-                        style="border-top-color: {{ block.settings.callout_bg }};"
-                      ></div>
+                        class="hidden md:block absolute bottom-0 left-1/2 transform translate-x-1 translate-y-[100%] "
+                      >
+                        {% render 'icon-long-arrow-desktop' %}
+                      </div>
+                      <div
+                        class="block md:hidden absolute  -bottom-2 right-[15px] top-[55px]"
+                      >
+                        {% render 'icon-long-arrow-mobile' %}
+                      </div>
                     {% endif %}
                   </div>
               {% endcase %}
@@ -60,7 +66,7 @@
 
             {% if section.settings.bottom_callout_text != blank %}
               <div
-                class="md:absolute max-sm:mt-[25px] md:bottom-[42px] max-sm:mb-6 px-4 py-2.5 rounded-full md:whitespace-nowrap text-center text-[14px] leading-[1.4] font-semibold font-nunito"
+                class="md:absolute max-sm:mt-[25px] md:bottom-[42px] max-sm:mb-6 px-4 py-2.5 rounded-full md:whitespace-nowrap text-center text-[14px] leading-[1.4] font-semibold font-nunito shadow-lg"
                 style="background: {{ section.settings.bottom_callout_bg }};"
               >
                 <span style="color: {{ section.settings.bottom_text_color }}">
