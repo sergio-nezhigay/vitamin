@@ -1,10 +1,10 @@
 <div
   id="section-{{ section.id }}"
-  class="w-full relative {{ section.settings.custom_classes }} pt-[64px]"
+  class="w-full relative {{ section.settings.custom_classes }} outline outline-red-700 max-sm:pt-[64px] md:pb-[96px]"
   style="background: {{ section.settings.background_color }};"
 >
   <div class="mx-auto max-sm:px-6" style="max-width: {{ section.settings.max_width }}px;">
-    <div class="flex items-center max-sm:flex-col-reverse gap-6 md:gap-8 flex-col lg:flex-row">
+    <div class="flex items-center max-sm:flex-col-reverse gap-6 md:!gap-[32px] flex-col lg:flex-row">
       <!-- Left Image Section -->
       <div class="flex-1 relative w-full">
         {% if section.settings.main_image %}
@@ -24,16 +24,16 @@
               {% case block.type %}
                 {% when 'image_callout' %}
                   <div
-                    class="absolute top-[25px] left-[62px] z-10 px-4 py-3 rounded-lg whitespace-nowrap shadow-lg"
+                    class="absolute top-[25px] md:top-[39px] left-[62px] md:left-[247px] z-10 px-4 py-3 rounded-lg whitespace-nowrap shadow-lg"
                     style="                      background: {{ block.settings.callout_bg }};"
                   >
                     {% if block.settings.callout_text != blank %}
-                      <span
+                      <div
                         class="block text-[14px] font-semibold font-nunito leading-normal"
                         style="color: {{ block.settings.text_color }}; "
                       >
                         {{ block.settings.callout_text }}
-                      </span>
+                      </div>
                     {% endif %}
                     {% if block.settings.show_arrow %}
                       <div
@@ -60,7 +60,7 @@
 
             {% if section.settings.bottom_callout_text != blank %}
               <div
-                class="md:absolute max-sm:mt-[25px] md:bottom-10 max-sm:mb-6 px-4 py-2.5 rounded-full md:whitespace-nowrap text-center text-[14px] leading-[1.4] font-semibold font-nunito"
+                class="md:absolute max-sm:mt-[25px] md:bottom-[42px] max-sm:mb-6 px-4 py-2.5 rounded-full md:whitespace-nowrap text-center text-[14px] leading-[1.4] font-semibold font-nunito"
                 style="background: {{ section.settings.bottom_callout_bg }};"
               >
                 <span style="color: {{ section.settings.bottom_text_color }}">
@@ -86,49 +86,51 @@
       </div>
 
       <!-- Right Content Section -->
-      <div class="flex-1">
-        {% if section.settings.main_title != blank %}
-          <h2
-            class="font-medium leading-[1.4] text-[20px]"
-            style="color: {{ section.settings.title_color }};"
-          >
-            {{ section.settings.main_title }}
-          </h2>
-        {% endif %}
+      <div class="flex-1 ">
+        <div class="max-w-[520px] md:ml-auto">
+          {% if section.settings.main_title != blank %}
+            <h2
+              class="font-medium leading-[1.4] text-[20px] md:text-[36px] md:leading-[1.22]"
+              style="color: {{ section.settings.title_color }};"
+            >
+              {{ section.settings.main_title }}
+            </h2>
+          {% endif %}
 
-        {% if section.settings.subtitle != blank %}
-          <h3
-            class="font-medium leading-[1.4] text-[20px] !mb-5"
-            style="color: {{ section.settings.subtitle_color }};"
-          >
-            {{ section.settings.subtitle }}
-          </h3>
-        {% endif %}
+          {% if section.settings.subtitle != blank %}
+            <h3
+              class="font-medium leading-[1.4] text-[20px] !mb-5 md:text-[36px] md:leading-[1.22]"
+              style="color: {{ section.settings.subtitle_color }};"
+            >
+              {{ section.settings.subtitle }}
+            </h3>
+          {% endif %}
 
-        {% if section.settings.description != blank %}
-          <div
-            class="font-nunito"
-            style="
-              color: {{ section.settings.description_color }};
-              font-size: {{ section.settings.description_size_desktop }}px;
-            "
-          >
-            {{ section.settings.description }}
-          </div>
-        {% endif %}
+          {% if section.settings.description != blank %}
+            <div
+              class="font-nunito font-medium text-[14px] md:text-[18px] leading-[1.4] md:mb-6"
+              style="
+                color: {{ section.settings.description_color }};
+                font-size: {{ section.settings.description_size_desktop }}px;
+              "
+            >
+              {{ section.settings.description }}
+            </div>
+          {% endif %}
 
-        {% if section.settings.button_text != blank %}
-          <a
-            href="{{ section.settings.button_link | default: '#' }}"
-            class="hidden md:block px-7 py-3.5 rounded-full no-underline font-semibold ease-in-out border-0 cursor-pointer font-nunito "
-            style="
-              background: {{ section.settings.button_bg }};
-              color: {{ section.settings.button_text_color }};
-            "
-          >
-            {{ section.settings.button_text }}
-          </a>
-        {% endif %}
+          {% if section.settings.button_text != blank %}
+            <a
+              href="{{ section.settings.button_link | default: '#' }}"
+              class="hidden md:block md:w-fit py-3.5 px-[18px] rounded-full no-underline font-bold text-[16px] ease-in-out border-0 cursor-pointer font-nunito "
+              style="
+                background: {{ section.settings.button_bg }};
+                color: {{ section.settings.button_text_color }};
+              "
+            >
+              {{ section.settings.button_text }}
+            </a>
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>
@@ -262,13 +264,6 @@
       font-size: {{ section.settings.text_size_mobile }}px !important;
     }
 
-  }
-
-  @media (min-width: 769px) {
-    #section-{{ section.id }} {
-      padding-top: {{ section.settings.padding_top_desktop }}px !important;
-      padding-bottom: {{ section.settings.padding_bottom_desktop }}px !important;
-    }
   }
 </style>
 
@@ -467,10 +462,10 @@
       "content": "Bottom Callout"
     },
     {
-      "type": "text",
+      "type": "richtext",
       "id": "bottom_callout_text",
       "label": "Bottom Callout Text",
-      "default": "Random multivitamins = not enough active ingredients"
+      "default": "<p>Random multivitamins = not enough active ingredients</p>"
     },
     {
       "type": "color",
@@ -491,10 +486,10 @@
       "name": "Image Callout",
       "settings": [
         {
-          "type": "text",
+          "type": "richtext",
           "id": "callout_text",
           "label": "Callout Text",
-          "default": "Coffee = short-lived energy crash"
+          "default": "<p><strong>Coffee</strong> = short-lived energy crash</p>"
         },
 
         {

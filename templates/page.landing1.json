@@ -194,12 +194,9 @@
         "image_callout_qFzHFh": {
           "type": "image_callout",
           "settings": {
-            "callout_text": "Coffee = short-lived energy crash",
-            "position_top": 20,
-            "position_left": 80,
+            "callout_text": "<p>Coffee = <strong>short-lived</strong> energy crash</p>",
             "callout_bg": "#fdf4e9",
             "text_color": "#44403c",
-            "text_size_desktop": 18,
             "text_size_mobile": 16,
             "show_arrow": true
           }
@@ -209,7 +206,7 @@
         "image_callout_qFzHFh"
       ],
       "settings": {
-        "max_width": "1200",
+        "max_width": "1216",
         "padding_top_desktop": 0,
         "padding_bottom_desktop": 0,
         "padding_top_mobile": 0,
@@ -220,13 +217,11 @@
         "bottom_image": "shopify://shop_images/Frame_1099.webp",
         "main_title": "Tried It All? Still Exhausted?",
         "title_color": "#292524",
-        "title_size_desktop": 36,
         "title_size_mobile": 20,
         "subtitle": "You're Not Alone.",
         "subtitle_color": "#ea5167",
-        "subtitle_size_desktop": 36,
         "subtitle_size_mobile": 20,
-        "description": "<p>You've tried more coffee, energy drinks, vitamins from the store, even quick-fix supplements... And yet – you're still dragging through the day. Why?</p><p>Because most of those solutions are temporary boosters or overdosed formulas. They don't address the root cause: your body's energy production at a cellular level.</p><p>It's not that these options are bad – they're just not complete.</p><p>That's why Vitamin H2 combines the right nutrients, in the right form, to truly recharge your body from the bottom up.</p>",
+        "description": "<p>You've tried more coffee, energy drinks, vitamins from the store, even quick-fix supplements... And yet – you're still dragging through the day. Why?</p><p>Because most of those solutions are temporary boosters or overdosed formulas. They don't address the root cause: your body's energy production at a cellular level.</p><p>It's not that these options are bad – they're just not complete.</p><p>That's why <strong>Vitamin H2 combines the right nutrients</strong>, in the right form, to truly <strong>recharge your body from the bottom up.</strong></p>",
         "description_color": "#44403c",
         "description_size_desktop": 18,
         "description_size_mobile": 14,
@@ -234,13 +229,10 @@
         "button_link": "#",
         "button_bg": "#ea5167",
         "button_text_color": "#ffffff",
-        "button_text_size_desktop": 16,
         "button_text_size_mobile": 16,
-        "bottom_callout_text": "Random multivitamins = not enough active ingredients",
+        "bottom_callout_text": "<p>Random multivitamins = <strong>not enough</strong> active ingredients</p>",
         "bottom_callout_bg": "#fdf4e9",
-        "bottom_text_color": "#44403c",
-        "bottom_text_size_desktop": 18,
-        "bottom_text_size_mobile": 14
+        "bottom_text_color": "#44403c"
       }
     },
     "landing_vitamin_ingredients": {
