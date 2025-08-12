@@ -1,23 +1,19 @@
 <div
   id="section-{{ section.id }}"
-  class="w-full relative {{ section.settings.custom_classes }}"
-  style="
-    background: {{ section.settings.background_color }};
-    padding-top: {{ section.settings.padding_top_mobile }}px;
-    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
-  "
+  class="w-full relative {{ section.settings.custom_classes }} pt-[64px]"
+  style="background: {{ section.settings.background_color }};"
 >
-  <div class="mx-auto px-5" style="max-width: {{ section.settings.max_width }}px;">
-    <div class="flex items-center max-sm:flex-col-reverse gap-15 flex-col lg:flex-row">
+  <div class="mx-auto max-sm:px-6" style="max-width: {{ section.settings.max_width }}px;">
+    <div class="flex items-center max-sm:flex-col-reverse gap-6 md:gap-8 flex-col lg:flex-row">
       <!-- Left Image Section -->
-      <div class="flex-1 relative">
+      <div class="flex-1 relative w-full">
         {% if section.settings.main_image %}
           <div class="relative">
             <img
               src="{{ section.settings.main_image | image_url: width: 600, height: 600 }}"
               alt="{{ section.settings.main_image.alt | default: 'Energy comparison' }}"
               loading="lazy"
-              class="w-[80.4%] h-auto rounded-3xl"
+              class="w-[80.4%] md:w-[61.4%] h-auto rounded-3xl"
               width="600"
               height="600"
             >
@@ -28,13 +24,13 @@
               {% case block.type %}
                 {% when 'image_callout' %}
                   <div
-                    class="absolute top-15 left-20 z-10 px-4 py-3 rounded-lg whitespace-nowrap shadow-lg"
+                    class="absolute top-[25px] left-[62px] z-10 px-4 py-3 rounded-lg whitespace-nowrap shadow-lg"
                     style="                      background: {{ block.settings.callout_bg }};"
                   >
                     {% if block.settings.callout_text != blank %}
                       <span
-                        class="block"
-                        style="color: {{ block.settings.text_color }}; font-size: {{ block.settings.text_size_desktop }}px;"
+                        class="block text-[14px] font-semibold font-nunito leading-normal"
+                        style="color: {{ block.settings.text_color }}; "
                       >
                         {{ block.settings.callout_text }}
                       </span>
@@ -52,19 +48,19 @@
         {% endif %}
 
         {% if section.settings.bottom_image %}
-          <div class="relative inline-block max-sm:block max-sm:-mt-[48px]">
+          <div class="relative block   max-sm:-mt-[38px] md:-mt-[100px] md:ml-auto">
             <img
               src="{{ section.settings.bottom_image | image_url: width: 400, height: 400 }}"
               alt="{{ section.settings.bottom_image.alt | default: 'Supplements comparison' }}"
               loading="lazy"
-              class="w-[62.4%] ml-auto h-auto rounded-2xl"
+              class="max-sm:aspect-[204/194] md:aspect-auto  w-[62.4%] md:w-[62.4%] ml-auto h-auto rounded-[24px]"
               width="400"
               height="400"
             >
 
             {% if section.settings.bottom_callout_text != blank %}
               <div
-                class="md:absolute max-sm:mt-[25px] max-sm:mb-6 px-4 py-2.5 rounded-full whitespace-nowrap"
+                class="md:absolute max-sm:mt-[25px] md:bottom-10 max-sm:mb-6 px-4 py-2.5 rounded-full md:whitespace-nowrap text-center text-[14px] leading-[1.4] font-semibold font-nunito"
                 style="background: {{ section.settings.bottom_callout_bg }};"
               >
                 <span style="color: {{ section.settings.bottom_text_color }}">
@@ -78,11 +74,10 @@
         {% if section.settings.button_text != blank %}
           <a
             href="{{ section.settings.button_link | default: '#' }}"
-            class="inline-block md:hidden px-7 py-3.5 rounded-full no-underline font-semibold transition-all duration-300 ease-in-out border-0 cursor-pointer hover:-translate-y-0.5 hover:shadow-xl"
+            class="md:hidden py-3 rounded-[8px] w-full flex flex-center justify-center no-underline font-bold font-nunito border-0 cursor-pointer text-[16px] leading-normal"
             style="
               background: {{ section.settings.button_bg }};
               color: {{ section.settings.button_text_color }};
-              font-size: {{ section.settings.button_text_size_desktop }}px;
             "
           >
             {{ section.settings.button_text }}
@@ -91,14 +86,11 @@
       </div>
 
       <!-- Right Content Section -->
-      <div class="flex-1 max-w-md text-center lg:text-left">
+      <div class="flex-1">
         {% if section.settings.main_title != blank %}
           <h2
-            class="font-bold leading-tight m-0 mb-4"
-            style="
-              color: {{ section.settings.title_color }};
-              font-size: {{ section.settings.title_size_desktop }}px;
-            "
+            class="font-medium leading-[1.4] text-[20px]"
+            style="color: {{ section.settings.title_color }};"
           >
             {{ section.settings.main_title }}
           </h2>
@@ -106,11 +98,8 @@
 
         {% if section.settings.subtitle != blank %}
           <h3
-            class="font-semibold leading-snug m-0 mb-6"
-            style="
-              color: {{ section.settings.subtitle_color }};
-              font-size: {{ section.settings.subtitle_size_desktop }}px;
-            "
+            class="font-medium leading-[1.4] text-[20px] !mb-5"
+            style="color: {{ section.settings.subtitle_color }};"
           >
             {{ section.settings.subtitle }}
           </h3>
@@ -118,7 +107,7 @@
 
         {% if section.settings.description != blank %}
           <div
-            class="leading-relaxed m-0 mb-8"
+            class="font-nunito"
             style="
               color: {{ section.settings.description_color }};
               font-size: {{ section.settings.description_size_desktop }}px;
@@ -131,11 +120,10 @@
         {% if section.settings.button_text != blank %}
           <a
             href="{{ section.settings.button_link | default: '#' }}"
-            class="hidden md:inline-block px-7 py-3.5 rounded-full no-underline font-semibold transition-all duration-300 ease-in-out border-0 cursor-pointer hover:-translate-y-0.5 hover:shadow-xl"
+            class="hidden md:block px-7 py-3.5 rounded-full no-underline font-semibold ease-in-out border-0 cursor-pointer font-nunito "
             style="
               background: {{ section.settings.button_bg }};
               color: {{ section.settings.button_text_color }};
-              font-size: {{ section.settings.button_text_size_desktop }}px;
             "
           >
             {{ section.settings.button_text }}
@@ -250,11 +238,6 @@
   }
 
   @media (max-width: 768px) {
-    #section-{{ section.id }} {
-      padding-top: {{ section.settings.padding_top_mobile }}px !important;
-      padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
-    }
-
     #section-{{ section.id }} .comparison-title {
       font-size: {{ section.settings.title_size_mobile }}px !important;
     }
@@ -380,15 +363,7 @@
       "label": "Title Color",
       "default": "#000000"
     },
-    {
-      "type": "range",
-      "id": "title_size_desktop",
-      "label": "Title Size Desktop",
-      "min": 20,
-      "max": 60,
-      "step": 2,
-      "default": 36
-    },
+
     {
       "type": "range",
       "id": "title_size_mobile",
@@ -410,15 +385,7 @@
       "label": "Subtitle Color",
       "default": "#ff4757"
     },
-    {
-      "type": "range",
-      "id": "subtitle_size_desktop",
-      "label": "Subtitle Size Desktop",
-      "min": 16,
-      "max": 40,
-      "step": 2,
-      "default": 24
-    },
+
     {
       "type": "range",
       "id": "subtitle_size_mobile",
@@ -485,15 +452,7 @@
       "label": "Button Text Color",
       "default": "#ffffff"
     },
-    {
-      "type": "range",
-      "id": "button_text_size_desktop",
-      "label": "Button Text Size Desktop",
-      "min": 12,
-      "max": 20,
-      "step": 1,
-      "default": 16
-    },
+
     {
       "type": "range",
       "id": "button_text_size_mobile",
@@ -550,15 +509,7 @@
           "label": "Text Color",
           "default": "#000000"
         },
-        {
-          "type": "range",
-          "id": "text_size_desktop",
-          "label": "Text Size Desktop",
-          "min": 10,
-          "max": 18,
-          "step": 1,
-          "default": 14
-        },
+
         {
           "type": "range",
           "id": "text_size_mobile",
