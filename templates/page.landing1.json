@@ -188,6 +188,61 @@
         "text_parts": "Zellstress | Entzündungen | Energieverlust | Leistungsabfall"
       }
     },
+    "landing_energy_comparision": {
+      "type": "landing-energy-comparision",
+      "blocks": {
+        "image_callout_qFzHFh": {
+          "type": "image_callout",
+          "settings": {
+            "callout_text": "Coffee = short-lived energy crash",
+            "position_top": 20,
+            "position_left": 80,
+            "callout_bg": "#fdf4e9",
+            "text_color": "#44403c",
+            "text_size_desktop": 18,
+            "text_size_mobile": 16,
+            "show_arrow": true
+          }
+        }
+      },
+      "block_order": [
+        "image_callout_qFzHFh"
+      ],
+      "settings": {
+        "max_width": "1200",
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "background_color": "#ffffff",
+        "custom_classes": "",
+        "main_image": "shopify://shop_images/Frame_1097.webp",
+        "bottom_image": "shopify://shop_images/Frame_1099.webp",
+        "main_title": "Tried It All? Still Exhausted?",
+        "title_color": "#292524",
+        "title_size_desktop": 36,
+        "title_size_mobile": 20,
+        "subtitle": "You're Not Alone.",
+        "subtitle_color": "#ea5167",
+        "subtitle_size_desktop": 36,
+        "subtitle_size_mobile": 20,
+        "description": "<p>You've tried more coffee, energy drinks, vitamins from the store, even quick-fix supplements... And yet – you're still dragging through the day. Why?</p><p>Because most of those solutions are temporary boosters or overdosed formulas. They don't address the root cause: your body's energy production at a cellular level.</p><p>It's not that these options are bad – they're just not complete.</p><p>That's why Vitamin H2 combines the right nutrients, in the right form, to truly recharge your body from the bottom up.</p>",
+        "description_color": "#44403c",
+        "description_size_desktop": 18,
+        "description_size_mobile": 14,
+        "button_text": "Start Your Natural Energy Reset Today",
+        "button_link": "#",
+        "button_bg": "#ea5167",
+        "button_text_color": "#ffffff",
+        "button_text_size_desktop": 16,
+        "button_text_size_mobile": 16,
+        "bottom_callout_text": "Random multivitamins = not enough active ingredients",
+        "bottom_callout_bg": "#fdf4e9",
+        "bottom_text_color": "#44403c",
+        "bottom_text_size_desktop": 18,
+        "bottom_text_size_mobile": 14
+      }
+    },
     "landing_vitamin_ingredients": {
       "type": "landing-vitamin-ingredients",
       "blocks": {
@@ -673,6 +728,7 @@
     "landing_hero_claude",
     "landing-marquee",
     "landing_health_awareness",
+    "landing_energy_comparision",
     "landing_vitamin_ingredients",
     "featured_product_czCePe",
     "from_fatigue",

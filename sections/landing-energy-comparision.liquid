@@ -1,0 +1,586 @@
+<div
+  id="section-{{ section.id }}"
+  class="w-full relative {{ section.settings.custom_classes }}"
+  style="
+    background: {{ section.settings.background_color }};
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  "
+>
+  <div class="mx-auto px-5" style="max-width: {{ section.settings.max_width }}px;">
+    <div class="flex items-center max-sm:flex-col-reverse gap-15 flex-col lg:flex-row">
+      <!-- Left Image Section -->
+      <div class="flex-1 relative">
+        {% if section.settings.main_image %}
+          <div class="relative">
+            <img
+              src="{{ section.settings.main_image | image_url: width: 600, height: 600 }}"
+              alt="{{ section.settings.main_image.alt | default: 'Energy comparison' }}"
+              loading="lazy"
+              class="w-[80.4%] h-auto rounded-3xl"
+              width="600"
+              height="600"
+            >
+
+            <!-- Overlay callouts -->
+
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'image_callout' %}
+                  <div
+                    class="absolute top-15 left-20 z-10 px-4 py-3 rounded-lg whitespace-nowrap shadow-lg"
+                    style="                      background: {{ block.settings.callout_bg }};"
+                  >
+                    {% if block.settings.callout_text != blank %}
+                      <span
+                        class="block"
+                        style="color: {{ block.settings.text_color }}; font-size: {{ block.settings.text_size_desktop }}px;"
+                      >
+                        {{ block.settings.callout_text }}
+                      </span>
+                    {% endif %}
+                    {% if block.settings.show_arrow %}
+                      <div
+                        class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-2 border-r-2 border-t-2 border-transparent"
+                        style="border-top-color: {{ block.settings.callout_bg }};"
+                      ></div>
+                    {% endif %}
+                  </div>
+              {% endcase %}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% if section.settings.bottom_image %}
+          <div class="relative inline-block max-sm:block max-sm:-mt-[48px]">
+            <img
+              src="{{ section.settings.bottom_image | image_url: width: 400, height: 400 }}"
+              alt="{{ section.settings.bottom_image.alt | default: 'Supplements comparison' }}"
+              loading="lazy"
+              class="w-[62.4%] ml-auto h-auto rounded-2xl"
+              width="400"
+              height="400"
+            >
+
+            {% if section.settings.bottom_callout_text != blank %}
+              <div
+                class="md:absolute max-sm:mt-[25px] max-sm:mb-6 px-4 py-2.5 rounded-full whitespace-nowrap"
+                style="background: {{ section.settings.bottom_callout_bg }};"
+              >
+                <span style="color: {{ section.settings.bottom_text_color }}">
+                  {{ section.settings.bottom_callout_text }}
+                </span>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if section.settings.button_text != blank %}
+          <a
+            href="{{ section.settings.button_link | default: '#' }}"
+            class="inline-block md:hidden px-7 py-3.5 rounded-full no-underline font-semibold transition-all duration-300 ease-in-out border-0 cursor-pointer hover:-translate-y-0.5 hover:shadow-xl"
+            style="
+              background: {{ section.settings.button_bg }};
+              color: {{ section.settings.button_text_color }};
+              font-size: {{ section.settings.button_text_size_desktop }}px;
+            "
+          >
+            {{ section.settings.button_text }}
+          </a>
+        {% endif %}
+      </div>
+
+      <!-- Right Content Section -->
+      <div class="flex-1 max-w-md text-center lg:text-left">
+        {% if section.settings.main_title != blank %}
+          <h2
+            class="font-bold leading-tight m-0 mb-4"
+            style="
+              color: {{ section.settings.title_color }};
+              font-size: {{ section.settings.title_size_desktop }}px;
+            "
+          >
+            {{ section.settings.main_title }}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.subtitle != blank %}
+          <h3
+            class="font-semibold leading-snug m-0 mb-6"
+            style="
+              color: {{ section.settings.subtitle_color }};
+              font-size: {{ section.settings.subtitle_size_desktop }}px;
+            "
+          >
+            {{ section.settings.subtitle }}
+          </h3>
+        {% endif %}
+
+        {% if section.settings.description != blank %}
+          <div
+            class="leading-relaxed m-0 mb-8"
+            style="
+              color: {{ section.settings.description_color }};
+              font-size: {{ section.settings.description_size_desktop }}px;
+            "
+          >
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.button_text != blank %}
+          <a
+            href="{{ section.settings.button_link | default: '#' }}"
+            class="hidden md:inline-block px-7 py-3.5 rounded-full no-underline font-semibold transition-all duration-300 ease-in-out border-0 cursor-pointer hover:-translate-y-0.5 hover:shadow-xl"
+            style="
+              background: {{ section.settings.button_bg }};
+              color: {{ section.settings.button_text_color }};
+              font-size: {{ section.settings.button_text_size_desktop }}px;
+            "
+          >
+            {{ section.settings.button_text }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #section-{{ section.id }} {
+    width: 100%;
+    position: relative;
+  }
+
+  #section-{{ section.id }} .energy-comparison-images {
+    flex: 1;
+    position: relative;
+  }
+
+  #section-{{ section.id }} .main-image-container {
+    position: relative;
+    margin-bottom: 40px;
+  }
+
+  #section-{{ section.id }} .main-comparison-image {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  #section-{{ section.id }} .image-callout {
+    position: absolute;
+    padding: 12px 16px;
+    border-radius: 8px;
+    white-space: nowrap;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  #section-{{ section.id }} .callout-arrow {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid;
+  }
+
+  #section-{{ section.id }} .bottom-image-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  #section-{{ section.id }} .bottom-comparison-image {
+    width: 280px;
+    height: auto;
+    border-radius: 15px;
+  }
+
+  #section-{{ section.id }} .bottom-callout {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 16px;
+    border-radius: 6px;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  #section-{{ section.id }} .energy-comparison-text {
+    flex: 1;
+    max-width: 500px;
+  }
+
+  #section-{{ section.id }} .comparison-title {
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 15px 0;
+  }
+
+  #section-{{ section.id }} .comparison-subtitle {
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0 0 25px 0;
+  }
+
+  #section-{{ section.id }} .comparison-description {
+    line-height: 1.6;
+    margin: 0 0 30px 0;
+  }
+
+  #section-{{ section.id }} .comparison-button {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  #section-{{ section.id }} .comparison-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+
+  @media (max-width: 768px) {
+    #section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_mobile }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
+    }
+
+    #section-{{ section.id }} .comparison-title {
+      font-size: {{ section.settings.title_size_mobile }}px !important;
+    }
+
+    #section-{{ section.id }} .comparison-subtitle {
+      font-size: {{ section.settings.subtitle_size_mobile }}px !important;
+    }
+
+    #section-{{ section.id }} .comparison-description {
+      font-size: {{ section.settings.description_size_mobile }}px !important;
+    }
+
+    #section-{{ section.id }} .comparison-button {
+      font-size: {{ section.settings.button_text_size_mobile }}px !important;
+    }
+
+    #section-{{ section.id }} .bottom-comparison-image {
+      width: 220px;
+    }
+
+    #section-{{ section.id }} .image-callout .callout-text {
+      font-size: {{ section.settings.text_size_mobile }}px !important;
+    }
+
+  }
+
+  @media (min-width: 769px) {
+    #section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px !important;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Energy Comparison",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "text",
+      "id": "max_width",
+      "label": "Max Width (px)",
+      "default": "1200"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "default": 50
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "custom_classes",
+      "label": "Custom CSS Classes"
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Main Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottom_image",
+      "label": "Bottom Image"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title",
+      "default": "Tried It All? Still Exhausted?"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "label": "Title Size Desktop",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Title Size Mobile",
+      "min": 18,
+      "max": 40,
+      "step": 2,
+      "default": 28
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "You're Not Alone."
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#ff4757"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size_desktop",
+      "label": "Subtitle Size Desktop",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size_mobile",
+      "label": "Subtitle Size Mobile",
+      "min": 14,
+      "max": 30,
+      "step": 2,
+      "default": 20
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>You've tried more coffee, energy drinks, vitamins from the store, even quick-fix supplements... And yet – you're still dragging through the day. Why?</p><p>Because most of those solutions are temporary boosters or overdosed formulas. They don't address the root cause: your body's energy production at a cellular level.</p><p>It's not that these options are bad – they're just not complete.</p><p>That's why Vitamin H2 combines the right nutrients, in the right form, to truly recharge your body from the bottom up.</p>"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description Color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "description_size_desktop",
+      "label": "Description Size Desktop",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "description_size_mobile",
+      "label": "Description Size Mobile",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Start Your Natural Energy Reset Today"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Button Background",
+      "default": "#ff4757"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_text_size_desktop",
+      "label": "Button Text Size Desktop",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_text_size_mobile",
+      "label": "Button Text Size Mobile",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Bottom Callout"
+    },
+    {
+      "type": "text",
+      "id": "bottom_callout_text",
+      "label": "Bottom Callout Text",
+      "default": "Random multivitamins = not enough active ingredients"
+    },
+    {
+      "type": "color",
+      "id": "bottom_callout_bg",
+      "label": "Bottom Callout Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "bottom_text_color",
+      "label": "Bottom Text Color",
+      "default": "#000000"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image_callout",
+      "name": "Image Callout",
+      "settings": [
+        {
+          "type": "text",
+          "id": "callout_text",
+          "label": "Callout Text",
+          "default": "Coffee = short-lived energy crash"
+        },
+
+        {
+          "type": "color",
+          "id": "callout_bg",
+          "label": "Callout Background",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "text_size_desktop",
+          "label": "Text Size Desktop",
+          "min": 10,
+          "max": 18,
+          "step": 1,
+          "default": 14
+        },
+        {
+          "type": "range",
+          "id": "text_size_mobile",
+          "label": "Text Size Mobile",
+          "min": 10,
+          "max": 16,
+          "step": 1,
+          "default": 12
+        },
+        {
+          "type": "checkbox",
+          "id": "show_arrow",
+          "label": "Show Arrow",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Energy Comparison"
+    }
+  ]
+}
+{% endschema %}

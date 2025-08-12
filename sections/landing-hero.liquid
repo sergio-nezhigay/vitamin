@@ -48,8 +48,7 @@
               class="font-medium text-[28px] md:text-[48px] leading-[1.18] "
               style="              color: {{ section.settings.title_color | default: '#2c2c2c' }};"
             >
-              Fuel Your Body, <br>
-              Energize Your Life
+              {{ section.settings.title }}
             </h1>
           {% endif %}
 
@@ -66,13 +65,11 @@
             {% if section.settings.primary_button_text != blank and section.settings.primary_button_url != blank %}
               <a
                 href="{{ section.settings.primary_button_url }}"
-                class="inline-block py-3 px-[18px] no-underline rounded-[8px] font-bold text-[16px] transition-all duration-300 border-0 cursor-pointer font-display text-center min-w-[106px] hover:-translate-y-0.5 max-md:w-full"
+                class="inline-block py-3 px-[18px] no-underline rounded-[8px] font-bold text-[16px] border-0  cursor-pointer font-display text-center min-w-[106px] max-md:w-full"
                 style="
                   background-color: {{ section.settings.primary_button_bg | default: '#e74c3c' }};
                   color: {{ section.settings.primary_button_color | default: '#ffffff' }};
                 "
-                onmouseover="this.style.backgroundColor='#c0392b'"
-                onmouseout="this.style.backgroundColor='{{ section.settings.primary_button_bg | default: '#e74c3c' }}'"
               >
                 {{ section.settings.primary_button_text }}
               </a>
@@ -81,7 +78,7 @@
             {% if section.settings.secondary_button_text != blank and section.settings.secondary_button_url != blank %}
               <a
                 href="{{ section.settings.secondary_button_url }}"
-                class="inline-block py-[11px] px-[18px] no-underline rounded-[8px] font-bold text-[16px] transition-all duration-300 cursor-pointer font-display text-center min-w-[106px] hover:-translate-y-0.5 max-md:w-full bg-white border border-[#D0D5DD]"
+                class="inline-block py-[11px] px-[18px] no-underline rounded-[8px] font-bold text-[16px] cursor-pointer font-display text-center min-w-[106px] max-md:w-full bg-white border border-[#D0D5DD]"
                 style="color: {{ section.settings.secondary_button_color | default: '#666' }};"
               >
                 {{ section.settings.secondary_button_text }}
