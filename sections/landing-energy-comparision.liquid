@@ -4,7 +4,7 @@
   style="background: {{ section.settings.background_color }};"
 >
   <div class="mx-auto max-sm:px-6" style="max-width: {{ section.settings.max_width }}px;">
-    <div class="flex items-center max-sm:flex-col-reverse gap-6 md:!gap-[32px] flex-col lg:flex-row">
+    <div class="flex items-center  max-sm:flex-col-reverse gap-6 md:!gap-[32px] flex-col lg:flex-row">
       <!-- Left Image Section -->
       <div class="flex-1 relative w-full">
         {% if section.settings.main_image %}
@@ -13,7 +13,7 @@
               src="{{ section.settings.main_image | image_url: width: 600, height: 600 }}"
               alt="{{ section.settings.main_image.alt | default: 'Energy comparison' }}"
               loading="lazy"
-              class="w-[80.4%] md:w-[61.4%] h-auto rounded-3xl"
+              class="w-[80.4%] md:w-[61.8%] h-auto rounded-3xl object-cover max-sm:aspect-[263/252]"
               width="600"
               height="600"
             >
@@ -24,12 +24,12 @@
               {% case block.type %}
                 {% when 'image_callout' %}
                   <div
-                    class="absolute top-[25px] md:top-[39px] left-[62px] md:left-[247px] z-10 px-6 py-[9px] rounded-lg  whitespace-nowrap shadow-lg"
+                    class="absolute top-[25px] md:top-[39px] left-[62px] md:left-[247px] z-10 px-6 py-[9px] rounded-full  whitespace-nowrap"
                     style="                      background: {{ block.settings.callout_bg }};"
                   >
                     {% if block.settings.callout_text != blank %}
                       <div
-                        class="block font-semibold font-nunito text-[14px] leading-[2.14]"
+                        class="block font-semibold font-nunito text-[14px] leading-[2.14] md:text-[18px] md:leading-[1.66]"
                         style="color: {{ block.settings.text_color }}; "
                       >
                         {{ block.settings.callout_text }}
@@ -37,7 +37,7 @@
                     {% endif %}
                     {% if block.settings.show_arrow %}
                       <div
-                        class="hidden md:block absolute bottom-0 left-1/2 transform translate-x-1 translate-y-[100%] "
+                        class="hidden md:block absolute bottom-0 left-1/2 transform -translate-x-5 translate-y-[100%] "
                       >
                         {% render 'icon-long-arrow-desktop' %}
                       </div>
@@ -54,24 +54,36 @@
         {% endif %}
 
         {% if section.settings.bottom_image %}
-          <div class="relative block   max-sm:-mt-[38px] md:-mt-[100px] md:ml-auto">
+          <div class="relative block md:h-[366px]  max-sm:-mt-[38px] md:-mt-[141px] md:ml-auto">
             <img
               src="{{ section.settings.bottom_image | image_url: width: 400, height: 400 }}"
               alt="{{ section.settings.bottom_image.alt | default: 'Supplements comparison' }}"
               loading="lazy"
-              class="max-sm:aspect-[204/194] md:aspect-auto  w-[62.4%] md:w-[62.4%] ml-auto h-auto rounded-[24px]"
+              class="block max-sm:aspect-[204/194] md:aspect-auto  w-[62.4%] md:w-[61.8%] ml-auto h-auto rounded-[24px]"
               width="400"
               height="400"
             >
 
             {% if section.settings.bottom_callout_text != blank %}
               <div
-                class="md:absolute max-sm:mt-[25px] md:bottom-[42px] max-sm:mb-6 px-4 py-2.5 rounded-full md:whitespace-nowrap text-center text-[14px] leading-[1.4] font-semibold font-nunito shadow-lg"
+                class="relative md:absolute max-sm:mt-[25px] md:w-fit md:bottom-[88px] md:px-6 md:py-[9px] rounded-full md:whitespace-nowrap text-center text-[14px] leading-[1.4] font-semibold font-nunito md:text-[18px] md:leading-[1.66] max-sm:px-6 max-sm:py-2"
                 style="background: {{ section.settings.bottom_callout_bg }};"
               >
                 <span style="color: {{ section.settings.bottom_text_color }}">
                   {{ section.settings.bottom_callout_text }}
                 </span>
+
+                <div
+                  class="hidden md:block  absolute left-[110px] -top-[120px] rotate-180"
+                >
+                  {% render 'icon-long-arrow-desktop' %}
+                </div>
+
+                <div
+                  class="block md:hidden  absolute left-[90px] -top-[90px] rotate-180"
+                >
+                  {% render 'icon-long-arrow-mobile' %}
+                </div>
               </div>
             {% endif %}
           </div>
@@ -80,7 +92,7 @@
         {% if section.settings.button_text != blank %}
           <a
             href="{{ section.settings.button_link | default: '#' }}"
-            class="md:hidden py-3 rounded-[8px] w-full flex flex-center justify-center no-underline font-bold font-nunito border-0 cursor-pointer text-[16px] leading-normal"
+            class="md:hidden py-3 rounded-[8px] w-full flex flex-center justify-center no-underline font-bold font-nunito border-0 cursor-pointer text-[16px] leading-normal mt-6"
             style="
               background: {{ section.settings.button_bg }};
               color: {{ section.settings.button_text_color }};
@@ -115,10 +127,7 @@
           {% if section.settings.description != blank %}
             <div
               class="font-nunito font-medium text-[14px] md:text-[18px] leading-[1.4] md:mb-6"
-              style="
-                color: {{ section.settings.description_color }};
-                font-size: {{ section.settings.description_size_desktop }}px;
-              "
+              style="                color: {{ section.settings.description_color }};"
             >
               {{ section.settings.description }}
             </div>
@@ -127,7 +136,7 @@
           {% if section.settings.button_text != blank %}
             <a
               href="{{ section.settings.button_link | default: '#' }}"
-              class="hidden md:block md:w-fit py-3.5 px-[18px] rounded-full no-underline font-bold text-[16px] ease-in-out border-0 cursor-pointer font-nunito "
+              class="hidden md:block md:w-fit py-3.5 px-[18px] md:px-5 md:py-3 rounded-lg no-underline font-bold text-[16px] ease-in-out border-0 cursor-pointer font-nunito "
               style="
                 background: {{ section.settings.button_bg }};
                 color: {{ section.settings.button_text_color }};
@@ -170,7 +179,7 @@
     border-radius: 8px;
     white-space: nowrap;
     z-index: 2;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
   }
 
   #section-{{ section.id }} .callout-arrow {
@@ -204,7 +213,6 @@
     padding: 10px 16px;
     border-radius: 6px;
     white-space: nowrap;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   }
 
   #section-{{ section.id }} .energy-comparison-text {
