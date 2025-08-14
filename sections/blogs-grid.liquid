@@ -52,9 +52,6 @@
             endif
             assign blog_count = blog_count | plus: 1
           endfor
-
-          assign right_blog_ids = right_blogs | split: ','
-          assign bottom_blog_ids = bottom_blogs | split: ','
         -%}
 
         <!-- Featured Blog (Left Column) -->
