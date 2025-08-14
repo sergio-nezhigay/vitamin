@@ -62,9 +62,9 @@
           {% endif %}
 
           <div class="flex gap-3 mb-4 flex-wrap ">
-            {% if section.settings.primary_button_text != blank and section.settings.primary_button_url != blank %}
+            {% if section.settings.primary_button_text != blank %}
               <a
-                href="{{ section.settings.primary_button_url }}"
+                href="#featured-product-section"
                 class="inline-block py-3 px-[18px] no-underline rounded-[8px] font-bold text-[16px] border-0  cursor-pointer font-display text-center min-w-[106px] max-md:w-full"
                 style="
                   background-color: {{ section.settings.primary_button_bg | default: '#e74c3c' }};
@@ -127,6 +127,9 @@
 </section>
 
 <style>
+  html {
+      scroll-behavior: smooth;
+  }
   @media (min-width: 1024px) {
     #{{ section.id }} h1 {
       font-size: {{ section.settings.title_size_desktop | default: 48 }}px !important;
@@ -343,11 +346,6 @@
       "id": "primary_button_text",
       "label": "Primary Button Text",
       "default": "Buy now"
-    },
-    {
-      "type": "url",
-      "id": "primary_button_url",
-      "label": "Primary Button URL"
     },
     {
       "type": "color",

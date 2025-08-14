@@ -1,6 +1,6 @@
 <div
   id="section-{{ section.id }}"
-  class="w-full relative {{ section.settings.custom_classes }} outline outline-red-700 max-sm:pt-[64px] md:pb-[96px]"
+  class="w-full relative {{ section.settings.custom_classes }} max-sm:pt-[64px] md:pb-[96px]"
   style="background: {{ section.settings.background_color }};"
 >
   <div class="mx-auto max-sm:px-6" style="max-width: {{ section.settings.max_width }}px;">
@@ -24,7 +24,7 @@
               {% case block.type %}
                 {% when 'image_callout' %}
                   <div
-                    class="absolute top-[25px] md:top-[39px] left-[62px] md:left-[247px] z-10 px-6 py-[9px] rounded-full  whitespace-nowrap"
+                    class="hide-small absolute top-[25px] md:top-[39px] left-[62px] md:left-[247px] z-10 px-6 py-[9px] rounded-full  whitespace-nowrap "
                     style="                      background: {{ block.settings.callout_bg }};"
                   >
                     {% if block.settings.callout_text != blank %}
@@ -277,8 +277,12 @@
     #section-{{ section.id }} .image-callout .callout-text {
       font-size: {{ section.settings.text_size_mobile }}px !important;
     }
-
   }
+    @media (max-width: 365px) {
+        #section-{{ section.id }} .hide-small {
+          display: none;
+        }
+    }
 </style>
 
 {% schema %}
