@@ -1,4 +1,7 @@
-{%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
+{%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient
+  | default: section.settings.color_scheme.settings.background
+  | md5
+-%}
 
 <div class="section-spacing section-spacing--tight color-scheme color-scheme--{{ section.settings.color_scheme }} color-scheme--bg-{{ color_scheme_hash }}">
   {%- if blog.articles_count == 0 -%}
@@ -35,7 +38,11 @@
 
             {%- if section.settings.show_tags and blog.tags.size > 0 -%}
               <ul class="blog-tags unstyled-list" role="list">
-                <li {% if current_tags.size > 0 %}class="link-faded"{% endif %}>
+                <li
+                  {% if current_tags.size > 0 %}
+                    class="link-faded"
+                  {% endif %}
+                >
                   <a href="{{ blog.url }}">{{- 'blog.general.all_posts' | t -}}</a>
                 </li>
 
@@ -53,7 +60,12 @@
 
         <div class="v-stack gap-8 sm:gap-12">
           {%- paginate blog.articles by section.settings.posts_per_page -%}
-            <blog-posts class="blog-post-list" {% if settings.stagger_blog_posts_apparition %}reveal-on-scroll="true"{% endif %}>
+            <blog-posts
+              class="blog-post-list"
+              {% if settings.stagger_blog_posts_apparition %}
+                reveal-on-scroll="true"
+              {% endif %}
+            >
               {%- capture sizes -%}(max-width: 699px) 95vw, (max-width: 1149px) calc(100vw / 2), calc((80rem - (5rem * ({{ section.settings.blog.articles_count | default: 3 | at_most: 3 }} - 1))) / 3){%- endcapture -%}
 
               {%- for article in blog.articles -%}
@@ -63,7 +75,14 @@
                       {%- capture featured_blog_post_sizes -%}(max-width: 1149px) 95vw, 1260px{%- endcapture -%}
 
                       {%- if article.image != blank -%}
-                        {{- article.image | image_url: width: article.image.width | image_tag: sizes: featured_blog_post_sizes, widths: '200,300,400,500,600,800,1000,1200,1400,1600,1800,2000,2200', class: 'zoom-image group-hover:zoom' -}}
+                        {{-
+                          article.image
+                          | image_url: width: article.image.width
+                          | image_tag:
+                            sizes: featured_blog_post_sizes,
+                            widths: '200,300,400,500,600,800,1000,1200,1400,1600,1800,2000,2200',
+                            class: 'zoom-image group-hover:zoom'
+                        -}}
                       {%- endif -%}
 
                       <div class="prose place-self-end-start">
@@ -76,13 +95,27 @@
                         </h2>
 
                         {%- assign button_content = 'blog.general.read_more' | t -%}
-                        {%- render 'button', type: 'button', content: button_content, background: section.settings.featured_blog_post_button_background, text_color: section.settings.featured_blog_post_button_text_color -%}
+                        {%- render 'button',
+                          type: 'button',
+                          content: button_content,
+                          background: section.settings.featured_blog_post_button_background,
+                          text_color: section.settings.featured_blog_post_button_text_color
+                        -%}
                       </div>
                     </a>
                   </div>
                 {%- endif -%}
 
-                {%- render 'blog-post-card', article: article, blog: blog, show_category: section.settings.show_category, show_date: section.settings.show_date, show_excerpt: section.settings.show_excerpt, show_read_more: section.settings.show_read_more, sizes: sizes, position: forloop.index -%}
+                {%- render 'blog-post-card',
+                  article: article,
+                  blog: blog,
+                  show_category: section.settings.show_category,
+                  show_date: section.settings.show_date,
+                  show_excerpt: section.settings.show_excerpt,
+                  show_read_more: section.settings.show_read_more,
+                  sizes: sizes,
+                  position: forloop.index
+                -%}
               {%- endfor -%}
             </blog-posts>
 
