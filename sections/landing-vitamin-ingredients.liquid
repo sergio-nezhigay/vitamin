@@ -81,6 +81,12 @@
     border-radius: {{ section.settings.card_border_radius }}px;
   }
 
+  @media screen and (max-width: 1024px) {
+      .vitamin-ingredients-section {
+        display: none!important;
+      }
+  }
+
   @media (max-width: 767px) {
     #{{ section.id }} {
       display: none !important;

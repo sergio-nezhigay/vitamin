@@ -1,10 +1,10 @@
 <div
   id="section-{{ section.id }}"
-  class="w-full relative {{ section.settings.custom_classes }} max-sm:pt-[64px] md:pb-[96px]"
+  class="w-full relative {{ section.settings.custom_classes }} pt-[64px] md:pt-0 md:pb-[96px]"
   style="background: {{ section.settings.background_color }};"
 >
-  <div class="mx-auto max-sm:px-6" style="max-width: {{ section.settings.max_width }}px;">
-    <div class="flex items-center  max-sm:flex-col-reverse gap-6 md:!gap-[32px] flex-col lg:flex-row">
+  <div class="mx-auto px-6 md:px-0" style="max-width: {{ section.settings.max_width }}px;">
+    <div class="flex items-center flex-col-reverse gap-6 md:!gap-[32px]  lg:flex-row">
       <!-- Left Image Section -->
       <div class="flex-1 relative w-full">
         {% if section.settings.main_image %}
@@ -13,7 +13,7 @@
               src="{{ section.settings.main_image | image_url: width: 600, height: 600 }}"
               alt="{{ section.settings.main_image.alt | default: 'Energy comparison' }}"
               loading="lazy"
-              class="w-[80.4%] md:w-[61.8%] h-auto rounded-3xl object-cover max-sm:aspect-[263/252]"
+              class="w-[80.4%] md:w-[61.8%] h-auto rounded-3xl object-cover aspect-[263/252] md:aspect-auto"
               width="600"
               height="600"
             >
@@ -24,7 +24,7 @@
               {% case block.type %}
                 {% when 'image_callout' %}
                   <div
-                    class="hide-small absolute top-[25px] md:top-[39px] left-[62px] md:left-[247px] z-10 px-6 py-[9px] rounded-full  whitespace-nowrap "
+                    class="top-callout absolute right-0  top-[25px] md:top-[39px]  md:left-[247px] z-2 px-6 py-[9px] rounded-full  whitespace-nowrap "
                     style="                      background: {{ block.settings.callout_bg }};"
                   >
                     {% if block.settings.callout_text != blank %}
@@ -54,19 +54,19 @@
         {% endif %}
 
         {% if section.settings.bottom_image %}
-          <div class="relative block md:h-[366px]  max-sm:-mt-[38px] md:-mt-[141px] md:ml-auto">
+          <div class="relative block lg:h-[366px] -mt-[38px] lg:-mt-[141px] lg:ml-auto">
             <img
               src="{{ section.settings.bottom_image | image_url: width: 400, height: 400 }}"
               alt="{{ section.settings.bottom_image.alt | default: 'Supplements comparison' }}"
               loading="lazy"
-              class="block max-sm:aspect-[204/194] md:aspect-auto  w-[62.4%] md:w-[61.8%] ml-auto h-auto rounded-[24px]"
+              class="block aspect-[204/194] md:aspect-auto  w-[62.4%] md:w-[61.8%] ml-auto h-auto rounded-[24px] sm:rounded-[40px] lg:rounded-[24px]"
               width="400"
               height="400"
             >
 
             {% if section.settings.bottom_callout_text != blank %}
               <div
-                class="relative md:absolute max-sm:mt-[25px] md:w-fit md:bottom-[88px] md:px-6 md:py-[9px] rounded-full md:whitespace-nowrap text-center text-[14px] leading-[1.4] font-semibold font-nunito md:text-[18px] md:leading-[1.66] max-sm:px-6 max-sm:py-2"
+                class="bottom-callout relative lg:absolute mt-[25px] lg:mt-0 lg:w-fit lg:bottom-[88px] lg:px-6 lg:py-[9px] rounded-full lg:whitespace-nowrap text-center text-[14px] leading-[1.4] font-semibold font-nunito lg:text-[18px] lg:leading-[1.66] px-6 py-2 "
                 style="background: {{ section.settings.bottom_callout_bg }};"
               >
                 <span style="color: {{ section.settings.bottom_text_color }}">
@@ -80,7 +80,7 @@
                 </div>
 
                 <div
-                  class="block md:hidden  absolute left-[90px] -top-[90px] rotate-180"
+                  class="block md:hidden  absolute left-[70px] -top-[90px] rotate-180"
                 >
                   {% render 'icon-long-arrow-mobile' %}
                 </div>
@@ -92,7 +92,7 @@
         {% if section.settings.button_text != blank %}
           <a
             href="{{ section.settings.button_link | default: '#' }}"
-            class="md:hidden py-3 rounded-[8px] w-full flex flex-center justify-center no-underline font-bold font-nunito border-0 cursor-pointer text-[16px] leading-normal mt-6"
+            class="lg:hidden py-3 rounded-[8px] w-full flex flex-center justify-center no-underline font-bold font-nunito border-0 cursor-pointer text-[16px] leading-normal mt-6"
             style="
               background: {{ section.settings.button_bg }};
               color: {{ section.settings.button_text_color }};
@@ -205,16 +205,6 @@
     border-radius: 15px;
   }
 
-  #section-{{ section.id }} .bottom-callout {
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 16px;
-    border-radius: 6px;
-    white-space: nowrap;
-  }
-
   #section-{{ section.id }} .energy-comparison-text {
     flex: 1;
     max-width: 500px;
@@ -278,8 +268,31 @@
       font-size: {{ section.settings.text_size_mobile }}px !important;
     }
   }
+    @media (min-width: 1201px) and (max-width: 1439px) {
+           #section-{{ section.id }} .top-callout {
+           top: 20px !important;
+           left:220px !important;
+        }
+    }
+    @media (min-width: 1024px) and (max-width: 1200px) {
+           #section-{{ section.id }} .top-callout {
+           top: 10px !important;
+           left:200px !important;
+        }
+    }
+
+    @media (min-width: 1024px) and (max-width: 1439px) {
+           #section-{{ section.id }} .bottom-callout {
+           bottom: 50px !important;
+        }
+    }
+     @media (min-width: 376px) and (max-width: 1024px) {
+        #section-{{ section.id }} .top-callout {
+          {% comment %}right: calc(20vw){% endcomment %}
+        }
+    }
     @media (max-width: 365px) {
-        #section-{{ section.id }} .hide-small {
+        #section-{{ section.id }} .top-callout {
           display: none;
         }
     }
