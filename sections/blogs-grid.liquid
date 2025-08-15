@@ -1,8 +1,26 @@
 <section id="{{ section.id }}">
   {%- assign articles_per_page = 2 -%}
+
+  <!-- Tag Filter Buttons -->
+  <div class="tag-filter-container">
+    <div id="tag-filter-buttons">
+      <button class="filter-btn active" data-tag="">All</button>
+      {%- assign all_tags = '' -%}
+      {%- for article in blog.articles -%}
+        {%- for tag in article.tags -%}
+          {%- unless all_tags contains tag -%}
+            <button class="filter-btn" data-tag="{{ tag | escape | downcase }}">{{ tag }}</button>
+            {%- assign all_tags = all_tags | append: ',' | append: tag -%}
+          {%- endunless -%}
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <!-- Articles -->
   <ul id="article-list">
     {%- for article in blog.articles -%}
-      <li class="article-item" style="display:none;">
+      <li class="article-item" data-tags="{{ article.tags | join: ',' | downcase }}">
         <a href="{{ article.url }}">{{ article.title }}</a>
         {%- if article.tags.size > 0 -%}
           <span>
@@ -18,52 +36,175 @@
   </ul>
 
   <div id="pagination"></div>
+  <div id="no-articles" style="display: none;">
+    <p>No articles found for the selected filter.</p>
+  </div>
+
+  <style>
+    .tag-filter-container {
+      margin-bottom: 20px;
+    }
+
+    #tag-filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .filter-btn {
+      padding: 8px 16px;
+      border: 2px solid #e2e8f0;
+      background: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+      border-color: #3b82f6;
+      background: #f8fafc;
+    }
+
+    .filter-btn.active {
+      background: #3b82f6;
+      color: white;
+      border-color: #3b82f6;
+    }
+
+    #pagination {
+      display: flex;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    #pagination a {
+      padding: 8px 12px;
+      border: 1px solid #d1d5db;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+
+    #pagination a:hover {
+      background: #f3f4f6;
+    }
+  </style>
 
   <script>
-    (function() {
-      var items = document.querySelectorAll('#article-list .article-item');
-      var perPage = {{ articles_per_page }};
-      var currentPage = 1;
-      var totalPages = Math.ceil(items.length / perPage);
-      var pagination = document.getElementById('pagination');
+    (() => {
+      const items = Array.from(document.querySelectorAll('#article-list .article-item'));
+      const perPage = {{ articles_per_page }};
+      let currentPage = 1;
+      let totalPages = 1;
+      const pagination = document.getElementById('pagination');
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const noArticlesMsg = document.getElementById('no-articles');
+      let filteredItems = [...items];
 
-      function showPage(page) {
-        currentPage = page;
-        items.forEach(function(item, index) {
-          item.style.display = (index >= (page - 1) * perPage && index < page * perPage) ? '' : 'none';
+      const showPage = (page) => {
+        currentPage = Math.min(page, totalPages) || 1;
+
+        items.forEach(item => {
+          item.style.display = 'none';
         });
+
+        const startIndex = (currentPage - 1) * perPage;
+        const endIndex = startIndex + perPage;
+
+        filteredItems.slice(startIndex, endIndex).forEach(item => {
+          item.style.display = 'block';
+        });
+
         renderPagination();
-      }
+      };
 
-      function renderPagination() {
+      const renderPagination = () => {
         pagination.innerHTML = '';
-        if (currentPage > 1) {
-          var prev = document.createElement('a');
-          prev.href = '#';
-          prev.textContent = 'Previous';
-          prev.onclick = function(e) { e.preventDefault(); showPage(currentPage - 1); };
-          pagination.appendChild(prev);
-        }
-        for (let i = 1; i <= totalPages; i++) {
-          let link = document.createElement('a');
-          link.href = '#';
-          link.textContent = i;
-          if (i === currentPage) {
-            link.style.fontWeight = 'bold';
-          }
-          link.onclick = function(e) { e.preventDefault(); showPage(i); };
-          pagination.appendChild(link);
-        }
-        if (currentPage < totalPages) {
-          var next = document.createElement('a');
-          next.href = '#';
-          next.textContent = 'Next';
-          next.onclick = function(e) { e.preventDefault(); showPage(currentPage + 1); };
-          pagination.appendChild(next);
-        }
-      }
+        totalPages = Math.ceil(filteredItems.length / perPage);
 
-      showPage(1);
+        console.log('Filtered items:', filteredItems.length, 'Total pages:', totalPages, 'Current page:', currentPage);
+
+        // Only show pagination if there are multiple pages
+        if (totalPages > 1) {
+          // Previous button
+          if (currentPage > 1) {
+            addPageLink('Previous', currentPage - 1, false);
+          }
+
+          // Page numbers
+          for (let i = 1; i <= totalPages; i++) {
+            addPageLink(i, i, i === currentPage);
+          }
+
+          // Next button
+          if (currentPage < totalPages) {
+            addPageLink('Next', currentPage + 1, false);
+          }
+        } else {
+          console.log('Pagination not rendered: only one page.');
+        }
+      };
+
+      const addPageLink = (text, page, isActive) => {
+        const link = document.createElement('a');
+        link.href = '#';
+        link.textContent = text;
+        if (isActive) link.style.fontWeight = 'bold';
+
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          showPage(page);
+        });
+
+        pagination.appendChild(link);
+      };
+
+      const filterArticles = (selectedTag) => {
+        if (!selectedTag) {
+          // Show all articles
+          filteredItems = [...items];
+        } else {
+          // Filter by exact tag match
+          filteredItems = items.filter(item => {
+            const tags = item.dataset.tags.split(',').map(tag => tag.trim());
+            return tags.includes(selectedTag);
+          });
+        }
+
+        // Show/hide no articles message
+        if (filteredItems.length === 0) {
+          noArticlesMsg.style.display = 'block';
+          items.forEach(item => item.style.display = 'none');
+          pagination.innerHTML = '';
+          return;
+        } else {
+          noArticlesMsg.style.display = 'none';
+        }
+
+        // Reset to page 1 when filtering and show results with pagination
+        showPage(1);
+      };
+
+      const updateActiveButton = (activeButton) => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        activeButton.classList.add('active');
+      };
+
+      // Event listeners for filter buttons
+      filterButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          const selectedTag = button.dataset.tag.toLowerCase().trim();
+
+          updateActiveButton(button);
+          filterArticles(selectedTag);
+        });
+      });
+
+      // Initialize with "All" filter
+      filterArticles('');
     })();
   </script>
 </section>
@@ -71,14 +212,7 @@
 {% schema %}
 {
   "name": "Simple Blog List",
-  "settings": [
-    {
-      "type": "number",
-      "id": "blogs_per_page",
-      "label": "Number of articles to show",
-      "default": 7
-    }
-  ],
+  "settings": [],
   "presets": [
     {
       "name": "Simple Blog List"
