@@ -146,6 +146,30 @@
     font-weight: 700;
     line-height: 1.42;
   }
+  .tag-nutrition {
+    background: #e4eaf6;
+    color: #8aa5d9;
+    border-color: #8aa5d9;
+  }
+
+  .tag-health-tips {
+    background: #fdf4e9;
+    color: #deb88a;
+    border-color: #deb88a;
+  }
+
+  .tag-research {
+    background: #fdf4e9;
+    color: #deb88a;
+    border-color: #deb88a;
+  }
+
+  .tag-sport {
+    background: #fbeced;
+    color: #ea5167;
+    border-color: #ea5167;
+  }
+
   #pagination {
     display: flex;
     gap: 8px;
@@ -363,13 +387,16 @@
         : '';
 
       const tagsHtml = item.dataset.tagsDisplay
-        ? `<div class="article-tags">${
-            item.dataset.tagsDisplay
-              .split(',')
-              .map(tag => `<span class="tag-badge">${tag.trim()}</span>`)
-              .join(' ')
-          }</div>`
-        : '';
+  ? `<div class="article-tags">${
+      item.dataset.tagsDisplay
+        .split(',')
+        .map(tag => {
+          const safeTag = tag.trim().toLowerCase().replace(/\s+/g, '-');
+          return `<span class="tag-badge tag-${safeTag}">${tag.trim()}</span>`;
+        })
+        .join(' ')
+    }</div>`
+  : '';
 
         const arrowSvg = `
         <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
