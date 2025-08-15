@@ -5,6 +5,9 @@
     max-width: 1216px;
     padding: 0 20px;
   }
+  .arrow-icon {
+    display: none;
+  }
 
   /* Mobile select dropdown */
   #tag-filter-select {
@@ -205,6 +208,12 @@
     .article-card.as-right .article-title {
       font-size: 18px;
     }
+    .arrow-icon {
+      display: block;
+    }
+    .article-card.as-right .arrow-icon {
+      display: none;
+    }
 
     .article-card.as-featured .article-content {
       margin-top: 25px;
@@ -232,6 +241,22 @@
       display: flex;
       flex-direction: column;
       min-width: 0;
+    }
+  }
+
+  .article-title-row {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+  }
+  .article-title-arrow {
+    display: none;
+    flex-shrink: 0;
+    margin-left: 8px;
+  }
+  @media (min-width: 768px) {
+    .article-title-arrow {
+      display: inline-block;
     }
   }
 </style>
@@ -346,11 +371,21 @@
           }</div>`
         : '';
 
+        const arrowSvg = `
+        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7.66699 17L17.667 7M17.667 7H7.66699M17.667 7V17" stroke="#292524" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+      `;
+
       card.innerHTML = `
         ${imageHtml}
         <div class="article-content">
           ${dateHtml}
-          <h3 class="article-title">${item.dataset.title}</h3>
+          <div class="article-title-row">
+            <h3 class="article-title">${item.dataset.title}</h3>
+            <span class="arrow-icon">${arrowSvg}</span>
+          </div>
           ${excerptHtml}
           ${tagsHtml}
         </div>
