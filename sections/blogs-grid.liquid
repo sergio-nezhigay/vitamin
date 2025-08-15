@@ -1,20 +1,15 @@
 <section id="{{ section.id }}">
   {%- assign articles_per_page = 2 -%}
-  {%- assign current_page = request.query.page | default: 1 | plus: 0 -%}
-
-  {%- assign start_index = articles_per_page | times: current_page | minus: articles_per_page -%}
-  {%- assign paged_articles = blog.articles | slice: start_index, articles_per_page -%}
-
-  <ul>
-    {%- for article in paged_articles -%}
-      <li>
+  <ul id="article-list">
+    {%- for article in blog.articles -%}
+      <li class="article-item" style="display:none;">
         <a href="{{ article.url }}">{{ article.title }}</a>
         {%- if article.tags.size > 0 -%}
           <span>
             —
             {%- for tag in article.tags -%}
-              {{ tag }}
-              {%- unless forloop.last -%}, {% endunless -%}
+              {{ tag -}}
+              {%- unless forloop.last %}, {% endunless %}
             {%- endfor -%}
           </span>
         {%- endif -%}
@@ -22,26 +17,55 @@
     {%- endfor -%}
   </ul>
 
-  {# --- Pagination links --- #}
-  <div class="custom-pagination">
-    {%- assign total_pages = blog.articles.size | divided_by: articles_per_page | ceil -%}
+  <div id="pagination"></div>
 
-    {%- if current_page > 1 -%}
-      <a href="?page={{ current_page | minus: 1 }}">Previous</a>
-    {%- endif -%}
+  <script>
+    (function() {
+      var items = document.querySelectorAll('#article-list .article-item');
+      var perPage = {{ articles_per_page }};
+      var currentPage = 1;
+      var totalPages = Math.ceil(items.length / perPage);
+      var pagination = document.getElementById('pagination');
 
-    {%- for i in (1..total_pages) -%}
-      {%- if i == current_page -%}
-        <span>{{ i }}</span>
-      {%- else -%}
-        <a href="?page={{ i }}">{{ i }}</a>
-      {%- endif -%}
-    {%- endfor -%}
+      function showPage(page) {
+        currentPage = page;
+        items.forEach(function(item, index) {
+          item.style.display = (index >= (page - 1) * perPage && index < page * perPage) ? '' : 'none';
+        });
+        renderPagination();
+      }
 
-    {%- if current_page < total_pages -%}
-      <a href="?page={{ current_page | plus: 1 }}">Next</a>
-    {%- endif -%}
-  </div>
+      function renderPagination() {
+        pagination.innerHTML = '';
+        if (currentPage > 1) {
+          var prev = document.createElement('a');
+          prev.href = '#';
+          prev.textContent = 'Previous';
+          prev.onclick = function(e) { e.preventDefault(); showPage(currentPage - 1); };
+          pagination.appendChild(prev);
+        }
+        for (let i = 1; i <= totalPages; i++) {
+          let link = document.createElement('a');
+          link.href = '#';
+          link.textContent = i;
+          if (i === currentPage) {
+            link.style.fontWeight = 'bold';
+          }
+          link.onclick = function(e) { e.preventDefault(); showPage(i); };
+          pagination.appendChild(link);
+        }
+        if (currentPage < totalPages) {
+          var next = document.createElement('a');
+          next.href = '#';
+          next.textContent = 'Next';
+          next.onclick = function(e) { e.preventDefault(); showPage(currentPage + 1); };
+          pagination.appendChild(next);
+        }
+      }
+
+      showPage(1);
+    })();
+  </script>
 </section>
 
 {% schema %}
