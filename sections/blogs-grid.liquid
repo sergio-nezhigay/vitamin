@@ -1,13 +1,40 @@
 <style>
   .tag-filter-container {
     margin-bottom: 20px;
+    margin: 0 auto;
+    max-width: 1216px;
   }
+
+  /* Mobile select dropdown */
+  #tag-filter-select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 2px solid #e2e8f0;
+    background: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    display: block;
+  }
+
+  /* Desktop buttons */
   #tag-filter-buttons {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 16px;
   }
+
+  /* Show buttons on desktop, hide select */
+  @media (min-width: 768px) {
+    #tag-filter-select {
+      display: none;
+    }
+    #tag-filter-buttons {
+      display: flex;
+    }
+  }
+
   .filter-btn {
     padding: 8px 16px;
     border: 2px solid #e2e8f0;
@@ -92,6 +119,17 @@
     font-size: 14px;
     color: #6b7280;
   }
+  .tag-badge {
+    display: inline-block;
+    background: #f1f5f9;
+    color: #2563eb;
+    border-radius: 4px;
+    padding: 2px 8px;
+    margin-right: 6px;
+    margin-bottom: 2px;
+    font-size: 13px;
+    font-weight: 500;
+  }
   #pagination {
     display: flex;
     gap: 8px;
@@ -107,7 +145,13 @@
   #pagination a:hover {
     background: #f3f4f6;
   }
+  .blogs-grid {
+    padding-top: 70px;
+  }
   @media (min-width: 768px) {
+    .blogs-grid {
+      padding-top: 110px;
+    }
     #top-grid .as-featured {
       grid-column: 1;
       grid-row: span 3;
@@ -146,6 +190,22 @@
   {%- assign articles_per_page = 7 -%}
 
   <div class="tag-filter-container">
+    <!-- Mobile select dropdown -->
+    <select id="tag-filter-select">
+      <option value="">All</option>
+      {%- assign all_tags = '' -%}
+      {%- for article in blog.articles -%}
+        {%- for tag in article.tags -%}
+          {%- assign tag_lc = tag | downcase -%}
+          {%- unless all_tags contains tag_lc -%}
+            <option value="{{ tag_lc | escape }}">{{ tag }}</option>
+            {%- assign all_tags = all_tags | append: ',' | append: tag_lc -%}
+          {%- endunless -%}
+        {%- endfor -%}
+      {%- endfor -%}
+    </select>
+
+    <!-- Desktop buttons -->
     <div id="tag-filter-buttons">
       <button class="filter-btn active" data-tag="">All</button>
       {%- assign all_tags = '' -%}
@@ -172,7 +232,8 @@
         data-tags="{{ article.tags | join: ',' | downcase }}"
         data-url="{{ article.url }}"
         data-title="{{ article.title | escape }}"
-        data-image="{{ article.image | img_url: '600x400' }}"
+        data-image="{{ article.image | image_url: width: 600 }}"
+
         data-tags-display="{%- for tag in article.tags -%}{{ tag }}{%- unless forloop.last %}, {% endunless -%}{%- endfor -%}"
         data-date="{{ article.published_at | date: '%b %d, %Y' }}"
         data-excerpt="{{ excerpt_text | truncate: 120 | escape }}"
@@ -195,6 +256,7 @@
     const allItems = Array.from(document.querySelectorAll('#article-source .article-item'));
     const pagination = document.getElementById('pagination');
     const filterButtons = document.querySelectorAll('.filter-btn');
+    const filterSelect = document.getElementById('tag-filter-select');
     const noArticlesMsg = document.getElementById('no-articles');
     const topGrid = document.getElementById('top-grid');
     const bottomGrid = document.getElementById('bottom-grid');
@@ -226,7 +288,12 @@
         : '';
 
       const tagsHtml = item.dataset.tagsDisplay
-        ? `<div class="article-tags">${item.dataset.tagsDisplay}</div>`
+        ? `<div class="article-tags">${
+            item.dataset.tagsDisplay
+              .split(',')
+              .map(tag => `<span class="tag-badge">${tag.trim()}</span>`)
+              .join(' ')
+          }</div>`
         : '';
 
       card.innerHTML = `
@@ -300,13 +367,31 @@
       btn.classList.add('active');
     };
 
+    const updateSelectValue = (tag) => {
+      filterSelect.value = tag;
+    };
+
+    const handleFilter = (tag) => {
+      filterArticles(tag);
+      // Keep button and select in sync
+      const activeBtn = document.querySelector(`[data-tag="${tag}"]`);
+      if (activeBtn) updateActiveButton(activeBtn);
+      updateSelectValue(tag);
+    };
+
+    // Button event listeners
     filterButtons.forEach((btn) => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        updateActiveButton(btn);
         const tag = btn.dataset.tag.toLowerCase().trim();
-        filterArticles(tag);
+        handleFilter(tag);
       });
+    });
+
+    // Select event listener
+    filterSelect.addEventListener('change', (e) => {
+      const tag = e.target.value.toLowerCase().trim();
+      handleFilter(tag);
     });
 
     filterArticles('');
@@ -315,8 +400,9 @@
 
 {% schema %}
 {
-  "name": "Simple Blog List",
+  "name": "Blogs Grid",
+  "class": "blogs-grid",
   "settings": [],
-  "presets": [{ "name": "Simple Blog List" }]
+  "presets": [{ "name": "Blogs Grid" }]
 }
 {% endschema %}
