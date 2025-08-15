@@ -1254,6 +1254,11 @@
       }
     }
   }
+  .max-md\:\!mt-10 {
+    @media (width < 48rem) {
+      margin-top: calc(var(--spacing) * 10) !important;
+    }
+  }
   .max-md\:aspect-square {
     @media (width < 48rem) {
       aspect-ratio: 1 / 1;
@@ -1628,6 +1633,11 @@
       align-items: stretch;
     }
   }
+  .md\:\!gap-8 {
+    @media (width >= 48rem) {
+      gap: calc(var(--spacing) * 8) !important;
+    }
+  }
   .md\:\!gap-\[32px\] {
     @media (width >= 48rem) {
       gap: 32px !important;
@@ -1641,6 +1651,11 @@
   .md\:gap-5 {
     @media (width >= 48rem) {
       gap: calc(var(--spacing) * 5);
+    }
+  }
+  .md\:gap-8 {
+    @media (width >= 48rem) {
+      gap: calc(var(--spacing) * 8);
     }
   }
   .md\:gap-16 {

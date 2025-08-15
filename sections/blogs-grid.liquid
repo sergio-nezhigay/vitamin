@@ -32,12 +32,16 @@
   #tag-filter-buttons {
     display: none;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 16px;
+    gap: 45px;
+    border-bottom: 1px solid #ced6d3;
   }
 
   /* Show buttons on desktop, hide select */
   @media (min-width: 768px) {
+    .tag-filter-container {
+      margin-bottom: 45px;
+      padding: 0px;
+    }
     #tag-filter-select {
       display: none;
     }
@@ -47,22 +51,21 @@
   }
 
   .filter-btn {
-    padding: 8px 16px;
-    border: 2px solid #e2e8f0;
+    padding-bottom: 17px;
     background: #fff;
-    border-radius: 6px;
+    color: #8f8f8f;
     cursor: pointer;
-    font-size: 14px;
-    transition: all 0.2s ease;
+    font-family: Nunito, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
   }
-  .filter-btn:hover {
-    border-color: #3b82f6;
-    background: #f8fafc;
-  }
+
   .filter-btn.active {
-    background: #3b82f6;
-    color: #fff;
-    border-color: #3b82f6;
+    color: #292524;
+    border-bottom: 2px solid blue;
   }
   #top-grid,
   #bottom-grid {
@@ -104,7 +107,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
-    line-clamp: 2;
     max-height: 2.6em;
   }
 
@@ -120,12 +122,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 3;
-    line-clamp: 3;
     max-height: 4.5em;
   }
   .article-card.as-right .article-excerpt {
     -webkit-line-clamp: 2;
-    line-clamp: 2;
     max-height: 3em;
   }
 
@@ -197,6 +197,21 @@
     .article-card.as-featured .article-image {
       height: 419px;
     }
+
+    .article-title,
+    .article-card.as-featured .article-title {
+      font-size: 24px;
+    }
+    .article-card.as-right .article-title {
+      font-size: 18px;
+    }
+
+    .article-card.as-featured .article-content {
+      margin-top: 25px;
+    }
+    .article-card.as-right .article-content {
+      margin-top: 0px;
+    }
     .article-card.as-right {
       display: flex;
       flex-direction: row;
@@ -221,7 +236,7 @@
   }
 </style>
 
-<section id="{{ section.id }}" class="px-5">
+<section id="{{ section.id }}" class="max-md:px-5">
   {%- assign articles_per_page = 7 -%}
 
   <div class="tag-filter-container">
@@ -277,8 +292,8 @@
   </ul>
 
   <div class="!space-y-[55px] max-w-[1236px] mx-auto">
-    <ul id="top-grid" class="grid gap-10 md:grid-cols-2 !mt-10 md:!p-2.5"></ul>
-    <ul id="bottom-grid" class="grid gap-10 md:grid-cols-3"></ul>
+    <ul id="top-grid" class="grid gap-10 md:!gap-8 md:grid-cols-2 max-md:!mt-10 md:!p-2.5"></ul>
+    <ul id="bottom-grid" class="grid gap-10 md:gap-8 md:grid-cols-3"></ul>
   </div>
 
   <div id="pagination"></div>
