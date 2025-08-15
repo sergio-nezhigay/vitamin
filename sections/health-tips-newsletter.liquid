@@ -1,0 +1,225 @@
+<!-- Health Tips Newsletter Section -->
+<div
+  id="{{ section.id }}"
+  class="health-tips-newsletter {{ section.settings.custom_classes }}"
+  style="background: {{ section.settings.background_color }}; color: {{ section.settings.text_color }};"
+>
+  <div class="max-w-[{{ section.settings.max_width }}px] mx-auto px-4">
+    <div class="text-center">
+      {% if section.settings.title != blank %}
+        <h2 class="text-[48px] leading-none font-medium mb-6 text-[#292524]">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+
+      {% if section.settings.description != blank %}
+        <div class="font-nunito font-semibold text-[20px] mb-7.5  max-w-[746px] mx-auto leading-normal">
+          {{ section.settings.description }}
+        </div>
+      {% endif %}
+
+      <!-- Newsletter Form -->
+      <form class="newsletter-form max-w-md mx-auto">
+        <div class="flex flex-col md:flex-row md:gap-4 md:mb-[6px]">
+          <input
+            id="newsletter-email"
+            type="email"
+            placeholder="{{ section.settings.input_placeholder }}"
+            required
+            class="flex-1 !px-[14px] !py-3 border border-[#D0D5DD] rounded-[8px] focus:outline-none focus:ring-2 focus:ring-opacity-50 text-[#44403C] max-md:!mb-[6px]"
+            style="focus:ring-color: {{ section.settings.button_color }};"
+          >
+          {% if section.settings.privacy_text != blank %}
+            <span class="privacy-text text-left md:hidden text-[14px] leading-[1.71] font-nunito mb-4">
+              {{ section.settings.privacy_text }}
+            </span>
+          {% endif %}
+          <button
+            type="submit"
+            class="!px-6 !py-3 !text-white !font-bold !font-nunito !text-[16px]  hover:opacity-90 transition-opacity duration-200 !rounded-[8px] whitespace-nowrap"
+            style="background-color: {{ section.settings.button_color }};"
+          >
+            {{ section.settings.button_text }}
+          </button>
+        </div>
+        {% if section.settings.privacy_text != blank %}
+          <span class="privacy-text text-left hidden md:block text-[14px] leading-[1.71] font-nunito">
+            {{ section.settings.privacy_text }}
+          </span>
+        {% endif %}
+      </form>
+    </div>
+  </div>
+</div>
+
+<style>
+  #{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+  @media (min-width: 1024px) {
+    #{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+
+  #{{ section.id }} .newsletter-form input:focus {
+    ring-color: {{ section.settings.button_color }};
+  }
+
+  #{{ section.id }} .newsletter-form button:hover {
+    background-color: {{ section.settings.button_color | color_darken: 10 }};
+  }
+  #{{ section.id }} .privacy-text a {
+      text-decoration: underline;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('#{{ section.id }} .newsletter-form');
+
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = form.querySelector('input[type="email"]').value;
+
+        // Add your newsletter subscription logic here
+        console.log('Newsletter subscription for:', email);
+
+        // Example: Show success message
+        const button = form.querySelector('button');
+        const originalText = button.textContent;
+        button.textContent = 'Subscribed!';
+        button.disabled = true;
+
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.disabled = false;
+          form.reset();
+        }, 2000);
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Health Tips Newsletter",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Health Tips"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Let health experts show you how VitaminH2 can optimize your wellness routine. On our blog, doctors, nutritionists, and experts share valuable tips and insights.</p>"
+    },
+    {
+      "type": "text",
+      "id": "input_placeholder",
+      "label": "Email Input Placeholder",
+      "default": "Enter your email"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Subscribe"
+    },
+    {
+      "type": "richtext",
+      "id": "privacy_text",
+      "label": "Privacy Text",
+      "default": "<p>We care about your data. Read our <a href=\"/policies/privacy-policy\">privacy policy</a>.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Spacing Settings"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop (px)",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop (px)",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "default": 80
+    },
+    {
+      "type": "number",
+      "id": "max_width",
+      "label": "Max Width (px)",
+      "default": 1200
+    },
+    {
+      "type": "header",
+      "content": "Color Settings"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#f9fafb"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#374151"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Color",
+      "default": "#ef4444"
+    },
+    {
+      "type": "header",
+      "content": "Advanced Settings"
+    },
+    {
+      "type": "text",
+      "id": "custom_classes",
+      "label": "Custom CSS Classes"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Health Tips Newsletter"
+    }
+  ]
+}
+{% endschema %}

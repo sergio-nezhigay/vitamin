@@ -9,82 +9,33 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-blog",
-      "disabled": true,
+    "health_tips_newsletter_8a4pTE": {
+      "type": "health-tips-newsletter",
+      "name": "Health Tips Newsletter",
       "settings": {
-        "color_scheme": "",
-        "show_blog_title": true,
-        "show_rss_feed": false,
-        "show_tags": true,
-        "posts_per_page": 10,
-        "feature_first_blog_post": true,
-        "featured_blog_post_color_scheme": "",
-        "show_category": true,
-        "show_date": false,
-        "show_excerpt": true,
-        "show_read_more": true
+        "title": "Health Tips",
+        "description": "<p>Let health experts show you how VitaminH2 can optimize your wellness routine. On our blog, doctors, nutritionists, and experts share valuable tips and insights.</p>",
+        "input_placeholder": "Enter your email",
+        "button_text": "Subscribe",
+        "privacy_text": "<p>We care about your data in our <a href=\"/policies/privacy-policy\" target=\"_blank\" title=\"Privacy Policy\">privacy policy.</a></p>",
+        "padding_top_mobile": 50,
+        "padding_top_desktop": 90,
+        "padding_bottom_mobile": 0,
+        "padding_bottom_desktop": 0,
+        "max_width": 746,
+        "background_color": "#ffffff",
+        "text_color": "#44403c",
+        "button_color": "#ea5167",
+        "custom_classes": ""
       }
     },
-    "blogs_grid_6CgiQt": {
+    "blogs_grid": {
       "type": "blogs-grid",
-      "blocks": {
-        "tab_b8iA6B": {
-          "type": "tab",
-          "settings": {
-            "tab_title": "Sport",
-            "tab_handle": "sport"
-          }
-        },
-        "tab_Gf7RxJ": {
-          "type": "tab",
-          "settings": {
-            "tab_title": "Wellness",
-            "tab_handle": "wellness"
-          }
-        },
-        "tab_BMLeab": {
-          "type": "tab",
-          "settings": {
-            "tab_title": "Sport",
-            "tab_handle": "sport"
-          }
-        },
-        "tab_4n7EnA": {
-          "type": "tab",
-          "settings": {
-            "tab_title": "News",
-            "tab_handle": "news"
-          }
-        }
-      },
-      "block_order": [
-        "tab_b8iA6B",
-        "tab_Gf7RxJ",
-        "tab_BMLeab",
-        "tab_4n7EnA"
-      ],
-      "name": "Blog List Layout",
-      "settings": {
-        "padding_top_mobile": 40,
-        "padding_bottom_mobile": 40,
-        "padding_top_desktop": 60,
-        "padding_bottom_desktop": 60,
-        "background_color": "#ffffff",
-        "text_color": "#000000",
-        "max_width": "1200",
-        "custom_classes": "",
-        "blog": "",
-        "blogs_per_page": 7,
-        "show_tabs": true,
-        "show_badges": true,
-        "show_pagination": true,
-        "tab_all_text": "View all"
-      }
+      "settings": {}
     }
   },
   "order": [
-    "main",
-    "blogs_grid_6CgiQt"
+    "health_tips_newsletter_8a4pTE",
+    "blogs_grid"
   ]
 }
