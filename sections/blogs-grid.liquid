@@ -3,7 +3,7 @@
     margin-bottom: 20px;
     margin: 0 auto;
     max-width: 1216px;
-    position: relative; /* Add this */
+    position: relative;
   }
   .arrow-icon {
     display: none;
@@ -60,25 +60,6 @@
     border-bottom: 1px solid #ced6d3;
   }
 
-  /* Show buttons on desktop, hide select */
-  @media (min-width: 768px) {
-    .tag-filter-container {
-      margin-bottom: 45px;
-      padding: 0px;
-    }
-    @media (min-width: 768px) {
-      .tag-filter-container:after {
-        display: none;
-      }
-    }
-    #tag-filter-select {
-      display: none;
-    }
-    #tag-filter-buttons {
-      display: flex;
-    }
-  }
-
   .filter-btn {
     padding-bottom: 17px;
     background: #fff;
@@ -103,7 +84,7 @@
     content: '';
     position: absolute;
     left: 0;
-    bottom: -2px;
+    bottom: -4px;
     height: 5px;
     width: 100%;
     background: #ea5167;
@@ -220,73 +201,10 @@
     color: #ea5167;
     border-color: #ea5167;
   }
-
   .blogs-grid {
     padding-top: 70px;
     padding-bottom: 90px;
   }
-  @media (min-width: 768px) {
-    .article-card.as-featured .article-image {
-      height: 300px;
-    }
-    .blogs-grid {
-      padding-top: 110px;
-      padding-bottom: 102px;
-    }
-    #top-grid .as-featured {
-      grid-column: 1;
-      grid-row: span 3;
-    }
-    #top-grid .as-right {
-      grid-column: 2;
-    }
-    .article-card.as-featured .article-image {
-      height: 419px;
-    }
-
-    .article-title,
-    .article-card.as-featured .article-title {
-      font-size: 24px;
-    }
-    .article-card.as-right .article-title {
-      font-size: 18px;
-    }
-    .arrow-icon {
-      display: block;
-    }
-    .article-card.as-right .arrow-icon {
-      display: none;
-    }
-
-    .article-card.as-featured .article-content {
-      margin-top: 25px;
-    }
-    .article-card.as-right .article-content {
-      margin-top: 0px;
-    }
-    .article-card.as-right {
-      display: flex;
-      flex-direction: row;
-      gap: 20px;
-      align-items: stretch;
-      height: 200px;
-      min-width: 0;
-    }
-    .article-card.as-right .article-image {
-      width: 55.9%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 8px 0 0 8px;
-      min-width: 0;
-    }
-    .article-card.as-right .article-content {
-      width: 44.1%;
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-    }
-  }
-
   .article-title-row {
     display: flex;
     align-items: start;
@@ -297,11 +215,7 @@
     flex-shrink: 0;
     margin-left: 8px;
   }
-  @media (min-width: 768px) {
-    .article-title-arrow {
-      display: inline-block;
-    }
-  }
+
   #pagination {
     display: flex;
     justify-content: center;
@@ -382,6 +296,78 @@
   }
 
   @media (min-width: 768px) {
+    .tag-filter-container {
+      margin-bottom: 45px;
+      padding: 0px;
+    }
+    .tag-filter-container:after {
+      display: none;
+    }
+    #tag-filter-select {
+      display: none;
+    }
+    #tag-filter-buttons {
+      display: flex;
+    }
+    .article-card.as-featured .article-image {
+      height: 300px;
+    }
+    .blogs-grid {
+      padding-top: 110px;
+      padding-bottom: 102px;
+    }
+    #top-grid .as-featured {
+      grid-column: 1;
+      grid-row: span 3;
+    }
+    #top-grid .as-right {
+      grid-column: 2;
+    }
+    .article-card.as-featured .article-image {
+      height: 419px;
+    }
+
+    .article-title,
+    .article-card.as-featured .article-title {
+      font-size: 24px;
+    }
+    .article-card.as-right .article-title {
+      font-size: 18px;
+    }
+    .arrow-icon {
+      display: block;
+    }
+    .article-card.as-right .arrow-icon {
+      display: none;
+    }
+
+    .article-card.as-featured .article-content {
+      margin-top: 25px;
+    }
+    .article-card.as-right .article-content {
+      margin-top: 0px;
+    }
+    .article-card.as-right {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: stretch;
+      height: 200px;
+      min-width: 0;
+    }
+    .article-card.as-right .article-image {
+      width: 55.9%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px 0 0 8px;
+      min-width: 0;
+    }
+    .article-card.as-right .article-content {
+      width: 44.1%;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
     .page-numbers,
     .pagination-ellipsis {
       display: flex;
@@ -395,6 +381,9 @@
     }
     .pagination-nav:last-child {
       margin-left: 48px;
+    }
+    .article-title-arrow {
+      display: inline-block;
     }
   }
 </style>
@@ -558,7 +547,6 @@
 
       pagination.style.display = 'flex';
 
-      // Prev button
       const prevBtn = document.createElement('button');
       prevBtn.className = `pagination-nav ${currentPage === 1 ? 'disabled' : ''}`;
       prevBtn.setAttribute('aria-label', 'Previous page');
@@ -572,32 +560,29 @@
       });
       pagination.appendChild(prevBtn);
 
-      // Mobile page indicator (Page X of Y)
       const mobileIndicator = document.createElement('div');
       mobileIndicator.className = 'mobile-page-indicator';
       mobileIndicator.textContent = `Page ${currentPage} of ${totalPages}`;
       pagination.appendChild(mobileIndicator);
 
-      // Page numbers (desktop only)
+
       const renderPageNumbers = () => {
         let startPage = 1;
         let endPage = totalPages;
         const maxVisiblePages = 5;
 
-        // If total pages > max visible, calculate which ones to show
+
         if (totalPages > maxVisiblePages) {
-          // Always show current page and some neighbors
+
           const pageNeighbors = Math.floor((maxVisiblePages - 1) / 2);
           startPage = Math.max(1, currentPage - pageNeighbors);
           endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
 
-          // Adjust if we're near the end
           if (endPage - startPage + 1 < maxVisiblePages) {
             startPage = Math.max(1, endPage - maxVisiblePages + 1);
           }
         }
 
-        // First page + ellipsis
         if (startPage > 1) {
           const firstPageBtn = createPageButton(1);
           pagination.appendChild(firstPageBtn);
@@ -610,13 +595,11 @@
           }
         }
 
-        // Visible page numbers
         for (let i = startPage; i <= endPage; i++) {
           const pageBtn = createPageButton(i);
           pagination.appendChild(pageBtn);
         }
 
-        // Ellipsis + last page
         if (endPage < totalPages) {
           if (endPage < totalPages - 1) {
             const ellipsis = document.createElement('span');
@@ -630,7 +613,6 @@
         }
       };
 
-      // Helper to create page number buttons
       const createPageButton = (pageNum) => {
         const pageBtn = document.createElement('button');
         pageBtn.className = `pagination-btn page-numbers ${pageNum === currentPage ? 'active' : ''}`;
@@ -642,7 +624,6 @@
 
       renderPageNumbers();
 
-      // Next button
       const nextBtn = document.createElement('button');
       nextBtn.className = `pagination-nav ${currentPage === totalPages ? 'disabled' : ''}`;
       nextBtn.setAttribute('aria-label', 'Next page');
@@ -693,13 +674,11 @@
 
     const handleFilter = (tag) => {
       filterArticles(tag);
-
       const activeBtn = document.querySelector(`[data-tag="${tag}"]`);
       if (activeBtn) updateActiveButton(activeBtn);
       updateSelectValue(tag);
     };
 
-    // Button event listeners
     filterButtons.forEach((btn) => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -708,7 +687,6 @@
       });
     });
 
-    // Select event listener
     filterSelect.addEventListener('change', (e) => {
       const tag = e.target.value.toLowerCase().trim();
       handleFilter(tag);
