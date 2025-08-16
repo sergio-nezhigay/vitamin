@@ -90,11 +90,36 @@
     line-height: 1.5;
     border-bottom: 2px solid transparent;
     transition: color 0.2s ease, border-color 0.2s ease;
+    position: relative;
+  }
+  .filter-btn:hover {
+    color: #292524;
+  }
+  .filter-btn:hover::before {
+    transform: scaleX(1);
   }
 
+  .filter-btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 5px;
+    width: 100%;
+    background: #ea5167;
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+    pointer-events: none;
+  }
   .filter-btn.active {
     color: #292524;
-    border-bottom: 2px solid blue;
+  }
+
+  .filter-btn.active::before {
+    transform: scaleX(1);
   }
   #top-grid,
   #bottom-grid {
@@ -198,6 +223,7 @@
 
   .blogs-grid {
     padding-top: 70px;
+    padding-bottom: 90px;
   }
   @media (min-width: 768px) {
     .article-card.as-featured .article-image {
@@ -205,6 +231,7 @@
     }
     .blogs-grid {
       padding-top: 110px;
+      padding-bottom: 102px;
     }
     #top-grid .as-featured {
       grid-column: 1;
@@ -275,15 +302,11 @@
       display: inline-block;
     }
   }
-
-  /* Pagination styles */
   #pagination {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    gap: 8px;
+    gap: 2px;
   }
 
   .pagination-btn {
@@ -295,10 +318,10 @@
     border-radius: 50%;
     border: none;
     background: transparent;
-    color: #44403c;
+    color: #475467;
     font-family: Nunito, sans-serif;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
     transition: background-color 0.2s ease, color 0.2s ease;
   }
@@ -321,17 +344,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 40px;
-    height: 40px;
+    min-width: 56px;
+    height: 56px;
     border-radius: 50%;
-    border: 2px solid #ced6d3;
-    background: white;
+    background: #fdf4e9;
     cursor: pointer;
-    transition: border-color 0.2s ease;
   }
 
   .pagination-nav:hover:not(.disabled) {
-    border-color: #ea5167;
+    background-color: #f9f1e6;
   }
 
   .pagination-nav.disabled {
@@ -349,22 +370,42 @@
     font-weight: 700;
   }
 
+  .mobile-page-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #475467;
+    font-family: Nunito, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0 25px;
+  }
+
   @media (min-width: 768px) {
     .page-numbers,
     .pagination-ellipsis {
       display: flex;
       border-radius: 8px;
     }
+    .mobile-page-indicator {
+      display: none;
+    }
+    .pagination-nav:first-child {
+      margin-right: 48px;
+    }
+    .pagination-nav:last-child {
+      margin-left: 48px;
+    }
   }
 </style>
 
 <section id="{{ section.id }}" class="max-md:px-5">
-  {%- assign articles_per_page = 2 -%}
+  {%- assign articles_per_page = 7 -%}
 
   <div class="tag-filter-container">
     <!-- Mobile select dropdown -->
     <select id="tag-filter-select">
-      <option value="">All</option>
+      <option value="">View all</option>
       {%- assign all_tags = '' -%}
       {%- for article in blog.articles -%}
         {%- for tag in article.tags -%}
@@ -379,7 +420,7 @@
 
     <!-- Desktop buttons -->
     <div id="tag-filter-buttons">
-      <button class="filter-btn active" data-tag="">All</button>
+      <button class="filter-btn active" data-tag="">View All</button>
       {%- assign all_tags = '' -%}
       {%- for article in blog.articles -%}
         {%- for tag in article.tags -%}
@@ -413,7 +454,7 @@
     {%- endfor -%}
   </ul>
 
-  <div class="!space-y-[55px] max-w-[1236px] mx-auto">
+  <div class="!space-y-[55px] max-w-[1236px] mx-auto ">
     <ul id="top-grid" class="grid gap-10 md:!gap-8 md:grid-cols-2 max-md:!mt-10 md:!p-2.5"></ul>
     <ul id="bottom-grid" class="grid gap-10 md:gap-8 md:grid-cols-3"></ul>
   </div>
@@ -531,6 +572,12 @@
       });
       pagination.appendChild(prevBtn);
 
+      // Mobile page indicator (Page X of Y)
+      const mobileIndicator = document.createElement('div');
+      mobileIndicator.className = 'mobile-page-indicator';
+      mobileIndicator.textContent = `Page ${currentPage} of ${totalPages}`;
+      pagination.appendChild(mobileIndicator);
+
       // Page numbers (desktop only)
       const renderPageNumbers = () => {
         let startPage = 1;
@@ -616,9 +663,6 @@
       const pageItems = filteredItems.slice(start, start + perPage);
       reorderForLayout(pageItems);
       renderPagination();
-
-      // Scroll to top of section when changing pages
-      document.getElementById("{{ section.id }}").scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
 
     const filterArticles = (tag) => {
