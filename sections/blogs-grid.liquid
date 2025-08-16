@@ -25,8 +25,8 @@
 
   #tag-filter-select {
     width: 100%;
-    padding: 12px 14px;
-    border: 2px solid #ced6d3;
+    padding: 11px 14px;
+    border: 1px solid #ced6d3;
     background: #fff;
     color: #292524;
     border-radius: 8px;
@@ -61,7 +61,7 @@
   }
 
   .filter-btn {
-    padding-bottom: 17px;
+    padding-bottom: 15px;
     background: #fff;
     color: #8f8f8f;
     cursor: pointer;
@@ -84,9 +84,9 @@
     content: '';
     position: absolute;
     left: 0;
-    bottom: -4px;
+    bottom: -5px;
     height: 5px;
-    width: 100%;
+    width: calc(100% + 8px);
     background: #ea5167;
     border-radius: 2px;
     transform: scaleX(0);
@@ -129,7 +129,7 @@
     border-radius: 24px;
   }
   .article-content {
-    margin-top: 20px;
+    margin-top: 25px;
   }
 
   .article-title {
@@ -341,6 +341,10 @@
       display: none;
     }
 
+    .article-content {
+      margin-top: 20px;
+    }
+
     .article-card.as-featured .article-content {
       margin-top: 25px;
     }
@@ -358,8 +362,6 @@
     .article-card.as-right .article-image {
       width: 55.9%;
       height: 100%;
-      object-fit: cover;
-      border-radius: 8px 0 0 8px;
       min-width: 0;
     }
     .article-card.as-right .article-content {
@@ -437,7 +439,7 @@
         data-image="{{ article.image | image_url: width: 600 }}"
 
         data-tags-display="{%- for tag in article.tags -%}{{ tag }}{%- unless forloop.last %}, {% endunless -%}{%- endfor -%}"
-        data-date="{{ article.published_at | date: '%b %d, %Y' }}"
+        data-date="{{ article.published_at | date: '%d %b %Y' }}"
         data-excerpt="{{ excerpt_text | truncate: 120 | escape }}"
       ></li>
     {%- endfor -%}
@@ -445,7 +447,7 @@
 
   <div class="!space-y-[55px] max-w-[1236px] mx-auto ">
     <ul id="top-grid" class="grid gap-10 md:!gap-8 md:grid-cols-2 max-md:!mt-10 md:!p-2.5"></ul>
-    <ul id="bottom-grid" class="grid gap-10 md:gap-8 md:grid-cols-3"></ul>
+    <ul id="bottom-grid" class="grid gap-10 md:!gap-[32px] md:grid-cols-3"></ul>
   </div>
 
   <div id="pagination" aria-label="Pagination"></div>
