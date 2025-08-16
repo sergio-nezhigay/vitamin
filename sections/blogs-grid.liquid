@@ -304,12 +304,12 @@
   }
 
   .pagination-btn:hover {
-    background-color: #f3f4f6;
+    background-color: #fdf4e9;
   }
 
   .pagination-btn.active {
-    background-color: #ea5167;
-    color: white;
+    background-color: #fdf4e9;
+    color: #182230;
   }
 
   .pagination-btn.disabled {
@@ -353,6 +353,7 @@
     .page-numbers,
     .pagination-ellipsis {
       display: flex;
+      border-radius: 8px;
     }
   }
 </style>
@@ -521,8 +522,8 @@
       prevBtn.className = `pagination-nav ${currentPage === 1 ? 'disabled' : ''}`;
       prevBtn.setAttribute('aria-label', 'Previous page');
       prevBtn.innerHTML = `
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15 18L9 12L15 6" stroke="#292524" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"         xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 12H5M5 12L12 5M5 12L12 19" stroke="#EA5167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       `;
       prevBtn.addEventListener('click', () => {
@@ -600,7 +601,7 @@
       nextBtn.setAttribute('aria-label', 'Next page');
       nextBtn.innerHTML = `
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 6L15 12L9 18" stroke="#292524" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#EA5167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       `;
       nextBtn.addEventListener('click', () => {
