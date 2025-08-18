@@ -1,6 +1,6 @@
 {%- comment -%}
-This file defines all the CSS variables used throughout the theme. Feel free to adjust them at your own need, but
-note that this may have impact on different places.
+  This file defines all the CSS variables used throughout the theme. Feel free to adjust them at your own need, but
+  note that this may have impact on different places.
 {%- endcomment -%}
 
 {%- assign language_code = localization.language.iso_code | split: '-' | first -%}
@@ -127,6 +127,9 @@ note that this may have impact on different places.
 
     --checkmark-svg-url: url({{ 'checkmark.svg' | asset_url }});
     --cursor-zoom-in-svg-url: url({{ 'cursor-zoom-in.svg' | asset_url }});
+
+
+
   }
 
   [dir="rtl"]:root {

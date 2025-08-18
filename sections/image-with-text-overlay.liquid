@@ -1,8 +1,8 @@
 {%- if section.settings.image != blank or section.blocks.size > 0 -%}
   {%- comment -%}
-  ------------------------------------------------------------------------------------------------------------------------
-  CSS
-  ------------------------------------------------------------------------------------------------------------------------
+    ------------------------------------------------------------------------------------------------------------------------
+    CSS
+    ------------------------------------------------------------------------------------------------------------------------
   {%- endcomment -%}
 
   <style>
@@ -16,33 +16,51 @@
   </style>
 
   {%- comment -%}
-  ------------------------------------------------------------------------------------------------------------------------
-  LIQUID
-  ------------------------------------------------------------------------------------------------------------------------
+    ------------------------------------------------------------------------------------------------------------------------
+    LIQUID
+    ------------------------------------------------------------------------------------------------------------------------
   {%- endcomment -%}
 
-  <div class="{% unless section.settings.remove_vertical_spacing %}section-spacing{% endunless %} color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--with-image-overlay" {% if section.settings.allow_transparent_header %}allow-transparent-header{% endif %}>
-    <image-with-text-overlay class="content-over-media content-over-media--{{ section.settings.image_size }}" reveal-on-scroll="{{ section.settings.reveal_on_scroll }}">
+  <div
+    class="{% unless section.settings.remove_vertical_spacing %}section-spacing{% endunless %} color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--with-image-overlay"
+    {% if section.settings.allow_transparent_header %}
+      allow-transparent-header
+    {% endif %}
+  >
+    <image-with-text-overlay
+      class="content-over-media content-over-media--{{ section.settings.image_size }}"
+      reveal-on-scroll="{{ section.settings.reveal_on_scroll }}"
+    >
       {%- if section.settings.image != blank -%}
         <picture>
           {%- if section.settings.mobile_image != blank -%}
             <source
-                media="(max-width: 699px)"
-                srcset="{{ section.settings.mobile_image | image_url: width: 400 }} 400w, {{ section.settings.mobile_image | image_url: width: 600 }} 600w, {{ section.settings.mobile_image | image_url: width: 800 }} 800w, {{ section.settings.mobile_image | image_url: width: 1000 }} 1000w"
-                width="{{ section.settings.mobile_image.width }}"
-                height="{{ section.settings.mobile_image.height }}"
+              media="(max-width: 699px)"
+              srcset="{{ section.settings.mobile_image | image_url: width: 400 }} 400w, {{ section.settings.mobile_image | image_url: width: 600 }} 600w, {{ section.settings.mobile_image | image_url: width: 800 }} 800w, {{ section.settings.mobile_image | image_url: width: 1000 }} 1000w"
+              width="{{ section.settings.mobile_image.width }}"
+              height="{{ section.settings.mobile_image.height }}"
             >
           {%- endif -%}
 
-          {{- section.settings.image | image_url: width: section.settings.image.width | image_tag: sizes: '100vw', widths: '200,300,400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200,2400,2600,2800,3000,3200' -}}
+          {{-
+            section.settings.image
+            | image_url: width: section.settings.image.width
+            | image_tag:
+              sizes: '100vw',
+              widths: '200,300,400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200,2400,2600,2800,3000,3200'
+          -}}
         </picture>
       {%- else -%}
-        {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder' | replace: '<svg', '<svg preserveAspectRatio="xMinYMin slice"' -}}
+        {{-
+          'lifestyle-1'
+          | placeholder_svg_tag: 'placeholder'
+          | replace: '<svg', '<svg preserveAspectRatio="xMinYMin slice"'
+        -}}
       {%- endif -%}
 
       {%- if section.blocks.size > 0 -%}
         <div class="content {{ section.settings.mobile_text_position }} {{ section.settings.desktop_text_position }}">
-          <div class="prose">
+          <div class="prose ">
             {%- for block in section.blocks -%}
               {%- case block.type -%}
                 {%- when 'subheading' -%}
@@ -52,7 +70,12 @@
 
                 {%- when 'heading' -%}
                   {%- if block.settings.text != blank -%}
-                    <p class="{{ block.settings.heading_tag }}" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
+                    <p
+                      class="{{ block.settings.heading_tag }} !font-medium !text-[32px] md:!text-[48px] !leading-none"
+                      {{ block.shopify_attributes }}
+                    >
+                      {{ block.settings.text }}
+                    </p>
                   {%- endif -%}
 
                 {%- when 'richtext' -%}
@@ -71,7 +94,14 @@
 
                 {%- when 'button' -%}
                   {%- if block.settings.text != blank -%}
-                    {%- render 'button', content: block.settings.text, href: block.settings.url, style: block.settings.style, background: block.settings.background, text_color: block.settings.text_color, block: block -%}
+                    {%- render 'button',
+                      content: block.settings.text,
+                      href: block.settings.url,
+                      style: block.settings.style,
+                      background: block.settings.background,
+                      text_color: block.settings.text_color,
+                      block: block
+                    -%}
                   {%- endif -%}
 
                 {%- when 'link' -%}
@@ -373,7 +403,6 @@
           "label": "t:global.text.content",
           "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
         }
-        
       ]
     },
     {
@@ -453,7 +482,7 @@
     {
       "name": "t:sections.image_with_text_overlay.presets.image_with_text_overlay.name",
       "blocks": [
-       {
+        {
           "type": "heading",
           "settings": {
             "text": "Image with text overlay"

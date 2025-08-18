@@ -1,104 +1,98 @@
 <style>
+  /********** GT-America-Standard-Regular *****************/
 
-/********** GT-America-Standard-Regular *****************/
+  /* @font-face {
+      font-family: GT-America-Standard-Regular;
+      src: url("https://cdn.shopify.com/s/files/1/0513/5469/files/GT-America-Standard-Regular.woff2?v=1718860764") format("woff2");
+  }
 
-/* @font-face {
-    font-family: GT-America-Standard-Regular;
-    src: url("https://cdn.shopify.com/s/files/1/0513/5469/files/GT-America-Standard-Regular.woff2?v=1718860764") format("woff2");
-}
+  @font-face {
+      font-family: GT-America-Standard-Regular-Italic;
+      src: url("https://cdn.shopify.com/s/files/1/0513/5469/files/GT-America-Standard-Regular-Italic.woff2?v=1718861744") format("woff2");
+  }
 
-@font-face {
-    font-family: GT-America-Standard-Regular-Italic;
-    src: url("https://cdn.shopify.com/s/files/1/0513/5469/files/GT-America-Standard-Regular-Italic.woff2?v=1718861744") format("woff2");
-}
+  @font-face {
+      font-family: GT-America-Standard-Bold;
+      src: url("https://cdn.shopify.com/s/files/1/0513/5469/files/GT-America-Standard-Bold.woff2?v=1718860827") format("woff2");
+  } */
 
-@font-face {
-    font-family: GT-America-Standard-Bold;
-    src: url("https://cdn.shopify.com/s/files/1/0513/5469/files/GT-America-Standard-Bold.woff2?v=1718860827") format("woff2");
-} */
-
-:root{
-/* --heading-font-family: "Gluten" !important; */
-/* --text-font-family: "Mono", Mono !important; */
+  :root{
+  /* --heading-font-family: "Gluten" !important; */
+  /* --text-font-family: "Mono", Mono !important; */
 
 
-   {% if settings.use_custom_font_heading %}
-        {% if settings.custom_font_heading == "duckie_r" %}
+     {% if settings.use_custom_font_heading %}
+          {% if settings.custom_font_heading == "duckie_r" %}
+             --heading-font-family: duckie !important;
+             --heading-font-weight: 400 !important;
+          {% elsif settings.custom_font_heading == "duckie_m" %}
            --heading-font-family: duckie !important;
+           --heading-font-weight: 500 !important;
+          {% elsif settings.custom_font_heading == "duckie_h" %}
+           --heading-font-family: duckie !important;
+           --heading-font-weight: 800 !important;
+          {% elsif settings.custom_font_heading == "hoss-round_r" %}
+           --heading-font-family: hoss-round !important;
            --heading-font-weight: 400 !important;
-        {% elsif settings.custom_font_heading == "duckie_m" %}
-         --heading-font-family: duckie !important;
-         --heading-font-weight: 500 !important;
-        {% elsif settings.custom_font_heading == "duckie_h" %}
-         --heading-font-family: duckie !important;
-         --heading-font-weight: 800 !important;
-        {% elsif settings.custom_font_heading == "hoss-round_r" %}
-         --heading-font-family: hoss-round !important;
-         --heading-font-weight: 400 !important;
-        {% elsif settings.custom_font_heading == "hoss-round_m" %}
-         --heading-font-family: hoss-round !important;
-         --heading-font-weight: 500 !important;
-        {% elsif settings.custom_font_heading == "hoss-round_h" %}
-         --heading-font-family: hoss-round !important;
-         --heading-font-weight: 800 !important;
-        {% endif %}
-   {% endif %}
-    --text-font-family: {{settings.body_font}} !important;
+          {% elsif settings.custom_font_heading == "hoss-round_m" %}
+           --heading-font-family: hoss-round !important;
+           --heading-font-weight: 500 !important;
+          {% elsif settings.custom_font_heading == "hoss-round_h" %}
+           --heading-font-family: hoss-round !important;
+           --heading-font-weight: 800 !important;
+          {% endif %}
+     {% endif %}
+      --text-font-family: {{settings.body_font}} !important;
 
 
-    {% if settings.use_custom_font_text %}
-        {% if settings.custom_font_text == "duckie_r" %}
-          --text-font-family: duckie !important;
+      {% if settings.use_custom_font_text %}
+          {% if settings.custom_font_text == "duckie_r" %}
+            --text-font-family: duckie !important;
+             --text-font-weight: 400 !important;
+          {% elsif settings.custom_font_text == "duckie_m" %}
+            --text-font-family: duckie !important;
+           --text-font-weight: 500 !important;
+          {% elsif settings.custom_font_text == "duckie_h" %}
+            --text-font-family: duckie !important;
+           --text-font-weight: 800 !important;
+          {% elsif settings.custom_font_text == "hoss-round_r" %}
+            --text-font-family: hoss-round !important;
            --text-font-weight: 400 !important;
-        {% elsif settings.custom_font_text == "duckie_m" %}
-          --text-font-family: duckie !important;
-         --text-font-weight: 500 !important;
-        {% elsif settings.custom_font_text == "duckie_h" %}
-          --text-font-family: duckie !important;
-         --text-font-weight: 800 !important;
-        {% elsif settings.custom_font_text == "hoss-round_r" %}
-          --text-font-family: hoss-round !important;
-         --text-font-weight: 400 !important;
-        {% elsif settings.custom_font_text == "hoss-round_m" %}
-          --text-font-family: hoss-round !important;
-         --text-font-weight: 500 !important;
-        {% elsif settings.custom_font_text == "hoss-round_h" %}
-          --text-font-family: hoss-round !important;
-         --text-font-weight: 800 !important;
-        {% endif %}
-   {% endif %}
-} 
+          {% elsif settings.custom_font_text == "hoss-round_m" %}
+            --text-font-family: hoss-round !important;
+           --text-font-weight: 500 !important;
+          {% elsif settings.custom_font_text == "hoss-round_h" %}
+            --text-font-family: hoss-round !important;
+           --text-font-weight: 800 !important;
+          {% endif %}
+     {% endif %}
+  }
 
 
 
-{% assign elements = settings.listed_elements | split: ',' %}
-      {% for element in elements %}
-        {{ element | strip }}
-        {% unless forloop.last %},{% endunless %}
-      {% endfor %} {
-               {% if settings.custom_font_special == "duckie_r" %}
-                   font-family: duckie !important;
-                   font-weight: 400 !important;
-                {% elsif settings.custom_font_special == "duckie_m" %}
-                  font-family: duckie !important;
-                  font-weight: 500 !important;
-                {% elsif settings.custom_font_special == "duckie_h" %}
-                  font-family: duckie !important;
-                  font-weight: 800 !important;
-                {% elsif settings.custom_font_special == "hoss-round_r" %}
-                  font-family: hoss-round !important;
-                  font-weight: 400 !important;
-                {% elsif settings.custom_font_special == "hoss-round_m" %}
-                  font-family: hoss-round !important;
-                  font-weight: 500 !important;
-                {% elsif settings.custom_font_special == "hoss-round_h" %}
-                  font-family: hoss-round !important;
-                  font-weight: 800 !important;
-                {% endif %}
-      }
-
-    
+  {% assign elements = settings.listed_elements | split: ',' %}
+        {% for element in elements %}
+          {{ element | strip }}
+          {% unless forloop.last %},{% endunless %}
+        {% endfor %} {
+                 {% if settings.custom_font_special == "duckie_r" %}
+                     font-family: duckie !important;
+                     font-weight: 400 !important;
+                  {% elsif settings.custom_font_special == "duckie_m" %}
+                    font-family: duckie !important;
+                    font-weight: 500 !important;
+                  {% elsif settings.custom_font_special == "duckie_h" %}
+                    font-family: duckie !important;
+                    font-weight: 800 !important;
+                  {% elsif settings.custom_font_special == "hoss-round_r" %}
+                    font-family: hoss-round !important;
+                    font-weight: 400 !important;
+                  {% elsif settings.custom_font_special == "hoss-round_m" %}
+                    font-family: hoss-round !important;
+                    font-weight: 500 !important;
+                  {% elsif settings.custom_font_special == "hoss-round_h" %}
+                    font-family: hoss-round !important;
+                    font-weight: 800 !important;
+                  {% endif %}
+        }
 </style>
-
-
-

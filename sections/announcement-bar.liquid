@@ -45,9 +45,21 @@
         </carousel-prev-button>
       {%- endif -%}
 
-      <announcement-bar-carousel allow-swipe {% if section.settings.autoplay %}autoplay="{{ section.settings.cycle_speed }}"{% endif %} id="{{ carousel_id }}" class="announcement-bar__carousel">
+      <announcement-bar-carousel
+        allow-swipe
+        {% if section.settings.autoplay %}
+          autoplay="{{ section.settings.cycle_speed }}"
+        {% endif %}
+        id="{{ carousel_id }}"
+        class="announcement-bar__carousel"
+      >
         {%- for block in section.blocks -%}
-          <p class="prose heading {% if forloop.first %}is-selected{% endif %}" {{ block.shopify_attributes }}>{{- block.settings.text -}}</p>
+          <p
+            class="prose text-[12px] {% if forloop.first %}is-selected{% endif %}"
+            {{ block.shopify_attributes }}
+          >
+            {{- block.settings.text -}}
+          </p>
         {%- endfor -%}
       </announcement-bar-carousel>
 
@@ -63,7 +75,10 @@
   </height-observer>
 
   <script>
-    document.documentElement.style.setProperty('--announcement-bar-height', `${document.getElementById('shopify-section-{{ section.id }}').clientHeight.toFixed(2)}px`);
+    document.documentElement.style.setProperty(
+      '--announcement-bar-height',
+      `${document.getElementById('shopify-section-{{ section.id }}').clientHeight.toFixed(2)}px`
+    );
   </script>
 {%- endif -%}
 
