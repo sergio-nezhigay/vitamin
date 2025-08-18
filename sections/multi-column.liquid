@@ -24,16 +24,27 @@
     }
   </style>
 
-  {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
+  {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient
+    | default: section.settings.color_scheme.settings.background
+    | md5
+  -%}
 
   <div class="section-spacing color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
     <div class="container">
       <div class="section-stack">
-        {%- render 'section-header', subheading: section.settings.subheading, heading: section.settings.title, content: section.settings.content, text_alignment: section.settings.content_alignment -%}
+        {%- render 'section-header',
+          subheading: section.settings.subheading,
+          heading: section.settings.title,
+          content: section.settings.content,
+          text_alignment: section.settings.content_alignment
+        -%}
 
         <multi-column class="multi-column {% unless section.settings.stack_on_mobile %}scroll-area snap-x bleed md:unbleed{% endunless %}">
           {%- for block in section.blocks -%}
-            <div class="multi-column__item {% if section.settings.overlap_image and block.settings.title != blank %}multi-column__item--overlap{% endif %} snap-center group" {{ block.shopify_attributes }}>
+            <div
+              class="multi-column__item {% if section.settings.overlap_image and block.settings.title != blank %}multi-column__item--overlap{% endif %} snap-center group"
+              {{ block.shopify_attributes }}
+            >
               {%- capture sizes_attribute -%}
                 (max-width: 699px) 53vw, (max-width: 999px) 38vw, calc((100vw - 3rem * 2) / {{ section.settings.columns_per_row }})
               {%- endcapture -%}
@@ -41,13 +52,13 @@
               {%- liquid
                 capture media_content
                   if block.type == 'image_with_text' and block.settings.image != blank
-                    assign loading_strategy = nil
+                    assign loading_strategy = null
 
                     if forloop.index > 2 or section.location == 'footer'
                       assign loading_strategy = 'lazy'
                     endif
 
-                    echo block.settings.image | image_url: width: block.settings.image.width | image_tag: loading: loading_strategy, sizes: sizes_attribute, widths: '300,400,500,600,800,1000,1200,1400,1600,1800', class: 'zoom-image group-hover:zoom'
+                    echo block.settings.image | image_url: width: block.settings.image.width | image_tag: loading: loading_strategy, sizes: sizes_attribute, widths: '300,400,500,600,800,1000,1200,1400,1600,1800', class: 'zoom-image group-hover:zoom easy-image'
                   elsif block.type == 'video_with_text' and block.settings.video != blank
                     if block.settings.autoplay and block.settings.loop
                       assign show_controls = false
@@ -72,10 +83,15 @@
                 {%- endif -%}
               {%- endif -%}
 
-              {%- if block.settings.title != blank or block.settings.content != blank or block.settings.link_text != blank -%}
-                <div class="prose text-{{ section.settings.text_alignment }}">
+              {%- if block.settings.title != blank
+                or block.settings.content != blank
+                or block.settings.link_text != blank
+              -%}
+                <div class="text-[14px] md:text-[16px] leading-[calc(20/14)] text-[#44403C]">
                   {%- if block.settings.title != blank -%}
-                    <p class="{{ block.settings.heading_tag }}">{{ block.settings.title }}</p>
+                    <p class="!font-medium !text-[18px] md:!text-[20px] !leading-[calc(28/18)] !text-[#292524] {{ block.settings.heading_tag }}">
+                      {{ block.settings.title }}
+                    </p>
                   {%- endif -%}
 
                   {{- block.settings.content -}}

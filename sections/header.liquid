@@ -59,11 +59,16 @@
 </style>
 
 <height-observer variable="header">
-  <x-header {% if section.settings.hide_on_scroll and section.settings.enable_sticky %}hide-on-scroll{% endif %} class="header color-scheme color-scheme--{{ section.settings.color_scheme.id }}">
+  <x-header
+    {% if section.settings.hide_on_scroll and section.settings.enable_sticky %}
+      hide-on-scroll
+    {% endif %}
+    class="header color-scheme color-scheme--{{ section.settings.color_scheme.id }}"
+  >
     {%- comment -%}
-    --------------------------------------------------------------------------------------------------------------------
-    LOGO AREA
-    --------------------------------------------------------------------------------------------------------------------
+      --------------------------------------------------------------------------------------------------------------------
+      LOGO AREA
+      --------------------------------------------------------------------------------------------------------------------
     {%- endcomment -%}
 
     {%- capture logo_content -%}
@@ -91,17 +96,26 @@
     {% endif %}
 
     {%- comment -%}
-    --------------------------------------------------------------------------------------------------------------------
-    PRIMARY NAVIGATION AREA
-    --------------------------------------------------------------------------------------------------------------------
+      --------------------------------------------------------------------------------------------------------------------
+      PRIMARY NAVIGATION AREA
+      --------------------------------------------------------------------------------------------------------------------
     {%- endcomment -%}
 
     {%- assign menu = section.settings.menu -%}
     {%- assign sidebar_menu = section.settings.sidebar_menu -%}
 
     {%- if menu.links.size > 0 or sidebar_menu.links.size > 0 -%}
-      <nav class="header__primary-nav {% if section.settings.layout == 'logo_center_navigation_below' or section.settings.layout == 'logo_left_navigation_center' %}header__primary-nav--center{% endif %}" aria-label="{{ 'header.general.primary_navigation' | t | escape }}">
-        <button type="button" aria-controls="sidebar-menu" {% unless section.settings.layout == 'drawer' %}class="md:hidden"{% endunless %}>
+      <nav
+        class="header__primary-nav {% if section.settings.layout == 'logo_center_navigation_below' or section.settings.layout == 'logo_left_navigation_center' %}header__primary-nav--center{% endif %}"
+        aria-label="{{ 'header.general.primary_navigation' | t | escape }}"
+      >
+        <button
+          type="button"
+          aria-controls="sidebar-menu"
+          {% unless section.settings.layout == 'drawer' %}
+            class="md:hidden"
+          {% endunless %}
+        >
           <span class="sr-only">{{ 'header.general.menu' | t }}</span>
           {%- render 'icon' with 'hamburger', class: 'header__nav-icon' -%}
         </button>
@@ -120,13 +134,20 @@
                     assign mega_menu_block = block
                     break
                   endif
-
                 endfor
               %}
 
               <li class="header__primary-nav-item" data-title="{{ link.title | escape }}">
                 {%- if link.levels == 0 and mega_menu_block == '' -%}
-                  <a href="{{ link.url }}" class="block {% if section.settings.menu_text_font == 'heading' %}h6{% endif %}" {% if link.current %}aria-current="page"{% endif %}>{{ link.title }}</a>
+                  <a
+                    href="{{ link.url }}"
+                    class="!font-nunito !font-semibold !text-[14px] !text-[#292524] block {% if section.settings.menu_text_font == 'heading' %}h6{% endif %}"
+                    {% if link.current %}
+                      aria-current="page"
+                    {% endif %}
+                  >
+                    {{- link.title -}}
+                  </a>
                 {%- else -%}
                   {%- capture disclosure_content -%}
                     <details class="header__menu-disclosure">
@@ -170,7 +191,11 @@
                   {%- endcapture -%}
 
                   {% if mega_menu_block != '' %}
-                    <mega-menu-disclosure follow-summary-link trigger="{{ section.settings.menu_open_trigger }}" class="contents">
+                    <mega-menu-disclosure
+                      follow-summary-link
+                      trigger="{{ section.settings.menu_open_trigger }}"
+                      class="contents"
+                    >
                       {{- disclosure_content -}}
                     </mega-menu-disclosure>
                   {%- else -%}
@@ -187,9 +212,9 @@
     {%- endif -%}
 
     {%- comment -%}
-    --------------------------------------------------------------------------------------------------------------------
-    SECONDARY NAVIGATION AREA
-    --------------------------------------------------------------------------------------------------------------------
+      --------------------------------------------------------------------------------------------------------------------
+      SECONDARY NAVIGATION AREA
+      --------------------------------------------------------------------------------------------------------------------
     {%- endcomment -%}
 
     <nav class="header__secondary-nav" aria-label="{{ 'header.general.secondary_navigation' | t | escape }}">
@@ -207,7 +232,13 @@
         {%- if show_country_selector or show_locale_selector -%}
           <li class="localization-selectors md-max:hidden">
             {%- if show_country_selector -%}
-              {%- render 'localization-selector', type: 'country', placement: 'bottom-end', show_country_name: section.settings.show_country_name, show_country_flag: section.settings.show_country_flag, id_prefix: 'header-nav' -%}
+              {%- render 'localization-selector',
+                type: 'country',
+                placement: 'bottom-end',
+                show_country_name: section.settings.show_country_name,
+                show_country_flag: section.settings.show_country_flag,
+                id_prefix: 'header-nav'
+              -%}
             {%- endif -%}
 
             {%- if show_locale_selector -%}
@@ -228,14 +259,23 @@
         {%- if shop.customer_accounts_enabled -%}
           <li class="header__account-link sm-max:hidden">
             <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}">
-              <span class="sr-only">{% if customer %}{{ 'header.general.account' | t }}{% else %}{{ 'header.general.login' | t }}{% endif %}</span>
+              <span class="sr-only">
+                {%- if customer -%}
+                  {{- 'header.general.account' | t -}}
+                {%- else -%}
+                  {{- 'header.general.login' | t -}}
+                {%- endif -%}
+              </span>
 
               {%- if section.settings.show_icons -%}
                 {%- render 'icon' with 'account', class: 'header__nav-icon' -%}
               {%- else -%}
                 <span class="md:hidden">{%- render 'icon' with 'account', class: 'header__nav-icon' -%}</span>
 
-                <span class="{% if section.settings.menu_text_font == 'heading' %}h6{% endif %} link-faded md-max:hidden" aria-hidden="true">
+                <span
+                  class="{% if section.settings.menu_text_font == 'heading' %}h6{% endif %} link-faded md-max:hidden"
+                  aria-hidden="true"
+                >
                   {%- if customer -%}
                     {{- 'header.general.account' | t -}}
                   {%- else -%}
@@ -256,24 +296,39 @@
                 {%- render 'icon' with 'search', class: 'header__nav-icon' -%}
               {%- else -%}
                 <span class="md:hidden">{%- render 'icon' with 'search', class: 'header__nav-icon' -%}</span>
-                <span class="{% if section.settings.menu_text_font == 'heading' %}h6{% endif %} link-faded md-max:hidden" aria-hidden="true">{{ 'header.general.search' | t }}</span>
+                <span
+                  class="{% if section.settings.menu_text_font == 'heading' %}h6{% endif %} link-faded md-max:hidden"
+                  aria-hidden="true"
+                >
+                  {{- 'header.general.search' | t -}}
+                </span>
               {%- endif -%}
             </a>
           </li>
         {%- endif -%}
 
         <li class="relative header__cart-link">
-          <a href="{{ routes.cart_url }}" {% if settings.cart_type != 'page' and request.page_type != 'cart' %}aria-controls="cart-drawer"{% endif %} data-no-instant>
+          <a
+            href="{{ routes.cart_url }}"
+            {% if settings.cart_type != 'page' and request.page_type != 'cart' %}
+              aria-controls="cart-drawer"
+            {% endif %}
+            data-no-instant
+          >
             <span class="sr-only">{{ 'header.general.cart' | t }}</span>
 
             {%- if section.settings.show_icons -%}
               {%- render 'icon' with 'cart', class: 'header__nav-icon' -%}
             {%- else -%}
               <span class="md:hidden">{%- render 'icon' with 'cart', class: 'header__nav-icon' -%}</span>
-              <span class="{% if section.settings.menu_text_font == 'heading' %}h6{% endif %} link-faded md-max:hidden">{{ 'header.general.cart' | t }} (<cart-count>{{ cart.item_count }}</cart-count>)</span>
+              <span class="{% if section.settings.menu_text_font == 'heading' %}h6{% endif %} link-faded md-max:hidden">
+                {{- 'header.general.cart' | t }} (<cart-count>{{ cart.item_count }}</cart-count>)</span
+              >
             {%- endif -%}
 
-            <cart-dot class="header__cart-dot {% unless cart.empty? %}is-visible{% endunless %} {% unless section.settings.show_icons %}md:hidden{% endunless %}"></cart-dot>
+            <cart-dot
+              class="header__cart-dot {% unless cart.empty? %}is-visible{% endunless %} {% unless section.settings.show_icons %}md:hidden{% endunless %}"
+            ></cart-dot>
           </a>
         </li>
       </ul>
@@ -286,13 +341,21 @@
     {%- assign sidebar_menu = section.settings.sidebar_menu | default: section.settings.menu -%}
 
     {%- if sidebar_menu.links.size > 0 -%}
-      {%- render 'header-sidebar', menu: sidebar_menu, color_scheme: section.settings.sidebar_color_scheme, show_dividers: section.settings.sidebar_show_dividers, open_second_level_menus: section.settings.sidebar_open_second_level_menus -%}
+      {%- render 'header-sidebar',
+        menu: sidebar_menu,
+        color_scheme: section.settings.sidebar_color_scheme,
+        show_dividers: section.settings.sidebar_show_dividers,
+        open_second_level_menus: section.settings.sidebar_open_second_level_menus
+      -%}
     {%- endif -%}
   </x-header>
 </height-observer>
 
 <script>
-  document.documentElement.style.setProperty('--header-height', `${document.getElementById('shopify-section-{{ section.id }}').clientHeight.toFixed(2)}px`);
+  document.documentElement.style.setProperty(
+    '--header-height',
+    `${document.getElementById('shopify-section-{{ section.id }}').clientHeight.toFixed(2)}px`
+  );
 </script>
 
 {% schema %}

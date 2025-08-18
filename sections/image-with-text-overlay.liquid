@@ -80,7 +80,7 @@
 
                 {%- when 'richtext' -%}
                   {%- if block.settings.content != blank -%}
-                    <div {{ block.shopify_attributes }} class="body-text">
+                    <div {{ block.shopify_attributes }} class="body-text text-[16px] md:text-[18px] font-bold">
                       {{- block.settings.content -}}
                     </div>
                   {%- endif -%}

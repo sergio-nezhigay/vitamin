@@ -26,15 +26,33 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: 'Hoss Round';
+  src: url('./hoss-round-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 
 @theme {
-  --font-display: 'Nunito Sans', Arial, sans-serif;
   --font-nunito: 'Nunito Sans', Arial, sans-serif;
+  --font-hoss: 'Hoss Round', Arial, sans-serif;
 }
 
 :root {
-  --font-display: 'Nunito Sans', Arial, sans-serif;
   --font-nunito: 'Nunito Sans', Arial, sans-serif;
+  --text-font-family: 'Nunito Sans', Arial, sans-serif;
+}
 
-  --text-font-family: 'Nunito', sans-serif;
+body {
+  font-family: var(--font-nunito);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-hoss) !important;
 }

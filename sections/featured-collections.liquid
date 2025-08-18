@@ -13,7 +13,10 @@
     }
   </style>
 
-  {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
+  {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient
+    | default: section.settings.color_scheme.settings.background
+    | md5
+  -%}
 
   <div class="section-spacing color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
     <div class="container">
@@ -26,7 +29,11 @@
           {%- endif -%}
 
           {%- if section.blocks.size > 1 -%}
-            <carousel-navigation align-selected class="featured-collections-navigation scroll-area bleed" aria-controls="{{ wrapper_carousel_id }}">
+            <carousel-navigation
+              align-selected
+              class="featured-collections-navigation scroll-area bleed"
+              aria-controls="{{ wrapper_carousel_id }}"
+            >
               {%- for block in section.blocks -%}
                 <button class="h2" aria-current="{% if forloop.first %}true{% else %}false{% endif %}">
                   {{- block.settings.title | default: block.settings.collection.title | default: 'Collection' -}}
@@ -34,13 +41,22 @@
               {%- endfor -%}
             </carousel-navigation>
           {%- else -%}
-            <h2 class="h2">{{ section.blocks.first.settings.title | default: section.blocks.first.settings.collection.title | default: 'Collection' }}</h2>
+            <h2 class="h2">
+              {{
+                section.blocks.first.settings.title
+                | default: section.blocks.first.settings.collection.title
+                | default: 'Collection'
+              }}
+            </h2>
           {%- endif -%}
         </div>
 
         <featured-collections-carousel id="{{ wrapper_carousel_id }}" class="featured-collections-carousel">
           {%- for block in section.blocks -%}
-            <div class="featured-collections-carousel__item {% if forloop.first %}is-selected{% endif %}" {{ block.shopify_attributes }}>
+            <div
+              class="featured-collections-carousel__item {% if forloop.first %}is-selected{% endif %}"
+              {{ block.shopify_attributes }}
+            >
               {%- capture product_list -%}
                 {%- assign should_reveal = false -%}
 
@@ -65,19 +81,37 @@
                 {%- assign product_carousel_id = 'featured-collections-product-list-carousel-' | append: block.id -%}
 
                 <product-list class="floating-controls-container floating-controls-container--inside floating-controls-container--on-hover">
-                  <carousel-prev-button class="floating-controls-container__control" aria-controls="{{ product_carousel_id }}">
-                    <button type="button" class="prev-next-button prev-next-button--prev circle-button hover:animate-icon-inline" disabled>
+                  <carousel-prev-button
+                    class="floating-controls-container__control"
+                    aria-controls="{{ product_carousel_id }}"
+                  >
+                    <button
+                      type="button"
+                      class="prev-next-button prev-next-button--prev circle-button hover:animate-icon-inline"
+                      disabled
+                    >
                       <span class="sr-only">{{ 'general.accessibility.previous' | t }}</span>
                       {%- render 'icon' with 'arrow-left', direction_aware: true -%}
                     </button>
                   </carousel-prev-button>
 
-                  <scroll-carousel id="{{ product_carousel_id }}" group-cells allow-drag class="product-list {% if section.settings.hide_product_information %}product-list--compact{% endif %} product-list--carousel scroll-area bleed md:unbleed">
+                  <scroll-carousel
+                    id="{{ product_carousel_id }}"
+                    group-cells
+                    allow-drag
+                    class="product-list {% if section.settings.hide_product_information %}product-list--compact{% endif %} product-list--carousel scroll-area bleed md:unbleed"
+                  >
                     {{- product_list -}}
                   </scroll-carousel>
-                  
-                  <carousel-next-button class="floating-controls-container__control" aria-controls="{{ product_carousel_id }}">
-                    <button type="button" class="prev-next-button prev-next-button--next circle-button hover:animate-icon-inline">
+
+                  <carousel-next-button
+                    class="floating-controls-container__control"
+                    aria-controls="{{ product_carousel_id }}"
+                  >
+                    <button
+                      type="button"
+                      class="prev-next-button prev-next-button--next circle-button hover:animate-icon-inline"
+                    >
                       <span class="sr-only">{{ 'general.accessibility.next' | t }}</span>
                       {%- render 'icon' with 'arrow-right', direction_aware: true -%}
                     </button>
@@ -86,7 +120,10 @@
               {%- endif -%}
 
               {%- if block.settings.link_text != blank -%}
-                {%- assign button_link = block.settings.link_url | default: block.settings.collection.url | default: '#' -%}
+                {%- assign button_link = block.settings.link_url
+                  | default: block.settings.collection.url
+                  | default: '#'
+                -%}
 
                 <div class="justify-self-center">
                   {%- render 'button', href: button_link, content: block.settings.link_text -%}
