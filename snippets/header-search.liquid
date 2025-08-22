@@ -1,24 +1,38 @@
 {%- comment -%}
-----------------------------------------------------------------------------------------------------------------------
-HEADER SEARCH
-----------------------------------------------------------------------------------------------------------------------
+  ----------------------------------------------------------------------------------------------------------------------
+  HEADER SEARCH
+  ----------------------------------------------------------------------------------------------------------------------
 
-Code of the predictive search in the header. This uses the "predictive-search" component. The resources being
-searched are controlled by the Search & Discovery app.
+  Code of the predictive search in the header. This uses the "predictive-search" component. The resources being
+  searched are controlled by the Search & Discovery app.
 
-********************************************
-Supported variables
-********************************************
+  ********************************************
+  Supported variables
+  ********************************************
 
-Nothing
+  Nothing
 {%- endcomment -%}
 
 <header-search id="header-search-{{ section.id }}" class="header-search">
-  <div class="container">
-    <form id="predictive-search-form" action="{{ routes.search_url }}" method="GET" aria-owns="header-predictive-search" class="header-search__form" role="search">
+  <div class="px-5 max-w-[1440px] mx-auto md:px-[145px]">
+    <form
+      id="predictive-search-form"
+      action="{{ routes.search_url }}"
+      method="GET"
+      aria-owns="header-predictive-search"
+      class="header-search__form"
+      role="search"
+    >
       <div class="header-search__form-control">
         {%- render 'icon' with 'search', width: 20 -%}
-        <input type="search" name="q" spellcheck="false" class="header-search__input h5 sm:h4" aria-label="{{ 'search.general.title' | t | escape }}" placeholder="{{ 'search.general.search_placeholder' | t | escape }}">
+        <input
+          type="search"
+          name="q"
+          spellcheck="false"
+          class="header-search__input h5 sm:h4"
+          aria-label="{{ 'search.general.title' | t | escape }}"
+          placeholder="{{ 'search.general.search_placeholder' | t | escape }}"
+        >
 
         <dialog-close-button class="contents">
           <button type="button">

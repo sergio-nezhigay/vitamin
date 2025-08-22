@@ -29,6 +29,7 @@
     --font-weight-bold: 700;
     --leading-normal: 1.5;
     --radius-lg: 0.5rem;
+    --radius-2xl: 1rem;
     --radius-3xl: 1.5rem;
     --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -404,6 +405,12 @@
   .h-full {
     height: 100%;
   }
+  .max-h-\[240px\] {
+    max-height: 240px;
+  }
+  .min-h-\[240px\] {
+    min-height: 240px;
+  }
   .min-h-\[600px\] {
     min-height: 600px;
   }
@@ -653,6 +660,9 @@
   .rounded {
     border-radius: 0.25rem;
   }
+  .rounded-2xl {
+    border-radius: var(--radius-2xl);
+  }
   .rounded-3xl {
     border-radius: var(--radius-3xl);
   }
@@ -848,6 +858,9 @@
   }
   .text-\[30px\] {
     font-size: 30px;
+  }
+  .text-\[32px\] {
+    font-size: 32px;
   }
   .\!leading-\[1\.62\] {
     --tw-leading: 1.62 !important;

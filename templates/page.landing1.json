@@ -628,22 +628,27 @@
     },
     "blog_posts_kWAWWH": {
       "type": "blog-posts",
+      "custom_css": [
+        ".header-wrapper {display: flex; justify-content: space-between; align-items: flex-end;}",
+        ".justify-self-center.bottom-btn {display: none;}",
+        "@media screen and (max-width: 768px) {.justify-self-center.bottom-btn {display: block; } .justify-self-center.top-btn {display: none; }}"
+      ],
       "name": "t:sections.blog_posts.presets.blog_posts.name",
       "settings": {
-        "color_scheme": "",
-        "separate_section_with_border": true,
+        "color_scheme": "scheme-e240f942-9acb-4b5c-8e31-a59739abd614",
+        "separate_section_with_border": false,
         "blog": "news",
         "posts_count": 3,
         "stack_on_mobile": false,
-        "show_category": true,
+        "show_category": false,
         "show_date": false,
         "show_excerpt": true,
-        "show_read_more": true,
+        "show_read_more": false,
         "subheading": "Hear from health professionals about how Vitamin H2 can fit into your wellness routine. Our blog features insights from doctors, nutritionists, and health experts.",
         "title": "Expert Advice and Health Tips",
         "content": "",
         "button_link": "",
-        "button_text": "View all"
+        "button_text": "View all posts"
       }
     },
     "faq_KafdiU": {

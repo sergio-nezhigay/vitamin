@@ -340,7 +340,7 @@ height-observer {
 
 .blog-post-list {
   --blog-post-list-items-per-row: 1;
-  --blog-post-list-column-gap: 1.875rem;
+  --blog-post-list-column-gap: 32px !important;
   --blog-post-list-row-gap: var(--section-stack-gap);
   --blog-post-list-card-width: calc(
     100% / var(--blog-post-list-items-per-row) -
@@ -1770,15 +1770,15 @@ shopify-accelerated-checkout-cart {
 }
 
 .section-stack {
-  gap: var(--section-stack-gap);
+  gap: 64px;
   grid-auto-columns: minmax(0, 1fr);
   display: grid;
 }
 
 .section-header {
   max-width: min(var(--container-xs-max-width), 100%);
-  margin-inline-start: var(--container-gutter);
-  margin-inline-end: var(--container-gutter);
+  /*margin-inline-start: var(--container-gutter);
+  margin-inline-end: var(--container-gutter);*/
 }
 
 .container .section-header {
@@ -4341,14 +4341,7 @@ product-rerender {
   padding: 1.5rem var(--article-wrapper-padding-inline) 0;
   background: rgb(var(--background));
   gap: 5rem;
-  margin-inline-start: max(
-    var(--container-gutter),
-    50% - var(--container-max-width) / 2 - var(--article-wrapper-padding-inline)
-  );
-  margin-inline-end: max(
-    var(--container-gutter),
-    50% - var(--container-max-width) / 2 - var(--article-wrapper-padding-inline)
-  );
+
   display: grid;
   position: relative;
 }
@@ -8452,4 +8445,9 @@ accordion-disclosure .text-with-icon {
   .section-header .prose p {
     font-size: 20px !important;
   }
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
 }

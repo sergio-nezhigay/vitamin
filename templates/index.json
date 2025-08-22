@@ -221,7 +221,9 @@
           }
         }
       },
-      "block_order": ["heading_dMN7if"],
+      "block_order": [
+        "heading_dMN7if"
+      ],
       "disabled": true,
       "custom_css": [
         "@media (min-width: 768px) {.prose {overflow-wrap: anywhere; max-width: 75%; margin: auto; } .container.container--sm {margin: 0 auto; width: 100%; }}"
@@ -537,7 +539,10 @@
           }
         }
       },
-      "block_order": ["testimony_6zaqDC", "testimony_d4QE6A"],
+      "block_order": [
+        "testimony_6zaqDC",
+        "testimony_d4QE6A"
+      ],
       "custom_css": [
         "@media (max-width: 768px) {.section-spacing {width: 90%; margin: auto; }}"
       ],
@@ -564,7 +569,10 @@
           }
         }
       },
-      "block_order": ["heading_jfXxxG", "richtext_HCnaPT"],
+      "block_order": [
+        "heading_jfXxxG",
+        "richtext_HCnaPT"
+      ],
       "disabled": true,
       "custom_css": [
         "p {margin-top: 2px !important;}",
@@ -768,7 +776,11 @@
           }
         }
       },
-      "block_order": ["subheading_kgAXwG", "heading_jKwiPx", "richtext_8FLjNA"],
+      "block_order": [
+        "subheading_kgAXwG",
+        "heading_jKwiPx",
+        "richtext_8FLjNA"
+      ],
       "disabled": true,
       "settings": {
         "color_scheme": "scheme-2",
@@ -793,10 +805,10 @@
         "blog": "news",
         "posts_count": 3,
         "stack_on_mobile": false,
-        "show_category": true,
+        "show_category": false,
         "show_date": false,
         "show_excerpt": true,
-        "show_read_more": true,
+        "show_read_more": false,
         "subheading": "",
         "title": "Gesundheitstipps",
         "content": "<p>Lass dir von Gesundheitsexperten zeigen, wie Vitamin H2 deine Wellness-Routine optimieren kann. In unserem Blog teilen Ärzte, Ernährungsberater und Experten wertvolle Tipps und Erkenntnisse.</p>",
