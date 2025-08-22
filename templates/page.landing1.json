@@ -400,7 +400,6 @@
         "buy_buttons_CWdmJi",
         "pickup_availability_C8D9Px"
       ],
-      "disabled": true,
       "name": "t:sections.featured_product.presets.featured_product.name",
       "settings": {
         "color_scheme": "scheme-d158b51a-f3e3-4810-a2bb-41206d01c467",
@@ -629,7 +628,6 @@
     },
     "blog_posts_kWAWWH": {
       "type": "blog-posts",
-      "disabled": true,
       "name": "t:sections.blog_posts.presets.blog_posts.name",
       "settings": {
         "color_scheme": "",
@@ -687,7 +685,6 @@
         "question_4VxWyH",
         "question_keFU39"
       ],
-      "disabled": true,
       "name": "t:sections.faq.presets.faq.name",
       "settings": {
         "color_scheme": "",
