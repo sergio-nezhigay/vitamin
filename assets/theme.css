@@ -8371,6 +8371,14 @@ ul {
 
 .product-info .h4.text-subdued {
   color: #ea5167 !important;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  .product-info .h4.text-subdued {
+    font-size: 24px;
+  }
 }
 
 .block-swatch {
@@ -8419,6 +8427,7 @@ accordion-disclosure .text-with-icon {
 }
 .product .product-info__block-item {
   font-size: 14px !important;
+  color: #44403c !important;
 }
 .section-header .prose p {
   font-size: 16px !important;

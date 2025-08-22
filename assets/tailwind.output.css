@@ -379,6 +379,9 @@
   .table {
     display: table;
   }
+  .aspect-\[16\/9\] {
+    aspect-ratio: 16/9;
+  }
   .aspect-\[204\/194\] {
     aspect-ratio: 204/194;
   }

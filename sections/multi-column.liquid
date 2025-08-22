@@ -73,11 +73,11 @@
 
               {%- if media_content != blank -%}
                 {%- if block.type == 'image_with_text' and block.settings.link_url != blank -%}
-                  <a href="{{ block.settings.link_url }}" class="overflow-hidden">
+                  <a href="{{ block.settings.link_url }}" class="rounded-3xl overflow-hidden">
                     {{- media_content -}}
                   </a>
                 {%- else -%}
-                  <div class="overflow-hidden">
+                  <div class="rounded-3xl overflow-hidden">
                     {{- media_content -}}
                   </div>
                 {%- endif -%}
