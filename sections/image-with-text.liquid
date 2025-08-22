@@ -6,8 +6,16 @@
   {%- endcomment -%}
 
   <style>
-    #shopify-section-{{ section.id }} {
-      --image-with-text-content-max-width: {% if section.settings.content_width == 'sm' %}430px{% elsif section.settings.content_width == 'md' %}780px{% else %}100%{% endif %};
+        #shopify-section-{{ section.id }} {
+          --image-with-text-content-max-width: {% if section.settings.content_width == 'sm' %}430px{% elsif section.settings.content_width == 'md' %}780px{% else %}100%{% endif %};
+          }
+    .h2 + .image-text-description {
+      font-size: 16px;
+    }
+    @media (min-width: 768px) {
+      .h2 + .image-text-description {
+        font-size: 20px;
+      }
     }
   </style>
 
@@ -84,7 +92,10 @@
                 </div>
               {%- endif -%}
               {%- if block.settings.content != blank -%}
-                <div {{ block.shopify_attributes }} class=" text-[14px] md:text-[16px] leading-normal text-[#44403C]">
+                <div
+                  {{ block.shopify_attributes }}
+                  class="image-text-description text-[14px] md:text-[16px] leading-normal text-[#44403C]"
+                >
                   {{- block.settings.content -}}
                 </div>
               {%- endif -%}
