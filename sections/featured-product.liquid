@@ -20,7 +20,7 @@
   id="featured-product-section"
   class="section-spacing color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}"
 >
-  <div class="container {% unless section.settings.container_size == 'full' %}container--{{ section.settings.container_size }}{% endunless %}">
+  <div class="px-5 max-w-[1440px] mx-auto md:px-[112px] ">
     <div class="section-stack">
       {%- render 'section-header',
         subheading: section.settings.subheading,
