@@ -27,6 +27,7 @@
     },
     "prev-next-blog-posts": {
       "type": "prev-next-blog-posts",
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-bf5b0f8c-52b0-4434-9e75-88cb7d811258",
         "separate_section_with_border": false,

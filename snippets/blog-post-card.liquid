@@ -83,7 +83,9 @@
     {%- if show_excerpt -%}
       {%- if article -%}
         {%- unless article.excerpt_or_content == blank -%}
-          <p class="blog-post-card__excerpt">{{ article.excerpt_or_content | strip_html | truncate: 200 }}</p>
+          <p class="font-semi-bold text-[14px] md:text-[16px] text-[#44403C]">
+            {{ article.excerpt_or_content | strip_html | truncate: 200 }}
+          </p>
         {%- endunless -%}
       {%- else -%}
         <p class="blog-post-card__excerpt">{{ 'general.on_boarding.blog_post_excerpt' | t }}</p>
