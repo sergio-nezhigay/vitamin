@@ -1735,7 +1735,7 @@ shopify-accelerated-checkout-cart {
 }
 
 .container--lg {
-  --container-max-width: var(--container-lg-max-width);
+  --container-max-width: var(--container-lg-max-width) !important;
 }
 
 .container--xl {

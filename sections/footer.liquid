@@ -4,15 +4,18 @@
   }
 </style>
 
-{%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
+{%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient
+  | default: section.settings.color_scheme.settings.background
+  | md5
+-%}
 
 <div class="footer color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
-  <div class="container">
+  <div class="px-5 max-w-[1440px] mx-auto md:px-[48px]">
     <div class="footer__inner">
       {%- comment -%}
-      ------------------------------------------------------------------------------------------------------------------
-      FOOTER BLOCKS (MAIN CONTENT)
-      ------------------------------------------------------------------------------------------------------------------
+        ------------------------------------------------------------------------------------------------------------------
+        FOOTER BLOCKS (MAIN CONTENT)
+        ------------------------------------------------------------------------------------------------------------------
       {%- endcomment -%}
 
       {%- if section.blocks.size > 0 -%}
@@ -119,7 +122,10 @@
             {%- endcapture -%}
 
             {%- if block_content != blank -%}
-              <div class="footer__block footer__block--{{ block.type | remove_first: '@' }}" {{ block.shopify_attributes }}>
+              <div
+                class="footer__block footer__block--{{ block.type | remove_first: '@' }}"
+                {{ block.shopify_attributes }}
+              >
                 {{- block_content -}}
               </div>
             {%- endif -%}
@@ -128,9 +134,9 @@
       {%- endif -%}
 
       {%- comment -%}
-      ------------------------------------------------------------------------------------------------------------------
-      FOOTER SOCIAL MEDIA
-      ------------------------------------------------------------------------------------------------------------------
+        ------------------------------------------------------------------------------------------------------------------
+        FOOTER SOCIAL MEDIA
+        ------------------------------------------------------------------------------------------------------------------
       {%- endcomment -%}
 
       {%- if section.settings.show_social_media -%}
@@ -138,9 +144,9 @@
       {%- endif -%}
 
       {%- comment -%}
-      ------------------------------------------------------------------------------------------------------------------
-      FOOTER ASIDE (COPYRIGHT + LOCALIZATION SELECTORS + PAYMENT METHODS)
-      ------------------------------------------------------------------------------------------------------------------
+        ------------------------------------------------------------------------------------------------------------------
+        FOOTER ASIDE (COPYRIGHT + LOCALIZATION SELECTORS + PAYMENT METHODS)
+        ------------------------------------------------------------------------------------------------------------------
       {%- endcomment -%}
 
       <div class="footer__aside">
@@ -155,7 +161,12 @@
         {%- if show_country_selector or show_locale_selector -%}
           <div class="localization-selectors">
             {%- if show_country_selector -%}
-              {%- render 'localization-selector', type: 'country', placement: 'top-start', show_country_name: section.settings.show_country_name, show_country_flag: section.settings.show_country_flag -%}
+              {%- render 'localization-selector',
+                type: 'country',
+                placement: 'top-start',
+                show_country_name: section.settings.show_country_name,
+                show_country_flag: section.settings.show_country_flag
+              -%}
             {%- endif -%}
 
             {%- if show_locale_selector -%}
@@ -164,7 +175,10 @@
           </div>
         {%- endif -%}
 
-        <p class="heading text-subdued text-xxs">© {{ 'now' | date: '%Y' }} - {{ shop.name }} {{ powered_by_link }}</p>
+        <p class="heading text-subdued text-xxs">
+          © {{ 'now' | date: '%Y' }} - {{ shop.name }}
+          {{ powered_by_link }}
+        </p>
 
         {%- if section.settings.show_payment_icons and shop.enabled_payment_types.size > 0 -%}
           <ul class="payment-methods unstyled-list">
