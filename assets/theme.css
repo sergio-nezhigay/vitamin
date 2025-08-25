@@ -8390,8 +8390,10 @@ ul {
   overflow: hidden;
 }
 .testimonial-text-container .content-body-text p {
-  font-family: 'Hoss', sans-serif !important;
+  font-family: 'Hoss Round', sans-serif !important;
   font-size: 36px !important;
+  font-weight: 500;
+  line-height: 1.22;
   color: #292524 !important;
 }
 
@@ -8417,7 +8419,7 @@ ul {
 }
 accordion-disclosure .text-with-icon {
   font-size: 16px !important;
-  font-family: 'Hoss', sans-serif !important;
+  font-family: 'Hoss Round', sans-serif !important;
   font-weight: 500 !important;
   color: #292524 !important;
 }
@@ -8500,5 +8502,36 @@ pre {
   .testimonial-image-container {
     height: 280px;
     display: block;
+  }
+}
+
+.shopify-section--main-article h1 {
+  font-family: 'Hoss', sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  text-align: center;
+}
+
+.shopify-section--main-article .prose p {
+  font-family: 'Nunito Sans', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.shopify-section--main-article .prose p strong {
+  font-family: 'Hoss', sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+}
+
+@media screen and (min-width: 768px) {
+  .shopify-section--main-article h1 {
+    font-size: 48px;
+  }
+  .shopify-section--main-article .prose p {
+    font-size: 18px;
+  }
+  .shopify-section--main-article .prose p strong {
+    font-size: 30px;
   }
 }
