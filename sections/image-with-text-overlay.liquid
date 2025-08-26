@@ -22,17 +22,17 @@
   {%- endcomment -%}
 
   <div
-    class="{% unless section.settings.remove_vertical_spacing %}section-spacing{% endunless %} color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--with-image-overlay"
+    class="{% unless section.settings.remove_vertical_spacing %}section-spacing{% endunless %} color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--with-image-overlay "
     {% if section.settings.allow_transparent_header %}
       allow-transparent-header
     {% endif %}
   >
     <image-with-text-overlay
-      class="relative content-over-media content-over-media--{{ section.settings.image_size }}"
+      class=" !block !relative !min-h-[600px] content-over-media2 2content-over-media--{{ section.settings.image_size }}"
       reveal-on-scroll="{{ section.settings.reveal_on_scroll }}"
     >
       {%- if section.settings.image != blank -%}
-        <picture>
+        <picture class="!h-[600px] block relative ">
           {%- if section.settings.mobile_image != blank -%}
             <source
               media="(max-width: 699px)"
@@ -59,7 +59,7 @@
       {%- endif -%}
 
       {%- if section.blocks.size > 0 -%}
-        <div class="content {{ section.settings.mobile_text_position }} {{ section.settings.desktop_text_position }}">
+        <div class="internal-content content {{ section.settings.mobile_text_position }} {{ section.settings.desktop_text_position }}">
           <div class="prose ">
             {%- for block in section.blocks -%}
               {%- case block.type -%}
@@ -71,7 +71,7 @@
                 {%- when 'heading' -%}
                   {%- if block.settings.text != blank -%}
                     <p
-                      class="{{ block.settings.heading_tag }} !font-medium !text-[32px] md:!text-[48px] !leading-none"
+                      class="{{ block.settings.heading_tag }} !font-medium !text-[32px] md:!text-[48px] !leading-none max-w-[510px]"
                       {{ block.shopify_attributes }}
                     >
                       {{ block.settings.text }}
@@ -80,7 +80,10 @@
 
                 {%- when 'richtext' -%}
                   {%- if block.settings.content != blank -%}
-                    <div {{ block.shopify_attributes }} class="body-text text-[16px] md:text-[18px] font-bold">
+                    <div
+                      {{ block.shopify_attributes }}
+                      class="body-text text-[16px] md:text-[18px] font-bold max-w-[510px]"
+                    >
                       {{- block.settings.content -}}
                     </div>
                   {%- endif -%}
