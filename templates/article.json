@@ -11,6 +11,7 @@
   "sections": {
     "main": {
       "type": "main-article",
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-1",
         "show_image": true,
@@ -38,6 +39,42 @@
         "show_read_more": true
       }
     },
+    "blog_post_custom": {
+      "type": "blog-post-custom",
+      "blocks": {
+        "highlight_box_HbgPmF": {
+          "type": "highlight_box",
+          "settings": {
+            "title": "Was VitaminH2 nicht ist:",
+            "content": "<ul><li>Kein Wasserstoffperoxid (H₂O₂): VitaminH2 enthält kein aggressives Oxidationsmittel, sondern reinen, molekularen Wasserstoff.</li><li>Kein H₃O oder H₄O: Die chemische Struktur des Wassers wird nicht verändert – H₂ wird einfach gelöst, nicht umgewandelt.</li><li>Kein basisches Wasser: VitaminH2 verändert den pH-Wert des Wassers nicht. Wasserstoffgas ist neutral und beeinflusst den Säure-Basen-Haushalt nicht.</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "highlight_box_HbgPmF"
+      ],
+      "settings": {
+        "subheading": "Was ist VitaminH2 – und was genau ist Wasserstoffwasser? VitaminH2 ist ein innovatives Produkt, das auf sogenanntem Wasserstoffwasser basiert.",
+        "title_color": "#292524",
+        "title_size_desktop": 48,
+        "title_size_mobile": 30,
+        "subheading_color": "#44403c",
+        "subheading_size_desktop": 20,
+        "subheading_size_mobile": 16,
+        "show_date": true,
+        "text_color": "#44403c",
+        "text_size_desktop": 18,
+        "text_size_mobile": 16,
+        "show_table_of_contents": true,
+        "show_social_share": true,
+        "social_facebook": true,
+        "social_twitter": true,
+        "social_linkedin": true,
+        "social_copy_link": true,
+        "bg_color": "#ffffff",
+        "custom_classes": ""
+      }
+    },
     "blog_posts_rDYf43": {
       "type": "blog-posts",
       "custom_css": [
@@ -47,7 +84,7 @@
       ],
       "name": "t:sections.blog_posts.presets.blog_posts.name",
       "settings": {
-        "color_scheme": "scheme-e240f942-9acb-4b5c-8e31-a59739abd614",
+        "color_scheme": "scheme-d158b51a-f3e3-4810-a2bb-41206d01c467",
         "separate_section_with_border": false,
         "blog": "news",
         "posts_count": 3,
@@ -67,6 +104,7 @@
   "order": [
     "main",
     "prev-next-blog-posts",
+    "blog_post_custom",
     "blog_posts_rDYf43"
   ]
 }

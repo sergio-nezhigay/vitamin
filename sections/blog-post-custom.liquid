@@ -1,0 +1,732 @@
+{{ 'blog-post-custom.css' | asset_url | stylesheet_tag }}
+
+<style>
+#shopify-section-{{ section.id }} {
+  background-color: {{ section.settings.bg_color | default: '#ffffff' }};
+}
+
+#shopify-section-{{ section.id }} .pp-blog-title {
+  color: {{ section.settings.title_color | default: '#292524' }};
+  font-size: {{ section.settings.title_size_desktop }}px;
+}
+
+#shopify-section-{{ section.id }} .pp-blog-subheading {
+  color: {{ section.settings.subheading_color | default: '#44403c' }};
+  font-size: {{ section.settings.subheading_size_desktop }}px;
+}
+
+#shopify-section-{{ section.id }} .pp-blog-rich-content {
+  color: {{ section.settings.text_color | default: '#44403c' }};
+  font-size: {{ section.settings.text_size_desktop }}px;
+}
+
+@media (max-width: 768px) {
+  #shopify-section-{{ section.id }} .pp-blog-title {
+    font-size: {{ section.settings.title_size_mobile }}px;
+  }
+  
+  #shopify-section-{{ section.id }} .pp-blog-subheading {
+    font-size: {{ section.settings.subheading_size_mobile }}px;
+  }
+  
+  #shopify-section-{{ section.id }} .pp-blog-rich-content {
+    font-size: {{ section.settings.text_size_mobile }}px;
+  }
+}
+</style>
+
+
+
+<section id="shopify-section-{{ section.id }}" class="pp-blog-content {{ section.settings.custom_classes }}">
+  <div class="pp-blog-main-container">
+    
+    <div class="pp-blog-header-content">
+      {% if section.settings.show_date and blog.id and article.published_at %}
+        <div class="pp-blog-date">
+          <p>{{ article.published_at | date: '%d %b %Y' }}</p>
+        </div>
+      {% endif %}
+      
+      {% if blog.id and article.title != blank %}
+        <h1 class="pp-blog-title">{{ article.title }}</h1>
+      {% endif %}
+      
+      {% if section.settings.subheading != blank %}
+        <div class="pp-blog-subheading">
+          <p>{{ section.settings.subheading }}</p>
+        </div>
+      {% endif %}
+    </div>
+
+    {% if blog.id and article.image %}
+      <div class="pp-blog-hero-image">
+        <img src="{{ article.image | image_url: width: 1215 }}" 
+             alt="{{ article.image.alt | default: article.title | escape }}" 
+             loading="lazy" 
+             decoding="async"
+             width="1215" 
+             height="560">
+      </div>
+    {% endif %}
+
+    <div class="pp-blog-content-layout">
+      
+      {% if section.settings.show_table_of_contents %}
+        <div class="pp-blog-toc-sidebar">
+          <div class="pp-blog-toc-list" id="toc-list-{{ section.id }}">
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="pp-blog-content-column">
+        {% if blog.id and article.content != blank %}
+          <div class="pp-blog-rich-content">
+            {{ article.content }}
+          </div>
+        {% endif %}
+
+
+        {% for block in section.blocks %}
+          <div class="pp-blog-block pp-blog-block-{{ block.type }}" {{ block.shopify_attributes }}>
+            {% case block.type %}
+              {% when 'media' %}
+                {% if block.settings.image %}
+                  <div class="pp-blog-media">
+                    <img src="{{ block.settings.image | image_url: width: 720 }}" 
+                         alt="{{ block.settings.alt | default: 'Content image' | escape }}" 
+                         loading="lazy" 
+                         decoding="async"
+                         width="720" 
+                         height="480">
+                  </div>
+                {% endif %}
+                
+              {% when 'highlight_box' %}
+                {% if block.settings.title != blank or block.settings.content != blank %}
+                  <div class="pp-blog-highlight-box">
+                    {% if block.settings.title != blank %}
+                      <h3>{{ block.settings.title }}</h3>
+                    {% endif %}
+                    {% if block.settings.content != blank %}
+                      {{ block.settings.content }}
+                    {% endif %}
+                  </div>
+                {% endif %}
+                
+              {% when 'badge' %}
+                {% if block.settings.text != blank %}
+                  <div class="pp-blog-badges">
+                    <span class="pp-blog-badge pp-blog-badge-{{ block.settings.style }}">{{ block.settings.text }}</span>
+                  </div>
+                {% endif %}
+                
+            {% endcase %}
+          </div>
+        {% endfor %}
+
+        <div class="pp-blog-bottom-section">
+          {% if blog.id and article.tags.size > 0 %}
+            <div class="article-tags" data-tags-display="{% for tag in article.tags %}{{ tag }}{% unless forloop.last %},{% endunless %}{% endfor %}">
+            </div>
+          {% endif %}
+
+          {% if section.settings.show_social_share %}
+            <div class="pp-blog-social-share">
+              {% assign share_url = request.origin | append: request.path %}
+              {% assign share_title = article.title | url_encode %}
+              
+              {% if section.settings.social_facebook %}
+                <a href="https://facebook.com/sharer/sharer.php?u={{ share_url }}" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="pp-blog-social-link"
+                   aria-label="Share on Facebook">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <g clip-path="url(#clip0_30_9)">
+                      <path d="M20 10C20 4.47715 15.5229 0 10 0C4.47715 0 0 4.47715 0 10C0 14.9912 3.65684 19.1283 8.4375 19.8785V12.8906H5.89844V10H8.4375V7.79688C8.4375 5.29063 9.93047 3.90625 12.2146 3.90625C13.3084 3.90625 14.4531 4.10156 14.4531 4.10156V6.5625H13.1922C11.95 6.5625 11.5625 7.3334 11.5625 8.125V10H14.3359L13.8926 12.8906H11.5625V19.8785C16.3432 19.1283 20 14.9912 20 10Z" fill="#EA5167"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_30_9">
+                        <rect width="20" height="20" fill="white"/>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </a>
+              {% endif %}
+              
+              {% if section.settings.social_twitter %}
+                <a href="https://twitter.com/intent/tweet?url={{ share_url }}&text={{ share_title }}" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="pp-blog-social-link"
+                   aria-label="Share on X (Twitter)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <g clip-path="url(#clip0_30_23)">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2879 19.1666L8.66337 12.575L2.87405 19.1666H0.424805L7.57674 11.0258L0.424805 0.833252H6.71309L11.0717 7.04577L16.5327 0.833252H18.982L12.1619 8.59699L19.5762 19.1666H13.2879ZM16.0154 17.3083H14.3665L3.93176 2.69159H5.58092L9.7601 8.54422L10.4828 9.5598L16.0154 17.3083Z" fill="#EA5167"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_30_23">
+                        <rect width="20" height="20" fill="white"/>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </a>
+              {% endif %}
+              
+              {% if section.settings.social_linkedin %}
+                <a href="https://linkedin.com/sharing/share-offsite/?url={{ share_url }}" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="pp-blog-social-link"
+                   aria-label="Share on LinkedIn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M18.5195 0H1.47656C0.660156 0 0 0.644531 0 1.44141V18.5547C0 19.3516 0.660156 20 1.47656 20H18.5195C19.3359 20 20 19.3516 20 18.5586V1.44141C20 0.644531 19.3359 0 18.5195 0ZM5.93359 17.043H2.96484V7.49609H5.93359V17.043ZM4.44922 6.19531C3.49609 6.19531 2.72656 5.42578 2.72656 4.47656C2.72656 3.52734 3.49609 2.75781 4.44922 2.75781C5.39844 2.75781 6.16797 3.52734 6.16797 4.47656C6.16797 5.42188 5.39844 6.19531 4.44922 6.19531ZM17.043 17.043H14.0781V12.4023C14.0781 11.2969 14.0586 9.87109 12.5352 9.87109C10.9922 9.87109 10.7578 11.0781 10.7578 12.3242V17.043H7.79688V7.49609H10.6406V8.80078H10.6797C11.0742 8.05078 12.043 7.25781 13.4844 7.25781C16.4883 7.25781 17.043 9.23438 17.043 11.8047V17.043Z" fill="#EA5167"/>
+                  </svg>
+                </a>
+              {% endif %}
+              
+              {% if section.settings.social_copy_link %}
+                <button type="button"
+                        class="pp-blog-social-link pp-blog-copy-link"
+                        data-url="{{ share_url }}"
+                        aria-label="Copy link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M10.5898 15.3034L9.41128 16.4819C7.7841 18.1091 5.14591 18.1091 3.51873 16.4819C1.89154 14.8547 1.89154 12.2165 3.51873 10.5893L4.69724 9.4108M15.3038 10.5893L16.4824 9.4108C18.1095 7.78361 18.1095 5.14542 16.4824 3.51824C14.8552 1.89106 12.217 1.89106 10.5898 3.51824L9.41128 4.69675M7.08387 12.9167L12.9172 7.08337" stroke="#EA5167" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+
+(function (global) {
+  "use strict";
+
+  const DEFAULTS = {
+    badgeClass: "tag-badge",
+    tagClassPrefix: "tag-",
+    asciiOnly: true,
+    listSeparator: ",",
+  };
+
+  const _stripDiacritics = (s) =>
+    s.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+  const _slugifyAscii = (s) => {
+    return _stripDiacritics(String(s || ""))
+      .toLowerCase()
+      .replace(/&/g, " and ")
+      .replace(/[''`"]/g, "")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  };
+
+  const _slugifyUnicode = (s) => {
+    return String(s || "")
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/[^\p{Letter}\p{Number}-]+/gu, "")
+      .replace(/^-+|-+$/g, "");
+  };
+
+  function slugify(tag, opts = {}) {
+    const cfg = { ...DEFAULTS, ...opts };
+    const raw = String(tag || "").trim();
+    if (!raw) return "";
+    const core = cfg.asciiOnly ? _slugifyAscii(raw) : _slugifyUnicode(raw);
+    return core || _slugifyAscii(raw);
+  }
+
+  function classForTag(tag, opts = {}) {
+    const cfg = { ...DEFAULTS, ...opts };
+    const s = slugify(tag, cfg);
+    return s ? cfg.tagClassPrefix + s : "";
+  }
+
+  function badgeHTML(tag, opts = {}) {
+    const cfg = { ...DEFAULTS, ...opts };
+    const t = String(tag || "").trim();
+    if (!t) return "";
+    const cls = classForTag(t, cfg);
+    const fullClass = cls
+      ? `${cfg.badgeClass} ${cls}`
+      : cfg.badgeClass;
+    const safeText = t.replace(/[<>&"]/g, (m) => ({
+      "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;"
+    }[m]));
+    return `<span class="${fullClass}">${safeText}</span>`;
+  }
+
+  function badgesHTML(tags, opts = {}) {
+    const cfg = { ...DEFAULTS, ...opts };
+    let arr = Array.isArray(tags)
+      ? tags
+      : String(tags || "")
+          .split(cfg.listSeparator)
+          .map((t) => t.trim())
+          .filter(Boolean);
+
+    return arr.map((t) => badgeHTML(t, cfg)).join(" ");
+  }
+
+  function renderBadgesInto(container, tags, opts = {}) {
+    if (!container) return;
+    const html = badgesHTML(tags, opts);
+    let host = container.querySelector(".article-tags");
+    if (!host) {
+      host = document.createElement("div");
+      host.className = "article-tags";
+      container.appendChild(host);
+    }
+    host.innerHTML = html;
+    return host;
+  }
+
+  function upgradeNodes(selectorOrNodes, opts = {}) {
+    let nodes;
+    if (typeof selectorOrNodes === "string") {
+      nodes = document.querySelectorAll(selectorOrNodes);
+    } else if (selectorOrNodes && typeof selectorOrNodes.length === "number") {
+      nodes = selectorOrNodes;
+    } else if (selectorOrNodes && selectorOrNodes.nodeType === 1) {
+      nodes = [selectorOrNodes];
+    } else {
+      return;
+    }
+
+    nodes.forEach((node) => {
+      const raw = node.getAttribute("data-tags-display") || "";
+      const parent = node.closest(".article-card") || node.parentElement || node;
+      renderBadgesInto(parent, raw, opts);
+    });
+  }
+
+  function getTagClasses(tags, opts = {}) {
+    const cfg = { ...DEFAULTS, ...opts };
+    let arr = Array.isArray(tags)
+      ? tags
+      : String(tags || "")
+          .split(cfg.listSeparator)
+          .map((t) => t.trim())
+          .filter(Boolean);
+
+    return arr.map((t) => classForTag(t, cfg)).filter(Boolean);
+  }
+
+  const api = {
+    slugify,
+    classForTag,
+    badgeHTML,
+    badgesHTML,
+    renderBadgesInto,
+    upgradeNodes,
+    getTagClasses,
+    defaults: { ...DEFAULTS },
+  };
+
+  if (typeof module !== "undefined" && module.exports) {
+    module.exports = api;
+  } else {
+    global.TagBadges = api;
+  }
+
+  if (typeof document !== "undefined") {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", () => {
+        api.upgradeNodes("[data-tags-display]");
+      });
+    } else {
+      api.upgradeNodes("[data-tags-display]");
+    }
+  }
+})(typeof window !== "undefined" ? window : globalThis);
+
+document.addEventListener('DOMContentLoaded', function() {
+  const sectionId = '{{ section.id }}';
+  const container = document.getElementById('shopify-section-' + sectionId);
+  const tocList = container.querySelector('#toc-list-' + sectionId);
+  const richContent = container.querySelector('.pp-blog-rich-content');
+  
+  if (tocList && richContent) {
+    const headings = richContent.querySelectorAll('h2, h3, h4, strong, b');
+    const highlightBoxHeadings = container.querySelectorAll('.pp-blog-highlight-box h3');
+    const allHeadings = [...headings, ...highlightBoxHeadings];
+    const validHeadings = [];
+    
+    allHeadings.forEach((heading, index) => {
+      const text = heading.textContent.trim();
+      if (text.length > 0) {
+        const id = 'heading-' + sectionId + '-' + index;
+        heading.id = id;
+        validHeadings.push({
+          element: heading,
+          text: text,
+          id: id
+        });
+      }
+    });
+    
+    if (validHeadings.length > 0) {
+      validHeadings.forEach((heading, index) => {
+        const tocItem = document.createElement('div');
+        tocItem.className = 'pp-blog-toc-item';
+        tocItem.innerHTML = `
+          <div class="pp-blog-toc-content">
+            <div class="pp-blog-toc-dot"></div>
+            <h4 class="pp-blog-toc-heading">${heading.text}</h4>
+          </div>
+          <div class="pp-blog-toc-icon">
+            <svg class="pp-blog-toc-icon-desktop" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="#EA5167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <svg class="pp-blog-toc-icon-mobile" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 1V15M8 15L1 8M8 15L15 8" stroke="#EA5167" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        `;
+        
+        tocItem.addEventListener('click', function() {
+          heading.element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+          
+          tocList.querySelectorAll('.pp-blog-toc-item').forEach(item => {
+            item.classList.remove('active');
+          });
+          tocItem.classList.add('active');
+        });
+        
+        tocList.appendChild(tocItem);
+      });
+      
+      const firstItem = tocList.querySelector('.pp-blog-toc-item');
+      if (firstItem) {
+        firstItem.classList.add('active');
+      }
+      
+      window.addEventListener('scroll', function() {
+        let currentHeading = null;
+        const scrollPosition = window.scrollY + 100;
+        
+        validHeadings.forEach(heading => {
+          const rect = heading.element.getBoundingClientRect();
+          const elementTop = rect.top + window.scrollY;
+          
+          if (elementTop <= scrollPosition) {
+            currentHeading = heading;
+          }
+        });
+        
+        if (currentHeading) {
+          const currentIndex = validHeadings.indexOf(currentHeading);
+          const tocItems = tocList.querySelectorAll('.pp-blog-toc-item');
+          
+          tocItems.forEach((item, index) => {
+            if (index === currentIndex) {
+              item.classList.add('active');
+            } else {
+              item.classList.remove('active');
+            }
+          });
+        }
+      });
+    }
+  }
+  
+  const copyButton = container.querySelector('.pp-blog-copy-link');
+  if (copyButton) {
+    copyButton.addEventListener('click', function() {
+      const url = this.dataset.url;
+      
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function() {
+          showCopiedState();
+        }).catch(function() {
+          fallbackCopyTextToClipboard(url);
+        });
+      } else {
+        fallbackCopyTextToClipboard(url);
+      }
+      
+      function fallbackCopyTextToClipboard(text) {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.top = '0';
+        textArea.style.left = '0';
+        textArea.style.position = 'fixed';
+        
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        
+        try {
+          document.execCommand('copy');
+          showCopiedState();
+        } catch (err) {
+          console.error('Could not copy text: ', err);
+        }
+        
+        document.body.removeChild(textArea);
+      }
+      
+      function showCopiedState() {
+        copyButton.classList.add('copied');
+        setTimeout(function() {
+          copyButton.classList.remove('copied');
+        }, 2000);
+      }
+    });
+  }
+});
+</script>
+
+{% schema %}
+{
+  "name": "Blog Content",
+  "tag": "section",
+  "class": "section",
+  "templates": ["blog", "article"],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header Settings"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Was ist VitaminH2 – und was genau ist Wasserstoffwasser? VitaminH2 ist ein innovatives Produkt, das auf sogenanntem Wasserstoffwasser basiert."
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#292524"
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "min": 24,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Size Desktop",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Size Mobile",
+      "default": 30
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading Color",
+      "default": "#44403c"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size_desktop",
+      "min": 16,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Subheading Size Desktop",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "subheading_size_mobile",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subheading Size Mobile",
+      "default": 16
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "label": "Show Date",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#44403c"
+    },
+    {
+      "type": "range",
+      "id": "text_size_desktop",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Text Size Desktop",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "text_size_mobile",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Text Size Mobile",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Table of Contents"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_table_of_contents",
+      "label": "Show Table of Contents",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Social Share"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social_share",
+      "label": "Show Social Share",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "social_facebook",
+      "label": "Facebook Share",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "social_twitter",
+      "label": "Twitter Share",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "social_linkedin",
+      "label": "LinkedIn Share",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "social_copy_link",
+      "label": "Copy Link Share",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "text",
+      "id": "custom_classes",
+      "label": "Custom CSS Classes"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "media",
+      "name": "Media Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Alt Text"
+        }
+      ]
+    },
+    {
+      "type": "highlight_box",
+      "name": "Highlight Box",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    },
+    {
+      "type": "badge",
+      "name": "Badge",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Badge Text"
+        },
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Badge Style",
+          "options": [
+            {
+              "value": "research",
+              "label": "Research (Orange)"
+            },
+            {
+              "value": "news",
+              "label": "News (Red)"
+            }
+          ],
+          "default": "research"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog Content",
+      "blocks": [
+        {
+          "type": "highlight_box",
+          "settings": {
+            "title": "Key Takeaways",
+            "content": "<p>This is an example highlight box that draws attention to important information. You can customize this content to highlight key points, summaries, or important notes.</p><ul><li>This is a bullet point with important information</li><li>Another key point to remember</li><li>Final important takeaway</li></ul>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
