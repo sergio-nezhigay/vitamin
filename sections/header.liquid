@@ -151,7 +151,7 @@
                 {%- else -%}
                   {%- capture disclosure_content -%}
                     <details class="header__menu-disclosure">
-                      <summary data-follow-link="{{ link.url }}" {% if section.settings.menu_text_font == 'heading' %}class="h6"{% endif %}>
+                      <summary data-follow-link="{{ link.url }}"  {% if section.settings.menu_text_font == 'heading' %}class="!font-nunito !font-semibold !text-[14px] !text-[#292524]"{% endif %}>
                         {{- link.title -}}
                       </summary>
 
