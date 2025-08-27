@@ -111,7 +111,7 @@
 
       <div class="flex-1 flex justify-center items-center">
         {% if section.settings.hero_image != blank %}
-          <div class="relative flex max-md:aspect-square xl:w-full md:aspect-[720/600] max-w-[960px]">
+          <div class="relative flex max-md:aspect-square xl:w-full md:aspect-[720/600] md:h-[600px] 2xl:aspect-auto">
             <img
               src="{{ section.settings.hero_image | image_url: width:800 }}"
               alt="{{ section.settings.hero_image.alt | default: section.settings.title }}"
@@ -130,6 +130,9 @@
   html {
       scroll-behavior: smooth;
   }
+     #{{ section.id }} h1 {
+      font-size: {{ section.settings.title_size_mobile | default: 32 }}px !important;
+    }
   @media (min-width: 1024px) {
     #{{ section.id }} h1 {
       font-size: {{ section.settings.title_size_desktop | default: 48 }}px !important;

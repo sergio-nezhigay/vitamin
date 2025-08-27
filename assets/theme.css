@@ -8504,34 +8504,85 @@ pre {
   }
 }
 
-.shopify-section--main-article h1 {
-  font-family: 'Hoss', sans-serif;
+h1,
+.h1,
+.h1 p,
+h2,
+.h2,
+.h2 p,
+h3,
+.h3,
+.h3 p,
+h4,
+.h4,
+.h4 p,
+h5,
+.h5,
+.h5 p {
+  font-family: 'Hoss Round', Arial, sans-serif;
   font-weight: 500;
-  font-size: 30px;
-  text-align: center;
 }
 
-.shopify-section--main-article .prose p {
+h1 p,
+.h1 p,
+h2 p,
+.h3 p,
+h4 p,
+.h4 p,
+h5 p,
+.h5 p {
+  font-size: inherit !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+}
+
+h1,
+.h1 {
+  font-size: 30px;
+}
+h2,
+.h2 {
+  font-size: 25px;
+}
+h3,
+.h3 {
+  font-size: 23px;
+}
+h4,
+.h4 {
+  font-size: 21px;
+}
+
+p {
   font-family: 'Nunito Sans', Arial, sans-serif;
   font-weight: 500;
   font-size: 16px;
 }
 
-.shopify-section--main-article .prose p strong {
-  font-family: 'Hoss', sans-serif;
-  font-weight: 500;
-  font-size: 25px;
-}
-
 @media screen and (min-width: 768px) {
-  .shopify-section--main-article h1 {
+  h1,
+  .h1,
+  .h1 p {
     font-size: 48px;
   }
-  .shopify-section--main-article .prose p {
-    font-size: 18px;
+  h1 p {
+    font-size: inherit !important;
   }
-  .shopify-section--main-article .prose p strong {
+
+  h2,
+  .h2 {
     font-size: 30px;
+  }
+  h3,
+  .h3 {
+    font-size: 28px;
+  }
+  h4,
+  .h4 {
+    font-size: 26px;
+  }
+  p {
+    font-size: 18px;
   }
 }
 
@@ -8555,4 +8606,9 @@ image-with-text-overlay img {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+@media screen and (min-width: 768px) {
+  .accordion__content p {
+    font-size: 16px !important;
+  }
 }
