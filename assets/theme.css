@@ -8592,7 +8592,8 @@ p {
   right: 0 !important;
   top: 0 !important;
   bottom: 0 !important;
-  padding: 0 112px !important;
+  padding-left: 112px !important;
+  padding-right: 112px !important;
   max-width: 1440px !important;
   min-height: 600px !important;
   width: 100% !important;
@@ -8613,10 +8614,17 @@ image-with-text-overlay img {
   }
 }
 
-/* Mobile FAQ layout styles */
-/* filepath: c:\projects\vitamin\assets\theme.css */
-
 @media (max-width: 768px) {
+  .internal-content {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    align-items: flex-end !important;
+    padding-bottom: 40px !important;
+  }
+  .internal-content .button {
+    width: 100% !important;
+  }
+
   .faq {
     display: flex;
     flex-direction: column;
@@ -8656,4 +8664,8 @@ image-with-text-overlay img {
   .shopify-section--faq .side-text p {
     font-size: 14px !important;
   }
+}
+
+.internal-content .body-text p {
+  font-weight: 700 !important;
 }

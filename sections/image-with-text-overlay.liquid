@@ -71,7 +71,7 @@
                 {%- when 'heading' -%}
                   {%- if block.settings.text != blank -%}
                     <p
-                      class="{{ block.settings.heading_tag }} !font-medium !text-[32px] md:!text-[48px] !leading-none max-w-[510px]"
+                      class="{{ block.settings.heading_tag }} !font-medium !text-[32px] md:!text-[48px] !leading-none md:max-w-[510px]"
                       {{ block.shopify_attributes }}
                     >
                       {{ block.settings.text }}
@@ -82,7 +82,7 @@
                   {%- if block.settings.content != blank -%}
                     <div
                       {{ block.shopify_attributes }}
-                      class="body-text text-[16px] md:text-[18px] font-bold max-w-[510px]"
+                      class="body-text text-[16px] md:text-[18px] font-bold md:max-w-[510px]"
                     >
                       {{- block.settings.content -}}
                     </div>
