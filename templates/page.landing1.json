@@ -657,7 +657,7 @@
         "category_r3bHiE": {
           "type": "category",
           "settings": {
-            "title": "Order",
+            "title": "",
             "icon": "none",
             "icon_width": 16
           }
@@ -697,7 +697,7 @@
         "side_text": "<p>Here are the answers to some of the most common questions we get about VitaminH2. Can’t find the answer you’re looking for? Please chat to our friendly team.</p>",
         "separate_section_with_border": true,
         "show_categories": false,
-        "subheading": "Need help?",
+        "subheading": "",
         "title": "Got Questions?  We’ve Got Answers",
         "content": ""
       }
