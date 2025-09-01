@@ -14,18 +14,17 @@
       "name": "Health Tips Newsletter",
       "settings": {
         "title": "Health Tips",
-        "description": "<p>Let health experts show you how VitaminH2 can optimize your wellness routine. On our blog, doctors, nutritionists, and experts share valuable tips and insights.</p>",
+        "description": "<p>In unserem Blog findest du hilfreiche Gesundheitstipps und erfährst mehr über die Vorteile von VitaminH2 – verständlich erklärt von Experten.</p>",
         "input_placeholder": "Enter your email",
         "button_text": "Subscribe",
-        "privacy_text": "<p>We care about your data in our <a href=\"/policies/privacy-policy\" target=\"_blank\" title=\"Privacy Policy\">privacy policy.</a></p>",
+        "privacy_text": "",
         "padding_top_mobile": 50,
         "padding_top_desktop": 90,
         "padding_bottom_mobile": 0,
         "padding_bottom_desktop": 0,
         "max_width": 746,
-        "background_color": "#ffffff",
+        "background_color": "#fdf4e9",
         "text_color": "#44403c",
-        "button_color": "#ea5167",
         "custom_classes": ""
       }
     },

@@ -18,16 +18,16 @@
             "heading_tag": "h3"
           }
         },
+        "liquid_eihyBg": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div style=\"display:flex; flex-wrap:wrap; row-gap:10px; column-gap:10px; padding:0px 0;\">\n  <span style=\"display:inline-block;background:#fdf4e9;color:#cc0000;padding:6px 12px;border-radius:12px;font-weight:600;font-size:14px;line-height:1;\">\n    Fokus und Konzentration\n  </span>\n  <span style=\"display:inline-block;background:#fdf4e9;color:#cc0000;padding:6px 12px;border-radius:12px;font-weight:600;font-size:14px;line-height:1;\">\n    Leistungs-Boost\n  </span>\n  <span style=\"display:inline-block;background:#fdf4e9;color:#cc0000;padding:6px 12px;border-radius:12px;font-weight:600;font-size:14px;line-height:1;\">\n    Schnell löslich\n  </span>\n  <span style=\"display:inline-block;background:#fdf4e9;color:#cc0000;padding:6px 12px;border-radius:12px;font-weight:600;font-size:14px;line-height:1;\">\n    Fruchtiger Geschmack\n  </span>\n</div>"
+          }
+        },
         "price": {
           "type": "price",
           "settings": {
             "show_taxes_notice": false
-          }
-        },
-        "liquid_eihyBg": {
-          "type": "liquid",
-          "settings": {
-            "liquid": "<style>\n.usp-wrapper {\n  display: flex;\n  justify-content: flex-start; /* linksbündig statt zentriert */\n  margin: 30px 15px;\n}\n\n.usp-container {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  align-items: flex-start; /* ebenfalls linksbündig */\n}\n\n.usp-item {\n  display: flex;\n  align-items: center; /* vertikale Zentrierung */\n  gap: 10px;\n}\n\n.usp-item img {\n  width: 20px; /* kleinere Darstellung */\n  height: 20px;\n  flex-shrink: 0;\n}\n\n.usp-item p {\n  font-size: 14px;\n  margin: 0;\n}\n</style>\n\n<div class=\"usp-wrapper\">\n  <div class=\"usp-container\">\n    <div class=\"usp-item\">\n      <img src=\"{{ 'focus.svg' | asset_url }}\" alt=\"Fokus Icon\">\n      <p>Fokus & Konzentration</p>\n    </div>\n    <div class=\"usp-item\">\n      <img src=\"{{ 'fruity.svg' | asset_url }}\" alt=\"Fruchtiger Geschmack Icon\">\n      <p>Fruchtiger Geschmack</p>\n    </div>\n    <div class=\"usp-item\">\n      <img src=\"{{ 'boost.svg' | asset_url }}\" alt=\"Boost Icon\">\n      <p>Leistungs-Boost</p>\n    </div>\n    <div class=\"usp-item\">\n      <img src=\"{{ 'loslich.svg' | asset_url }}\" alt=\"Schnell löslich Icon\">\n      <p>Schnell löslich</p>\n    </div>\n  </div>\n</div>"
           }
         },
         "payment_terms": {
@@ -211,8 +211,8 @@
       },
       "block_order": [
         "title",
-        "price",
         "liquid_eihyBg",
+        "price",
         "payment_terms",
         "separator",
         "feature_with_icon_f4WrNN",

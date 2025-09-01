@@ -11,6 +11,7 @@
   "sections": {
     "main": {
       "type": "main-article",
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-1",
         "show_image": true,
@@ -27,6 +28,7 @@
     },
     "prev-next-blog-posts": {
       "type": "prev-next-blog-posts",
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-bf5b0f8c-52b0-4434-9e75-88cb7d811258",
         "separate_section_with_border": false,
@@ -36,10 +38,73 @@
         "show_excerpt": true,
         "show_read_more": true
       }
+    },
+    "blog_post_custom": {
+      "type": "blog-post-custom",
+      "blocks": {
+        "highlight_box_HbgPmF": {
+          "type": "highlight_box",
+          "settings": {
+            "title": "Was VitaminH2 nicht ist:",
+            "content": "<ul><li>Kein Wasserstoffperoxid (H₂O₂): VitaminH2 enthält kein aggressives Oxidationsmittel, sondern reinen, molekularen Wasserstoff.</li><li>Kein H₃O oder H₄O: Die chemische Struktur des Wassers wird nicht verändert – H₂ wird einfach gelöst, nicht umgewandelt.</li><li>Kein basisches Wasser: VitaminH2 verändert den pH-Wert des Wassers nicht. Wasserstoffgas ist neutral und beeinflusst den Säure-Basen-Haushalt nicht.</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "highlight_box_HbgPmF"
+      ],
+      "settings": {
+        "subheading": "Was ist VitaminH2 – und was genau ist Wasserstoffwasser? VitaminH2 ist ein innovatives Produkt, das auf sogenanntem Wasserstoffwasser basiert.",
+        "title_color": "#292524",
+        "title_size_desktop": 48,
+        "title_size_mobile": 30,
+        "subheading_color": "#44403c",
+        "subheading_size_desktop": 20,
+        "subheading_size_mobile": 16,
+        "show_date": true,
+        "text_color": "#44403c",
+        "text_size_desktop": 18,
+        "text_size_mobile": 16,
+        "show_table_of_contents": true,
+        "show_social_share": false,
+        "social_facebook": false,
+        "social_twitter": false,
+        "social_linkedin": false,
+        "social_copy_link": false,
+        "bg_color": "#ffffff",
+        "custom_classes": ""
+      }
+    },
+    "blog_posts_rDYf43": {
+      "type": "blog-posts",
+      "custom_css": [
+        ".header-wrapper {display: flex; justify-content: space-between; align-items: flex-end;}",
+        ".justify-self-center.bottom-btn {display: none;}",
+        "@media screen and (max-width: 768px) {.justify-self-center.bottom-btn {display: block; } .justify-self-center.top-btn {display: none; }}"
+      ],
+      "name": "t:sections.blog_posts.presets.blog_posts.name",
+      "settings": {
+        "color_scheme": "scheme-d158b51a-f3e3-4810-a2bb-41206d01c467",
+        "separate_section_with_border": false,
+        "blog": "news",
+        "posts_count": 3,
+        "stack_on_mobile": false,
+        "show_category": false,
+        "show_date": false,
+        "show_excerpt": true,
+        "show_read_more": false,
+        "subheading": "",
+        "title": "Ähnliche Beiträge",
+        "content": "",
+        "button_link": "",
+        "button_text": "Alle Beiträge entdecken"
+      }
     }
   },
   "order": [
     "main",
-    "prev-next-blog-posts"
+    "prev-next-blog-posts",
+    "blog_post_custom",
+    "blog_posts_rDYf43"
   ]
 }

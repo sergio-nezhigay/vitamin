@@ -14,25 +14,36 @@
     }
   </style>
 
-  <images-with-text-scroll id="{{ section_carousel_id }}" class="images-with-text-scroll {% if section.settings.image_position == 'end' %}images-with-text-scroll--reverse{% endif %} color-scheme color-scheme--{{ section.settings.color_scheme.id }}">
+  <images-with-text-scroll
+    id="{{ section_carousel_id }}"
+    class="images-with-text-scroll {% if section.settings.image_position == 'end' %}images-with-text-scroll--reverse{% endif %} color-scheme color-scheme--{{ section.settings.color_scheme.id }}"
+  >
     {%- if section.settings.background_image or section.settings.mobile_background_image -%}
       <picture class="contents {% if section.settings.background_image == blank %}md:hidden{% endif %}">
         {%- if section.settings.mobile_background_image -%}
           <source
-              media="(max-width: 699px)"
-              srcset="{{ section.settings.mobile_background_image | image_url: width: 400 }} 400w, {{ section.settings.mobile_background_image | image_url: width: 600 }} 600w, {{ section.settings.mobile_background_image | image_url: width: 800 }} 800w, {{ section.settings.mobile_background_image | image_url: width: 1000 }} 1000w"
-              width="{{ section.settings.mobile_background_image.width }}"
-              height="{{ section.settings.mobile_background_image.height }}"
+            media="(max-width: 699px)"
+            srcset="{{ section.settings.mobile_background_image | image_url: width: 400 }} 400w, {{ section.settings.mobile_background_image | image_url: width: 600 }} 600w, {{ section.settings.mobile_background_image | image_url: width: 800 }} 800w, {{ section.settings.mobile_background_image | image_url: width: 1000 }} 1000w"
+            width="{{ section.settings.mobile_background_image.width }}"
+            height="{{ section.settings.mobile_background_image.height }}"
           >
         {%- endif -%}
 
-        {%- assign background_image = section.settings.background_image | default: section.settings.mobile_background_image -%}
+        {%- assign background_image = section.settings.background_image
+          | default: section.settings.mobile_background_image
+        -%}
 
-        {{- background_image | image_url: width: background_image.width | image_tag: widths: '200,300,400,500,600,800,1000,1200,1400,1600,1800,2000,2200,2400,2600,2800,3000', class: 'images-with-text-scroll__image-background' -}}
+        {{-
+          background_image
+          | image_url: width: background_image.width
+          | image_tag:
+            widths: '200,300,400,500,600,800,1000,1200,1400,1600,1800,2000,2200,2400,2600,2800,3000',
+            class: 'images-with-text-scroll__image-background'
+        -}}
       </picture>
     {%- endif -%}
 
-    <div class="images-with-text-scroll__container container container--md">
+    <div class="images-with-text-scroll__container px-5 max-w-[1440px] mx-auto md:px-[145px]">
       {%- assign images = section.blocks | map: 'settings' | map: 'image' | compact -%}
 
       {%- for block in section.blocks -%}
@@ -41,7 +52,7 @@
             if images.size == 0 and forloop.first
               echo 'image' | placeholder_svg_tag: 'images-with-text-scroll__image placeholder'
             elsif block.settings.image
-              assign loading = nil
+              assign loading = null
 
               unless forloop.first
                 assign loading = 'lazy'
@@ -64,7 +75,11 @@
               {{- block.settings.content -}}
 
               {%- if block.settings.link_text != blank -%}
-                {%- render 'button', href: block.settings.link_url, content: block.settings.link_text, style: block.settings.link_style -%}
+                {%- render 'button',
+                  href: block.settings.link_url,
+                  content: block.settings.link_text,
+                  style: block.settings.link_style
+                -%}
               {%- endif -%}
             </div>
           </div>

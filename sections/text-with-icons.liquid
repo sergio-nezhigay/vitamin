@@ -1,8 +1,11 @@
 {%- if section.blocks.size > 0 -%}
-  {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
+  {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient
+    | default: section.settings.color_scheme.settings.background
+    | md5
+  -%}
 
   <div class="section-spacing section-spacing--tight color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
-    <div class="container">
+    <div class="px-5 max-w-[1440px] mx-auto md:px-[112px]">
       <div class="v-stack gap-8">
         {%- capture section_content -%}
           {%- for block in section.blocks -%}
@@ -47,13 +50,24 @@
         {%- endcapture -%}
 
         {%- if section.settings.stack_on_mobile -%}
-          <div class="text-with-icons text-with-icons--stacked" role="region" style="{% render 'surface', text_color: section.settings.text_color %}">
+          <div
+            class="text-with-icons text-with-icons--stacked"
+            role="region"
+            style="{% render 'surface', text_color: section.settings.text_color %}"
+          >
             {{- section_content -}}
           </div>
         {%- else -%}
           {%- assign carousel_id = 'text-with-icons-' | append: section.id -%}
 
-          <text-with-icons-carousel disabled-on="sm" allow-swipe id="{{ carousel_id }}" class="text-with-icons full-bleed sm:unbleed" role="region" style="{% render 'surface', text_color: section.settings.text_color %}">
+          <text-with-icons-carousel
+            disabled-on="sm"
+            allow-swipe
+            id="{{ carousel_id }}"
+            class="text-with-icons full-bleed sm:unbleed"
+            role="region"
+            style="{% render 'surface', text_color: section.settings.text_color %}"
+          >
             {{- section_content -}}
           </text-with-icons-carousel>
 

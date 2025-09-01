@@ -1,10 +1,17 @@
 {%- if section.blocks.size > 0 -%}
-  {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
+  {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient
+    | default: section.settings.color_scheme.settings.background
+    | md5
+  -%}
 
   <div class="section-spacing color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
-    <div class="container container--md">
+    <div class="px-5 max-w-[1440px] mx-auto md:px-[112px] ">
       <div class="section-stack">
-        {%- render 'section-header', subheading: section.settings.subheading, heading: section.settings.title, content: section.settings.content -%}
+        {%- render 'section-header',
+          subheading: section.settings.subheading,
+          heading: section.settings.title,
+          content: section.settings.content
+        -%}
 
         <div class="faq">
           {%- assign categories_blocks = section.blocks | where: 'type', 'category' -%}
@@ -12,13 +19,15 @@
           {%- if section.settings.show_categories and categories_blocks.size > 0 -%}
             <faq-toc class="faq__toc hidden md:grid">
               {%- for block in categories_blocks -%}
-                <a class="faq__toc-item {% if forloop.first %}is-active{% endif %}" href="#block-{{ block.id }}">{{ block.settings.title }}</a>
+                <a class="faq__toc-item {% if forloop.first %}is-active{% endif %}" href="#block-{{ block.id }}">
+                  {{- block.settings.title -}}
+                </a>
               {%- endfor -%}
             </faq-toc>
           {%- endif -%}
           <div class="faq_side_text">
-             <div class="side-header">{{ section.settings.side_header }}</div>
-              <div class="side-text">{{ section.settings.side_text }}</div>
+            <div class="side-header">{{ section.settings.side_header }}</div>
+            <div class="side-text">{{ section.settings.side_text }}</div>
           </div>
           <div class="faq__content">
             {%- for block in section.blocks -%}
@@ -26,15 +35,19 @@
                 {%- when 'category' -%}
                   {%- if block.settings.title != blank -%}
                     <p id="block-{{ block.id }}" class="faq__category h4" {{ block.shopify_attributes }}>
-                    {%- if block.settings.custom_icon != blank -%}
-                      {%- capture sizes -%}{{ block.settings.icon_width }}px{%- endcapture -%}
-                      {%- capture widths -%}{{ block.settings.icon_width }}, {{ block.settings.icon_width | times: 2 | at_most: block.settings.custom_icon.width }}{%- endcapture -%}
-                      {%- capture style -%}--image-max-width: {{ block.settings.icon_width }}px{%- endcapture -%}
+                      {%- if block.settings.custom_icon != blank -%}
+                        {%- capture sizes -%}{{ block.settings.icon_width }}px{%- endcapture -%}
+                        {%- capture widths -%}{{ block.settings.icon_width }}, {{ block.settings.icon_width | times: 2 | at_most: block.settings.custom_icon.width }}{%- endcapture -%}
+                        {%- capture style -%}--image-max-width: {{ block.settings.icon_width }}px{%- endcapture -%}
 
-                      {{- block.settings.custom_icon | image_url: width: block.settings.custom_icon.width | image_tag: sizes: sizes, widths: widths, class: 'constrained-image', style: style -}}
-                    {%- elsif block.settings.icon != 'none' -%}
-                      {%- render 'icon' with block.settings.icon, width: block.settings.icon_width -%}
-                    {%- endif -%}
+                        {{-
+                          block.settings.custom_icon
+                          | image_url: width: block.settings.custom_icon.width
+                          | image_tag: sizes: sizes, widths: widths, class: 'constrained-image', style: style
+                        -}}
+                      {%- elsif block.settings.icon != 'none' -%}
+                        {%- render 'icon' with block.settings.icon, width: block.settings.icon_width -%}
+                      {%- endif -%}
 
                       {{- block.settings.title -}}
                     </p>
@@ -48,7 +61,12 @@
                       </div>
                     {%- endcapture -%}
 
-                    {%- render 'accordion', title: block.settings.question, content: answer, show_title_as_text: true, block: block -%}
+                    {%- render 'accordion',
+                      title: block.settings.question,
+                      content: answer,
+                      show_title_as_text: true,
+                      block: block
+                    -%}
                   {%- endif -%}
               {%- endcase -%}
             {%- endfor -%}
