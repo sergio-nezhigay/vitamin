@@ -9,6 +9,41 @@
  */
 {
   "sections": {
+    "landing_hero_VUHXRm": {
+      "type": "landing-hero",
+      "name": "Premium Hero Section",
+      "settings": {
+        "custom_classes": "",
+        "max_width": "1200",
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "background_color": "#fdf4e9",
+        "trust_text": "Bereits über 15.000 Menschen setzen auf VitaminH2",
+        "trust_text_color": "#666666",
+        "title": "<p>Stärke deinen Körper, Entfessele deine Energie</p>",
+        "title_color": "#2c2c2c",
+        "title_size_desktop": 48,
+        "title_size_mobile": 32,
+        "description": "<p>Erlebe die Vorteile von VitaminH2 – das Premium-Supplement, das deine Energie steigert, deine mentale Klarheit fördert und dein Wohlbefinden auf ein neues Level bringt.</p>",
+        "description_color": "#666666",
+        "primary_button_text": "Jetzt kaufen",
+        "primary_button_bg": "#ea5167",
+        "primary_button_color": "#ffffff",
+        "secondary_button_text": "Jetzt entdecken",
+        "secondary_button_url": "shopify://blogs/news",
+        "secondary_button_color": "#ea5167",
+        "guarantee_text": "100% Zufriedenheitsgarantie",
+        "guarantee_icon": "",
+        "guarantee_color": "#e32c2b",
+        "hero_image": "shopify://shop_images/4_8fefe208-e52c-4e23-b4f2-d52b10bf08b5.png",
+        "mobile_layout": "image-first",
+        "trust_text_before": "Über",
+        "trust_number": "15.000",
+        "trust_text_after": "vertrauen auf Energie mit VitaminH2"
+      }
+    },
     "image_with_text_overlay_t9GHLw": {
       "type": "image-with-text-overlay",
       "blocks": {
@@ -50,6 +85,7 @@
         "richtext_RtabLk",
         "button_pCiby3"
       ],
+      "disabled": true,
       "custom_css": [
         "p.h2:nth-child(2) {margin-top: 5px;}",
         "p.h2 {text-transform: capitalize;}",
@@ -111,6 +147,7 @@
         "text_Uzx3Ur",
         "text_rjdm9J"
       ],
+      "disabled": true,
       "custom_css": [
         ".section-spacing {background: linear-gradient(45deg, #f6b042, #deb2b6, #d1dbee, #b3c4e6);}"
       ],
@@ -130,6 +167,81 @@
         "text_color": "#000000"
       }
     },
+    "landing_marquee_cByH93": {
+      "type": "landing-marquee",
+      "blocks": {
+        "benefit_7rtgVc": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Natürliche Inhaltsstoffe",
+            "text_color": "#000000",
+            "custom_icon": "",
+            "icon_color": "#ffffff",
+            "icon_background_color": "#ea5167"
+          }
+        },
+        "benefit_ajx4dF": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "0% Zucker",
+            "text_color": "#000000",
+            "custom_icon": "",
+            "icon_color": "#ffffff",
+            "icon_background_color": "#ea5167"
+          }
+        },
+        "benefit_g4chrK": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Wissenschaftlich fundiert",
+            "text_color": "#000000",
+            "custom_icon": "",
+            "icon_color": "#ffffff",
+            "icon_background_color": "#ea5167"
+          }
+        },
+        "benefit_NQQPU4": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Fruchtiger Geschmack",
+            "text_color": "#000000",
+            "custom_icon": "",
+            "icon_color": "#ffffff",
+            "icon_background_color": "#ea5167"
+          }
+        },
+        "benefit_N9L4iN": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Glutenfrei",
+            "text_color": "#000000",
+            "custom_icon": "",
+            "icon_color": "#ffffff",
+            "icon_background_color": "#ea5167"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_7rtgVc",
+        "benefit_ajx4dF",
+        "benefit_g4chrK",
+        "benefit_NQQPU4",
+        "benefit_N9L4iN"
+      ],
+      "name": "Benefits Marquee",
+      "settings": {
+        "max_width": "1200",
+        "custom_classes": "",
+        "font_family": "inherit",
+        "font_weight": "500",
+        "animation_duration": 30,
+        "speed": 50,
+        "min_duration": 15,
+        "pause_on_hover": false,
+        "item_spacing": 50,
+        "icon_text_spacing": 8
+      }
+    },
     "image_with_text_xEVRHw": {
       "type": "image-with-text",
       "blocks": {
@@ -138,7 +250,7 @@
           "settings": {
             "text": "",
             "text2": "<p>Natürliche Energie für deinen Tag</p>",
-            "heading_tag": "h2"
+            "heading_tag": "h3"
           }
         },
         "richtext_h8GXmh": {
@@ -332,6 +444,12 @@
     "featured_product_JCRmJp": {
       "type": "featured-product",
       "blocks": {
+        "liquid_tjcYpQ": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div style=\"display:flex;align-items:center;gap:6px;font-size:16px;color:#4b4b4b;padding-top:0px;padding-bottom:0px;\">\n  <span style=\"color:#ea5167;font-size:18px;\">★★★★★</span>\n  <span>\n    Über <strong>15.000</strong> vertrauen auf Energie mit VitaminH2\n  </span>\n</div>"
+          }
+        },
         "vendor_QWYKDi": {
           "type": "vendor",
           "disabled": true,
@@ -346,6 +464,12 @@
         "badges_8bBEaY": {
           "type": "badges",
           "settings": {}
+        },
+        "liquid_ntryk9": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div style=\"display:flex; flex-wrap:wrap; row-gap:10px; column-gap:10px; padding:0px 0;\">\n  <span style=\"display:inline-block;background:#fdf4e9;color:#cc0000;padding:6px 12px;border-radius:12px;font-weight:600;font-size:14px;line-height:1;\">\n    Fokus und Konzentration\n  </span>\n  <span style=\"display:inline-block;background:#fdf4e9;color:#cc0000;padding:6px 12px;border-radius:12px;font-weight:600;font-size:14px;line-height:1;\">\n    Leistungs-Boost\n  </span>\n  <span style=\"display:inline-block;background:#fdf4e9;color:#cc0000;padding:6px 12px;border-radius:12px;font-weight:600;font-size:14px;line-height:1;\">\n    Schnell löslich\n  </span>\n  <span style=\"display:inline-block;background:#fdf4e9;color:#cc0000;padding:6px 12px;border-radius:12px;font-weight:600;font-size:14px;line-height:1;\">\n    Fruchtiger Geschmack\n  </span>\n</div>"
+          }
         },
         "price_tiPtzX": {
           "type": "price",
@@ -367,6 +491,7 @@
         },
         "separator_TRN6DK": {
           "type": "separator",
+          "disabled": true,
           "settings": {}
         },
         "description_GU8VLY": {
@@ -400,15 +525,23 @@
             "payment_button_text_color": ""
           }
         },
+        "liquid_QUynMU": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div style=\"display:flex;align-items:flex-start;gap:12px;max-width:600px;padding:16px 0;\">\n  <!-- Bild -->\n  <img src=\"https://cdn.shopify.com/s/files/1/0872/7969/8251/files/Melanie_D.png?v=1756467562\" \n       alt=\"Melanie D.\" \n       style=\"width:48px;height:48px;border-radius:50%;object-fit:cover;\">\n  \n  <!-- Text -->\n  <div style=\"font-size:15px;color:#333;line-height:1.4;\">\n    <p style=\"font-style:italic;margin:0 0 6px 0;\">\n      \"VitaminH2 gibt mir spürbar mehr Energie im Alltag – ich fühle mich fokussierter und frischer.\"\n    </p>\n    <p style=\"margin:0;font-size:14px;color:#555;\">\n      – Melanie D., Kundin\n    </p>\n  </div>\n</div>"
+          }
+        },
         "pickup_availability_XhwiW9": {
           "type": "pickup_availability",
           "settings": {}
         }
       },
       "block_order": [
+        "liquid_tjcYpQ",
         "vendor_QWYKDi",
         "title_9MiycC",
         "badges_8bBEaY",
+        "liquid_ntryk9",
         "price_tiPtzX",
         "rating_7DcHM9",
         "payment_terms_qtgU4P",
@@ -417,6 +550,7 @@
         "variant_picker_AfCd7X",
         "quantity_selector_FYUxGw",
         "buy_buttons_MmkgEj",
+        "liquid_QUynMU",
         "pickup_availability_XhwiW9"
       ],
       "settings": {
@@ -428,7 +562,7 @@
         "center_basic_info": false,
         "desktop_media_layout": "carousel_thumbnails_bottom",
         "desktop_media_grid_gap": 30,
-        "mobile_controls": "dots",
+        "mobile_controls": "thumbnails",
         "enable_media_autoplay": false,
         "enable_video_looping": true,
         "enable_image_zoom": false,
@@ -543,6 +677,7 @@
         "testimony_6zaqDC",
         "testimony_d4QE6A"
       ],
+      "disabled": true,
       "custom_css": [
         "@media (max-width: 768px) {.section-spacing {width: 90%; margin: auto; }}"
       ],
@@ -550,6 +685,110 @@
         "color_scheme": "",
         "color_scheme2": "scheme-bf5b0f8c-52b0-4434-9e75-88cb7d811258",
         "separate_section_with_border": false
+      }
+    },
+    "landing_testimonials_9m3Lm6": {
+      "type": "landing-testimonials",
+      "blocks": {
+        "image_iaPCEz": {
+          "type": "image",
+          "settings": {
+            "customer_image": "shopify://shop_images/2_248a221f-4987-47fd-b843-3d17068c7a72.png",
+            "alt_text": "Emily"
+          }
+        },
+        "image_zYA9V8": {
+          "type": "image",
+          "settings": {
+            "customer_image": "shopify://shop_images/3_440b574d-db02-489c-9f43-2358f0d410d0.png",
+            "alt_text": "Michael"
+          }
+        },
+        "image_4qExDD": {
+          "type": "image",
+          "settings": {
+            "customer_image": "shopify://shop_images/30943.png",
+            "alt_text": "Ava"
+          }
+        },
+        "image_WALjwn": {
+          "type": "image",
+          "settings": {
+            "customer_image": "shopify://shop_images/Bildschirmfoto_2025-08-29_um_14.21.44.png",
+            "alt_text": "Daniel"
+          }
+        },
+        "testimonial_J9caXX": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Laura S.",
+            "testimonial_text": "Ich sitze oft 9 Stunden am PC und war nachmittags total erschöpft. Seit VitaminH2 habe ich viel mehr Energie und kann mich bis Feierabend konzentrieren – ohne ständig Kaffee zu trinken. Ich nehme es jetzt jeden Morgen und merke richtig, wie gut es mir tut.",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_ixhmTT": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Daniel N.",
+            "testimonial_text": "Ich trainiere fast täglich und hatte oft das Problem, dass die Regeneration lange dauerte. Mit VitaminH2 fühle ich mich viel frischer, mein Muskelkater ist spürbar leichter und ich habe mehr Power. Endlich ein Supplement, das hält, was es verspricht.",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_99pkzq": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Stefanie M.",
+            "testimonial_text": "Job, Haushalt, Kinder – ich war ständig müde. VitaminH2 hat mir echt geholfen: Ich fühle mich wacher, ausgeglichener und habe wieder mehr Energie für die wichtigen Dinge. Besonders praktisch: Einfach ins Wasser geben, fertig.",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_ieCP93": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Johannes K.",
+            "testimonial_text": "Ich bin beruflich viel unterwegs und oft unter Strom. VitaminH2 ist mittlerweile fester Bestandteil meiner Morgenroutine. Ich bin konzentrierter, kann besser mit Stress umgehen und fühle mich innerlich stabiler.",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_MmzV44": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Anna B.",
+            "testimonial_text": "Ich teste viele Supplements, aber VitaminH2 hat mich echt überzeugt. Kein Zucker, leicht einzunehmen und man merkt schon nach kurzer Zeit, dass der Körper besser funktioniert. Für mich das perfekte Daily-Boost-Produkt.",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_kxk7Rz": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Markus L.",
+            "testimonial_text": "Ich reise beruflich viel und war nach langen Tagen oft ausgelaugt. Seit ich VitaminH2 nutze, fühle ich mich auch nach stressigen Flügen oder langen Meetings deutlich fitter. Vor allem das Travel Pack ist super praktisch.",
+            "show_rating": true,
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "image_iaPCEz",
+        "image_zYA9V8",
+        "image_4qExDD",
+        "image_WALjwn",
+        "testimonial_J9caXX",
+        "testimonial_ixhmTT",
+        "testimonial_99pkzq",
+        "testimonial_ieCP93",
+        "testimonial_MmzV44",
+        "testimonial_kxk7Rz"
+      ],
+      "name": "Customer Testimonials",
+      "settings": {
+        "section_title": "Weltweit von Tausenden vertraut",
+        "rating_text": "(4.8/5)"
       }
     },
     "rich_text_9q3TB9": {
@@ -818,8 +1057,10 @@
     }
   },
   "order": [
+    "landing_hero_VUHXRm",
     "image_with_text_overlay_t9GHLw",
     "scrolling_content_RDf8c4",
+    "landing_marquee_cByH93",
     "image_with_text_xEVRHw",
     "custom_liquid_3KRn3U",
     "rich_text_MLiPKR",
@@ -829,6 +1070,7 @@
     "logo_list_9ec3EQ",
     "custom_liquid_CwjJ9e",
     "custom_testimonial_9dAqMB",
+    "landing_testimonials_9m3Lm6",
     "rich_text_9q3TB9",
     "image_with_text_overlay_69hhz6",
     "custom_comparison_table_tNmYz8",

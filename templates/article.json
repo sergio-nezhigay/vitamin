@@ -66,11 +66,11 @@
         "text_size_desktop": 18,
         "text_size_mobile": 16,
         "show_table_of_contents": true,
-        "show_social_share": true,
-        "social_facebook": true,
-        "social_twitter": true,
-        "social_linkedin": true,
-        "social_copy_link": true,
+        "show_social_share": false,
+        "social_facebook": false,
+        "social_twitter": false,
+        "social_linkedin": false,
+        "social_copy_link": false,
         "bg_color": "#ffffff",
         "custom_classes": ""
       }
@@ -94,10 +94,10 @@
         "show_excerpt": true,
         "show_read_more": false,
         "subheading": "",
-        "title": "Related posts",
+        "title": "Ähnliche Beiträge",
         "content": "",
         "button_link": "",
-        "button_text": "View all posts"
+        "button_text": "Alle Beiträge entdecken"
       }
     }
   },
