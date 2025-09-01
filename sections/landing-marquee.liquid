@@ -1,96 +1,218 @@
 <div
   id="section-{{ section.id }}"
   class="benefits-marquee-wrapper overflow-hidden relative {{ section.settings.custom_classes }} py-[19px] md:py-[22px]"
-  style="
-    background: linear-gradient(104.04deg, #F6B042 0%, #DEB2B6 50%, #D1DBEE 75%, #B3C4E6 100%);
-    margin: 0 auto;
-  "
+  style="background: linear-gradient(104.04deg, #F6B042 0%, #DEB2B6 50%, #D1DBEE 75%, #B3C4E6 100%); margin: 0 auto;"
 >
-  <div class="w-full overflow-hidden relative">
-    <div class="flex items-center whitespace-nowrap animate-marquee" id="marquee-track-{{ section.id }}">
-      <!-- First copy -->
-      {% for block in section.blocks %}
-        {% if block.settings.benefit_text != blank %}
-          <div
-            class="flex items-center flex-shrink-0 h-full"
-            style="margin-right: {{ section.settings.item_spacing }}px;"
-          >
-            <div
-              class="flex items-center justify-center flex-shrink-0 h-full"
-              style="margin-right: {{ section.settings.icon_text_spacing }}px;"
-            >
-              {% if block.settings.custom_icon != blank %}
-                {{ block.settings.custom_icon }}
-              {% else %}
-                <svg class="w-7 h-7" viewBox="0 0 20 20" fill="none">
-                  <circle cx="10" cy="10" r="10" fill="{{ block.settings.icon_background_color }}"/>
-                  <path d="M6 10L8.5 12.5L14 7" stroke="{{ block.settings.icon_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              {% endif %}
-            </div>
-            <span
-              class="whitespace-nowrap font-medium leading-none pt-[2px] font-display text-[14px] md:text-[18px]"
-              style="
-                color: {{ block.settings.text_color }};
-
-                font-weight: {{ section.settings.font_weight }};
-              "
-            >
-              {{ block.settings.benefit_text }}
-            </span>
-          </div>
-        {% endif %}
-      {% endfor %}
-
-      <!-- Second copy -->
-      {% for block in section.blocks %}
-        {% if block.settings.benefit_text != blank %}
-          <div class="flex items-center flex-shrink-0" style="margin-right: {{ section.settings.item_spacing }}px;">
-            <div
-              class="flex items-center justify-center flex-shrink-0"
-              style="margin-right: {{ section.settings.icon_text_spacing }}px;"
-            >
-              {% if block.settings.custom_icon != blank %}
-                {{ block.settings.custom_icon }}
-              {% else %}
-                <svg class="w-7 h-7" viewBox="0 0 20 20" fill="none">
-                  <circle cx="10" cy="10" r="10" fill="{{ block.settings.icon_background_color }}"/>
-                  <path d="M6 10L8.5 12.5L14 7" stroke="{{ block.settings.icon_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              {% endif %}
-            </div>
-            <span
-              class="whitespace-nowrap font-medium leading-none pt-[2px] font-display text-[14px] md:text-[18px]"
-              style="
-                color: {{ block.settings.text_color }};
-                font-weight: {{ section.settings.font_weight }};
-              "
-            >
-              {{ block.settings.benefit_text }}
-            </span>
-          </div>
-        {% endif %}
-      {% endfor %}
+  <div class="marquee-container w-full overflow-hidden relative">
+    <div
+      class="marquee-track flex items-center whitespace-nowrap"
+      id="marquee-track-{{ section.id }}"
+      data-section-id="{{ section.id }}"
+      data-speed="{{ section.settings.speed | default: 50 }}"
+      data-min-duration="{{ section.settings.min_duration | default: 15 }}"
+      data-pause-hover="{{ section.settings.pause_on_hover }}"
+    >
+      <!-- Content will be populated by JavaScript -->
     </div>
   </div>
 </div>
 
 <style>
-      @keyframes marquee {
-  0%   { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-      }
+  #section-{{ section.id }} .marquee-track {
+    will-change: transform;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
 
-      #section-{{ section.id }} .animate-marquee {
-        animation: marquee 30s linear infinite;
-      }
+  #section-{{ section.id }} .marquee-item {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    height: 100%;
+  }
 
-      {% if section.settings.pause_on_hover %}
-        #section-{{ section.id }}:hover .animate-marquee {
-          animation-play-state: paused;
-        }
-      {% endif %}
+  #section-{{ section.id }} .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    height: 100%;
+    margin-right: {{ section.settings.icon_text_spacing | default: 8 }}px;
+  }
+
+  #section-{{ section.id }} .benefit-text {
+    white-space: nowrap;
+    font-weight: {{ section.settings.font_weight | default: 500 }};
+    line-height: 1;
+    padding-top: 2px;
+    font-size: 14px;
+    font-family: {{ section.settings.font_family | default: 'inherit' }};
+  }
+
+  @media (min-width: 768px) {
+    #section-{{ section.id }} .benefit-text {
+      font-size: 18px;
+    }
+  }
 </style>
+
+<script
+  type="module"
+>
+  document.addEventListener('DOMContentLoaded', () => {
+    class ShopifyMarquee {
+      constructor(sectionId) {
+        this.sectionId = sectionId;
+        this.container = document.querySelector(`#section-${sectionId}`);
+        this.track = document.querySelector(`#marquee-track-${sectionId}`);
+
+        if (!this.container || !this.track) return;
+
+        this.options = {
+          speed: parseInt(this.track.dataset.speed) || 50,
+          minDuration: parseInt(this.track.dataset.minDuration) || 15,
+          pauseOnHover: this.track.dataset.pauseHover === 'true',
+          itemSpacing: {{ section.settings.item_spacing | default: 50 }}
+        };
+
+        this.items = [
+          {% for block in section.blocks %}
+            {% if block.settings.benefit_text != blank %}
+              {
+                text: {{ block.settings.benefit_text | json }},
+                textColor: {{ block.settings.text_color | default: '#FFFFFF' | json }},
+                iconColor: {{ block.settings.icon_color | default: '#FFFFFF' | json }},
+                iconBg: {{ block.settings.icon_background_color | default: '#22C55E' | json }},
+                customIcon: {{ block.settings.custom_icon | json }}
+              }{% unless forloop.last %},{% endunless %}
+            {% endif %}
+          {% endfor %}
+        ];
+
+        this.init();
+      }
+
+      createIcon(item) {
+        if (item.customIcon && item.customIcon.trim()) {
+          return item.customIcon;
+        }
+
+        return `
+          <svg class="w-7 h-7" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="10" fill="${item.iconBg}"/>
+            <path d="M6 10L8.5 12.5L14 7" stroke="${item.iconColor}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        `;
+      }
+
+      createMarqueeItem(item) {
+        const div = document.createElement('div');
+        div.className = 'marquee-item';
+        div.innerHTML = `
+          <div class="icon-container">
+            ${this.createIcon(item)}
+          </div>
+          <span class="benefit-text" style="color: ${item.textColor};">
+            ${item.text}
+          </span>
+        `;
+        return div;
+      }
+
+      init() {
+        if (this.items.length === 0) return;
+
+        // Clear existing content
+        this.track.innerHTML = '';
+        this.itemQueue = [...this.items];
+        this.currentTransform = 0;
+
+        // Create initial items to fill the visible area plus buffer
+        this.populateInitialItems();
+        this.startAnimation();
+      }
+
+      populateInitialItems() {
+        const containerWidth = this.container.offsetWidth;
+        let currentWidth = 0;
+        let itemIndex = 0;
+
+        // Fill the container width plus extra buffer for smooth scrolling
+        while (currentWidth < containerWidth * 2) {
+          const item = this.items[itemIndex % this.items.length];
+          const itemElement = this.createMarqueeItem(item);
+          itemElement.style.marginRight = this.options.itemSpacing + 'px';
+          this.track.appendChild(itemElement);
+
+          // Estimate width (we'll get exact width after render)
+          currentWidth += 200; // rough estimate per item
+          itemIndex++;
+        }
+      }
+
+      startAnimation() {
+        requestAnimationFrame(() => {
+          let itemIndex = 0;
+
+          const animate = () => {
+            if (this.isPaused) {
+              this.animationId = requestAnimationFrame(animate);
+              return;
+            }
+
+            // Move everything left
+            this.currentTransform -= this.options.speed / 60;
+            this.track.style.transform = `translateX(${this.currentTransform}px)`;
+
+            // Check if first item is completely out of view
+            const firstItem = this.track.children[0];
+            if (firstItem) {
+              const firstItemRect = firstItem.getBoundingClientRect();
+              const containerRect = this.container.getBoundingClientRect();
+
+              // If first item is completely scrolled past the left edge
+              if (firstItemRect.right < containerRect.left) {
+                // Remove the first item
+                const itemWidth = firstItem.offsetWidth + this.options.itemSpacing;
+                this.track.removeChild(firstItem);
+
+                // Adjust transform to account for removed item
+                this.currentTransform += itemWidth;
+                this.track.style.transform = `translateX(${this.currentTransform}px)`;
+
+                // Add new item to the end
+                const newItem = this.items[itemIndex % this.items.length];
+                const newItemElement = this.createMarqueeItem(newItem);
+                newItemElement.style.marginRight = this.options.itemSpacing + 'px';
+                this.track.appendChild(newItemElement);
+                itemIndex++;
+              }
+            }
+
+            this.animationId = requestAnimationFrame(animate);
+          };
+
+          this.isPaused = false;
+          animate();
+
+          // Handle hover pause
+          if (this.options.pauseOnHover) {
+            this.container.addEventListener('mouseenter', () => {
+              this.isPaused = true;
+            });
+
+            this.container.addEventListener('mouseleave', () => {
+              this.isPaused = false;
+            });
+          }
+        });
+      }
+    }
+
+    // Initialize marquee for this section
+    new ShopifyMarquee('{{ section.id }}');
+  });
+</script>
 
 {% schema %}
 {
@@ -107,7 +229,6 @@
       "default": "1200",
       "info": "Leave blank for full width"
     },
-
     {
       "type": "text",
       "id": "custom_classes",
@@ -123,22 +244,10 @@
       "label": "Font Family",
       "default": "inherit",
       "options": [
-        {
-          "value": "inherit",
-          "label": "Theme Default"
-        },
-        {
-          "value": "Arial, sans-serif",
-          "label": "Arial"
-        },
-        {
-          "value": "Helvetica, sans-serif",
-          "label": "Helvetica"
-        },
-        {
-          "value": "Georgia, serif",
-          "label": "Georgia"
-        }
+        { "value": "inherit", "label": "Theme Default" },
+        { "value": "Arial, sans-serif", "label": "Arial" },
+        { "value": "Helvetica, sans-serif", "label": "Helvetica" },
+        { "value": "Georgia, serif", "label": "Georgia" }
       ]
     },
     {
@@ -147,42 +256,20 @@
       "label": "Font Weight",
       "default": "500",
       "options": [
-        {
-          "value": "400",
-          "label": "Normal (400)"
-        },
-        {
-          "value": "500",
-          "label": "Medium (500)"
-        },
-        {
-          "value": "600",
-          "label": "Semi Bold (600)"
-        },
-        {
-          "value": "700",
-          "label": "Bold (700)"
-        }
+        { "value": "400", "label": "Normal (400)" },
+        { "value": "500", "label": "Medium (500)" },
+        { "value": "600", "label": "Semi Bold (600)" },
+        { "value": "700", "label": "Bold (700)" }
       ]
     },
-
     {
       "type": "header",
       "content": "Animation Settings"
     },
     {
       "type": "range",
-      "id": "animation_duration",
-      "label": "Animation Duration (seconds)",
-      "min": 10,
-      "max": 100,
-      "step": 5,
-      "default": 30
-    },
-    {
-      "type": "range",
       "id": "speed",
-      "label": "Animation Speed",
+      "label": "Animation Speed (pixels/second)",
       "min": 20,
       "max": 100,
       "step": 5,
@@ -293,19 +380,19 @@
         {
           "type": "benefit",
           "settings": {
-            "benefit_text": "Natural ingredients"
+            "benefit_text": "100% satisfaction guarantee"
           }
         },
         {
           "type": "benefit",
           "settings": {
-            "benefit_text": "Zero sugar"
+            "benefit_text": "Scientifically proven"
           }
         },
         {
           "type": "benefit",
           "settings": {
-            "benefit_text": "Free delivery"
+            "benefit_text": "Gluten free"
           }
         }
       ]
