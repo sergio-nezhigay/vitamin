@@ -393,9 +393,9 @@
       "settings": {
         "max_width": "1200",
         "padding_top_desktop": 65,
-        "padding_bottom_desktop": 80,
-        "padding_top_mobile": 50,
-        "padding_bottom_mobile": 50,
+        "padding_bottom_desktop": 0,
+        "padding_top_mobile": 65,
+        "padding_bottom_mobile": 0,
         "background_color": "#ffffff",
         "custom_classes": "",
         "main_image": "shopify://shop_images/3_440b574d-db02-489c-9f43-2358f0d410d0.png",
