@@ -234,7 +234,6 @@
         "custom_classes": "",
         "font_family": "inherit",
         "font_weight": "500",
-        "animation_duration": 30,
         "speed": 50,
         "min_duration": 15,
         "pause_on_hover": false,
@@ -461,6 +460,12 @@
             "heading_tag": "h3"
           }
         },
+        "text_483EBC": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>In einem Glas das Steuer über deine Gesundheit wieder in der Hand</strong></p>"
+          }
+        },
         "badges_8bBEaY": {
           "type": "badges",
           "settings": {}
@@ -540,6 +545,7 @@
         "liquid_tjcYpQ",
         "vendor_QWYKDi",
         "title_9MiycC",
+        "text_483EBC",
         "badges_8bBEaY",
         "liquid_ntryk9",
         "price_tiPtzX",
@@ -1054,6 +1060,32 @@
         "button_link": "",
         "button_text": "Alle Beiträge ansehen"
       }
+    },
+    "175682804677578861": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_agg_section_3FHXYy": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-agg-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "only_photos": false,
+            "hide_thumbnails": false,
+            "product_handle": "",
+            "aggregated": false,
+            "data-limit": 20,
+            "maxwidth": 1920,
+            "is_sample": false
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_agg_section_3FHXYy"
+      ],
+      "settings": {
+        "color_scheme": "scheme-d158b51a-f3e3-4810-a2bb-41206d01c467",
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false
+      }
     }
   },
   "order": [
@@ -1076,6 +1108,7 @@
     "custom_comparison_table_tNmYz8",
     "faq_q76XTU",
     "image_with_text_8eymdx",
-    "blog-posts"
+    "blog-posts",
+    "175682804677578861"
   ]
 }

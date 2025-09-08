@@ -44,6 +44,7 @@
       "blocks": {
         "highlight_box_HbgPmF": {
           "type": "highlight_box",
+          "disabled": true,
           "settings": {
             "title": "Was VitaminH2 nicht ist:",
             "content": "<ul><li>Kein Wasserstoffperoxid (H₂O₂): VitaminH2 enthält kein aggressives Oxidationsmittel, sondern reinen, molekularen Wasserstoff.</li><li>Kein H₃O oder H₄O: Die chemische Struktur des Wassers wird nicht verändert – H₂ wird einfach gelöst, nicht umgewandelt.</li><li>Kein basisches Wasser: VitaminH2 verändert den pH-Wert des Wassers nicht. Wasserstoffgas ist neutral und beeinflusst den Säure-Basen-Haushalt nicht.</li></ul>"
@@ -54,14 +55,14 @@
         "highlight_box_HbgPmF"
       ],
       "settings": {
-        "subheading": "Was ist VitaminH2 – und was genau ist Wasserstoffwasser? VitaminH2 ist ein innovatives Produkt, das auf sogenanntem Wasserstoffwasser basiert.",
+        "subheading": "",
         "title_color": "#292524",
         "title_size_desktop": 48,
         "title_size_mobile": 30,
         "subheading_color": "#44403c",
         "subheading_size_desktop": 20,
         "subheading_size_mobile": 16,
-        "show_date": true,
+        "show_date": false,
         "text_color": "#44403c",
         "text_size_desktop": 18,
         "text_size_mobile": 16,

@@ -148,17 +148,91 @@
         "benefit_TY63U6",
         "benefit_MA37q9"
       ],
+      "disabled": true,
       "settings": {
         "max_width": "1200",
         "custom_classes": "",
         "font_family": "inherit",
         "font_weight": "700",
-        "animation_duration": 15,
         "speed": 60,
         "min_duration": 10,
         "pause_on_hover": true,
         "item_spacing": 40,
         "icon_text_spacing": 12
+      }
+    },
+    "landing_marquee_meraH4": {
+      "type": "landing-marquee",
+      "blocks": {
+        "benefit_adbmMh": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Natürliche Inhaltsstoffe",
+            "text_color": "#000000",
+            "custom_icon": "",
+            "icon_color": "#ffffff",
+            "icon_background_color": "#ea5167"
+          }
+        },
+        "benefit_Jh4U3L": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "0% Zucker",
+            "text_color": "#000000",
+            "custom_icon": "",
+            "icon_color": "#ffffff",
+            "icon_background_color": "#ea5167"
+          }
+        },
+        "benefit_jgwgMf": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Wissenschaftlich fundiert",
+            "text_color": "#000000",
+            "custom_icon": "",
+            "icon_color": "#ffffff",
+            "icon_background_color": "#ea5167"
+          }
+        },
+        "benefit_mcPQLd": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Fruchtiger Geschmack",
+            "text_color": "#000000",
+            "custom_icon": "",
+            "icon_color": "#ffffff",
+            "icon_background_color": "#ea5167"
+          }
+        },
+        "benefit_fhw9Fm": {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Glutenfrei",
+            "text_color": "#000000",
+            "custom_icon": "",
+            "icon_color": "#ffffff",
+            "icon_background_color": "#ea5167"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_adbmMh",
+        "benefit_Jh4U3L",
+        "benefit_jgwgMf",
+        "benefit_mcPQLd",
+        "benefit_fhw9Fm"
+      ],
+      "name": "Benefits Marquee",
+      "settings": {
+        "max_width": "1200",
+        "custom_classes": "",
+        "font_family": "inherit",
+        "font_weight": "500",
+        "speed": 50,
+        "min_duration": 15,
+        "pause_on_hover": false,
+        "item_spacing": 50,
+        "icon_text_spacing": 8
       }
     },
     "landing_health_awareness": {
@@ -243,7 +317,7 @@
             "ingredient_name": "Magnesium",
             "name_color": "#44403c",
             "name_size_desktop": 20,
-            "ingredient_description": "<p>Activates hydrogen release and fuels over 300 vital processes in your body.</p>",
+            "ingredient_description": "<p>Magnesiummalat kombiniert hoch verfügbares Magnesium mit Apfelsäure und liefert so Energie und Ausdauer für den Alltag. Magnesium unterstützt Muskeln, Nerven und Konzentration – gleichzeitig wirkt es Müdigkeit entgegen und trägt zu einer spürbaren Vitalität bei.</p>",
             "description_color": "#44403c",
             "description_size_desktop": 16,
             "read_more_text": "Read more",
@@ -257,7 +331,7 @@
             "ingredient_name": "Sodium Bicarbonate",
             "name_color": "#292524",
             "name_size_desktop": 20,
-            "ingredient_description": "<p>Balances pH levels for better absorption and gentle alkalizing effect.</p>",
+            "ingredient_description": "<p>Als natürlicher Säurepuffer hilft Natriumbicarbonat, den Säure-Basen-Haushalt ins Gleichgewicht zu bringen. Es unterstützt den Körper dabei, Belastungen besser zu verkraften, fördert die Regeneration und trägt so zu mehr Leistungsfähigkeit bei.</p>",
             "description_color": "#44403c",
             "description_size_desktop": 16,
             "read_more_text": "Read more",
@@ -271,7 +345,7 @@
             "ingredient_name": "Organic Acids",
             "name_color": "#292524",
             "name_size_desktop": 20,
-            "ingredient_description": "<p>Ensure fast, smooth hydrogen release with no residue.</p>",
+            "ingredient_description": "<p>Das erfrischend-fruchtige Aroma rundet VitaminH2 geschmacklich ab. Es sorgt dafür, dass jede Einnahme leicht und angenehm ist – ganz ohne künstliche Zusätze, dafür mit einem natürlichen, belebenden Genussmoment.</p>",
             "description_color": "#44403c",
             "description_size_desktop": 16,
             "read_more_text": "Read more",
@@ -280,6 +354,7 @@
         },
         "ingredient_pEPQRD": {
           "type": "ingredient",
+          "disabled": true,
           "settings": {
             "ingredient_image": "shopify://shop_images/Rectangle_5.webp",
             "ingredient_name": "Molecular Hydrogen (H₂)",
@@ -310,6 +385,184 @@
         "card_background": "#ffffff",
         "card_border_radius": 24,
         "custom_classes": ""
+      }
+    },
+    "landing_energy_comparision_bJLrdN": {
+      "type": "landing-energy-comparision",
+      "name": "Energy Comparison",
+      "settings": {
+        "max_width": "1200",
+        "padding_top_desktop": 65,
+        "padding_bottom_desktop": 80,
+        "padding_top_mobile": 50,
+        "padding_bottom_mobile": 50,
+        "background_color": "#ffffff",
+        "custom_classes": "",
+        "main_image": "shopify://shop_images/3_440b574d-db02-489c-9f43-2358f0d410d0.png",
+        "bottom_image": "shopify://shop_images/Review_23.png",
+        "main_title": "Die Power-Mischung, die aus Wasser mehr macht:",
+        "title_color": "#000000",
+        "title_size_mobile": 28,
+        "subtitle": "VitaminH2",
+        "subtitle_color": "#ff4757",
+        "subtitle_size_mobile": 20,
+        "description": "<p>Wenn sich die Brausetablette in Wasser auflöst, entsteht ein <strong>erfrischendes Getränk mit leichtem Pfirsichgeschmack</strong>, das reich an <strong>molekularem Wasserstoff</strong> ist. Dieser verbindet sich mit dem Körper, unterstützt die Zellen beim Schutz vor oxidativem Stress und fördert Energie, Regeneration und Wohlbefinden. Das enthaltene Magnesium stärkt Muskeln und Nerven, während Natriumbicarbonat den Säure-Basen-Haushalt ausgleicht.</p><p>Das Ergebnis: Ein <strong>sprudelnd-leichter Drink</strong>, der nicht nur schmeckt, sondern auch spürbar dazu beiträgt, sich vitaler, ausgeglichener und leistungsfähiger zu fühlen – Tag für Tag.</p>",
+        "description_color": "#666666",
+        "description_size_desktop": 16,
+        "description_size_mobile": 14,
+        "button_text": "Start Your Natural Energy Reset Today",
+        "button_link": "",
+        "button_bg": "#ff4757",
+        "button_text_color": "#ffffff",
+        "button_text_size_mobile": 14,
+        "bottom_callout_text": "",
+        "bottom_callout_bg": "#ffffff",
+        "bottom_text_color": "#000000"
+      }
+    },
+    "featured_product_Rbtcwc": {
+      "type": "featured-product",
+      "blocks": {
+        "liquid_eQFmD7": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div style=\"display:flex;align-items:center;gap:6px;font-size:16px;color:#4b4b4b;padding-top:0px;padding-bottom:0px;\">\n  <span style=\"color:#ea5167;font-size:18px;\">★★★★★</span>\n  <span>\n    Über <strong>15.000</strong> vertrauen auf Energie mit VitaminH2\n  </span>\n</div>"
+          }
+        },
+        "vendor_cw7jJ4": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "title_XYJTxc": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h3"
+          }
+        },
+        "text_bmLJ69": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>In einem Glas das Steuer über deine Gesundheit wieder in der Hand</strong></p>"
+          }
+        },
+        "badges_MJYHpj": {
+          "type": "badges",
+          "settings": {}
+        },
+        "liquid_GGd4eG": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div style=\"display:flex; flex-wrap:wrap; row-gap:10px; column-gap:10px; padding:0px 0;\">\n  <span style=\"display:inline-block;background:#fdf4e9;color:#cc0000;padding:6px 12px;border-radius:12px;font-weight:600;font-size:14px;line-height:1;\">\n    Fokus und Konzentration\n  </span>\n  <span style=\"display:inline-block;background:#fdf4e9;color:#cc0000;padding:6px 12px;border-radius:12px;font-weight:600;font-size:14px;line-height:1;\">\n    Leistungs-Boost\n  </span>\n  <span style=\"display:inline-block;background:#fdf4e9;color:#cc0000;padding:6px 12px;border-radius:12px;font-weight:600;font-size:14px;line-height:1;\">\n    Schnell löslich\n  </span>\n  <span style=\"display:inline-block;background:#fdf4e9;color:#cc0000;padding:6px 12px;border-radius:12px;font-weight:600;font-size:14px;line-height:1;\">\n    Fruchtiger Geschmack\n  </span>\n</div>"
+          }
+        },
+        "price_qCbkGE": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "rating_bxLptX": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+            "show_empty": true,
+            "rating_mode": "rating"
+          }
+        },
+        "payment_terms_Wr9UQ4": {
+          "type": "payment_terms",
+          "settings": {}
+        },
+        "separator_6A8rDN": {
+          "type": "separator",
+          "disabled": true,
+          "settings": {}
+        },
+        "description_BRRBa8": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false
+          }
+        },
+        "variant_picker_mYpkB6": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "",
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector_kdhpbp": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_kJ34aq": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": false,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "liquid_8rFbYK": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<!-- 30 Tage Wirkungs Garantie - Custom Liquid -->\n<div class=\"wg-box\" role=\"region\" aria-label=\"30 Tage Wirkungs Garantie\">\n  <div class=\"wg-headline\">\n    <span class=\"wg-icon\" aria-hidden=\"true\">\n      <!-- Haken-Icon -->\n      <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n        <circle cx=\"12\" cy=\"12\" r=\"9\"></circle>\n        <path d=\"M8 12l3 3 5-6\"></path>\n      </svg>\n    </span>\n    <strong class=\"wg-title\">30 Tage Wirkungs Garantie</strong>\n  </div>\n  <p class=\"wg-text\">Wenn du nach 30 Tagen keine positive Veränderung spürst – bekommst du dein Geld zurück. <br> Einfach & unkompliziert.</p>\n</div>\n\n<style>\n  .wg-box{\n    --wg-bg: #fff7f2;     /* Hintergrundfarbe */\n    --wg-text: #2d3748;   /* Textfarbe */\n    --wg-icon: #e63946;   /* Iconfarbe */\n    --wg-radius: 10px;\n    --wg-px: 14px;\n    --wg-py: 12px;\n    --wg-mt: 0px;         /* Abstand oben (negativ möglich) */\n    --wg-mb: 20px;        /* Abstand unten (negativ möglich) */\n\n    background: var(--wg-bg);\n    padding: var(--wg-py) var(--wg-px);\n    border-radius: var(--wg-radius);\n    margin-top: var(--wg-mt);\n    margin-bottom: var(--wg-mb);\n    color: var(--wg-text);\n  }\n\n  .wg-headline{\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    font-size: 18px;\n  }\n\n  .wg-title{\n    font-weight: 700;\n  }\n\n  .wg-icon{\n    display: inline-flex;\n    color: var(--wg-icon);\n  }\n\n  .wg-text{\n    margin: 6px 0 0 0;\n    font-size: 15px;\n    line-height: 1.4;\n  }\n</style>"
+          }
+        },
+        "liquid_ewwdPN": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div style=\"display:flex;align-items:flex-start;gap:12px;max-width:600px;padding:16px 0;\">\n  <!-- Bild -->\n  <img src=\"https://cdn.shopify.com/s/files/1/0872/7969/8251/files/Melanie_D.png?v=1756467562\" \n       alt=\"Melanie D.\" \n       style=\"width:48px;height:48px;border-radius:50%;object-fit:cover;\">\n  \n  <!-- Text -->\n  <div style=\"font-size:15px;color:#333;line-height:1.4;\">\n    <p style=\"font-style:italic;margin:0 0 6px 0;\">\n      \"VitaminH2 gibt mir spürbar mehr Energie im Alltag – ich fühle mich fokussierter und frischer.\"\n    </p>\n    <p style=\"margin:0;font-size:14px;color:#555;\">\n      – Melanie D., Kundin\n    </p>\n  </div>\n</div>"
+          }
+        },
+        "pickup_availability_VxDCCK": {
+          "type": "pickup_availability",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "liquid_eQFmD7",
+        "vendor_cw7jJ4",
+        "title_XYJTxc",
+        "text_bmLJ69",
+        "badges_MJYHpj",
+        "liquid_GGd4eG",
+        "price_qCbkGE",
+        "rating_bxLptX",
+        "payment_terms_Wr9UQ4",
+        "separator_6A8rDN",
+        "description_BRRBa8",
+        "variant_picker_mYpkB6",
+        "quantity_selector_kdhpbp",
+        "buy_buttons_kJ34aq",
+        "liquid_8rFbYK",
+        "liquid_ewwdPN",
+        "pickup_availability_VxDCCK"
+      ],
+      "settings": {
+        "color_scheme": "scheme-d158b51a-f3e3-4810-a2bb-41206d01c467",
+        "product": "vitaminh2",
+        "separate_section_with_border": false,
+        "container_size": "lg",
+        "product_info_size": 45,
+        "center_basic_info": false,
+        "desktop_media_layout": "carousel_thumbnails_bottom",
+        "desktop_media_grid_gap": 30,
+        "mobile_controls": "thumbnails",
+        "enable_media_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": false,
+        "max_image_zoom_level": 3,
+        "subheading": "",
+        "title": "",
+        "content": ""
       }
     },
     "featured_product_czCePe": {
@@ -401,6 +654,7 @@
         "buy_buttons_CWdmJi",
         "pickup_availability_C8D9Px"
       ],
+      "disabled": true,
       "name": "t:sections.featured_product.presets.featured_product.name",
       "settings": {
         "color_scheme": "scheme-d158b51a-f3e3-4810-a2bb-41206d01c467",
@@ -417,7 +671,7 @@
         "enable_image_zoom": false,
         "max_image_zoom_level": 3,
         "subheading": "",
-        "title": "Featured product",
+        "title": "",
         "content": ""
       }
     },
@@ -428,32 +682,32 @@
           "type": "benefit_item",
           "settings": {
             "icon": "<svg width=\"16\" height=\"20\" viewbox=\"0 0 16 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M8.83306 1.6665L1.41094 10.573C1.12026 10.9219 0.974925 11.0963 0.972704 11.2436C0.970773 11.3716 1.02783 11.4934 1.12744 11.5739C1.24201 11.6665 1.46904 11.6665 1.92308 11.6665H7.99972L7.16639 18.3332L14.5885 9.42663C14.8792 9.07782 15.0245 8.90341 15.0267 8.75612C15.0287 8.62807 14.9716 8.50625 14.872 8.42576C14.7574 8.33317 14.5304 8.33317 14.0764 8.33317H7.99972L8.83306 1.6665Z\" stroke=\"#EA5167\" stroke-width=\"1.66667\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
-            "title": "Sustainable Energy",
-            "description": "No more ups and downs - experience a steady flow of natural energy all day long."
+            "title": "Nachhaltige Energie",
+            "description": "Keine Energiehochs und Tiefs mehr, sondern ein gleichmässiger Fluss natürlicher Energie – den ganzen Tag."
           }
         },
         "benefit_2": {
           "type": "benefit_item",
           "settings": {
             "icon": "<svg width=\"20\" height=\"20\" viewbox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M10.0007 12.0831V7.08314M7.50065 9.58314H12.5007M16.6673 9.99981C16.6673 14.0902 12.2057 17.0651 10.5823 18.0122C10.3978 18.1198 10.3056 18.1737 10.1754 18.2016C10.0744 18.2232 9.92695 18.2232 9.82592 18.2016C9.69573 18.1737 9.60349 18.1198 9.41899 18.0122C7.79562 17.0651 3.33398 14.0902 3.33398 9.99981V6.01448C3.33398 5.34822 3.33398 5.01509 3.44295 4.72873C3.53921 4.47576 3.69564 4.25004 3.8987 4.07109C4.12856 3.86851 4.44048 3.75154 5.06432 3.5176L9.53249 1.84204C9.70573 1.77707 9.79236 1.74459 9.88147 1.73171C9.96051 1.72029 10.0408 1.72029 10.1198 1.73171C10.2089 1.74459 10.2956 1.77707 10.4688 1.84204L14.937 3.5176C15.5608 3.75154 15.8727 3.86851 16.1026 4.07109C16.3057 4.25004 16.4621 4.47576 16.5584 4.72873C16.6673 5.01509 16.6673 5.34822 16.6673 6.01448V9.99981Z\" stroke=\"#EA5167\" stroke-width=\"1.66667\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
-            "title": "Stronger Immunity",
-            "description": "Support your body's defenses and get sick less often."
+            "title": "Stärkeres Immunsystem",
+            "description": "Stärke die Abwehrkräfte deines Körpers und werde seltener krank."
           }
         },
         "benefit_3": {
           "type": "benefit_item",
           "settings": {
             "icon": "<svg width=\"20\" height=\"20\" viewbox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M6.66602 11.6665C6.66602 11.6665 7.91602 13.3332 9.99935 13.3332C12.0827 13.3332 13.3327 11.6665 13.3327 11.6665M14.166 7.69984C13.8368 8.104 13.3868 8.33317 12.916 8.33317C12.4452 8.33317 12.0077 8.104 11.666 7.69984M8.33268 7.69984C8.00352 8.104 7.55352 8.33317 7.08268 8.33317C6.61185 8.33317 6.17435 8.104 5.83268 7.69984M18.3327 9.99984C18.3327 14.6022 14.6017 18.3332 9.99935 18.3332C5.39698 18.3332 1.66602 14.6022 1.66602 9.99984C1.66602 5.39746 5.39698 1.6665 9.99935 1.6665C14.6017 1.6665 18.3327 5.39746 18.3327 9.99984Z\" stroke=\"#EA5167\" stroke-width=\"1.66667\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
-            "title": "Better Sleep & Recovery",
-            "description": "Wake up feeling rested, refreshed, and ready to go."
+            "title": "Besserer Schlaf und Regeneration",
+            "description": "Wach auf mit dem Gefühl erholt, erfrischt und bereit für den Tag."
           }
         },
         "benefit_4": {
           "type": "benefit_item",
           "settings": {
             "icon": "<svg width=\"20\" height=\"20\" viewbox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M9.99935 18.3332C14.6017 18.3332 18.3327 14.6022 18.3327 9.99984C18.3327 5.39746 14.6017 1.6665 9.99935 1.6665C5.39698 1.6665 1.66602 5.39746 1.66602 9.99984C1.66602 14.6022 5.39698 18.3332 9.99935 18.3332Z\" stroke=\"#EA5167\" stroke-width=\"1.66667\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9.99935 14.9998C12.7608 14.9998 14.9993 12.7613 14.9993 9.99984C14.9993 7.23841 12.7608 4.99984 9.99935 4.99984C7.23793 4.99984 4.99935 7.23841 4.99935 9.99984C4.99935 12.7613 7.23793 14.9998 9.99935 14.9998Z\" stroke=\"#EA5167\" stroke-width=\"1.66667\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M9.99935 11.6665C10.9198 11.6665 11.666 10.9203 11.666 9.99984C11.666 9.07936 10.9198 8.33317 9.99935 8.33317C9.07887 8.33317 8.33268 9.07936 8.33268 9.99984C8.33268 10.9203 9.07887 11.6665 9.99935 11.6665Z\" stroke=\"#EA5167\" stroke-width=\"1.66667\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
-            "title": "Sharper Focus",
-            "description": "Say goodbye to mental fog and distractions - clear thinking and better productivity."
+            "title": "Schärferer Fokus",
+            "description": "Verabschiede dich von mentaler Müdigkeit und Ablenkungen. Erlebe klares Denken und höhere Produktivität."
           }
         }
       },
@@ -468,9 +722,9 @@
         "reverse_layout": false,
         "mobile_layout": "content_first",
         "background_color": "#ffffff",
-        "title": "From Fatigue and Brain Fog… to a",
-        "highlight_text": "Clear, Energized You",
-        "description": "<p>Vitamin H2 isn’t just about masking tiredness – it’s about restoring your body’s natural energy from the inside out. Here’s what people start noticing just after a few weeks:</p>",
+        "title": "Von Müdigkeit und mentalem Nebel zu...",
+        "highlight_text": "Klarheit und neuer Energie",
+        "description": "<p>Vitamin H2 geht nicht nur darum, Müdigkeit zu überdecken, sondern darum, die natürliche Energie deines Körpers von innen heraus wiederherzustellen. Das fällt Menschen schon nach wenigen Wochen auf:</p>",
         "highlight_color": "#ea5167",
         "image": "shopify://shop_images/Group_-_Item_1_of_2_2_png.webp"
       }
@@ -623,8 +877,113 @@
         "image_ynEgyq",
         "testimonial_HnDh7c"
       ],
+      "disabled": true,
       "settings": {
         "section_title": "Trusted by Thousands Worldwide",
+        "rating_text": "(4.8/5)"
+      }
+    },
+    "landing_testimonials_yLejKq": {
+      "type": "landing-testimonials",
+      "blocks": {
+        "image_kPq3Rf": {
+          "type": "image",
+          "settings": {
+            "customer_image": "shopify://shop_images/2_248a221f-4987-47fd-b843-3d17068c7a72.png",
+            "alt_text": "Emily"
+          }
+        },
+        "image_rW7PQK": {
+          "type": "image",
+          "settings": {
+            "customer_image": "shopify://shop_images/3_440b574d-db02-489c-9f43-2358f0d410d0.png",
+            "alt_text": "Michael"
+          }
+        },
+        "image_Wjq93y": {
+          "type": "image",
+          "settings": {
+            "customer_image": "shopify://shop_images/30943.png",
+            "alt_text": "Ava"
+          }
+        },
+        "image_kj8qcY": {
+          "type": "image",
+          "settings": {
+            "customer_image": "shopify://shop_images/Bildschirmfoto_2025-08-29_um_14.21.44.png",
+            "alt_text": "Daniel"
+          }
+        },
+        "testimonial_FWRXti": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Laura S.",
+            "testimonial_text": "Ich sitze oft 9 Stunden am PC und war nachmittags total erschöpft. Seit VitaminH2 habe ich viel mehr Energie und kann mich bis Feierabend konzentrieren – ohne ständig Kaffee zu trinken. Ich nehme es jetzt jeden Morgen und merke richtig, wie gut es mir tut.",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_hNPYzX": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Daniel N.",
+            "testimonial_text": "Ich trainiere fast täglich und hatte oft das Problem, dass die Regeneration lange dauerte. Mit VitaminH2 fühle ich mich viel frischer, mein Muskelkater ist spürbar leichter und ich habe mehr Power. Endlich ein Supplement, das hält, was es verspricht.",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_fLQ8nB": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Stefanie M.",
+            "testimonial_text": "Job, Haushalt, Kinder – ich war ständig müde. VitaminH2 hat mir echt geholfen: Ich fühle mich wacher, ausgeglichener und habe wieder mehr Energie für die wichtigen Dinge. Besonders praktisch: Einfach ins Wasser geben, fertig.",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_cakXRP": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Johannes K.",
+            "testimonial_text": "Ich bin beruflich viel unterwegs und oft unter Strom. VitaminH2 ist mittlerweile fester Bestandteil meiner Morgenroutine. Ich bin konzentrierter, kann besser mit Stress umgehen und fühle mich innerlich stabiler.",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_tbgC73": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Anna B.",
+            "testimonial_text": "Ich teste viele Supplements, aber VitaminH2 hat mich echt überzeugt. Kein Zucker, leicht einzunehmen und man merkt schon nach kurzer Zeit, dass der Körper besser funktioniert. Für mich das perfekte Daily-Boost-Produkt.",
+            "show_rating": true,
+            "rating": 5
+          }
+        },
+        "testimonial_FqTmjR": {
+          "type": "testimonial",
+          "settings": {
+            "customer_name": "Markus L.",
+            "testimonial_text": "Ich reise beruflich viel und war nach langen Tagen oft ausgelaugt. Seit ich VitaminH2 nutze, fühle ich mich auch nach stressigen Flügen oder langen Meetings deutlich fitter. Vor allem das Travel Pack ist super praktisch.",
+            "show_rating": true,
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "image_kPq3Rf",
+        "image_rW7PQK",
+        "image_Wjq93y",
+        "image_kj8qcY",
+        "testimonial_FWRXti",
+        "testimonial_hNPYzX",
+        "testimonial_fLQ8nB",
+        "testimonial_cakXRP",
+        "testimonial_tbgC73",
+        "testimonial_FqTmjR"
+      ],
+      "name": "Customer Testimonials",
+      "settings": {
+        "section_title": "Weltweit von Tausenden vertraut",
         "rating_text": "(4.8/5)"
       }
     },
@@ -637,7 +996,7 @@
       ],
       "name": "t:sections.blog_posts.presets.blog_posts.name",
       "settings": {
-        "color_scheme": "scheme-e240f942-9acb-4b5c-8e31-a59739abd614",
+        "color_scheme": "scheme-d158b51a-f3e3-4810-a2bb-41206d01c467",
         "separate_section_with_border": false,
         "blog": "news",
         "posts_count": 3,
@@ -647,10 +1006,101 @@
         "show_excerpt": true,
         "show_read_more": false,
         "subheading": "",
-        "title": "Expert Advice and Health Tips",
-        "content": "",
+        "title": "Gesundheitstipps",
+        "content": "<p>Lass dir von Gesundheitsexperten zeigen, wie Vitamin H2 deine Wellness-Routine optimieren kann. In unserem Blog teilen Ärzte, Ernährungsberater und Experten wertvolle Tipps und Erkenntnisse.</p>",
         "button_link": "",
-        "button_text": "View all posts"
+        "button_text": "Alle Beiträge ansehen"
+      }
+    },
+    "faq_hk6dHJ": {
+      "type": "faq",
+      "blocks": {
+        "question_WALF8U": {
+          "type": "question",
+          "settings": {
+            "question": "Wie nehme ich VitaminH2 richtig ein?",
+            "answer": "<p>Löse 1-2 Tabletten in 200-300 ml Wasser auf. Für maximale Wirkung kannst du auch 2 Tabletten verwenden. Trinke die Mischung nach dem vollständigen Auflösen.</p>"
+          }
+        },
+        "question_P3rnmw": {
+          "type": "question",
+          "settings": {
+            "question": "Wie oft sollte ich VitaminH2 einnehmen?",
+            "answer": "<p>Für optimale Ergebnisse empfehlen wir die Einnahme von 1-2 Tabletten täglich. Du kannst bis zu 5 Tabletten pro Tag konsumieren, da das Produkt frei von schädlichen Zusatzstoffen ist.</p>"
+          }
+        },
+        "question_7BKfQ6": {
+          "type": "question",
+          "settings": {
+            "question": "Wie schnell werde ich die Wirkung von VitaminH2 spüren?",
+            "answer": "<p>Viele Nutzer berichten von einer schnellen Verbesserung ihrer Energielevels und einer besseren Hydration nach nur wenigen Tagen der Einnahme. Die Wirkung variiert jedoch je nach Körper und Bedarf.</p>"
+          }
+        },
+        "question_QdDrUG": {
+          "type": "question",
+          "settings": {
+            "question": "Ist VitaminH2 für Vegetarier und Veganer geeignet?",
+            "answer": "<p>Ja, VitaminH2 ist zu 100% vegan und enthält keine tierischen Inhaltsstoffe.</p>"
+          }
+        },
+        "question_JBYeH4": {
+          "type": "question",
+          "settings": {
+            "question": "Ist VitaminH2 gluten- oder laktosefrei?",
+            "answer": "<p>Ja, VitaminH2 ist frei von Gluten und Laktose. Es ist auch frei von Zucker, Soja und Gentechnik.</p>"
+          }
+        },
+        "question_ALneec": {
+          "type": "question",
+          "settings": {
+            "question": "Kann VitaminH2 bei Stress helfen?",
+            "answer": "<p>Ja, die enthaltenen natürlichen Inhaltsstoffe wie Magnesium können helfen, Stress abzubauen und das allgemeine Wohlbefinden zu steigern.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_WALF8U",
+        "question_P3rnmw",
+        "question_7BKfQ6",
+        "question_QdDrUG",
+        "question_JBYeH4",
+        "question_ALneec"
+      ],
+      "settings": {
+        "color_scheme": "scheme-e240f942-9acb-4b5c-8e31-a59739abd614",
+        "side_header": "<h2>Hast du Fragen? Wir haben die Antworten. </h2>",
+        "side_text": "<p>Hier findest du die Antworten auf einige der häufigsten Fragen zu VitaminH2. Kannst du die gesuchte Antwort nicht finden? </p><p>Dann kontaktiere einfach unser freundliches Team.</p>",
+        "separate_section_with_border": true,
+        "show_categories": true,
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    },
+    "apps_BER4mN": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_agg_section_W8CpRG": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-agg-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "only_photos": false,
+            "hide_thumbnails": false,
+            "product_handle": "",
+            "aggregated": false,
+            "data-limit": 20,
+            "maxwidth": 1920,
+            "is_sample": false
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_agg_section_W8CpRG"
+      ],
+      "settings": {
+        "color_scheme": "scheme-d158b51a-f3e3-4810-a2bb-41206d01c467",
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false
       }
     },
     "faq_KafdiU": {
@@ -692,6 +1142,7 @@
         "question_4VxWyH",
         "question_keFU39"
       ],
+      "disabled": true,
       "name": "t:sections.faq.presets.faq.name",
       "settings": {
         "color_scheme": "",
@@ -706,6 +1157,7 @@
     },
     "newsletter_Lr8TGN": {
       "type": "newsletter",
+      "disabled": true,
       "name": "t:sections.newsletter.presets.newsletter.name",
       "settings": {
         "color_scheme": "scheme-bf5b0f8c-52b0-4434-9e75-88cb7d811258",
@@ -724,14 +1176,20 @@
   "order": [
     "landing_hero_claude",
     "landing-marquee",
+    "landing_marquee_meraH4",
     "landing_health_awareness",
     "landing_energy_comparision",
     "landing_vitamin_ingredients",
+    "landing_energy_comparision_bJLrdN",
+    "featured_product_Rbtcwc",
     "featured_product_czCePe",
     "from_fatigue",
     "landing_video_testimonials",
     "landing_testimonials",
+    "landing_testimonials_yLejKq",
     "blog_posts_kWAWWH",
+    "faq_hk6dHJ",
+    "apps_BER4mN",
     "faq_KafdiU",
     "newsletter_Lr8TGN"
   ]

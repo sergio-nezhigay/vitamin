@@ -2,6 +2,7 @@
 
 <html lang="{{ request.locale.iso_code }}" dir="{% render 'direction' %}">
   <head>
+ {%- render 'ecom_header' -%}
     <meta charset="utf-8">
     <meta
       name="viewport"
@@ -128,5 +129,5 @@
       {%- endif -%}
     </main>
     {% render 'custom-fonts' %}
-  </body>
+  {%- render "ecom_footer"-%}</body>
 </html>

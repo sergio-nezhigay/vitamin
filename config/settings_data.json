@@ -39,7 +39,7 @@
     "product_image_aspect_ratio": "tall",
     "product_card_text_font": "body",
     "cart_type": "drawer",
-    "cart_show_free_shipping_bar": true,
+    "cart_show_free_shipping_bar": false,
     "cart_free_shipping_threshold": "129",
     "social_facebook": "https://www.facebook.com/people/VitaminH2/61567194489806/",
     "social_instagram": "https://www.instagram.com/vitaminh2.tabs/",
@@ -59,6 +59,11 @@
       },
       "2567389343055140935": {
         "type": "shopify://apps/microsoft-clarity/blocks/clarity_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
+        "disabled": false,
+        "settings": {}
+      },
+      "11532412952436166569": {
+        "type": "shopify://apps/loox-reviews/blocks/loox-inject/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
         "disabled": false,
         "settings": {}
       }

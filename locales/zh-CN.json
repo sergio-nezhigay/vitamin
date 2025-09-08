@@ -8,6 +8,13 @@
  * ------------------------------------------------------------
  */
 {
+  "404": {
+    "general": {
+      "title": "404",
+      "continue_shopping": "继续购物",
+      "not_found_info": "我们找不到您正在寻找的页面。请使用下面的导航或按钮返回我们的网站。"
+    }
+  },
   "general": {
     "page": "第 {{ page }} 页",
     "home": "首页",
@@ -47,7 +54,7 @@
       "share_email": "通过电子邮件分享"
     },
     "rating": {
-      "info": "{{ rating_value }} \/ {{ rating_max }} 颗星"
+      "info": "{{ rating_value }} / {{ rating_max }} 颗星"
     },
     "newsletter": {
       "email": "电子邮件",
@@ -56,7 +63,7 @@
       "subscribed_successfully": "您已订阅我们的新闻通讯。"
     },
     "localization": {
-      "country": "国家\/地区",
+      "country": "国家/地区",
       "language": "语言",
       "change_country_accessibility_text": "更改国家或货币",
       "change_language_accessibility_text": "更改语言"
@@ -107,7 +114,7 @@
       "view_in_space": "在您的空间中查看",
       "taxes_included": "含税。",
       "taxes_excluded": "不含税。",
-      "shipping_policy_html": "结账时<a href=\"{{ link }}\" class=\"link\">计算运费<\/a>",
+      "shipping_policy_html": "结账时<a href=\"{{ link }}\" class=\"link\">计算运费</a>",
       "size_chart": "尺码表",
       "available_colors_count": {
         "other": "{{ count }} 种颜色可选"
@@ -336,8 +343,8 @@
       "address2": "地址行 2",
       "city": "城市",
       "zip": "邮编",
-      "country": "国家\/地区",
-      "province": "省\/直辖市\/自治区",
+      "country": "国家/地区",
+      "province": "省/直辖市/自治区",
       "set_default": "设为默认地址"
     }
   },
@@ -358,9 +365,9 @@
       "view_cart": "查看购物车",
       "checkout": "结账",
       "we_accept": "我们接受",
-      "taxes_and_shipping_policy_at_checkout_html": "结账时计算税费和<a href=\"{{ link }}\" class=\"link\">运费<\/a>",
+      "taxes_and_shipping_policy_at_checkout_html": "结账时计算税费和<a href=\"{{ link }}\" class=\"link\">运费</a>",
       "taxes_included_but_shipping_at_checkout": "含税并在结账时计算运费",
-      "taxes_included_and_shipping_policy_html": "含税。在结账时计算<a href=\"{{ link }}\" class=\"link\">运费<\/a>。",
+      "taxes_included_and_shipping_policy_html": "含税。在结账时计算<a href=\"{{ link }}\" class=\"link\">运费</a>。",
       "taxes_and_shipping_at_checkout": "结账时计算税费和运费"
     },
     "order": {
@@ -376,21 +383,14 @@
     },
     "shipping_estimator": {
       "estimate_shipping": "预估运费",
-      "country": "国家\/地区",
-      "province": "省\/直辖市\/自治区",
+      "country": "国家/地区",
+      "province": "省/直辖市/自治区",
       "zip": "邮编",
       "estimate": "预估",
       "no_results": "抱歉，我们无法为您的地址提供配送。",
       "one_result": "您的地址有一种运费：",
       "multiple_results": "您的地址有多种运费：",
       "error": "检索运费时出现一个或多个错误："
-    }
-  },
-  "404": {
-    "general": {
-      "title": "404",
-      "continue_shopping": "继续购物",
-      "not_found_info": "我们找不到您正在寻找的页面。请使用下面的导航或按钮返回我们的网站。"
     }
   },
   "search": {
@@ -474,6 +474,51 @@
     "shop_the_look": {
       "view_products": "查看商品",
       "view_product": "查看商品"
+    }
+  },
+  "pagefly": {
+    "products": {
+      "product": {
+        "regular_price": "Regular price",
+        "sold_out": "Sold out",
+        "unavailable": "Unavailable",
+        "on_sale": "Sale",
+        "quantity": "Quantity",
+        "add_to_cart": "Add to cart",
+        "back_to_collection": "Back to {{ title }}",
+        "view_details": "View details"
+      }
+    },
+    "article": {
+      "tags": "Tags:",
+      "all_topics": "All topics",
+      "by_author": "by {{ author }}",
+      "posted_in": "Posted in",
+      "read_more": "Read more",
+      "back_to_blog": "Back to {{ title }}"
+    },
+    "comments": {
+      "title": "Leave a comment",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "post": "Post comment",
+      "moderated": "Please note, comments must be approved before they are published",
+      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
+      "success": "Your comment was posted successfully! Thank you!",
+      "comments_with_count": {
+        "one": "{{ count }} comment",
+        "other": "{{ count }} comments"
+      }
+    },
+    "password_page": {
+      "login_form_message": "Enter store using password:",
+      "login_form_password_label": "Password",
+      "login_form_password_placeholder": "Your password",
+      "login_form_submit": "Enter",
+      "signup_form_email_label": "Email",
+      "signup_form_success": "We will send you an email right before we open!",
+      "password_link": "Enter using password"
     }
   }
 }
