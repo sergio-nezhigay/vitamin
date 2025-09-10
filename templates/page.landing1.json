@@ -411,7 +411,7 @@
         "description_size_desktop": 16,
         "description_size_mobile": 14,
         "button_text": "Start Your Natural Energy Reset Today",
-        "button_link": "",
+        "button_link": "shopify://policies/refund-policy",
         "button_bg": "#ff4757",
         "button_text_color": "#ffffff",
         "button_text_size_mobile": 14,
