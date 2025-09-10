@@ -22,14 +22,14 @@
       </div>
     {% endif %}
 
-    <div class="grid grid-cols-4 gap-[37px]">
+    <div class="grid gap-[37px] justify-center" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
       {% for block in section.blocks %}
         <div
           class="ingredient-card bg-white rounded-[24px] px-5 pb-[29px] flex flex-col"
           {{ block.shopify_attributes }}
         >
           {% if block.settings.ingredient_image != blank %}
-            <div class="ingredient-icon flex px-2 pt-2 pb-[12px]">
+            <div class="ingredient-icon flex justify-center px-2 pt-2 pb-[12px]">
               <img
                 src="{{ block.settings.ingredient_image | image_url: width: 108 }}"
                 alt="{{ block.settings.ingredient_name | escape }}"
@@ -52,7 +52,7 @@
 
           {% if block.settings.ingredient_description != blank %}
             <div
-              class="text-gray-600 mb-5 leading-normal font-nunito max-w-[229px]"
+              class="text-gray-600 mb-5 leading-normal font-nunito"
               style="color: {{ block.settings.description_color }}; font-size: {{ block.settings.description_size_desktop }}px;"
             >
               {{ block.settings.ingredient_description }}
