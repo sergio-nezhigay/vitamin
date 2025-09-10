@@ -96,7 +96,7 @@
         {% if section.settings.button_text != blank %}
           <a
             href="{{ section.settings.button_link | default: '#' }}"
-            class="lg:hidden py-3 rounded-[8px] w-full flex flex-center justify-center no-underline font-bold font-nunito border-0 cursor-pointer text-[16px] leading-normal mt-6"
+            class="lg:hidden py-3 rounded-[8px] w-full flex flex-center justify-center no-underline font-bold font-nunito border-0 cursor-pointer text-[16px] leading-normal mt-6 max-md:px-2"
             style="
               background: {{ section.settings.button_bg }};
               color: {{ section.settings.button_text_color }};

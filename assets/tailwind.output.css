@@ -460,9 +460,6 @@
   .w-full {
     width: 100%;
   }
-  .max-w-\[229px\] {
-    max-width: 229px;
-  }
   .max-w-\[454px\] {
     max-width: 454px;
   }
@@ -542,9 +539,6 @@
   }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-  .grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
   .flex-col {
     flex-direction: column;
@@ -1117,6 +1111,11 @@
   .max-md\:flex-1 {
     @media (width < 48rem) {
       flex: 1;
+    }
+  }
+  .max-md\:px-2 {
+    @media (width < 48rem) {
+      padding-inline: calc(var(--spacing) * 2);
     }
   }
   .max-md\:px-5 {
