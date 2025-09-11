@@ -1154,6 +1154,11 @@
       padding-block: 95px !important;
     }
   }
+  .max-md\:text-center {
+    @media (width < 48rem) {
+      text-align: center;
+    }
+  }
   .max-sm\:\!mb-1 {
     @media (width < 40rem) {
       margin-bottom: calc(var(--spacing) * 1) !important;

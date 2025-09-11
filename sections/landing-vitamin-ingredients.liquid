@@ -43,7 +43,7 @@
 
           {% if block.settings.ingredient_name != blank %}
             <h3
-              class="font-medium !mb-[6px]"
+              class="font-medium !mb-[6px] max-md:text-center"
               style="color: {{ block.settings.name_color }}; font-size: {{ block.settings.name_size_desktop }}px;"
             >
               {{ block.settings.ingredient_name }}
@@ -52,7 +52,7 @@
 
           {% if block.settings.ingredient_description != blank %}
             <div
-              class="text-gray-600 mb-5 leading-normal font-nunito"
+              class="text-gray-600 mb-5 leading-normal font-nunito max-md:text-center"
               style="color: {{ block.settings.description_color }}; font-size: {{ block.settings.description_size_desktop }}px;"
             >
               {{ block.settings.ingredient_description }}
