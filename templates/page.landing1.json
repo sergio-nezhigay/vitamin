@@ -320,8 +320,9 @@
             "ingredient_description": "<p>Magnesiummalat kombiniert hoch verfügbares Magnesium mit Apfelsäure und liefert so Energie und Ausdauer für den Alltag. Magnesium unterstützt Muskeln, Nerven und Konzentration – gleichzeitig wirkt es Müdigkeit entgegen und trägt zu einer spürbaren Vitalität bei.</p>",
             "description_color": "#44403c",
             "description_size_desktop": 16,
-            "read_more_text": "Read more",
-            "read_more_color": "#344054"
+            "read_more_text": "",
+            "read_more_color": "#344054",
+            "read_more_url": ""
           }
         },
         "ingredient_PcGRHf": {
@@ -335,7 +336,8 @@
             "description_color": "#44403c",
             "description_size_desktop": 16,
             "read_more_text": "Read more",
-            "read_more_color": "#344054"
+            "read_more_color": "#344054",
+            "read_more_url": "https://vitaminh2.com/blogs/news/inhaltsstoffe-von-vitaminh2-klein-aber-wirkungsvoll?_pos=1&_sid=53d7437ca&_ss=r"
           }
         },
         "ingredient_Y4zgWH": {
@@ -349,7 +351,8 @@
             "description_color": "#44403c",
             "description_size_desktop": 16,
             "read_more_text": "Read more",
-            "read_more_color": "#344054"
+            "read_more_color": "#344054",
+            "read_more_url": "https://vitaminh2.com/blogs/news/inhaltsstoffe-von-vitaminh2-klein-aber-wirkungsvoll?_pos=1&_sid=76aa8cd85&_ss=r"
           }
         },
         "ingredient_pEPQRD": {
@@ -364,7 +367,8 @@
             "description_color": "#44403c",
             "description_size_desktop": 16,
             "read_more_text": "Read more",
-            "read_more_color": "#344054"
+            "read_more_color": "#344054",
+            "read_more_url": ""
           }
         }
       },
@@ -377,7 +381,6 @@
       "settings": {
         "title": "Wertvolle Inhaltsstoffe. Spürbare Wirkung.",
         "title_color": "#1f2937",
-        "title_size_desktop": 36,
         "subtitle": "<p>VitaminH2 enthält nur wertvolle Inhaltsstoffe: Molekularer Wasserstoff und sorgfältig ausgewählte Mineralien, die dein Körper kennt und braucht. Keine künstlichen Zusätze, keine versteckten Inhaltsstoffe – einfach reine Unterstützung für mehr Energie, Fokus und Wohlbefinden.</p>",
         "subtitle_color": "#6b7280",
         "subtitle_size_desktop": 18,

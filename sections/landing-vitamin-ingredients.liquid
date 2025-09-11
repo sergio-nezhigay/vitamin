@@ -61,12 +61,25 @@
 
           {% if block.settings.read_more_text != blank %}
             <div class="mt-auto">
-              <button
-                class="block !text-[16px] !font-bold !font-nunito !px-[17px] !py-[11px] border border-[#D0D5DD] rounded-[8px] !leading-normal"
-                style="color: {{ block.settings.read_more_color }};"
-              >
-                {{ block.settings.read_more_text }}
-              </button>
+              {% if block.settings.read_more_url != blank %}
+                <a
+                  href="{{ block.settings.read_more_url }}"
+                  class="block !text-[16px] !font-bold !font-nunito !px-[17px] !py-[11px] border border-[#D0D5DD] rounded-[8px] !leading-normal"
+                  style="color: {{ block.settings.read_more_color }};"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  {{ block.settings.read_more_text }}
+                </a>
+              {% else %}
+                <button
+                  class="block !text-[16px] !font-bold !font-nunito !px-[17px] !py-[11px] border border-[#D0D5DD] rounded-[8px] !leading-normal"
+                  style="color: {{ block.settings.read_more_color }};"
+                  disabled
+                >
+                  {{ block.settings.read_more_text }}
+                </button>
+              {% endif %}
             </div>
           {% endif %}
         </div>
@@ -236,6 +249,11 @@
           "id": "read_more_color",
           "label": "Read More Color",
           "default": "#2563EB"
+        },
+        {
+          "type": "url",
+          "id": "read_more_url",
+          "label": "Read More URL"
         }
       ]
     }
