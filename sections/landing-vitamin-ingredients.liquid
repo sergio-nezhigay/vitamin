@@ -64,7 +64,7 @@
               {% if block.settings.read_more_url != blank %}
                 <a
                   href="{{ block.settings.read_more_url }}"
-                  class="block !text-[16px] !font-bold !font-nunito !px-[17px] !py-[11px] border border-[#D0D5DD] rounded-[8px] !leading-normal"
+                  class="block !text-[16px] !font-bold !font-nunito !px-[17px] !py-[11px] border border-[#D0D5DD] rounded-[8px] !w-fit max-md:!mx-auto !leading-normal"
                   style="color: {{ block.settings.read_more_color }};"
                   target="_blank"
                   rel="noopener"
@@ -73,7 +73,7 @@
                 </a>
               {% else %}
                 <button
-                  class="block !text-[16px] !font-bold !font-nunito !px-[17px] !py-[11px] border border-[#D0D5DD] rounded-[8px] !leading-normal"
+                  class="block !text-[16px] !font-bold !font-nunito !px-[17px] !py-[11px] border border-[#D0D5DD] rounded-[8px] !leading-normal !w-fit max-md:!mx-auto "
                   style="color: {{ block.settings.read_more_color }};"
                   disabled
                 >
