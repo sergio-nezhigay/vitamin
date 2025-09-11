@@ -396,7 +396,7 @@
   <div class="tag-filter-container">
     <!-- Mobile select dropdown -->
     <select id="tag-filter-select">
-      <option value="">View all</option>
+      <option value="">Alle Kategorien</option>
       {%- assign all_tags = '' -%}
       {%- for article in blog.articles -%}
         {%- for tag in article.tags -%}
@@ -411,7 +411,7 @@
 
     <!-- Desktop buttons -->
     <div id="tag-filter-buttons">
-      <button class="filter-btn active" data-tag="">View All</button>
+      <button class="filter-btn active" data-tag="">Alle Kategorien</button>
       {%- assign all_tags = '' -%}
       {%- for article in blog.articles -%}
         {%- for tag in article.tags -%}
