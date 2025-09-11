@@ -3,18 +3,18 @@
   class="vitamin-h2-ingredients-section {{ section.settings.custom_classes }} "
   style="padding-top: 96px; padding-bottom: 116px; background: {{ section.settings.section_background }};"
 >
-  <div class="hidden md:block max-w-[1440px] px-[112px] mx-auto">
+  <div class="max-w-[1440px] px-[112px] mx-auto">
     {% if section.settings.title != blank %}
       <div class="text-center mb-[66px]">
         <h2
-          class="text-4xl font-medium text-[#292524] !mb-4 leading-[1.22]"
+          class="!text-[20px] md:!text-4xl font-medium text-[#292524] !mb-4 leading-[1.22]"
           style="font-size: {{ section.settings.title_size_desktop }}px;"
         >
           {{ section.settings.title }}
         </h2>
         {% if section.settings.subtitle != blank %}
           <div
-            class="text-[20px] text-black font-semibold max-w-[794px] mx-auto leading-normal font-nunito"
+            class="!text-[14px] md:!text-[20px] text-black font-semibold max-w-[794px] mx-auto leading-normal font-nunito"
           >
             {{ section.settings.subtitle }}
           </div>
@@ -81,15 +81,25 @@
     border-radius: {{ section.settings.card_border_radius }}px;
   }
 
-  @media screen and (max-width: 1024px) {
-      .vitamin-ingredients-section {
-        display: none!important;
-      }
+    #{{ section.id }} p {
+    font-size: inherit;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     #{{ section.id }} {
-      display: none !important;
+      padding-top: 40px !important;
+      padding-bottom: 48px !important;
+    }
+    #{{ section.id }} .max-w-\[1440px\] {
+      padding-left: 24px !important;
+      padding-right: 24px !important;
+    }
+    #{{ section.id }} .text-center.mb-\[66px\] {
+      margin-bottom: 32px !important;
+    }
+    #{{ section.id }} .ingredient-card {
+      padding-left: 12px !important;
+      padding-right: 12px !important;
     }
   }
 </style>
@@ -112,16 +122,7 @@
       "label": "Title Color",
       "default": "#1F2937"
     },
-    {
-      "type": "range",
-      "id": "title_size_desktop",
-      "label": "Title Size (Desktop)",
-      "min": 20,
-      "max": 60,
-      "step": 2,
-      "default": 36,
-      "unit": "px"
-    },
+
     {
       "type": "richtext",
       "id": "subtitle",

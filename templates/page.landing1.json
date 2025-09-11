@@ -282,7 +282,7 @@
         "padding_top_desktop": 0,
         "padding_bottom_desktop": 0,
         "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0,
+        "padding_bottom_mobile": 65,
         "background_color": "#ffffff",
         "custom_classes": "",
         "main_image": "shopify://shop_images/Frame_1097.webp",
