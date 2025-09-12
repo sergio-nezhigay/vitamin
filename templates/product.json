@@ -132,6 +132,7 @@
         },
         "offers_N79mcn": {
           "type": "offers",
+          "disabled": true,
           "settings": {
             "stack_offers": false,
             "offer_1_title": "<strong>10 % Off mit dem Code \"Welcome10\"</strong>",

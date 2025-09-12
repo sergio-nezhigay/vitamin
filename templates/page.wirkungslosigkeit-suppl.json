@@ -21,11 +21,11 @@
         "background_color": "#fdf4e9",
         "trust_text": "Trusted by 15,000+ Health Enthusiasts",
         "trust_text_color": "#44403c",
-        "title": "<p>Warum bin ich ständig müde, obwohl ich mich gesund ernähre?</p>",
+        "title": "<p>Warum Supplements bei dir nicht wirken – und was deinem Körper wirklich fehlt.</p>",
         "title_color": "#292524",
         "title_size_desktop": 48,
         "title_size_mobile": 32,
-        "description": "<p>Das ist kein Zufall – es ist ein Zeichen, dass dein Körper Unterstützung auf Zellebene braucht.</p>",
+        "description": "<p>Viele Supplements, Diäten, Routinen. Du verzichtest, strengst dich an, gibst auf. Immer mit dem Gefühl: <em>„Irgendwas stimmt mit meinem Körper nicht.“</em><br/><br/>Die Wahrheit: Es liegt nicht an deinem Willen. Es liegt tiefer.</p>",
         "description_color": "#000000",
         "primary_button_text": "Jetzt kaufen",
         "primary_button_bg": "#ea5167",
@@ -241,8 +241,8 @@
         "testimonial_Yt78qc": {
           "type": "testimonial",
           "settings": {
-            "quote": "„Ich fühlte mich dauernd erschöpft und machte Stress verantwortlich. Mit VitaminH2 habe ich verstanden: Meine Zellen brauchten Schutz – und erst dann verschwand die permanente Müdigkeit.“",
-            "author": "Andreia K.",
+            "quote": "„Meine Vitamine haben nie viel gebracht. Mit VitaminH2 merke ich endlich Wirkung – es ergänzt meine Supplements problemlos und liefert spürbare Resultate..“",
+            "author": "Jana K.",
             "avatar": "shopify://shop_images/Ellipse_68.jpg"
           }
         }
@@ -251,9 +251,9 @@
         "testimonial_Yt78qc"
       ],
       "settings": {
-        "title": "Es ist nicht nur Müdigkeit.",
-        "subtitle": "Es ist ein Warnsignal deines Körpers.",
-        "description": "<p>Müdigkeit, Antriebslosigkeit, schwache Konzentration und langsame Regeneration sind oft Signale deines Körpers für oxidativen Stress und stille Entzündungen, die deine Zellen belasten.</p>",
+        "title": "Supplements allein",
+        "subtitle": "reichen nicht.",
+        "description": "<p>Müdigkeit, Antriebslosigkeit und langsame Erholung sind oft Anzeichen für oxidativen Stress und stille Entzündungen. Diese Prozesse blockieren deine Zellen – und verhindern, dass Nährstoffe ihre volle Wirkung entfalten.</p>",
         "main_image": "shopify://shop_images/Frame_1096.webp",
         "reverse_layout": false,
         "custom_classes": "",
@@ -287,13 +287,13 @@
         "custom_classes": "",
         "main_image": "shopify://shop_images/Frame_1097.webp",
         "bottom_image": "shopify://shop_images/Frame_1099.webp",
-        "main_title": "Alles ausprobiert und trotzdem müde?",
+        "main_title": "Mehr Supplements, neue Kombinationen, höhere Dosierungen",
         "title_color": "#292524",
         "title_size_mobile": 20,
-        "subtitle": "Du bist nicht allein.",
+        "subtitle": "doch die Wirkung bleibt aus.",
         "subtitle_color": "#ea5167",
         "subtitle_size_mobile": 20,
-        "description": "<p>Mehr Kaffee, Energydrinks, teure Vitamine oder Detox-Kuren helfen nicht wirklich. Die Energie bleibt aus und die Müdigkeit kommt immer wieder.<br/><br/>Der Grund ist einfach: Diese schnellen Lösungen kaschieren nur die Symptome. Die eigentliche Ursache bleibt bestehen und das ist oxidativer Stress in deinen Zellen.</p><p><strong>Vitamin H2</strong> setzt genau hier an. Es schützt deine Zellen, aktiviert die natürliche Energieproduktion deines Körpers und gibt dir spürbar mehr Kraft von innen heraus.</p>",
+        "description": "<p>Egal ob Vitamine, Mineralstoffe oder teure Spezialpräparate: Die erhoffte Energie kommt nicht zurück, die Müdigkeit bleibt bestehen.</p><p>Der Grund ist einfach: Diese Ansätze gehen nicht tief genug. Sie liefern zwar Nährstoffe, doch solange oxidativer Stress deine Zellen blockiert, können diese Nährstoffe nicht ihr volles Potenzial entfalten.</p><p><strong>VitaminH2 setzt genau hier an.</strong><br/><br/>Es reduziert oxidativen Stress, befreit deine Zellen und aktiviert die natürliche Energieproduktion deines Körpers. So können auch andere Nährstoffe wieder wirken – und du spürst spürbar mehr Kraft von innen heraus.</p>",
         "description_color": "#44403c",
         "description_size_desktop": 18,
         "description_size_mobile": 14,
@@ -503,7 +503,7 @@
           "disabled": true,
           "settings": {}
         },
-        "pumper_bundles_app_block_qb_hnHXiM": {
+        "pumper_bundles_app_block_qb_YQEB6U": {
           "type": "shopify://apps/pumper-bundles/blocks/app-block-qb/0856870d-2aca-4b1e-a662-cf1797f61270",
           "settings": {
             "selected_product": "{{section.settings.product}}",
@@ -552,7 +552,7 @@
         "description_BRRBa8",
         "variant_picker_mYpkB6",
         "quantity_selector_kdhpbp",
-        "pumper_bundles_app_block_qb_hnHXiM",
+        "pumper_bundles_app_block_qb_YQEB6U",
         "buy_buttons_kJ34aq",
         "liquid_8rFbYK",
         "liquid_ewwdPN",
@@ -734,9 +734,9 @@
         "reverse_layout": false,
         "mobile_layout": "content_first",
         "background_color": "#ffffff",
-        "title": "Von Müdigkeit und mentalem Nebel zu...",
-        "highlight_text": "Klarheit und neuer Energie",
-        "description": "<p>Vitamin H2 geht nicht nur darum, Müdigkeit zu überdecken, sondern darum, die natürliche Energie deines Körpers von innen heraus wiederherzustellen. Das fällt Menschen schon nach wenigen Wochen auf:</p>",
+        "title": "Von wirkungslosen Supplements zu…",
+        "highlight_text": "spürbarer Energie und Klarheit",
+        "description": "<p>Stell dir vor, deine Supplements wirken endlich. Mehr Energie im Alltag, schnellere Regeneration nach dem Training, bessere Ergebnisse im Gym.<br/><br/>Alles, was du für dich tust, zahlt sich spürbar aus – dank VitaminH2.</p>",
         "highlight_color": "#ea5167",
         "image": "shopify://shop_images/Group_-_Item_1_of_2_2_png.webp"
       }

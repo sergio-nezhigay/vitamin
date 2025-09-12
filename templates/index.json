@@ -517,7 +517,15 @@
         },
         "quantity_selector_FYUxGw": {
           "type": "quantity_selector",
+          "disabled": true,
           "settings": {}
+        },
+        "pumper_bundles_app_block_qb_NYdnL7": {
+          "type": "shopify://apps/pumper-bundles/blocks/app-block-qb/0856870d-2aca-4b1e-a662-cf1797f61270",
+          "settings": {
+            "selected_product": "{{section.settings.product}}",
+            "using_page_builder": false
+          }
         },
         "buy_buttons_MmkgEj": {
           "type": "buy_buttons",
@@ -555,6 +563,7 @@
         "description_GU8VLY",
         "variant_picker_AfCd7X",
         "quantity_selector_FYUxGw",
+        "pumper_bundles_app_block_qb_NYdnL7",
         "buy_buttons_MmkgEj",
         "liquid_QUynMU",
         "pickup_availability_XhwiW9"
