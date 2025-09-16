@@ -8669,3 +8669,23 @@ image-with-text-overlay img {
 .internal-content .body-text p {
   font-weight: 700 !important;
 }
+
+.container {
+  all: unset;        
+  display: block;          
+  box-sizing: border-box;  
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 112px;
+    padding-right: 112px;
+  }
+}
+
+
