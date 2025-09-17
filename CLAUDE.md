@@ -63,6 +63,42 @@ The theme uses Shopify's native settings system with extensive customization opt
 - **`assets/tailwind.input.css`** - Tailwind source file
 - **`assets/tailwind.output.css`** - Compiled Tailwind styles
 
+## Scroll Prevention System
+
+The theme includes a production-ready scroll prevention system that prevents unwanted auto-scrolling during page load, particularly caused by app scripts focusing form elements like radio buttons.
+
+### Problem Solved
+- App scripts (like `prvw_app.js`) were automatically focusing radio inputs during page load
+- This caused the page to scroll to ~2287px automatically, creating poor UX
+- The scroll prevention system blocks this behavior during the critical loading phase
+
+### Implementation
+- **Location**: `layout/theme.liquid` (lines 5-195)
+- **Configuration**: Theme Settings > Developer Settings > Page Load Behavior
+- **Duration**: Configurable (default: 4 seconds)
+- **Methods**: Function overrides, event prevention, CSS locks, focus blocking
+
+### Settings Available
+1. **Enable scroll prevention** - Toggle the entire system on/off
+2. **Debug logs** - Enable console logging for troubleshooting
+3. **Duration** - How long to prevent scrolling (1-10 seconds)
+
+### Manual Control
+```javascript
+// Enable/disable manually
+window.scrollPrevention.enable()
+window.scrollPrevention.disable()
+
+// Check status
+window.scrollPrevention.isEnabled()
+```
+
+### Performance Impact
+- Minimal - Only active during page load
+- Auto-disables after timeout
+- Graceful error handling prevents script crashes
+- No permanent DOM modifications
+
 ## Development Notes
 - This is a Shopify theme, so changes should be tested with `npm run dev` before pushing
 - Tailwind compilation must be run separately with `npm run tail` when making CSS changes

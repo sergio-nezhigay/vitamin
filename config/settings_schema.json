@@ -946,5 +946,38 @@
       }
     ]
   },
-  
+  {
+    "name": "Developer Settings",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Page Load Behavior"
+      },
+      {
+        "type": "checkbox",
+        "id": "scroll_prevention_enabled",
+        "label": "Enable scroll prevention during page load",
+        "info": "Prevents apps and scripts from auto-scrolling the page during initial load. Recommended for pages with app sections that cause unwanted scrolling.",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "scroll_prevention_debug",
+        "label": "Enable scroll prevention debug logs",
+        "info": "Shows console logs when scroll prevention is active. Useful for debugging scroll issues.",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "scroll_prevention_duration",
+        "min": 1000,
+        "max": 8000,
+        "step": 500,
+        "unit": "ms",
+        "label": "Scroll prevention duration",
+        "info": "How long to prevent scrolling after page load starts (in milliseconds)",
+        "default": 4000
+      }
+    ]
+  }
 ]
