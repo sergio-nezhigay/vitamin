@@ -73,8 +73,9 @@ The theme includes a production-ready scroll prevention system that prevents unw
 - The scroll prevention system blocks this behavior during the critical loading phase
 
 ### Implementation
-- **Location**: `layout/theme.liquid` (lines 5-195)
-- **Configuration**: Theme Settings > Developer Settings > Page Load Behavior
+- **Script**: `assets/scroll-prevention.js` - Main implementation
+- **Configuration**: `layout/theme.liquid` (lines 5-15) - Settings injection
+- **Settings**: Theme Settings > Developer Settings > Page Load Behavior
 - **Duration**: Configurable (default: 4 seconds)
 - **Methods**: Function overrides, event prevention, CSS locks, focus blocking
 
