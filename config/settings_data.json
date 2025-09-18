@@ -45,6 +45,7 @@
     "social_instagram": "https://www.instagram.com/vitaminh2.tabs/",
     "social_tiktok": "https://www.tiktok.com/@vitaminh2.tabs?lang=de-DE",
     "favicon": "shopify://shop_images/Transparent_Favicon_VitaminH2.png",
+    "scroll_prevention_duration": 100,
     "content_for_index": [],
     "blocks": {
       "855628211100114053": {
