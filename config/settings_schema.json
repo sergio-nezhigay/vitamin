@@ -307,7 +307,7 @@
           {
             "value": "hoss-round_h",
             "label": "Hoss Round Heavy"
-          },
+          }
         ],
         "default": "hoss-round_h"
       },
@@ -365,7 +365,7 @@
           {
             "value": "hoss-round_h",
             "label": "Hoss Round Heavy"
-          },
+          }
         ],
         "default": "hoss-round_h"
       },
@@ -478,15 +478,15 @@
           {
             "value": "hoss-round_h",
             "label": "Hoss Round Heavy"
-          },
+          }
         ],
         "default": "hoss-round_h"
       },
       {
-          "type": "textarea",
-          "id": "listed_elements",
-          "label": "List elements or class - separated by (,)",
-          "info": "the selected special font will be applied in the listed elements"
+        "type": "textarea",
+        "id": "listed_elements",
+        "label": "List elements or class - separated by (,)",
+        "info": "the selected special font will be applied in the listed elements"
       }
     ]
   },
@@ -970,9 +970,9 @@
       {
         "type": "range",
         "id": "scroll_prevention_duration",
-        "min": 1000,
+        "min": 100,
         "max": 8000,
-        "step": 500,
+        "step": 100,
         "unit": "ms",
         "label": "Scroll prevention duration",
         "info": "How long to prevent scrolling after page load starts (in milliseconds)",

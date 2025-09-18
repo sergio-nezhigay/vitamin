@@ -33,17 +33,59 @@
     if (config.debug) console.log('[ScrollPrevention]', ...args);
   };
 
-  // CSS prevention styles
+  // CSS prevention styles with scrollbar space preservation
   const preventionStyle = document.createElement('style');
   preventionStyle.textContent = `
-    .scroll-prevention-active {
+    /* Method 1: Hide overflow but preserve scrollbar space */
+    .scroll-prevention-active.method-hidden {
       overflow: hidden !important;
       position: fixed !important;
       width: 100% !important;
       height: 100% !important;
     }
+
+    .scroll-prevention-active.method-hidden.has-scrollbar {
+      padding-right: var(--scrollbar-width, 0) !important;
+    }
+
+    /* Method 2: Keep scrollbar visible but disable scrolling (smoother) */
+    .scroll-prevention-active.method-disabled {
+      position: fixed !important;
+      width: 100% !important;
+      height: 100% !important;
+      overflow-y: scroll !important;
+      top: var(--scroll-lock-offset, 0);
+    }
+
+    /* Modern approach using scrollbar-gutter if supported */
+    @supports (scrollbar-gutter: stable) {
+      .scroll-prevention-active.method-modern {
+        scrollbar-gutter: stable;
+        overflow: hidden !important;
+        position: fixed !important;
+        width: 100% !important;
+        height: 100% !important;
+      }
+    }
   `;
   document.head.appendChild(preventionStyle);
+
+  // Calculate and store scrollbar width
+  const getScrollbarWidth = () => {
+    const outer = document.createElement('div');
+    outer.style.visibility = 'hidden';
+    outer.style.overflow = 'scroll';
+    outer.style.msOverflowStyle = 'scrollbar';
+    document.body.appendChild(outer);
+
+    const inner = document.createElement('div');
+    outer.appendChild(inner);
+
+    const scrollbarWidth = outer.offsetWidth - inner.offsetWidth;
+    outer.parentNode.removeChild(outer);
+
+    return scrollbarWidth;
+  };
 
   // Override scroll functions
   window.scrollTo = function(...args) {
@@ -106,6 +148,17 @@
     }
   };
 
+  // Detect best scroll prevention method
+  const getBestPreventionMethod = () => {
+    // Check for modern scrollbar-gutter support
+    if (CSS.supports && CSS.supports('scrollbar-gutter', 'stable')) {
+      return 'method-modern';
+    }
+
+    // Use visible scrollbar method (smoothest for most browsers)
+    return 'method-disabled';
+  };
+
   // Enable scroll prevention
   const enablePrevention = () => {
     if (scrollPrevented) return;
@@ -113,8 +166,30 @@
     scrollPrevented = true;
     log('Scroll prevention enabled');
 
-    // Add CSS lock
-    document.documentElement.classList.add('scroll-prevention-active');
+    const method = getBestPreventionMethod();
+
+    if (method === 'method-disabled') {
+      // Store current scroll position and set offset
+      const currentScroll = window.pageYOffset || window.scrollY;
+      document.documentElement.style.setProperty('--scroll-lock-offset', `-${currentScroll}px`);
+      document.documentElement.classList.add('scroll-prevention-active', method);
+    } else if (method === 'method-modern') {
+      // Modern browsers with scrollbar-gutter support
+      document.documentElement.classList.add('scroll-prevention-active', method);
+    } else {
+      // Fallback: calculate scrollbar width and preserve space
+      const scrollbarWidth = getScrollbarWidth();
+      const hasScrollbar = scrollbarWidth > 0 && document.body.scrollHeight > window.innerHeight;
+
+      if (hasScrollbar) {
+        document.documentElement.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`);
+        document.documentElement.classList.add('scroll-prevention-active', 'method-hidden', 'has-scrollbar');
+      } else {
+        document.documentElement.classList.add('scroll-prevention-active', 'method-hidden');
+      }
+    }
+
+    log('Using prevention method:', method);
 
     // Add event listeners
     const events = [
@@ -148,8 +223,27 @@
     scrollPrevented = false;
     log('Scroll prevention disabled');
 
-    // Remove CSS lock
-    document.documentElement.classList.remove('scroll-prevention-active');
+    // Get current scroll offset if using method-disabled
+    const scrollOffset = document.documentElement.style.getPropertyValue('--scroll-lock-offset');
+
+    // Remove all CSS classes and properties
+    document.documentElement.classList.remove(
+      'scroll-prevention-active',
+      'has-scrollbar',
+      'method-hidden',
+      'method-disabled',
+      'method-modern'
+    );
+    document.documentElement.style.removeProperty('--scrollbar-width');
+    document.documentElement.style.removeProperty('--scroll-lock-offset');
+
+    // Restore scroll position if we were using method-disabled
+    if (scrollOffset) {
+      const scrollY = Math.abs(parseInt(scrollOffset));
+      if (scrollY > 0) {
+        setTimeout(() => window.scrollTo(0, scrollY), 0);
+      }
+    }
 
     // Clean up event listeners
     cleanupFunctions.forEach(cleanup => cleanup());
