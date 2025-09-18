@@ -73,6 +73,12 @@
         "social_linkedin": false,
         "social_copy_link": false,
         "bg_color": "#ffffff",
+        "show_cta_button": true,
+        "cta_button_text": "Learn More",
+        "cta_button_url": "shopify://collections/all",
+        "cta_button_bg": "#ea5167",
+        "cta_button_color": "#ffffff",
+        "cta_button_hover_bg": "#cc475a",
         "custom_classes": ""
       }
     },
