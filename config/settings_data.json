@@ -45,7 +45,6 @@
     "social_instagram": "https://www.instagram.com/vitaminh2.tabs/",
     "social_tiktok": "https://www.tiktok.com/@vitaminh2.tabs?lang=de-DE",
     "favicon": "shopify://shop_images/Transparent_Favicon_VitaminH2.png",
-    "scroll_prevention_duration": 100,
     "content_for_index": [],
     "blocks": {
       "855628211100114053": {
@@ -72,6 +71,13 @@
         "type": "shopify://apps/pumper-bundles/blocks/app-embed/0856870d-2aca-4b1e-a662-cf1797f61270",
         "disabled": false,
         "settings": {}
+      },
+      "13951170544780599758": {
+        "type": "shopify://apps/tapita-seo-speed/blocks/app-embed/cd37ca7a-40ad-4fdc-afd3-768701482209",
+        "disabled": false,
+        "settings": {
+          "hide_price": false
+        }
       }
     },
     "color_schemes": {

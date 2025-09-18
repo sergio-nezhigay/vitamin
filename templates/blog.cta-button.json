@@ -1,0 +1,80 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_idjHQM": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_bXtiaW": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": "Subheading"
+          }
+        },
+        "heading_nfcj3h": {
+          "type": "heading",
+          "settings": {
+            "text": "Mehr Energie für dein Leben",
+            "heading_tag": "h3"
+          }
+        },
+        "richtext_wUNjiK": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Entdecke Tipps, Insights und Hintergründe zu VitaminH2, Gesundheit und Lifestyle. Für mehr Fokus, Stärke und Vitalität.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_bXtiaW",
+        "heading_nfcj3h",
+        "richtext_wUNjiK"
+      ],
+      "name": "t:sections.rich_text.presets.rich_text.name",
+      "settings": {
+        "color_scheme": "scheme-e240f942-9acb-4b5c-8e31-a59739abd614",
+        "separate_section_with_border": false,
+        "content_width": "lg",
+        "text_position": "start",
+        "remove_vertical_spacing": false
+      }
+    },
+    "health_tips_newsletter_8a4pTE": {
+      "type": "health-tips-newsletter",
+      "disabled": true,
+      "name": "Health Tips Newsletter",
+      "settings": {
+        "title": "Bleib voller Energie – verpasse keine Insights zu Gesundheit & Performance.",
+        "description": "<p>In unserem Blog findest du hilfreiche Gesundheitstipps und erfährst mehr über die Vorteile von VitaminH2 – verständlich erklärt von Experten.</p>",
+        "input_placeholder": "Enter your email",
+        "button_text": "Subscribe",
+        "privacy_text": "",
+        "padding_top_mobile": 50,
+        "padding_top_desktop": 90,
+        "padding_bottom_mobile": 0,
+        "padding_bottom_desktop": 0,
+        "max_width": 746,
+        "background_color": "#fdf4e9",
+        "text_color": "#44403c",
+        "custom_classes": ""
+      }
+    },
+    "blogs_grid": {
+      "type": "blogs-grid",
+      "settings": {}
+    }
+  },
+  "order": [
+    "rich_text_idjHQM",
+    "health_tips_newsletter_8a4pTE",
+    "blogs_grid"
+  ]
+}
