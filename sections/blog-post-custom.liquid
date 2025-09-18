@@ -20,6 +20,12 @@
   font-size: {{ section.settings.text_size_desktop }}px;
 }
 
+#shopify-section-{{ section.id }} .pp-blog-cta-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   #shopify-section-{{ section.id }} .pp-blog-title {
     font-size: {{ section.settings.title_size_mobile }}px;
@@ -134,10 +140,10 @@
             <div class="pp-blog-social-share">
               {% assign share_url = request.origin | append: request.path %}
               {% assign share_title = article.title | url_encode %}
-              
+
               {% if section.settings.social_facebook %}
-                <a href="https://facebook.com/sharer/sharer.php?u={{ share_url }}" 
-                   target="_blank" 
+                <a href="https://facebook.com/sharer/sharer.php?u={{ share_url }}"
+                   target="_blank"
                    rel="noopener noreferrer"
                    class="pp-blog-social-link"
                    aria-label="Share on Facebook">
@@ -153,10 +159,10 @@
                   </svg>
                 </a>
               {% endif %}
-              
+
               {% if section.settings.social_twitter %}
-                <a href="https://twitter.com/intent/tweet?url={{ share_url }}&text={{ share_title }}" 
-                   target="_blank" 
+                <a href="https://twitter.com/intent/tweet?url={{ share_url }}&text={{ share_title }}"
+                   target="_blank"
                    rel="noopener noreferrer"
                    class="pp-blog-social-link"
                    aria-label="Share on X (Twitter)">
@@ -172,10 +178,10 @@
                   </svg>
                 </a>
               {% endif %}
-              
+
               {% if section.settings.social_linkedin %}
-                <a href="https://linkedin.com/sharing/share-offsite/?url={{ share_url }}" 
-                   target="_blank" 
+                <a href="https://linkedin.com/sharing/share-offsite/?url={{ share_url }}"
+                   target="_blank"
                    rel="noopener noreferrer"
                    class="pp-blog-social-link"
                    aria-label="Share on LinkedIn">
@@ -184,7 +190,7 @@
                   </svg>
                 </a>
               {% endif %}
-              
+
               {% if section.settings.social_copy_link %}
                 <button type="button"
                         class="pp-blog-social-link pp-blog-copy-link"
@@ -198,6 +204,23 @@
             </div>
           {% endif %}
         </div>
+
+        {% if section.settings.show_cta_button and section.settings.cta_button_text != blank and section.settings.cta_button_url != blank %}
+          <div class="pp-blog-cta-section">
+            <a
+              href="{{ section.settings.cta_button_url }}"
+              class="inline-block py-3 px-[18px] no-underline rounded-[8px] font-bold text-[16px] border-0 cursor-pointer font-display text-center min-w-[106px] max-md:w-full transition-colors duration-200"
+              style="
+                background-color: {{ section.settings.cta_button_bg | default: '#EA5167' }};
+                color: {{ section.settings.cta_button_color | default: '#ffffff' }};
+              "
+              onmouseover="this.style.backgroundColor='{{ section.settings.cta_button_hover_bg | default: '#CC475A' }}'"
+              onmouseout="this.style.backgroundColor='{{ section.settings.cta_button_bg | default: '#EA5167' }}'"
+            >
+              {{ section.settings.cta_button_text }}
+            </a>
+          </div>
+        {% endif %}
       </div>
     </div>
   </div>
@@ -642,6 +665,45 @@ document.addEventListener('DOMContentLoaded', function() {
       "id": "bg_color",
       "label": "Background Color",
       "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Call to Action Button"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cta_button",
+      "label": "Show CTA Button",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "cta_button_text",
+      "label": "Button Text",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "cta_button_url",
+      "label": "Button Link"
+    },
+    {
+      "type": "color",
+      "id": "cta_button_bg",
+      "label": "Button Background Color",
+      "default": "#EA5167"
+    },
+    {
+      "type": "color",
+      "id": "cta_button_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "cta_button_hover_bg",
+      "label": "Button Hover Background Color",
+      "default": "#CC475A"
     },
     {
       "type": "header",
