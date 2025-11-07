@@ -4,9 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "shopify theme dev --store=vitaminh2.myshopify.com --theme 188056535371",
-    "push": "shopify theme push --store=vitaminh2.myshopify.com --theme 188056535371",
-    "pull": "shopify theme pull --store=vitaminh2.myshopify.com --theme 188056535371",
+    "dev": "shopify theme dev --store=vitaminh2.myshopify.com --theme 190719852875",
+    "push": "shopify theme push --store=vitaminh2.myshopify.com --theme 190719852875",
+    "pull": "shopify theme pull --store=vitaminh2.myshopify.com --theme 190719852875",
     "tail": "npx tailwindcss -i ./assets/tailwind.input.css -o ./assets/tailwind.output.css --watch"
   },
   "repository": {
