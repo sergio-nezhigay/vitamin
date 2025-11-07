@@ -9,12 +9,17 @@ This is a Shopify theme called "Vitamin" based on the Prestige theme framework (
 ## Development Commands
 
 ### Shopify Theme Development
-- `npm run dev` - Start development server with live reload (connects to vitaminh2.myshopify.com theme ID 187771945291)
+- `npm run dev` - Start development server with live reload (connects to vitaminh2.myshopify.com theme ID 190719852875)
 - `npm run push` - Push local changes to the Shopify store
 - `npm run pull` - Pull changes from the Shopify store to local
 
 ### CSS Development
 - `npm run tail` - Watch and compile Tailwind CSS (from `./assets/tailwind.input.css` to `./assets/tailwind.output.css`)
+
+### Development Workflow
+When developing with both Shopify and Tailwind changes, run both commands in separate terminals:
+1. Terminal 1: `npm run dev` (Shopify theme development)
+2. Terminal 2: `npm run tail` (Tailwind CSS compilation)
 
 Note: No test suite is configured (`npm test` returns an error).
 
@@ -22,10 +27,11 @@ Note: No test suite is configured (`npm test` returns an error).
 
 ### Theme Structure (Shopify Liquid)
 - **`layout/theme.liquid`** - Main theme layout with head, body, and script imports
-- **`sections/`** - Modular content sections (60+ sections including landing pages, testimonials, product displays)
-- **`templates/`** - Page templates for different content types (product, collection, blog, etc.)
-- **`snippets/`** - Reusable code snippets
-- **`config/settings_schema.json`** - Theme customization settings schema
+- **`sections/`** - Modular content sections (75+ sections including landing pages, testimonials, product displays)
+- **`templates/`** - Page templates for different content types (product, collection, blog, etc.) with specialized templates for landing pages, studies, and A/B testing
+- **`snippets/`** - Reusable code snippets (80+ snippets including custom icons, product cards, ecom integrations)
+- **`config/settings_schema.json`** - Theme customization settings schema (950+ lines)
+- **`locales/`** - Internationalization files for multi-language support
 
 ### CSS & Styling
 - **Tailwind CSS 4.x** - Primary CSS framework
@@ -42,11 +48,15 @@ Note: No test suite is configured (`npm test` returns an error).
 
 ### Key Features
 - **Custom vitamin/supplement focused sections** (ingredient displays, health tips, testimonials)
-- **Landing page variants** with A/B testing templates
-- **Study/research content system** with dedicated templates
+- **Landing page variants** with A/B testing templates (`page.landing1.json`, `page.landing-page-a-b-testing.json`)
+- **Study/research content system** with dedicated templates and search functionality:
+  - `page.study.json` and `page.study-detail.json` templates
+  - `sections/study-search.liquid` and `sections/study-detail.liquid`
+  - `assets/study.js` and `assets/study.css` for study-specific functionality
 - **Advanced product features** (quick buy, color swatches, ratings)
-- **Multiple testimonial systems** (text, video, custom)
+- **Multiple testimonial systems** (text, video, custom testimonials)
 - **Responsive design** with mobile-first approach
+- **Third-party integrations** via ecom snippets (filters, predictive search, product hooks)
 
 ### Customization System
 The theme uses Shopify's native settings system with extensive customization options:
@@ -105,3 +115,18 @@ window.scrollPrevention.isEnabled()
 - Tailwind compilation must be run separately with `npm run tail` when making CSS changes
 - The theme integrates with Shopify's section groups (header-group, footer-group, overlay-group)
 - Custom fonts are loaded via CSS and configured through theme settings
+- When making TypeScript changes, verify there are no type errors (as per user preferences)
+- Use `console.log()` for debugging, not logger utilities
+- For Shopify liquid templates, prefer `image_url` filter over deprecated `img_url`
+- Follow mobile-first approach when writing CSS
+
+## Custom Sections Architecture
+The theme includes specialized landing page sections:
+- **`landing-hero.liquid`** - Hero sections for landing pages
+- **`landing-testimonials.liquid`** - Testimonial displays
+- **`landing-video-testimonials.liquid`** - Video testimonial sections
+- **`landing-vitamin-ingredients.liquid`** - Ingredient showcases
+- **`landing-health-awareness.liquid`** - Health awareness content
+- **`landing-energy-comparision.liquid`** - Product comparison displays
+- **`landing-from-fatigue.liquid`** - Problem/solution focused content
+- **`landing-marquee.liquid`** - Scrolling announcement/feature displays
