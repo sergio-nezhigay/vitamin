@@ -9,47 +9,204 @@
  */
 {
   "sections": {
-    "faq": {
+    "faq_wLLdef": {
       "type": "faq",
       "blocks": {
-        "category": {
-          "type": "category",
-          "settings": {
-            "title": "Order"
-          }
-        },
-        "question-1": {
+        "question_4n8gbU": {
           "type": "question",
           "settings": {
-            "question": "Do you ship overseas?",
-            "answer": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+            "question": "Wie nehme ich VitaminH2 richtig ein?",
+            "answer": "<p>Löse 1-2 Tabletten in 200-300 ml Wasser auf. Für maximale Wirkung kannst du auch 2 Tabletten verwenden. Trinke die Mischung nach dem vollständigen Auflösen.</p>"
           }
         },
-        "question-2": {
+        "question_ziPHBG": {
           "type": "question",
           "settings": {
-            "question": "How long will it take to get my orders?",
-            "answer": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+            "question": "Wie oft sollte ich VitaminH2 einnehmen?",
+            "answer": "<p>Für optimale Ergebnisse empfehlen wir die Einnahme von 1-2 Tabletten täglich. Du kannst bis zu 5 Tabletten pro Tag konsumieren, da das Produkt frei von schädlichen Zusatzstoffen ist.</p>"
           }
         },
-        "question-3": {
+        "question_ag9wBM": {
           "type": "question",
           "settings": {
-            "question": "Any question?",
-            "answer": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+            "question": "Wie schnell werde ich die Wirkung von VitaminH2 spüren?",
+            "answer": "<p>Viele Nutzer berichten von einer schnellen Verbesserung ihrer Energielevels und einer besseren Hydration nach nur wenigen Tagen der Einnahme. Die Wirkung variiert jedoch je nach Körper und Bedarf.</p>"
+          }
+        },
+        "question_LFTeeB": {
+          "type": "question",
+          "settings": {
+            "question": "Ist VitaminH2 für Vegetarier und Veganer geeignet?",
+            "answer": "<p>Ja, VitaminH2 ist zu 100% vegan und enthält keine tierischen Inhaltsstoffe.</p>"
+          }
+        },
+        "question_Rb9Lie": {
+          "type": "question",
+          "settings": {
+            "question": "Ist VitaminH2 gluten- oder laktosefrei?",
+            "answer": "<p>Ja, VitaminH2 ist frei von Gluten und Laktose. Es ist auch frei von Zucker, Soja und Gentechnik.</p>"
+          }
+        },
+        "question_LFVt3F": {
+          "type": "question",
+          "settings": {
+            "question": "Kann VitaminH2 bei Stress helfen?",
+            "answer": "<p>Ja, die enthaltenen natürlichen Inhaltsstoffe wie Magnesium können helfen, Stress abzubauen und das allgemeine Wohlbefinden zu steigern.</p>"
+          }
+        },
+        "question_cFcbBg": {
+          "type": "question",
+          "settings": {
+            "question": "Was ist VitaminH2 überhaupt?",
+            "answer": "<p>VitaminH2 wirkt, weil es winzige Bläschen von Wasserstoff ins Wasser bringt. Wenn du das Getränk trinkst, gelangen diese Bläschen in deinen Körper. Dort gehen sie direkt in deine Zellen, wo sie wie ein Schutzschild arbeiten.<br/><br/>Sie helfen, die schlechten Stoffe zu neutralisieren, die dich müde machen, dich schneller altern lassen und deine Energie rauben. Dadurch fühlt sich dein Körper leichter, frischer und leistungsfähiger an.<br/><br/>Das Besondere: Andere Vitamine oder Mineralien sind wie Bausteine, die oben draufgelegt werden. VitaminH2 baut aber das Fundament, indem es deine Zellen schützt und stärkt. So können alle anderen Nährstoffe überhaupt erst richtig wirken.</p>"
+          }
+        },
+        "question_JTJDgM": {
+          "type": "question",
+          "settings": {
+            "question": "Wie viele Tabletten sind in einer Packung?",
+            "answer": "<p>Du erhälst in einer Packung 60 Brausetabletten.</p>"
+          }
+        },
+        "question_UaUUVR": {
+          "type": "question",
+          "settings": {
+            "question": "Gibt es Nebenwirkungen?",
+            "answer": "<p>Nein, VitaminH2 ist absolut sicher und wird vom Körper einfach wieder ausgeschieden. Du kannst es also bedenkenlos in deinen Alltag integrieren.</p>"
+          }
+        },
+        "question_fMc7Dk": {
+          "type": "question",
+          "settings": {
+            "question": "Was genau macht VitaminH2 mit meinem Körper?",
+            "answer": "<p>VitaminH2 gibt deinen Zellen frische Energie, hilft ihnen sich zu erholen und schützt sie vor dem, was dich müde macht und schneller altern lässt. Du spürst mehr Kraft, Klarheit im Kopf und dein Körper fühlt sich von innen heraus stärker an.</p>"
+          }
+        },
+        "question_UH4raC": {
+          "type": "question",
+          "settings": {
+            "question": "Wann sollte ich VitaminH2 einnehmen?",
+            "answer": "<p>Du kannst VitaminH2 immer dann trinken, wenn du neue Energie brauchst. Viele nehmen es morgens für einen klaren Start in den Tag, vor dem Training für mehr Leistung oder nach Belastung, um schneller zu regenerieren. Wichtig ist nur, dass es zu deinem Alltag passt.</p>"
+          }
+        },
+        "question_Le6yJU": {
+          "type": "question",
+          "settings": {
+            "question": "Wie viele Tabs sollte ich nehmen?",
+            "answer": "<p>Löse dafür 1-2 Tabs in 200–300 ml Wasser auf. Du kannst bedenkenlos bis zu 5 Tabs pro Tag nehmen.</p>"
+          }
+        },
+        "question_Vc9TGk": {
+          "type": "question",
+          "settings": {
+            "question": "Ist der VitaminH2 Vegan?",
+            "answer": "<p>Ja, VitaminH2 ist garantiert Vegan – ohne tierische Inhaltsstoffe, dafür mit maximaler Wirkung.</p>"
+          }
+        },
+        "question_pcxNkg": {
+          "type": "question",
+          "settings": {
+            "question": "Wie lange dauert der Versand?",
+            "answer": "<p>Dein Paket ist in der Regel schon nach 2 bis 3 Tagen bei dir und du kannst direkt mit VitaminH2 starten.</p>"
+          }
+        },
+        "question_Kt4cUm": {
+          "type": "question",
+          "settings": {
+            "question": "Was kostet der Versand?",
+            "answer": "<p>Der Versand ist für dich komplett kostenlos und unabhängig von der Bestellmenge.</p>"
+          }
+        },
+        "question_VBVVd4": {
+          "type": "question",
+          "settings": {
+            "question": "Kann ich zurückschicken?",
+            "answer": "<p>Du hast 14 Tage Zeit, um deine Bestellung ohne Stress zurückzuschicken.</p>"
+          }
+        },
+        "question_M76nMF": {
+          "type": "question",
+          "settings": {
+            "question": "Welche Zahlarten gibt es?",
+            "answer": "<p>Du kannst mit allen gängigen Kredit- und Debitkarten wie Visa, Mastercard oder American Express zahlen. Auch Apple Pay, Google Pay und Shop Pay stehen dir zur Verfügung. Zusätzlich kannst du je nach Verfügbarkeit lokale Optionen wie Klarna oder Sofort nutzen, sodass du immer die bequemste Zahlart wählen kannst.</p>"
+          }
+        },
+        "question_zDHrAF": {
+          "type": "question",
+          "settings": {
+            "question": "Kann ich mit Rechnung zahlen?",
+            "answer": "<p>Ja, über Klarna kannst du ganz einfach per Rechnung zahlen und dich entspannt zurücklehnen.</p>"
+          }
+        },
+        "question_EwpXcg": {
+          "type": "question",
+          "settings": {
+            "question": "Kann ich meine Bestellung verfolgen?",
+            "answer": "<p>Den Tracking Link erhältst du direkt mit deiner Versandbestätigung und siehst so jederzeit, wo sich deine Bestellung gerade befindet.</p>"
           }
         }
       },
       "block_order": [
-        "category",
-        "question-1",
-        "question-2",
-        "question-3"
+        "question_4n8gbU",
+        "question_ziPHBG",
+        "question_ag9wBM",
+        "question_LFTeeB",
+        "question_Rb9Lie",
+        "question_LFVt3F",
+        "question_cFcbBg",
+        "question_JTJDgM",
+        "question_UaUUVR",
+        "question_fMc7Dk",
+        "question_UH4raC",
+        "question_Le6yJU",
+        "question_Vc9TGk",
+        "question_pcxNkg",
+        "question_Kt4cUm",
+        "question_VBVVd4",
+        "question_M76nMF",
+        "question_zDHrAF",
+        "question_EwpXcg"
       ],
-      "settings": {}
+      "settings": {
+        "color_scheme": "scheme-e240f942-9acb-4b5c-8e31-a59739abd614",
+        "side_header": "<h2>Hast du Fragen? Wir haben die Antworten. </h2>",
+        "side_text": "<p>Hier findest du die Antworten auf einige der häufigsten Fragen zu VitaminH2. Kannst du die gesuchte Antwort nicht finden? </p><p>Dann kontaktiere einfach unser freundliches Team.</p>",
+        "separate_section_with_border": true,
+        "show_categories": true,
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    },
+    "17584700206794b3e7": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_agg_section_wTyJgd": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-agg-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "only_photos": false,
+            "hide_thumbnails": false,
+            "product_handle": "",
+            "aggregated": true,
+            "data-limit": 20,
+            "maxwidth": 1080,
+            "is_sample": true
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_agg_section_wTyJgd"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false
+      }
     }
   },
   "order": [
-    "faq"
+    "faq_wLLdef",
+    "17584700206794b3e7"
   ]
 }

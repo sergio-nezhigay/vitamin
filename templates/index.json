@@ -11,6 +11,7 @@
   "sections": {
     "landing_hero_VUHXRm": {
       "type": "landing-hero",
+      "disabled": true,
       "name": "Premium Hero Section",
       "settings": {
         "custom_classes": "",
@@ -28,11 +29,11 @@
         "title_size_mobile": 32,
         "description": "<p>Erlebe die Vorteile von VitaminH2 – das Premium-Supplement, das deine Energie steigert, deine mentale Klarheit fördert und dein Wohlbefinden auf ein neues Level bringt.</p>",
         "description_color": "#666666",
-        "primary_button_text": "Jetzt kaufen",
+        "primary_button_text": "Jetzt VitaminH2 risikofrei probieren",
         "primary_button_bg": "#ea5167",
         "primary_button_color": "#ffffff",
-        "secondary_button_text": "Jetzt entdecken",
-        "secondary_button_url": "shopify://blogs/news",
+        "secondary_button_text": "",
+        "secondary_button_url": "",
         "secondary_button_color": "#ea5167",
         "guarantee_text": "100% Zufriedenheitsgarantie",
         "guarantee_icon": "",
@@ -43,6 +44,97 @@
         "trust_number": "15.000",
         "trust_text_after": "vertrauen auf Energie mit VitaminH2"
       }
+    },
+    "1761947664c2136f39": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "17619431406a49fa30": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "17619440923561c7b6": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_78bef8e_zzBFMd": {
+          "type": "ai_gen_block_78bef8e",
+          "settings": {
+            "desktop_image": "shopify://shop_images/4_8fefe208-e52c-4e23-b4f2-d52b10bf08b5.png",
+            "image_position": "right",
+            "topline_text": "Über 15.000 vertrauen auf Energie mit VitaminH2",
+            "show_topline_stars": true,
+            "topline_font_size": 16,
+            "topline_icon_size": 20,
+            "topline_text_color": "#000000",
+            "topline_star_color": "#ea5167",
+            "title": "Zellschutz und Energie auf molekularer Ebene",
+            "description": "<p>Angetrieben durch molekularen Wasserstoff H₂, wissenschaftlich belegt in über 1.300 Studien. Schützt deine Zellen, steigert natürliche Energie und beschleunigt Regeneration von innen.</p>",
+            "cta_text": "Jetzt VitaminH2 risikofrei probieren",
+            "cta_link": "",
+            "show_secondary_button": false,
+            "cta_secondary_text": "Learn more",
+            "cta_secondary_link": "",
+            "button_secondary_background": "#ffffff",
+            "button_secondary_text_color": "#000000",
+            "button_secondary_border_color": "#000000",
+            "button_secondary_hover_background": "#f5f5f5",
+            "trust_badge_text": "Inklusive 30 Tage Geld zurück Garantie",
+            "trust_badge_icon": "shopify://shop_images/Featured_icon_3.jpg",
+            "trust_badge_spacing": 12,
+            "trust_badge_font_size": 15,
+            "trust_badge_icon_size": 32,
+            "trust_badge_text_color": "#000000",
+            "marquee_spacing_top": 48,
+            "marquee_item_gap": 28,
+            "marquee_content_gap": 12,
+            "marquee_item_width": 280,
+            "marquee_image_size": 40,
+            "marquee_star_size": 12,
+            "marquee_star_gap": 2,
+            "marquee_name_font_size": 13,
+            "marquee_text_font_size": 12,
+            "marquee_text_max_lines": 0,
+            "marquee_speed": 40,
+            "marquee_speed_mobile": 60,
+            "testimonial_1_image": "shopify://shop_images/2_248a221f-4987-47fd-b843-3d17068c7a72.png",
+            "testimonial_1_name": "Claudia M.",
+            "testimonial_1_text": "Ich hätte nicht gedacht, dass man den Unterschied so deutlich merkt. Seit ich VitaminH2 trinke, habe ich morgens mehr Energie und fühle mich den ganzen Tag über konzentrierter.",
+            "testimonial_1_show_stars": true,
+            "testimonial_1_star_count": 5,
+            "testimonial_2_image": "shopify://shop_images/30943.png",
+            "testimonial_2_name": "Andrea P.",
+            "testimonial_2_text": "Ich habe vieles ausprobiert, aber nichts hat mich so überzeugt wie VitaminH2. Ich fühle mich wacher, stabiler und einfach ausgeglichener.",
+            "testimonial_2_show_stars": true,
+            "testimonial_2_star_count": 5,
+            "testimonial_3_image": "shopify://shop_images/Bildschirmfoto_2025-08-29_um_14.21.44.png",
+            "testimonial_3_name": "Stefan W.",
+            "testimonial_3_text": "VitaminH2 ist mittlerweile fester Bestandteil meines Alltags. Ich spüre, dass mein Körper besser reagiert, ganz gleich ob nach dem Sport oder an langen Arbeitstagen.",
+            "testimonial_3_show_stars": true,
+            "testimonial_3_star_count": 5,
+            "testimonial_4_name": "",
+            "testimonial_4_text": "",
+            "testimonial_4_show_stars": true,
+            "testimonial_4_star_count": 5,
+            "testimonial_5_name": "",
+            "testimonial_5_text": "",
+            "testimonial_5_show_stars": true,
+            "testimonial_5_star_count": 5,
+            "background_color": "#fdf4e9",
+            "text_color": "#000000",
+            "button_background": "#ea5167",
+            "button_text_color": "#ffffff",
+            "button_hover_background": "#e32c2b",
+            "star_color": "#ffd700",
+            "button_border_radius": 8
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_78bef8e_zzBFMd"
+      ],
+      "name": "Hero Section",
+      "settings": {}
     },
     "image_with_text_overlay_t9GHLw": {
       "type": "image-with-text-overlay",
@@ -241,6 +333,47 @@
         "icon_text_spacing": 8
       }
     },
+    "1761946711eb3f252d": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_33024b2_iUit66": {
+          "type": "ai_gen_block_33024b2",
+          "disabled": true,
+          "settings": {
+            "section_width": 1400,
+            "heading": "<p>Ihr Haupttitel hier</p>",
+            "heading_color": "#043841",
+            "heading_size_mobile": 28,
+            "heading_size_desktop": 42,
+            "subheading": "<p>Ihr Untertitel hier</p>",
+            "subheading_color": "#043841",
+            "subheading_size_mobile": 16,
+            "subheading_size_desktop": 20,
+            "bullet_1_title": "Erster Titel",
+            "bullet_1_text": "<p>Beschreibungstext für den ersten Bulletpoint</p>",
+            "bullet_2_title": "Zweiter Titel",
+            "bullet_2_text": "<p>Beschreibungstext für den zweiten Bulletpoint</p>",
+            "bullet_3_title": "Dritter Titel",
+            "bullet_3_text": "<p>Beschreibungstext für den dritten Bulletpoint</p>",
+            "bullet_title_color": "#043841",
+            "bullet_title_size": 18,
+            "bullet_text_color": "#043841",
+            "bullet_text_size": 16,
+            "icon_size": 40,
+            "icon_text_gap": 16,
+            "bullet_title_text_gap": 8,
+            "bullet_spacing": 24,
+            "image_border_radius": 8,
+            "content_spacing": 24
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_33024b2_iUit66"
+      ],
+      "settings": {}
+    },
     "image_with_text_xEVRHw": {
       "type": "image-with-text",
       "blocks": {
@@ -248,7 +381,7 @@
           "type": "heading",
           "settings": {
             "text": "",
-            "text2": "<p>Natürliche Energie für deinen Tag</p>",
+            "text2": "<h2>Wissenschaftlich belegter Zellschutz und Energie von innen</h2>",
             "heading_tag": "h3"
           }
         },
@@ -257,23 +390,23 @@
           "settings": {
             "content_class": "first-content",
             "content2": "",
-            "content": "<p>VitaminH2 ist ein Premium-Nahrungsergänzungsmittel, das deine Zellgesundheit, Regeneration und Hydration unterstützt – mit natürlichen Inhaltsstoffen für mehr Wohlbefinden und Leistung.</p>"
+            "content": "<p>VitaminH2 nutzt die Kraft von molekularem Wasserstoff, um deine Zellen von innen zu schützen, oxidativen Stress zu reduzieren und deine natürliche Energieproduktion zu aktivieren.</p>"
           }
         },
         "richtext_7q78Ud": {
           "type": "richtext",
           "settings": {
             "content_class": "benefits-content one",
-            "content2": "<p><strong>Natürlicher Energie Boost</strong></p>",
-            "content": "<p>Erlebe eine gezielte Unterstützung auf zellulärer Ebene für bessere Regeneration und schnellere Heilung.<br/>Magnesiummalat und molekularer Wasserstoff fördern deine Zellgesundheit und aktivieren natürliche Reparaturmechanismen.</p>"
+            "content2": "<p>Die Wissenschaft hinter der Wirkung</p>",
+            "content": "<p>Molekularer Wasserstoff ist das kleinste und effektivste Antioxidans der Welt. Er gelangt direkt in die Zellen, wo oxidativer Stress entsteht, und schützt sie dort gezielt vor Schäden. Seine Wirkung ist in über 1.000 wissenschaftlichen Studien dokumentiert.</p>"
           }
         },
         "richtext_NPdWkx": {
           "type": "richtext",
           "settings": {
             "content_class": "benefits-content two",
-            "content2": "<p><strong>Fördert Schnelle Regeneration</strong></p>",
-            "content": "<p>Mit der HydraFusion® Technologie wird molekularer Wasserstoff optimal freigesetzt, um deine Regeneration nach dem Training zu beschleunigen.</p>"
+            "content2": "<p>Spürbare Regeneration und Energie</p>",
+            "content": "<p>Durch die innovative HydraFusion® Technologie wird der Wasserstoff optimal freigesetzt. Das unterstützt deine Mitochondrien bei der Energieproduktion und beschleunigt die Regeneration nach körperlicher oder mentaler Belastung.</p>"
           }
         },
         "richtext_VHXhhb": {
@@ -281,7 +414,7 @@
           "settings": {
             "content_class": "benefits-content three",
             "content2": "<p><strong>100% Natürliche Inhaltsstoffe</strong></p>",
-            "content": "<p>Frei von Zucker, Farbstoffen, Gluten, Soja und Laktose – für eine reine, hochwirksame Ergänzung, die du bedenkenlos täglich einnehmen kannst.</p>"
+            "content": "<p>Frei von Zucker, Farbstoffen, Gluten, Soja und Laktose. Eine reine, hochwirksame Ergänzung, die du bedenkenlos täglich einnehmen kannst.</p>"
           }
         }
       },
@@ -321,6 +454,59 @@
         "text_alignment": "center"
       }
     },
+    "1761948821067b292b": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_33d39f7_ReQxF4": {
+          "type": "ai_gen_block_33d39f7",
+          "settings": {
+            "section_heading": "Die Reise von der Einnahme bis zur Wirkung",
+            "step_1_icon": "shopify://shop_images/1_665c98b1-ac96-4412-a65f-abd731fa35f2.png",
+            "step_1_title": "Aktivierung im Wasser",
+            "step_1_description": "Du löst eine Tablette in Wasser auf. Dabei entsteht molekularer Wasserstoff, der sofort aktiv wird und vom Körper aufgenommen wird",
+            "step_2_icon": "shopify://shop_images/2_9bceffd1-28de-4f46-9a6c-5c96d02d7f8e.png",
+            "step_2_title": "Zellschutz von innen",
+            "step_2_description": "Der Wasserstoff gelangt über das Blut in deine Zellen und neutralisiert schädliche freie Radikale. Dadurch bleiben die Zellen gesund und funktionsfähig.",
+            "step_3_icon": "shopify://shop_images/3_f0614ad3-14ea-455c-8b56-08a2c6b6ab9c.png",
+            "step_3_title": "Energie und Regeneration",
+            "step_3_description": "Die Zellen können wieder effizient Energie produzieren. Du spürst mehr Fokus, Ausdauer und eine schnellere Erholung nach körperlicher oder mentaler Belastung.",
+            "step_4_icon": "shopify://shop_images/4_513507cf-2592-4f2a-b7bc-5c137434cbc7.png",
+            "step_4_title": "Spürbare Vitalität",
+            "step_4_description": "Bei regelmässiger Anwendung stärkt VitaminH2 deine Zellgesundheit langfristig und unterstützt natürliche Balance, Leistungsfähigkeit und Wohlbefinden.",
+            "show_cta_button": true,
+            "cta_button_text": "Mehr erfahren",
+            "cta_button_link": "shopify://blogs/news/wirkung",
+            "button_bg_color": "#ea5167",
+            "button_bg_hover_color": "#043841",
+            "button_text_color": "#ffffff",
+            "button_text_hover_color": "#ffffff",
+            "button_border_color": "#ea5167",
+            "button_border_hover_color": "#043841",
+            "button_border_width": 0,
+            "button_border_radius": 8,
+            "button_font_size": 16,
+            "button_font_weight": "600",
+            "button_text_transform": "none",
+            "button_letter_spacing": 0,
+            "button_padding_vertical": 14,
+            "button_padding_horizontal": 32,
+            "button_hover_lift": -2,
+            "background_color": "#ffffff",
+            "text_color": "#1c1c1c",
+            "placeholder_bg": "#f2f2ed",
+            "heading_size": 32,
+            "icon_size": 90,
+            "title_size": 18,
+            "description_size": 14
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_33d39f7_ReQxF4"
+      ],
+      "settings": {}
+    },
     "rich_text_MLiPKR": {
       "type": "rich-text",
       "blocks": {
@@ -347,27 +533,6 @@
         "remove_vertical_spacing": false
       }
     },
-    "image_with_text_overlay_enrhNd": {
-      "type": "image-with-text-overlay",
-      "disabled": true,
-      "custom_css": [
-        "@media (min-width: 768px) {image-with-text-overlay.content-over-media.content-over-media--auto {max-width: 75%; margin: auto; }}"
-      ],
-      "settings": {
-        "color_scheme": "scheme-569996c9-ce4a-4d19-aa0d-e0c820f04393",
-        "image_size": "auto",
-        "image": "shopify://shop_images/Frame_desktop.png",
-        "mobile_image": "shopify://shop_images/4_columns_mobile.jpg",
-        "allow_transparent_header": false,
-        "reveal_on_scroll": true,
-        "remove_vertical_spacing": true,
-        "content_width": "md",
-        "mobile_text_position": "place-self-center text-center",
-        "desktop_text_position": "sm:place-self-center sm:text-center",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0
-      }
-    },
     "multi_column_tLdACb": {
       "type": "multi-column",
       "blocks": {
@@ -375,9 +540,9 @@
           "type": "image_with_text",
           "settings": {
             "image": "shopify://shop_images/1_df1be256-cd44-4ba3-ae89-4a8b7022db0f.png",
-            "title": "Die richtige Menge dosieren",
+            "title": "Schnelle Aufnahme",
             "heading_tag": "h3",
-            "content": "<p>Verwende 1-2 Tabs täglich für optimale Ergebnisse. Für eine höhere Dosis kannst du auch bis zu 5 Tabs konsumieren.</p>",
+            "content": "<p>Beim Trinken gelangt der aktive Wasserstoff sofort in deinen Blutkreislauf und erreicht jede Zelle – blitzschnell und tief im Körper.</p>",
             "link_url": "",
             "link_text": ""
           }
@@ -386,9 +551,9 @@
           "type": "image_with_text",
           "settings": {
             "image": "shopify://shop_images/2_ac08646b-0a29-4f1d-b4ed-03951be3cad1.png",
-            "title": "Einfach ins Wasser geben",
+            "title": "Unterstützung des Zellschutzes",
             "heading_tag": "h3",
-            "content": "<p>Löse einen Tab in 200-300 ml Wasser auf. Warte, bis der Tab vollständig aufgelöst ist. Für einen intensiveren Effekt kannst du auch 2 Tabs in der gleichen Menge Wasser auflösen.</p>",
+            "content": "<p>Er erkennt und neutralisiert nur die wirklich schädlichen Stoffe. So schützt er deine Zellen und hält sie jung und funktionsfähig.</p><p></p>",
             "link_url": "",
             "link_text": ""
           }
@@ -397,9 +562,9 @@
           "type": "image_with_text",
           "settings": {
             "image": "shopify://shop_images/3.png",
-            "title": "Auflösen lassen",
+            "title": "Förderung körpereigener Schutzmechanismen",
             "heading_tag": "h3",
-            "content": "<p>Lass die Tabs nach dem Einlegen kurz auflösen und warte, bis sie vollständig verschwunden sind. Trinke das Getränk anschliessend möglichst zeitnah, um die volle Wirkung zu erzielen.</p>",
+            "content": "<p>Dein Körper wird angeregt, eigene Schutzstoffe zu bilden. Dadurch regenerierst du schneller und fühlst dich widerstandsfähiger.</p>",
             "link_url": "",
             "link_text": ""
           }
@@ -408,9 +573,9 @@
           "type": "image_with_text",
           "settings": {
             "image": "shopify://shop_images/Testemonial7869.png",
-            "title": "Trinken und genießen",
+            "title": "Energie und Wohlbefinden",
             "heading_tag": "h3",
-            "content": "<p>Geniesse das erfrischende Getränk und spüre die Vorteile von VitaminH2 für deine Zellen, Regeneration und Energie.</p>",
+            "content": "<p>Gesunde Zellen produzieren mehr Energie. Das Ergebnis: klarer Kopf, anhaltende Power und echte Balance ohne künstlichen Push.</p>",
             "link_url": "",
             "link_text": ""
           }
@@ -422,6 +587,7 @@
         "image_with_text_RFkyMi",
         "image_with_text_VeHCG9"
       ],
+      "disabled": true,
       "custom_css": [
         "@media (min-width: 1024px) {.container {width: 75%; margin: auto !important; }}",
         "@media (max-width: 768px) {.multi-column {grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }}"
@@ -436,9 +602,92 @@
         "text_alignment": "center",
         "spacing": "md",
         "subheading": "",
-        "title": "Einfach anzuwenden, maximaler Effekt",
+        "title": "Wie dein Körper die volle Wirkung entfaltet",
         "content": ""
       }
+    },
+    "1761941645f200a116": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a6fba89_bXUR7a": {
+          "type": "ai_gen_block_a6fba89",
+          "disabled": true,
+          "settings": {
+            "image_position": "right",
+            "heading": "Natürliche Energie für deinen Tag",
+            "heading_size_mobile": 28,
+            "heading_size_desktop": 42,
+            "subheading": "VitaminH2 entfaltet seine Wirkung, sobald sich die Tabs im Wasser lösen und molekularer Wasserstoff (H₂) entsteht.\nDieser unterstützt auf natürliche Weise die zelluläre Energiegewinnung und Regeneration.",
+            "subheading_size_mobile": 16,
+            "subheading_size_desktop": 20,
+            "bullet_1_icon": "shopify://shop_images/Shipping.png",
+            "bullet_1_text": "Unterstützt die Zellfunktion für mehr Energie und schnellere Erholung.",
+            "bullet_2_text": "Die HydraFusion® Technologie setzt Wasserstoff effizient frei und unterstützt die Regeneration nach Belastung.",
+            "bullet_3_text": "Frei von Zucker, Farbstoffen, Gluten, Soja und Laktose und ideal für den täglichen Gebrauch.",
+            "icon_size": 48,
+            "bullet_text_size_mobile": 15,
+            "bullet_text_size_desktop": 16,
+            "bullet_spacing": 20,
+            "image_desktop": "shopify://shop_images/3_cd99db2e-82f8-4c24-8196-ccfc4ba50d6b.png",
+            "image_border_radius": 8,
+            "text_color": "#043841"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a6fba89_bXUR7a"
+      ],
+      "settings": {}
+    },
+    "176193615488bec5ce": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_c211efa_8RjMqQ": {
+          "type": "ai_gen_block_c211efa",
+          "disabled": true,
+          "settings": {
+            "section_heading": "Wie dein Körper die volle Wirkung entfaltet",
+            "heading_size": 32,
+            "heading_color": "#043841",
+            "heading_alignment": "center",
+            "heading_spacing": 40,
+            "step_1_image": "shopify://shop_images/678909.png",
+            "step_1_title": "<strong>Vom ersten Schluck direkt in deine Zellen</strong>",
+            "step_1_description": "<p>Beim Trinken gelangt der aktive Wasserstoff sofort in deinen Blutkreislauf und erreicht jede Zelle – blitzschnell und tief im Körper.</p>",
+            "step_2_title": "Unterstützung des Zellschutzes",
+            "step_2_description": "<p>Molekularer Wasserstoff unterstützt den Zellschutz und hilft dem Körper, sein natürliches Gleichgewicht zu bewahren. So bleibt die Zellfunktion stabil, auch bei Stress oder hoher Belastung.</p><p></p>",
+            "step_3_title": "Förderung körpereigener Prozesse",
+            "step_3_description": "<p>VitaminH2 unterstützt den Körper dabei, eigene Schutzmechanismen zu aktivieren. So findet er leichter in sein Gleichgewicht zurück und kann sich nach Anstrengung besser erholen.</p>",
+            "step_4_title": "Mehr Energie und innere Balance im Alltag",
+            "step_4_description": "<p>Gesunde Zellen produzieren mehr Energie. Das Ergebnis ist ein klarer Kopf, anhaltende Power und echte Balance ohne künstlichen Push.</p>",
+            "container_width": 1350,
+            "gap_desktop": 10,
+            "gap_mobile": 10,
+            "mobile_slide_width": 70,
+            "text_alignment": "center",
+            "image_border_radius": 8,
+            "image_spacing": 20,
+            "title_size": 18,
+            "title_color": "#043841",
+            "title_spacing": 12,
+            "description_size": 14,
+            "description_color": "#043841",
+            "background_color": "#ffffff",
+            "section_padding_top": 60,
+            "section_padding_bottom": 60
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_c211efa_8RjMqQ"
+      ],
+      "settings": {}
+    },
+    "17619351262fbe0c42": {
+      "type": "_blocks",
+      "settings": {}
     },
     "featured_product_JCRmJp": {
       "type": "featured-product",
@@ -587,71 +836,6 @@
         "content": ""
       }
     },
-    "logo_list_9ec3EQ": {
-      "type": "logo-list",
-      "blocks": {
-        "logo_mUgUcQ": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/Company_logo_1.png",
-            "logo_width": 120,
-            "link": ""
-          }
-        },
-        "logo_qHPnE8": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/Company_logo_2.png",
-            "logo_width": 120,
-            "link": ""
-          }
-        },
-        "logo_J3ryn7": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/Company_logo_3.png",
-            "logo_width": 120,
-            "link": ""
-          }
-        },
-        "logo_RnhAG9": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/Company_logo_4.png",
-            "logo_width": 120,
-            "link": ""
-          }
-        },
-        "logo_WaaW6i": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/Company_logo.png",
-            "logo_width": 120,
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "logo_mUgUcQ",
-        "logo_qHPnE8",
-        "logo_J3ryn7",
-        "logo_RnhAG9",
-        "logo_WaaW6i"
-      ],
-      "disabled": true,
-      "custom_css": [
-        "@media (max-width: 768px) {.logo-list {display: flex !important; overflow-x: scroll; flex-wrap: nowrap !important; } .logo-list__item {min-width: 200px; }}"
-      ],
-      "settings": {
-        "color_scheme": "scheme-1",
-        "separate_section_with_border": false,
-        "subheading": "",
-        "title": "",
-        "items_per_row": 5,
-        "logo_item_background": "",
-        "logo_item_border": ""
-      }
-    },
     "custom_liquid_CwjJ9e": {
       "type": "custom-liquid",
       "disabled": true,
@@ -662,44 +846,6 @@
         "remove_horizontal_spacing": false,
         "liquid": "{% render 'custom-testimonial' %}",
         "text_alignment": "center"
-      }
-    },
-    "custom_testimonial_9dAqMB": {
-      "type": "custom-testimonial",
-      "blocks": {
-        "testimony_6zaqDC": {
-          "type": "testimony",
-          "settings": {
-            "color_scheme": "",
-            "image": "shopify://shop_images/Testimonial.png",
-            "content": "<p>Seit ich VitaminH2 nehme, fühle ich mich energiegeladener und regeneriere viel schneller nach dem Training. Es hat meine Leistung auf ein neues Level gehoben!</p>",
-            "name": "Lea P.",
-            "date": "14 März 2025"
-          }
-        },
-        "testimony_d4QE6A": {
-          "type": "testimony",
-          "settings": {
-            "color_scheme": "",
-            "image": "shopify://shop_images/Testemonial.png",
-            "content": "<p>Ich spüre eine deutliche Verbesserung meiner Konzentration und meiner Hautgesundheit. VitaminH2 ist jetzt ein fester Bestandteil meines Alltags!</p>",
-            "name": "Anna S.",
-            "date": "17 Dezember 2024"
-          }
-        }
-      },
-      "block_order": [
-        "testimony_6zaqDC",
-        "testimony_d4QE6A"
-      ],
-      "disabled": true,
-      "custom_css": [
-        "@media (max-width: 768px) {.section-spacing {width: 90%; margin: auto; }}"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "color_scheme2": "scheme-bf5b0f8c-52b0-4434-9e75-88cb7d811258",
-        "separate_section_with_border": false
       }
     },
     "landing_testimonials_9m3Lm6": {
@@ -800,44 +946,11 @@
         "testimonial_MmzV44",
         "testimonial_kxk7Rz"
       ],
+      "disabled": true,
       "name": "Customer Testimonials",
       "settings": {
         "section_title": "Weltweit von Tausenden vertraut",
         "rating_text": "(4.8/5)"
-      }
-    },
-    "rich_text_9q3TB9": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_jfXxxG": {
-          "type": "heading",
-          "settings": {
-            "text": "Compare and Choose the Best",
-            "heading_tag": "h2"
-          }
-        },
-        "richtext_HCnaPT": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>Not all supplements are created equal. See how VitaminH2 stacks up</p><p> against the competition with our all-natural, scientifically backed formula.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_jfXxxG",
-        "richtext_HCnaPT"
-      ],
-      "disabled": true,
-      "custom_css": [
-        "p {margin-top: 2px !important;}",
-        "@media (min-width: 768px) {.prose {overflow-wrap: anywhere; max-width: 75%; margin: auto; } .container.container--sm {margin: 0 auto; width: 100%; }}"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "separate_section_with_border": false,
-        "content_width": "sm",
-        "text_position": "start",
-        "remove_vertical_spacing": false
       }
     },
     "image_with_text_overlay_69hhz6": {
@@ -932,6 +1045,30 @@
         "remove_vertical_spacing": true
       }
     },
+    "blog-posts": {
+      "type": "blog-posts",
+      "custom_css": [
+        ".header-wrapper {display: flex; justify-content: space-between; align-items: flex-end;}",
+        ".justify-self-center.bottom-btn {display: none;}",
+        "@media screen and (max-width: 768px) {.justify-self-center.bottom-btn {display: block; } .justify-self-center.top-btn {display: none; }}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-e240f942-9acb-4b5c-8e31-a59739abd614",
+        "separate_section_with_border": false,
+        "blog": "news",
+        "posts_count": 3,
+        "stack_on_mobile": false,
+        "show_category": false,
+        "show_date": false,
+        "show_excerpt": true,
+        "show_read_more": false,
+        "subheading": "",
+        "title": "Gesundheitstipps",
+        "content": "<p>Lass dir von Gesundheitsexperten zeigen, wie Vitamin H2 deine Wellness-Routine optimieren kann. In unserem Blog teilen Ärzte, Ernährungsberater und Experten wertvolle Tipps und Erkenntnisse.</p>",
+        "button_link": "",
+        "button_text": "Alle Beiträge ansehen"
+      }
+    },
     "faq_q76XTU": {
       "type": "faq",
       "blocks": {
@@ -1004,72 +1141,6 @@
         "content": ""
       }
     },
-    "image_with_text_8eymdx": {
-      "type": "image-with-text",
-      "blocks": {
-        "subheading_kgAXwG": {
-          "type": "subheading",
-          "settings": {
-            "text": "Subheading"
-          }
-        },
-        "heading_jKwiPx": {
-          "type": "heading",
-          "settings": {
-            "text": "Image with text",
-            "text2": "<h2>Heading</h2",
-            "heading_tag": "h1"
-          }
-        },
-        "richtext_8FLjNA": {
-          "type": "richtext",
-          "settings": {
-            "content_class": "",
-            "content2": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "subheading_kgAXwG",
-        "heading_jKwiPx",
-        "richtext_8FLjNA"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "scheme-2",
-        "separate_section_with_border": true,
-        "image": "shopify://shop_images/1.png",
-        "reveal_on_scroll": true,
-        "image_position": "end",
-        "content_width": "sm",
-        "remove_vertical_spacing": true
-      }
-    },
-    "blog-posts": {
-      "type": "blog-posts",
-      "custom_css": [
-        ".header-wrapper {display: flex; justify-content: space-between; align-items: flex-end;}",
-        ".justify-self-center.bottom-btn {display: none;}",
-        "@media screen and (max-width: 768px) {.justify-self-center.bottom-btn {display: block; } .justify-self-center.top-btn {display: none; }}"
-      ],
-      "settings": {
-        "color_scheme": "scheme-e240f942-9acb-4b5c-8e31-a59739abd614",
-        "separate_section_with_border": false,
-        "blog": "news",
-        "posts_count": 3,
-        "stack_on_mobile": false,
-        "show_category": false,
-        "show_date": false,
-        "show_excerpt": true,
-        "show_read_more": false,
-        "subheading": "",
-        "title": "Gesundheitstipps",
-        "content": "<p>Lass dir von Gesundheitsexperten zeigen, wie Vitamin H2 deine Wellness-Routine optimieren kann. In unserem Blog teilen Ärzte, Ernährungsberater und Experten wertvolle Tipps und Erkenntnisse.</p>",
-        "button_link": "",
-        "button_text": "Alle Beiträge ansehen"
-      }
-    },
     "175682804677578861": {
       "type": "apps",
       "blocks": {
@@ -1099,25 +1170,28 @@
   },
   "order": [
     "landing_hero_VUHXRm",
+    "1761947664c2136f39",
+    "17619431406a49fa30",
+    "17619440923561c7b6",
     "image_with_text_overlay_t9GHLw",
     "scrolling_content_RDf8c4",
     "landing_marquee_cByH93",
+    "1761946711eb3f252d",
     "image_with_text_xEVRHw",
     "custom_liquid_3KRn3U",
+    "1761948821067b292b",
     "rich_text_MLiPKR",
-    "image_with_text_overlay_enrhNd",
     "multi_column_tLdACb",
+    "1761941645f200a116",
+    "176193615488bec5ce",
+    "17619351262fbe0c42",
     "featured_product_JCRmJp",
-    "logo_list_9ec3EQ",
     "custom_liquid_CwjJ9e",
-    "custom_testimonial_9dAqMB",
     "landing_testimonials_9m3Lm6",
-    "rich_text_9q3TB9",
     "image_with_text_overlay_69hhz6",
     "custom_comparison_table_tNmYz8",
-    "faq_q76XTU",
-    "image_with_text_8eymdx",
     "blog-posts",
+    "faq_q76XTU",
     "175682804677578861"
   ]
 }

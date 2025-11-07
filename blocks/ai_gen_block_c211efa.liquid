@@ -1,0 +1,495 @@
+{% doc %}
+  @prompt
+    Erstelle mir eine responsive Section mit 4 Schritten, die horizontal nebeneinander angezeigt werden (auch mobil gut gestapelt).
+    Jeder Schritt soll aus einem Bild, einem Titel (z. B. Schritt 1: …) und einem kurzen Beschreibungstext bestehen.
+    
+    Layout-Anforderungen:
+    
+    Desktop: 4 gleich breite Spalten nebeneinander
+    
+    Mobile: Schritte nebeneinander als slide
+    
+    Bild oben, Titel darunter, Text darunter
+    
+    Einheitlicher Stil (gleiche Abstände, Typografie und Bildgrössen)
+    
+    Möglichkeit, Bilder, Titel und Texte im Editor individuell anzupassen
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-steps-section-{{ ai_gen_id }} {
+    padding: {{ block.settings.section_padding_top }}px 0 {{ block.settings.section_padding_bottom }}px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-steps-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.container_width }}px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ai-steps-heading-{{ ai_gen_id }} {
+    text-align: {{ block.settings.heading_alignment }};
+    margin-bottom: {{ block.settings.heading_spacing }}px;
+    color: {{ block.settings.heading_color }};
+    font-size: {{ block.settings.heading_size }}px;
+  }
+
+  .ai-steps-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: {{ block.settings.gap_desktop }}px;
+  }
+
+  .ai-step-item-{{ ai_gen_id }} {
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-step-image-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    margin-bottom: {{ block.settings.image_spacing }}px;
+    overflow: hidden;
+    border-radius: {{ block.settings.image_border_radius }}px;
+  }
+
+  .ai-step-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ai-step-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: {{ block.settings.image_border_radius }}px;
+  }
+
+  .ai-step-image-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-step-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    margin-bottom: {{ block.settings.title_spacing }}px;
+    font-weight: 600;
+  }
+
+  .ai-step-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.description_size }}px;
+    color: {{ block.settings.description_color }};
+    line-height: 1.6;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-steps-grid-{{ ai_gen_id }} {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: {{ block.settings.gap_mobile }}px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding-bottom: 10px;
+    }
+
+    .ai-steps-grid-{{ ai_gen_id }}::-webkit-scrollbar {
+      display: none;
+    }
+
+    .ai-step-item-{{ ai_gen_id }} {
+      flex: 0 0 {{ block.settings.mobile_slide_width }}%;
+      scroll-snap-align: start;
+    }
+
+    .ai-steps-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}px * 0.8);
+    }
+
+    .ai-step-title-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.title_size }}px * 0.9);
+    }
+
+    .ai-step-description-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.description_size }}px * 0.9);
+    }
+  }
+{% endstyle %}
+
+<div class="ai-steps-section-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-steps-container-{{ ai_gen_id }}">
+    {% if block.settings.section_heading != blank %}
+      <h2 class="ai-steps-heading-{{ ai_gen_id }}">{{ block.settings.section_heading }}</h2>
+    {% endif %}
+
+    <div class="ai-steps-grid-{{ ai_gen_id }}">
+      {% for i in (1..4) %}
+        {% liquid
+          assign image_key = 'step_' | append: i | append: '_image'
+          assign title_key = 'step_' | append: i | append: '_title'
+          assign description_key = 'step_' | append: i | append: '_description'
+          
+          assign step_image = block.settings[image_key]
+          assign step_title = block.settings[title_key]
+          assign step_description = block.settings[description_key]
+        %}
+
+        <div class="ai-step-item-{{ ai_gen_id }}">
+          <div class="ai-step-image-wrapper-{{ ai_gen_id }}">
+            {% if step_image %}
+              <img
+                src="{{ step_image | image_url: width: 600 }}"
+                alt="{{ step_image.alt | escape }}"
+                loading="lazy"
+                width="{{ step_image.width }}"
+                height="{{ step_image.height }}"
+                class="ai-step-image-{{ ai_gen_id }}"
+              >
+            {% else %}
+              <div class="ai-step-image-placeholder-{{ ai_gen_id }}">
+                {{ 'image' | placeholder_svg_tag }}
+              </div>
+            {% endif %}
+          </div>
+
+          {% if step_title != blank %}
+            <h3 class="ai-step-title-{{ ai_gen_id }}">{{ step_title }}</h3>
+          {% endif %}
+
+          {% if step_description != blank %}
+            <div class="ai-step-description-{{ ai_gen_id }}">{{ step_description }}</div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "4 Schritte",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Überschrift"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "section_heading",
+      "label": "Überschrift",
+      "default": "So funktioniert's"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Überschriftgröße",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Überschriftfarbe",
+      "default": "#043841"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Überschrift-Ausrichtung",
+      "options": [
+        {
+          "value": "left",
+          "label": "Links"
+        },
+        {
+          "value": "center",
+          "label": "Zentriert"
+        },
+        {
+          "value": "right",
+          "label": "Rechts"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "heading_spacing",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand unter Überschrift",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Schritt 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_1_image",
+      "label": "Bild"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "step_1_title",
+      "label": "Titel",
+      "default": "Schritt 1: Auswählen"
+    },
+    {
+      "type": "richtext",
+      "id": "step_1_description",
+      "label": "Beschreibung",
+      "default": "<p>Wählen Sie Ihr gewünschtes Produkt aus unserem Sortiment.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Schritt 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_2_image",
+      "label": "Bild"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "step_2_title",
+      "label": "Titel",
+      "default": "Schritt 2: Konfigurieren"
+    },
+    {
+      "type": "richtext",
+      "id": "step_2_description",
+      "label": "Beschreibung",
+      "default": "<p>Passen Sie das Produkt nach Ihren Wünschen an.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Schritt 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_3_image",
+      "label": "Bild"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "step_3_title",
+      "label": "Titel",
+      "default": "Schritt 3: Bestellen"
+    },
+    {
+      "type": "richtext",
+      "id": "step_3_description",
+      "label": "Beschreibung",
+      "default": "<p>Legen Sie das Produkt in den Warenkorb und schließen Sie die Bestellung ab.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Schritt 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_4_image",
+      "label": "Bild"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "step_4_title",
+      "label": "Titel",
+      "default": "Schritt 4: Genießen"
+    },
+    {
+      "type": "richtext",
+      "id": "step_4_description",
+      "label": "Beschreibung",
+      "default": "<p>Erhalten Sie Ihr Produkt und genießen Sie es in vollen Zügen.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "min": 800,
+      "max": 1600,
+      "step": 50,
+      "unit": "px",
+      "label": "Container-Breite",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "gap_desktop",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Abstand zwischen Schritten (Desktop)",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "gap_mobile",
+      "min": 10,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "Abstand zwischen Schritten (Mobil)",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "mobile_slide_width",
+      "min": 60,
+      "max": 95,
+      "step": 5,
+      "unit": "%",
+      "label": "Slide-Breite (Mobil)",
+      "default": 80
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text-Ausrichtung",
+      "options": [
+        {
+          "value": "left",
+          "label": "Links"
+        },
+        {
+          "value": "center",
+          "label": "Zentriert"
+        },
+        {
+          "value": "right",
+          "label": "Rechts"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Bild-Stil"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Bild-Eckenradius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "image_spacing",
+      "min": 10,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Abstand unter Bild",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Titel-Stil"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Titelgröße",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Titelfarbe",
+      "default": "#043841"
+    },
+    {
+      "type": "range",
+      "id": "title_spacing",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Abstand unter Titel",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Beschreibungs-Stil"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Beschreibungsgröße",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Beschreibungsfarbe",
+      "default": "#043841"
+    },
+    {
+      "type": "header",
+      "content": "Abschnitt"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Hintergrundfarbe",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Innenabstand oben",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Innenabstand unten",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "4 Schritte"
+    }
+  ]
+}
+{% endschema %}

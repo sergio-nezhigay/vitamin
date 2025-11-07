@@ -2,6 +2,8 @@
 
 <html lang="{{ request.locale.iso_code }}" dir="{% render 'direction' %}">
   <head>
+ {%- if content_for_header contains 'tapita-seo-script-tags' -%}{%- include 'tapita-seo-schema' -%}{%- endif -%} 
+
     {% comment %} Scroll Prevention System - Configuration and Script {% endcomment %}
     <script>
       // Pass configuration to scroll prevention script

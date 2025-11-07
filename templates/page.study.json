@@ -8,13 +8,75 @@
  * ------------------------------------------------------------
  */
 {
-    "sections": {
-        "main": {
-            "type": "study-search",
-            "settings": {}
+  "sections": {
+    "rich_text_YCKqPB": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_rmNYAx": {
+          "type": "subheading",
+          "settings": {
+            "text": "Wissenschaftlich fundiert. Klinisch geprüft. Von Experten bestätigt."
+          }
+        },
+        "heading_yMTb3h": {
+          "type": "heading",
+          "settings": {
+            "text": "Über 1.300 wissenschaftliche Studien – die Kraft von VitaminH2 ist belegt",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_4pAhkF": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>VitaminH2 ist kein Trend, sondern das Ergebnis jahrzehntelanger Forschung. Über 1.300 internationale Studien belegen die Wirkung von molekularem Wasserstoff auf Zellschutz, Regeneration, Energie und Wohlbefinden. Entdecke die wissenschaftliche Basis hinter einem Produkt, das nachweislich funktioniert – und dein Leben nachhaltig verändern kann.</p>"
+          }
         }
+      },
+      "block_order": [
+        "subheading_rmNYAx",
+        "heading_yMTb3h",
+        "richtext_4pAhkF"
+      ],
+      "name": "t:sections.rich_text.presets.rich_text.name",
+      "settings": {
+        "color_scheme": "scheme-e240f942-9acb-4b5c-8e31-a59739abd614",
+        "separate_section_with_border": true,
+        "content_width": "sm",
+        "text_position": "center",
+        "remove_vertical_spacing": false
+      }
     },
-    "order": [
-        "main"
-    ]
+    "rich_text_x3L8V9": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_NMQJMK": {
+          "type": "heading",
+          "settings": {
+            "text": "Alle Studien im Überblick",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_NMQJMK"
+      ],
+      "name": "t:sections.rich_text.presets.rich_text.name",
+      "settings": {
+        "color_scheme": "scheme-e240f942-9acb-4b5c-8e31-a59739abd614",
+        "separate_section_with_border": false,
+        "content_width": "sm",
+        "text_position": "center",
+        "remove_vertical_spacing": true
+      }
+    },
+    "main": {
+      "type": "study-search",
+      "settings": {}
+    }
+  },
+  "order": [
+    "rich_text_YCKqPB",
+    "rich_text_x3L8V9",
+    "main"
+  ]
 }

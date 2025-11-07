@@ -1,0 +1,266 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "show_title": true,
+        "page_width": "xs"
+      }
+    },
+    "1760608147702a75c2": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_agg_section_DXzQwk": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-agg-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "only_photos": false,
+            "hide_thumbnails": false,
+            "product_handle": "",
+            "aggregated": true,
+            "data-limit": 20,
+            "maxwidth": 1080,
+            "is_sample": true
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_agg_section_DXzQwk"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false
+      }
+    },
+    "featured_product_DzYVaB": {
+      "type": "featured-product",
+      "blocks": {
+        "liquid_g9Wkgf": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div style=\"display:flex;align-items:center;gap:6px;font-size:16px;color:#4b4b4b;padding-top:0px;padding-bottom:0px;\">\n  <span style=\"color:#ea5167;font-size:18px;\">★★★★★</span>\n  <span>\n    Über <strong>15.000</strong> vertrauen auf Energie mit VitaminH2\n  </span>\n</div>"
+          }
+        },
+        "vendor_64f9AW": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "title_PyxCkH": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h3"
+          }
+        },
+        "text_nLrAFf": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>In einem Glas das Steuer über deine Gesundheit wieder in der Hand</strong></p>"
+          }
+        },
+        "badges_6FkXg7": {
+          "type": "badges",
+          "settings": {}
+        },
+        "liquid_iT7BDP": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div style=\"display:flex; flex-wrap:wrap; row-gap:10px; column-gap:10px; padding:0px 0;\">\n  <span style=\"display:inline-block;background:#fdf4e9;color:#cc0000;padding:6px 12px;border-radius:12px;font-weight:600;font-size:14px;line-height:1;\">\n    Fokus und Konzentration\n  </span>\n  <span style=\"display:inline-block;background:#fdf4e9;color:#cc0000;padding:6px 12px;border-radius:12px;font-weight:600;font-size:14px;line-height:1;\">\n    Leistungs-Boost\n  </span>\n  <span style=\"display:inline-block;background:#fdf4e9;color:#cc0000;padding:6px 12px;border-radius:12px;font-weight:600;font-size:14px;line-height:1;\">\n    Schnell löslich\n  </span>\n  <span style=\"display:inline-block;background:#fdf4e9;color:#cc0000;padding:6px 12px;border-radius:12px;font-weight:600;font-size:14px;line-height:1;\">\n    Fruchtiger Geschmack\n  </span>\n</div>"
+          }
+        },
+        "price_rNDt4f": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "rating_XgyVnF": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+            "show_empty": true,
+            "rating_mode": "rating"
+          }
+        },
+        "payment_terms_hFmMUN": {
+          "type": "payment_terms",
+          "settings": {}
+        },
+        "separator_KX3xMp": {
+          "type": "separator",
+          "disabled": true,
+          "settings": {}
+        },
+        "description_DzjqCD": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false
+          }
+        },
+        "variant_picker_3cwDGD": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "",
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector_m9fWMn": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "pumper_bundles_app_block_qb_jH9dK3": {
+          "type": "shopify://apps/pumper-bundles/blocks/app-block-qb/0856870d-2aca-4b1e-a662-cf1797f61270",
+          "settings": {
+            "selected_product": "{{section.settings.product}}",
+            "using_page_builder": false
+          }
+        },
+        "buy_buttons_4EXLtk": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": false,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "liquid_fjwATg": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div style=\"display:flex;align-items:flex-start;gap:12px;max-width:600px;padding:16px 0;\">\n  <!-- Bild -->\n  <img src=\"https://cdn.shopify.com/s/files/1/0872/7969/8251/files/Melanie_D.png?v=1756467562\" \n       alt=\"Melanie D.\" \n       style=\"width:48px;height:48px;border-radius:50%;object-fit:cover;\">\n  \n  <!-- Text -->\n  <div style=\"font-size:15px;color:#333;line-height:1.4;\">\n    <p style=\"font-style:italic;margin:0 0 6px 0;\">\n      \"VitaminH2 gibt mir spürbar mehr Energie im Alltag – ich fühle mich fokussierter und frischer.\"\n    </p>\n    <p style=\"margin:0;font-size:14px;color:#555;\">\n      – Melanie D., Kundin\n    </p>\n  </div>\n</div>"
+          }
+        },
+        "pickup_availability_rdWcHJ": {
+          "type": "pickup_availability",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "liquid_g9Wkgf",
+        "vendor_64f9AW",
+        "title_PyxCkH",
+        "text_nLrAFf",
+        "badges_6FkXg7",
+        "liquid_iT7BDP",
+        "price_rNDt4f",
+        "rating_XgyVnF",
+        "payment_terms_hFmMUN",
+        "separator_KX3xMp",
+        "description_DzjqCD",
+        "variant_picker_3cwDGD",
+        "quantity_selector_m9fWMn",
+        "pumper_bundles_app_block_qb_jH9dK3",
+        "buy_buttons_4EXLtk",
+        "liquid_fjwATg",
+        "pickup_availability_rdWcHJ"
+      ],
+      "settings": {
+        "color_scheme": "scheme-d158b51a-f3e3-4810-a2bb-41206d01c467",
+        "product": "vitaminh2",
+        "separate_section_with_border": false,
+        "container_size": "lg",
+        "product_info_size": 45,
+        "center_basic_info": false,
+        "desktop_media_layout": "carousel_thumbnails_bottom",
+        "desktop_media_grid_gap": 30,
+        "mobile_controls": "thumbnails",
+        "enable_media_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": false,
+        "max_image_zoom_level": 3,
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    },
+    "faq_qXhTf6": {
+      "type": "faq",
+      "blocks": {
+        "question_DRkkRy": {
+          "type": "question",
+          "settings": {
+            "question": "Wie nehme ich VitaminH2 richtig ein?",
+            "answer": "<p>Löse 1-2 Tabletten in 200-300 ml Wasser auf. Für maximale Wirkung kannst du auch 2 Tabletten verwenden. Trinke die Mischung nach dem vollständigen Auflösen.</p>"
+          }
+        },
+        "question_BQB4M8": {
+          "type": "question",
+          "settings": {
+            "question": "Wie oft sollte ich VitaminH2 einnehmen?",
+            "answer": "<p>Für optimale Ergebnisse empfehlen wir die Einnahme von 1-2 Tabletten täglich. Du kannst bis zu 5 Tabletten pro Tag konsumieren, da das Produkt frei von schädlichen Zusatzstoffen ist.</p>"
+          }
+        },
+        "question_XpLngr": {
+          "type": "question",
+          "settings": {
+            "question": "Wie schnell werde ich die Wirkung von VitaminH2 spüren?",
+            "answer": "<p>Viele Nutzer berichten von einer schnellen Verbesserung ihrer Energielevels und einer besseren Hydration nach nur wenigen Tagen der Einnahme. Die Wirkung variiert jedoch je nach Körper und Bedarf.</p>"
+          }
+        },
+        "question_niDNTL": {
+          "type": "question",
+          "settings": {
+            "question": "Ist VitaminH2 für Vegetarier und Veganer geeignet?",
+            "answer": "<p>Ja, VitaminH2 ist zu 100% vegan und enthält keine tierischen Inhaltsstoffe.</p>"
+          }
+        },
+        "question_n4RPP6": {
+          "type": "question",
+          "settings": {
+            "question": "Ist VitaminH2 gluten- oder laktosefrei?",
+            "answer": "<p>Ja, VitaminH2 ist frei von Gluten und Laktose. Es ist auch frei von Zucker, Soja und Gentechnik.</p>"
+          }
+        },
+        "question_jL8HDF": {
+          "type": "question",
+          "settings": {
+            "question": "Kann VitaminH2 bei Stress helfen?",
+            "answer": "<p>Ja, die enthaltenen natürlichen Inhaltsstoffe wie Magnesium können helfen, Stress abzubauen und das allgemeine Wohlbefinden zu steigern.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_DRkkRy",
+        "question_BQB4M8",
+        "question_XpLngr",
+        "question_niDNTL",
+        "question_n4RPP6",
+        "question_jL8HDF"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "side_header": "<h2>Hast du Fragen? Wir haben die Antworten. </h2>",
+        "side_text": "<p>Hier findest du die Antworten auf einige der häufigsten Fragen zu VitaminH2. Kannst du die gesuchte Antwort nicht finden? </p><p>Dann kontaktiere einfach unser freundliches Team.</p>",
+        "separate_section_with_border": true,
+        "show_categories": true,
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1760608147702a75c2",
+    "featured_product_DzYVaB",
+    "faq_qXhTf6"
+  ]
+}

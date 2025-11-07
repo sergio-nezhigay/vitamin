@@ -409,7 +409,7 @@
         "subtitle": "VitaminH2",
         "subtitle_color": "#ff4757",
         "subtitle_size_mobile": 20,
-        "description": "<p>Wenn sich die Brausetablette in Wasser auflöst, entsteht ein <strong>erfrischendes Getränk mit leichtem Pfirsichgeschmack</strong>, das reich an <strong>molekularem Wasserstoff</strong> ist. Dieser verbindet sich mit dem Körper, unterstützt die Zellen beim Schutz vor oxidativem Stress und fördert Energie, Regeneration und Wohlbefinden. Das enthaltene Magnesium stärkt Muskeln und Nerven, während Natriumbicarbonat den Säure-Basen-Haushalt ausgleicht.</p><p>Das Ergebnis: Ein <strong>sprudelnd-leichter Drink</strong>, der nicht nur schmeckt, sondern auch spürbar dazu beiträgt, sich vitaler, ausgeglichener und leistungsfähiger zu fühlen – Tag für Tag.</p>",
+        "description": "<p>Sobald sich die Brausetablette im Wasser auflöst, entsteht molekularer Wasserstoff. Dieses winzige, aber unglaublich kraftvolle Molekül gelangt tief in deine Zellen und hilft ihnen, sich von innen neu zu starten.</p><p>Wie ein Frischekick für jede einzelne Zelle: Der Wasserstoff beseitigt die Stoffe, die dich müde und schlapp machen, und bringt deine Zellenergie wieder in Gang. Plötzlich fühlt sich dein Körper leichter, wacher und klarer an, als würde innen alles wieder auf Power geschaltet.</p><p>Magnesium stärkt Muskeln und Nerven, Natriumbicarbonat sorgt für Balance.</p><p><strong>Das Ergebnis:</strong> Dein Körper läuft wieder auf voller Leistung. Du spürst Energie, Fokus und Leichtigkeit von innen heraus, jeden Tag.</p>",
         "description_color": "#666666",
         "description_size_desktop": 16,
         "description_size_mobile": 14,
@@ -901,8 +901,8 @@
         "image_kPq3Rf": {
           "type": "image",
           "settings": {
-            "customer_image": "shopify://shop_images/2_248a221f-4987-47fd-b843-3d17068c7a72.png",
-            "alt_text": "Emily"
+            "customer_image": "shopify://shop_images/Produktfoto_Schwester.jpg",
+            "alt_text": ""
           }
         },
         "image_rW7PQK": {
@@ -915,14 +915,14 @@
         "image_Wjq93y": {
           "type": "image",
           "settings": {
-            "customer_image": "shopify://shop_images/30943.png",
+            "customer_image": "shopify://shop_images/Produktfoto_Oma.jpg",
             "alt_text": "Ava"
           }
         },
         "image_kj8qcY": {
           "type": "image",
           "settings": {
-            "customer_image": "shopify://shop_images/Bildschirmfoto_2025-08-29_um_14.21.44.png",
+            "customer_image": "shopify://shop_images/Review_8123.jpg",
             "alt_text": "Daniel"
           }
         },

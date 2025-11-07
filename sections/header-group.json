@@ -30,7 +30,7 @@
         "enable_sticky": false,
         "autoplay": true,
         "cycle_speed": 5,
-        "desktop_font_size": 11,
+        "desktop_font_size": 9,
         "mobile_font_size": 10
       }
     },
